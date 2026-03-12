@@ -64,6 +64,7 @@ html {
 .docs-main {
   padding: var(--vui-space-xl);
   max-width: 1200px;
+  margin-inline: auto;
 }
 
 .docs-title {
@@ -96,17 +97,21 @@ html {
 }
 
 .docs-section-title {
-  margin: var(--vui-space-xl) 0 var(--vui-space-md);
   font-size: var(--vui-font-size-xl);
   color: var(--vui-fg);
+  margin: 1em 0;
 }
 
+.docs-preview{
+  margin: 2em 0;
+}
 .docs-preview,
 .docs-code,
 .docs-prose,
 .docs-table,
 .docs-directory-grid {
   margin-bottom: var(--vui-space-lg);
+  margin: 1em 0;
 }
 
 .docs-preview,
@@ -320,9 +325,7 @@ html {
   background: rgba(21, 128, 61, 0.035);
 }
 
-.docs-compat-row.is-healthy td:first-child {
-  box-shadow: inset 3px 0 0 var(--vui-success);
-}
+
 
 .docs-compat-table td:nth-child(2),
 .docs-compat-table td:nth-child(3),

@@ -88,12 +88,3 @@
   transform: translateY(0);
 }
 
-.vui-accordion--borderless {
-  border: none;
-  border-radius: 0;
-}
-
-.vui-accordion--borderless .vui-accordion-item {
-  border-bottom: 1px solid var(--vui-border-subtle);
-}
-

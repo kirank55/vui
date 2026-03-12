@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../docs.css" />
     <link rel="stylesheet" href="accordion.component.css" />
   </head>
+
   <body>
     <div class="docs-layout">
       <nav class="docs-sidebar">
@@ -27,14 +28,7 @@
           A disclosure component using the native &lt;details&gt; and
           &lt;summary&gt; elements.
         </p>
-        <span class="docs-compat">
-          Support: &lt;details&gt; and &lt;summary&gt; are broadly supported.
-          <code>details[name]</code> is newer.
-        </span>
-
-        <section>
-          <h2 class="docs-section-title">Component Preview</h2>
-
+        <section style="margin: 2em 0;">
           <div
             class="component-card"
             data-html-source="accordion.component.html"
@@ -50,8 +44,6 @@
         </section>
 
         <h2 class="docs-section-title">Open by Default</h2>
-        <div data-panel="open by default"></div>
-        
         <div class="docs-preview">
           <div class="vui-accordion">
             <details class="vui-accordion-item" open>
@@ -70,83 +62,21 @@
           </div>
         </div>
 
-        <div class="docs-code">
+        <div class="docs-code is-enhanced">
           <span class="docs-code-label">HTML</span>
-          <pre>
-&lt;details class="vui-accordion-item" open&gt;
-  &lt;summary&gt;This section starts open&lt;/summary&gt;
-  &lt;div class="vui-accordion-body"&gt;
-    Add the open attribute to the &lt;details&gt; element.
-  &lt;/div&gt;
-&lt;/details&gt;</pre
-          >
+          <pre><code><span class="token punctuation">&lt;</span><span class="token tag">details</span> <span class="token attr-name">class</span><span class="token punctuation">=</span><span class="token attr-value">&quot;vui-accordion-item&quot;</span> <span class="token attr-name">open</span><span class="token punctuation">&gt;</span>
+</code></pre>
         </div>
 
-        <h2 class="docs-section-title">Borderless Variant</h2>
-        <div class="docs-preview">
-          <div class="vui-accordion vui-accordion--borderless">
-            <details class="vui-accordion-item">
-              <summary>First item</summary>
-              <div class="vui-accordion-body">Content for the first item.</div>
-            </details>
-            <details class="vui-accordion-item">
-              <summary>Second item</summary>
-              <div class="vui-accordion-body">Content for the second item.</div>
-            </details>
-          </div>
+        <div style="display: flex;justify-content: space-between;align-items: center;">
+
+            
+            <h2 class="docs-section-title">Browser Compatibility
+                
+            </h2> 
+
         </div>
 
-        <div class="docs-code">
-          <span class="docs-code-label">HTML</span>
-          <pre>
-&lt;div class="vui-accordion vui-accordion--borderless"&gt;
-  ...
-&lt;/div&gt;</pre
-          >
-        </div>
-
-        <h2 class="docs-section-title">API</h2>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Class</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>.vui-accordion</code></td>
-              <td>Container element</td>
-            </tr>
-            <tr>
-              <td><code>.vui-accordion-item</code></td>
-              <td>Each &lt;details&gt; element</td>
-            </tr>
-            <tr>
-              <td><code>.vui-accordion-body</code></td>
-              <td>Content panel</td>
-            </tr>
-            <tr>
-              <td><code>.vui-accordion--borderless</code></td>
-              <td>No outer border variant</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2 class="docs-section-title">Notes</h2>
-        <div class="docs-prose">
-          <p>
-            The &lt;details&gt; element handles open and close state natively.
-            No dependency, no lock-in. Just copy paste.
-          </p>
-          <p>
-            Add the <code>name</code> attribute with the same value to multiple
-            &lt;details&gt; elements to create an exclusive accordion where only
-            one item can be open at a time.
-          </p>
-        </div>
-
-        <h2 class="docs-section-title">Browser Compatibility</h2>
         <table class="docs-table docs-compat-table">
           <thead>
             <tr>
@@ -183,7 +113,7 @@
                 >
               </td>
             </tr>
-            <tr class="docs-compat-row is-healthy">
+            <tr class="docs-compat-row is-healthy ">
               <td>
                 <code>&lt;summary&gt;</code>
                 <span class="docs-compat-signal is-good">Broad support</span>
