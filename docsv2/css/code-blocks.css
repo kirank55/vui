@@ -1,0 +1,262 @@
+/* ============================================================
+   code-blocks.css  —  Rendered code panels, syntax‐highlighting
+   tokens, copy button, and collapse/expand toggle.
+   ============================================================ */
+
+/* --- Code Shell (wraps label + window) --- */
+
+.docs-code-shell {
+  padding: 0;
+  background: var(--vui-bg-elevated);
+}
+
+.docs-code-window {
+  background: var(--vui-bg-elevated);
+  overflow: hidden;
+}
+
+/* --- Code Stack (side-by-side HTML + CSS) --- */
+
+.docs-code-stack {
+  display: grid;
+}
+
+.docs-code-stack.has-two-blocks {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* --- Individual Code Block --- */
+
+.docs-code-block + .docs-code-block {
+  border-top: 1px solid var(--vui-border-subtle);
+}
+
+.docs-code-stack.has-two-blocks .docs-code-block + .docs-code-block {
+  border-top: none;
+  border-left: 1px solid var(--vui-border-subtle);
+}
+
+/* --- Code Block Header (label + actions) --- */
+
+.docs-code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--vui-bg-surface);
+  border-bottom: 1px solid var(--vui-border-subtle);
+}
+
+.docs-code-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Code Label with coloured dot --- */
+
+.docs-code-block .docs-code-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--vui-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vui-fg);
+}
+
+.docs-code-block .docs-code-label::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.9;
+}
+
+.docs-code-block.is-css .docs-code-label {
+  color: #0f766e;
+}
+
+.docs-code-block.is-html .docs-code-label {
+  color: #be185d;
+}
+
+/* --- Code content (<pre> + <code>) --- */
+
+.docs-code-block pre {
+  margin: 0;
+  padding: 18px 20px 22px;
+  font-family: var(--vui-font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--vui-fg);
+  background: var(--vui-bg-elevated);
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.docs-code-block code {
+  color: inherit;
+}
+
+/* --- Copy Button --- */
+
+.docs-copy-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--vui-border);
+  border-radius: 999px;
+  background: var(--vui-bg-elevated);
+  color: var(--vui-fg-muted);
+  padding: 6px 10px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--vui-duration) var(--vui-easing),
+              border-color var(--vui-duration) var(--vui-easing),
+              color var(--vui-duration) var(--vui-easing);
+}
+
+.docs-copy-btn:hover {
+  background: var(--vui-bg-surface);
+  border-color: var(--vui-border-strong);
+  color: var(--vui-fg);
+}
+
+.docs-copy-btn.is-copied {
+  color: #bbf7d0;
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+.docs-copy-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.9rem;
+  height: 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.docs-copy-text {
+  display: inline-block;
+}
+
+/* --- Toggle (Show More / Show Less) Button --- */
+
+.docs-toggle-btn {
+  appearance: none;
+  border: 1px solid var(--vui-border);
+  border-radius: 999px;
+  background: var(--vui-bg-elevated);
+  color: var(--vui-fg-muted);
+  padding: 6px 10px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--vui-duration) var(--vui-easing),
+              border-color var(--vui-duration) var(--vui-easing),
+              color var(--vui-duration) var(--vui-easing);
+}
+
+.docs-toggle-btn:hover {
+  background: var(--vui-bg-surface);
+  border-color: var(--vui-border-strong);
+  color: var(--vui-fg);
+}
+
+.docs-code-toggle-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 18px;
+  background: var(--vui-bg-elevated);
+}
+
+.docs-code-toggle-row.is-legacy {
+  padding-top: 4px;
+}
+
+/* --- Collapsible code blocks --- */
+
+.docs-code-block.is-collapsible pre,
+.docs-code.is-collapsible > pre {
+  position: relative;
+  transition: max-height var(--vui-duration) var(--vui-easing);
+}
+
+.docs-code-block.is-collapsed pre {
+  max-height: 30rem;
+  overflow: hidden;
+}
+
+.docs-code.is-collapsed > pre {
+  max-height: 30rem;
+  overflow: hidden;
+}
+
+.docs-code-block.is-collapsed pre::after,
+.docs-code.is-collapsed > pre::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 64px;
+  pointer-events: none;
+}
+
+.docs-code-block.is-collapsed pre::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--vui-bg-elevated));
+}
+
+.docs-code.is-collapsed > pre::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--vui-bg-elevated));
+}
+
+.docs-code-block.is-expanded pre,
+.docs-code.is-expanded > pre {
+  max-height: none;
+}
+
+/* --- Scrollbar styling --- */
+
+.docs-code-block pre::-webkit-scrollbar {
+  height: 10px;
+}
+
+.docs-code-block pre::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+.docs-code-block pre::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+.docs-code-block pre::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* --- Syntax Highlighting Tokens --- */
+
+.token.comment    { color: #64748b; }
+.token.tag,
+.token.selector,
+.token.at-rule    { color: #0f766e; }
+.token.attr-name,
+.token.property,
+.token.variable   { color: #be185d; }
+.token.attr-value,
+.token.string     { color: #15803d; }
+.token.number,
+.token.function   { color: #b45309; }
+.token.punctuation { color: #475569; }

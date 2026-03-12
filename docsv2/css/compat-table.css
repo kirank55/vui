@@ -1,0 +1,107 @@
+/* ============================================================
+   compat-table.css  —  Browser compatibility table.
+   Shows per-feature support across Chrome, Edge, Firefox, Safari.
+   ============================================================ */
+
+/* --- Base Table --- */
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  overflow: hidden;
+}
+
+.docs-table th,
+.docs-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--vui-border-subtle);
+}
+
+.docs-table th {
+  background: var(--vui-bg-surface);
+  color: var(--vui-fg);
+  font-size: var(--vui-font-size-sm);
+}
+
+.docs-table td {
+  color: var(--vui-fg-muted);
+  font-size: var(--vui-font-size-sm);
+}
+
+.docs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Compat-specific overrides --- */
+
+.docs-compat-table td,
+.docs-compat-table th {
+  vertical-align: top;
+}
+
+.docs-compat-table td:nth-child(2),
+.docs-compat-table td:nth-child(3),
+.docs-compat-table td:nth-child(4),
+.docs-compat-table td:nth-child(5) {
+  white-space: nowrap;
+}
+
+/* --- Healthy row highlight --- */
+
+.docs-compat-row.is-healthy td {
+  background: rgba(21, 128, 61, 0.035);
+}
+
+/* --- Support Signal Badges --- */
+
+.docs-compat-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--vui-border);
+  background: var(--vui-bg-surface);
+  color: var(--vui-fg-muted);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.docs-compat-signal::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--vui-border-strong);
+  box-shadow: 0 0 0 4px rgba(163, 163, 163, 0.14);
+}
+
+.docs-compat-signal.is-good {
+  border-color: rgba(21, 128, 61, 0.28);
+  background: rgba(21, 128, 61, 0.08);
+  color: #14532d;
+}
+
+.docs-compat-signal.is-good::before {
+  background: var(--vui-success);
+  box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.14);
+}
+
+/* --- Links and Meta --- */
+
+.docs-compat-link {
+  color: var(--vui-fg);
+  font-weight: 600;
+}
+
+.docs-compat-meta {
+  margin-top: var(--vui-space-sm);
+  font-size: var(--vui-font-size-xs);
+  color: var(--vui-fg-subtle);
+}

@@ -1,0 +1,116 @@
+/* ============================================================
+   content.css  —  Page content: headings, previews,
+   component cards, and panel labels.
+   ============================================================ */
+
+/* --- Typography --- */
+
+.docs-title {
+  margin: 0 0 var(--vui-space-sm);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--vui-fg);
+}
+
+.docs-subtitle {
+  margin: 0 0 var(--vui-space-md);
+  font-size: var(--vui-font-size-base);
+  color: var(--vui-fg-muted);
+  line-height: 1.7;
+}
+
+.docs-section-title {
+  font-size: var(--vui-font-size-xl);
+  color: var(--vui-fg);
+  margin: 1em 0;
+}
+
+/* --- Preview Box --- */
+
+.docs-preview {
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  background: var(--vui-bg-elevated);
+  overflow: hidden;
+  padding: 24px;
+}
+
+/* --- Component Card (wraps preview + code panels) --- */
+
+.component-card {
+  display: grid;
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--vui-bg-elevated), var(--vui-bg));
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+/* --- Panel Labels (Preview / Code) --- */
+
+.docs-panel-label {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--vui-border-subtle);
+  font-family: var(--vui-font-mono);
+  font-size: var(--vui-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vui-fg-muted);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(246, 248, 251, 0.95)
+  );
+}
+
+/* --- Preview Panel --- */
+
+[data-panel="preview"] {
+  display: grid;
+  background: var(--vui-bg-elevated);
+}
+
+[data-panel="preview"] + [data-panel="code"] {
+  border-top: 1px solid var(--vui-border);
+}
+
+/* --- Code Panel --- */
+
+[data-panel="code"] {
+  background: var(--vui-bg-elevated);
+}
+
+/* --- Legacy Code Block (inline <pre> in the page) --- */
+
+.docs-code {
+  margin: 1em 0;
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  background: var(--vui-bg-elevated);
+  overflow: hidden;
+}
+
+.docs-code > .docs-code-label {
+  display: block;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--vui-border-subtle);
+  font-family: var(--vui-font-mono);
+  font-size: var(--vui-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vui-fg-muted);
+  background: var(--vui-bg-surface);
+}
+
+.docs-code > pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--vui-font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  background: var(--vui-bg-elevated);
+}

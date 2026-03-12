@@ -1,0 +1,71 @@
+/* ============================================================
+   layout.css  —  Page grid, sidebar, and main content area.
+   The two-column layout used by every docs page.
+   ============================================================ */
+
+html {
+  scroll-padding-top: 40px;
+}
+
+/* --- Page Shell --- */
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+
+.docs-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--vui-border-subtle);
+  padding: var(--vui-space-lg) 0;
+  background: var(--vui-bg);
+}
+
+.docs-sidebar-brand {
+  display: block;
+  padding: 0 var(--vui-space-lg) var(--vui-space-lg);
+  font-size: var(--vui-font-size-lg);
+  font-weight: 700;
+  color: var(--vui-fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--vui-border-subtle);
+  margin-bottom: var(--vui-space-md);
+}
+
+.docs-nav-label {
+  padding: var(--vui-space-xs) var(--vui-space-lg);
+  font-size: var(--vui-font-size-xs);
+  font-weight: 600;
+  color: var(--vui-fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.docs-nav-link {
+  display: block;
+  padding: var(--vui-space-xs) var(--vui-space-lg);
+  font-size: var(--vui-font-size-sm);
+  color: var(--vui-fg-muted);
+  text-decoration: none;
+  transition: color var(--vui-duration) var(--vui-easing),
+              background var(--vui-duration) var(--vui-easing);
+}
+
+.docs-nav-link:hover {
+  color: var(--vui-fg);
+  background: var(--vui-bg-surface);
+}
+
+/* --- Main Content Area --- */
+
+.docs-main {
+  padding: var(--vui-space-xl);
+  max-width: 1200px;
+  margin-inline: auto;
+}

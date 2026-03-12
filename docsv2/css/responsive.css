@@ -1,0 +1,70 @@
+/* ============================================================
+   responsive.css  —  Mobile breakpoint overrides.
+   Stacks the sidebar above the main content on small screens.
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Stack columns vertically */
+  .docs-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar sits on top instead of the side */
+  .docs-sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--vui-border-subtle);
+  }
+
+  /* Tighten main content padding */
+  .docs-main {
+    padding: var(--vui-space-lg);
+  }
+
+  /* Reduce code panel padding */
+  .docs-code-shell {
+    padding: 0;
+  }
+
+  .docs-panel-label,
+  .docs-code-block-header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .docs-code-toggle-row {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .docs-code-block pre {
+    padding: 14px 12px 18px;
+    font-size: 0.75rem;
+  }
+
+  /* Stack the side-by-side code blocks vertically */
+  .docs-code-stack.has-two-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-code-stack.has-two-blocks .docs-code-block + .docs-code-block {
+    border-left: none;
+    border-top: 1px solid var(--vui-border-subtle);
+  }
+
+  .docs-code-actions,
+  .docs-code-toggle-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .docs-code-toggle-row {
+    align-items: center;
+  }
+
+  [data-panel="preview"] > :not(.docs-panel-label) {
+    padding: 32px 20px;
+  }
+}
