@@ -1,0 +1,81 @@
+<form class="vui-form" action="">
+  <div class="vui-form-grid">
+    <label class="vui-field">
+      <span class="vui-field-label">Project name <span aria-hidden="true">*</span></span>
+      <input
+        class="vui-input"
+        type="text"
+        name="project-name"
+        required
+        minlength="4"
+        maxlength="40"
+        placeholder="Q2 Launch Site"
+      />
+      <span class="vui-field-help">4 to 40 characters.</span>
+    </label>
+
+    <label class="vui-field">
+      <span class="vui-field-label">Owner email <span aria-hidden="true">*</span></span>
+      <input
+        class="vui-input"
+        type="email"
+        name="owner-email"
+        required
+        placeholder="name@example.com"
+      />
+      <span class="vui-field-help">Native email validation is handled by the browser.</span>
+    </label>
+
+    <label class="vui-field">
+      <span class="vui-field-label">Launch budget</span>
+      <input class="vui-input" type="number" name="budget" min="5000" max="100000" step="500" value="12000" />
+      <span class="vui-field-help">Allowed range: 5,000 to 100,000.</span>
+    </label>
+
+    <label class="vui-field">
+      <span class="vui-field-label">Tracking code <span aria-hidden="true">*</span></span>
+      <input
+        class="vui-input"
+        type="text"
+        name="tracking-code"
+        required
+        pattern="[A-Z]{3}-[0-9]{4}"
+        title="Use the format ABC-1234"
+        placeholder="ABC-1234"
+      />
+      <span class="vui-field-help">Format: three capitals, a dash, then four digits.</span>
+    </label>
+
+    <label class="vui-field vui-field--full">
+      <span class="vui-field-label">Launch notes</span>
+      <textarea class="vui-textarea" name="notes" rows="5" maxlength="240" placeholder="Summarize the rollout plan, approvals, or risks."></textarea>
+      <span class="vui-field-help">Textarea keeps native resizing and maxlength behavior.</span>
+    </label>
+  </div>
+
+  <fieldset class="vui-choice-group">
+    <legend class="vui-field-label">Release track <span aria-hidden="true">*</span></legend>
+    <label class="vui-choice">
+      <input type="radio" name="track" value="pilot" required checked />
+      <span>Pilot</span>
+    </label>
+    <label class="vui-choice">
+      <input type="radio" name="track" value="public" required />
+      <span>Public</span>
+    </label>
+    <label class="vui-choice">
+      <input type="radio" name="track" value="internal" required />
+      <span>Internal</span>
+    </label>
+  </fieldset>
+
+  <label class="vui-choice vui-choice--checkbox">
+    <input type="checkbox" name="approvals" required />
+    <span>I have legal and analytics approval.</span>
+  </label>
+
+  <div class="vui-form-actions">
+    <button class="vui-form-btn vui-form-btn--secondary" type="reset">Reset</button>
+    <button class="vui-form-btn" type="submit">Validate</button>
+  </div>
+</form>

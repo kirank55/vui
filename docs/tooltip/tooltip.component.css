@@ -1,0 +1,142 @@
+/* ============================================================
+   tooltip.component.css  --  Tooltip component styles
+   Uses the Popover API and progressive CSS anchor positioning.
+   ============================================================ */
+
+.vui-tooltip-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-bg-invert: var(--vui-bg-invert, #1a1a1a);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-invert: var(--vui-fg-invert, #fafafa);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-radius-lg: var(--vui-radius-lg, 10px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  --_vui-shadow-lg: var(--vui-shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.12));
+  --_vui-duration: var(--vui-duration, 150ms);
+  --_vui-easing: var(--vui-easing, cubic-bezier(0.4, 0, 0.2, 1));
+  display: grid;
+  gap: var(--_vui-space-md);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-tooltip-stack {
+  display: inline-grid;
+  justify-items: start;
+}
+
+.vui-tooltip-trigger {
+  anchor-name: --vui-tooltip-anchor;
+  min-height: 44px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff, #f4f4f4);
+  color: var(--_vui-fg);
+  font: inherit;
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform var(--_vui-duration) var(--_vui-easing),
+    box-shadow var(--_vui-duration) var(--_vui-easing),
+    border-color var(--_vui-duration) var(--_vui-easing);
+}
+
+.vui-tooltip-trigger:hover {
+  border-color: var(--_vui-fg-muted);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.vui-tooltip-trigger:focus-visible {
+  outline: 2px solid var(--_vui-fg);
+  outline-offset: 2px;
+}
+
+.vui-tooltip-bubble {
+  max-width: 20rem;
+  margin: 0;
+  padding: 0.8rem 0.95rem;
+  border: 0;
+  border-radius: var(--_vui-radius-lg);
+  background: var(--_vui-bg-invert);
+  color: var(--_vui-fg-invert);
+  box-shadow: var(--_vui-shadow-lg);
+  font-size: var(--_vui-font-size-sm);
+  line-height: 1.5;
+}
+
+.vui-tooltip-bubble:popover-open {
+  display: block;
+}
+
+.vui-tooltip-bubble::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  transform: rotate(45deg);
+}
+
+.vui-tooltip-note {
+  max-width: 42rem;
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-sm);
+  line-height: 1.6;
+}
+
+@supports (position-anchor: --vui-tooltip-anchor) and (top: anchor(bottom)) {
+  .vui-tooltip-bubble:popover-open {
+    position: fixed;
+    position-anchor: --vui-tooltip-anchor;
+    inset: auto;
+    bottom: anchor(top);
+    justify-self: anchor-center;
+    margin-bottom: 14px;
+  }
+
+  .vui-tooltip-bubble::before {
+    left: 50%;
+    bottom: -6px;
+    margin-left: -6px;
+  }
+}
+
+@supports not ((position-anchor: --vui-tooltip-anchor) and (top: anchor(bottom))) {
+  .vui-tooltip-bubble:popover-open {
+    position: fixed;
+    inset: auto;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .vui-tooltip-bubble::before {
+    left: 50%;
+    bottom: -6px;
+    margin-left: -6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vui-tooltip-stack,
+  .vui-tooltip-trigger {
+    width: 100%;
+  }
+
+  .vui-tooltip-trigger {
+    text-align: center;
+  }
+
+  .vui-tooltip-bubble {
+    max-width: min(100vw - 2rem, 20rem);
+  }
+}

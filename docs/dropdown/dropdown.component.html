@@ -1,0 +1,30 @@
+<div class="vui-dropdown-demo">
+  <div class="vui-dropdown">
+    <button
+      class="vui-dropdown-trigger"
+      type="button"
+      popovertarget="vui-dropdown-menu"
+      aria-haspopup="menu"
+    >
+      Project actions
+      <span class="vui-dropdown-caret" aria-hidden="true"></span>
+    </button>
+
+    <div id="vui-dropdown-menu" class="vui-dropdown-menu" popover>
+      <div class="vui-dropdown-group-label">Workspace</div>
+      <button class="vui-dropdown-item" type="button">Invite reviewer</button>
+      <button class="vui-dropdown-item" type="button">Duplicate page</button>
+      <button class="vui-dropdown-item" type="button">Move to archive</button>
+      <hr class="vui-dropdown-separator" />
+      <button class="vui-dropdown-item vui-dropdown-item--danger" type="button">
+        Delete draft
+      </button>
+    </div>
+  </div>
+
+  <p class="vui-dropdown-note">
+    Declarative show and hide works with the Popover API in the project's
+    browser range. Precise trigger-relative placement improves when newer anchor
+    positioning support is available.
+  </p>
+</div>

@@ -1,0 +1,175 @@
+/* ============================================================
+   dropdown.component.css  --  Dropdown menu component styles
+   Uses the Popover API.
+   ============================================================ */
+
+.vui-dropdown-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f2f2f2);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-border-subtle: var(--vui-border-subtle, #e5e5e5);
+  --_vui-danger: var(--vui-danger, #b91c1c);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-radius-lg: var(--vui-radius-lg, 10px);
+  --_vui-space-xs: var(--vui-space-xs, 4px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-xs: var(--vui-font-size-xs, 0.75rem);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  --_vui-font-size-base: var(--vui-font-size-base, 1rem);
+  --_vui-shadow-lg: var(--vui-shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.12));
+  --_vui-duration: var(--vui-duration, 150ms);
+  --_vui-easing: var(--vui-easing, cubic-bezier(0.4, 0, 0.2, 1));
+  display: grid;
+  gap: var(--_vui-space-md);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-dropdown {
+  display: inline-grid;
+}
+
+.vui-dropdown-trigger {
+  anchor-name: --vui-dropdown-anchor;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  font: inherit;
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  transition:
+    border-color var(--_vui-duration) var(--_vui-easing),
+    transform var(--_vui-duration) var(--_vui-easing),
+    box-shadow var(--_vui-duration) var(--_vui-easing);
+}
+
+.vui-dropdown-trigger:hover {
+  border-color: var(--_vui-fg-muted);
+  transform: translateY(-1px);
+}
+
+.vui-dropdown-trigger:focus-visible,
+.vui-dropdown-item:focus-visible {
+  outline: 2px solid var(--_vui-fg);
+  outline-offset: 2px;
+}
+
+.vui-dropdown-caret {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  opacity: 0.7;
+}
+
+.vui-dropdown-menu {
+  min-width: 16rem;
+  margin: 0;
+  padding: var(--_vui-space-sm);
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-lg);
+  background: color-mix(in srgb, var(--_vui-bg-elevated) 94%, white);
+  color: var(--_vui-fg);
+  box-shadow: var(--_vui-shadow-lg);
+}
+
+.vui-dropdown-menu:popover-open {
+  display: grid;
+  gap: var(--_vui-space-xs);
+}
+
+.vui-dropdown-group-label {
+  padding: 0.45rem 0.6rem;
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vui-dropdown-item {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.8rem 0.85rem;
+  border: 0;
+  border-radius: calc(var(--_vui-radius-md) - 1px);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--_vui-font-size-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--_vui-duration) var(--_vui-easing);
+}
+
+.vui-dropdown-item:hover {
+  background: var(--_vui-bg-surface);
+}
+
+.vui-dropdown-item--danger {
+  color: var(--_vui-danger);
+}
+
+.vui-dropdown-separator {
+  margin: 0.2rem 0;
+  border: 0;
+  border-top: 1px solid var(--_vui-border-subtle);
+}
+
+.vui-dropdown-note {
+  max-width: 40rem;
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-sm);
+  line-height: 1.6;
+}
+
+@supports (position-anchor: --vui-dropdown-anchor) and (top: anchor(bottom)) {
+  .vui-dropdown-menu:popover-open {
+    position: fixed;
+    position-anchor: --vui-dropdown-anchor;
+    inset: auto;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin-top: 12px;
+  }
+}
+
+@supports not ((position-anchor: --vui-dropdown-anchor) and (top: anchor(bottom))) {
+  .vui-dropdown-menu:popover-open {
+    position: fixed;
+    inset: auto;
+    top: 11rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .vui-dropdown {
+    width: 100%;
+  }
+
+  .vui-dropdown-trigger {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .vui-dropdown-menu {
+    min-width: min(100vw - 3rem, 18rem);
+  }
+}

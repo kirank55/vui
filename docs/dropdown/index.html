@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dropdown -- vui</title>
+
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/content.css" />
+  <link rel="stylesheet" href="../css/code-blocks.css" />
+  <link rel="stylesheet" href="../css/compat-table.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="dropdown.component.css" />
+</head>
+
+<body>
+  <div class="docs-layout">
+    <docs-sidebar base-path="../"></docs-sidebar>
+
+    <main class="docs-main">
+      <h1 class="docs-title">Dropdown</h1>
+      <p class="docs-subtitle">
+        A non-modal action menu using the Popover API. Open and close behavior is
+        declarative today; trigger-relative positioning becomes more precise in
+        newer browsers with anchor positioning support.
+      </p>
+
+      <section style="margin: 2em 0;">
+        <div class="component-card" data-html-source="dropdown.component.html"
+          data-css-source="dropdown.component.css">
+          <div class="docs-panel-label">Preview</div>
+          <div data-panel="preview" class="docs-preview"></div>
+          <div data-panel="code" hidden>
+            <pre><code></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="docs-section-title">Implementation Notes</h2>
+      <div class="docs-prose">
+        <p>
+          The component relies on <code>popover</code>,
+          <code>popovertarget</code>, and <code>popovertargetaction</code> for
+          native open and close behavior. That keeps the menu HTML-only and avoids
+          custom event handling.
+        </p>
+        <p>
+          Chrome 120-era browsers can open the menu declaratively, but do not yet
+          expose the newer implicit anchor behavior that places the menu flush to
+          its trigger. This component therefore includes a centered fallback and a
+          precise anchor-based layout when supported.
+        </p>
+      </div>
+
+      <div style="display: flex;justify-content: space-between;align-items: center; margin-top: 2.5rem;">
+        <h2 class="docs-section-title">Browser Compatibility</h2>
+      </div>
+
+      <div class="docs-table-scroll">
+        <table class="docs-table docs-compat-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Chrome</th>
+              <th>Edge</th>
+              <th>Firefox</th>
+              <th>Safari</th>
+              <th>Notes</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="docs-compat-row is-healthy">
+              <td>
+                <code>popover</code>
+                <span class="docs-compat-signal is-good">Broad support</span>
+              </td>
+              <td>114+</td>
+              <td>114+</td>
+              <td>125+</td>
+              <td>17+</td>
+              <td>
+                Covers the native non-modal popover surface and declarative toggle
+                behavior.
+              </td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/API/Popover_API"
+                  target="_blank" rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+            <tr class="docs-compat-row is-healthy">
+              <td>
+                <code>popovertarget</code>
+                <span class="docs-compat-signal is-good">Broad support</span>
+              </td>
+              <td>114+</td>
+              <td>114+</td>
+              <td>125+</td>
+              <td>17+</td>
+              <td>
+                Gives the button a declarative relationship with the dropdown
+                panel.
+              </td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/button"
+                  target="_blank" rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Implicit anchor reference
+              </td>
+              <td>133+</td>
+              <td>133+</td>
+              <td>147+</td>
+              <td>26+</td>
+              <td>
+                Needed for perfect trigger-relative placement without an explicit
+                anchor fallback.
+              </td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/button"
+                  target="_blank" rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="docs-compat-meta">
+        Compatibility notes reference MDN Browser Compat Data current as of March 2026.
+      </p>
+    </main>
+  </div>
+
+  <script type="module" src="../js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooltip -- vui</title>
+
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/content.css" />
+  <link rel="stylesheet" href="../css/code-blocks.css" />
+  <link rel="stylesheet" href="../css/compat-table.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="tooltip.component.css" />
+</head>
+
+<body>
+  <div class="docs-layout">
+    <docs-sidebar base-path="../"></docs-sidebar>
+
+    <main class="docs-main">
+      <h1 class="docs-title">Tooltip</h1>
+      <p class="docs-subtitle">
+        A lightweight help bubble built with a popover trigger and upgraded with
+        CSS anchor positioning where the browser makes that possible.
+      </p>
+
+      <section style="margin: 2em 0;">
+        <div class="component-card" data-html-source="tooltip.component.html"
+          data-css-source="tooltip.component.css">
+          <div class="docs-panel-label">Preview</div>
+          <div data-panel="preview" class="docs-preview"></div>
+          <div data-panel="code" hidden>
+            <pre><code></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="docs-section-title">Implementation Notes</h2>
+      <div class="docs-prose">
+        <p>
+          The strict version of a tooltip people expect is hover and focus driven,
+          but the HTML-only mechanism for that is the newer interest invoker API,
+          which is not available in this project's support range. This component
+          therefore uses click to reveal the tooltip while staying declarative.
+        </p>
+        <p>
+          CSS anchor positioning also lands after the current baseline. The
+          component includes an anchor-positioned bubble when supported and a
+          centered fallback when it is not.
+        </p>
+      </div>
+
+      <div style="display: flex;justify-content: space-between;align-items: center; margin-top: 2.5rem;">
+        <h2 class="docs-section-title">Browser Compatibility</h2>
+      </div>
+
+      <div class="docs-table-scroll">
+        <table class="docs-table docs-compat-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Chrome</th>
+              <th>Edge</th>
+              <th>Firefox</th>
+              <th>Safari</th>
+              <th>Notes</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="docs-compat-row is-healthy">
+              <td>
+                <code>popover</code>
+                <span class="docs-compat-signal is-good">Broad support</span>
+              </td>
+              <td>114+</td>
+              <td>114+</td>
+              <td>125+</td>
+              <td>17+</td>
+              <td>
+                Handles the native surface and declarative toggle interaction.
+              </td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/API/Popover_API"
+                  target="_blank" rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>interestfor</code>
+              </td>
+              <td>142+</td>
+              <td>142+</td>
+              <td>No</td>
+              <td>No</td>
+              <td>
+                Hover and focus tooltip invocation without JavaScript depends on
+                this experimental API, so it is not used here.
+              </td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/API/Popover_API"
+                  target="_blank" rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                CSS anchor positioning
+              </td>
+              <td>125+</td>
+              <td>125+</td>
+              <td>147+</td>
+              <td>26+</td>
+              <td>
+                Allows the tooltip bubble to lock to its trigger without custom
+                layout code. This lands after the repo's baseline, so it is used
+                as a progressive enhancement.
+              </td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-anchor"
+                  target="_blank" rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="docs-compat-meta">
+        Compatibility notes reference MDN Browser Compat Data current as of March 2026.
+      </p>
+    </main>
+  </div>
+
+  <script type="module" src="../js/app.js"></script>
+</body>
+
+</html>

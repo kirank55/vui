@@ -1,0 +1,187 @@
+/* ============================================================
+   modal.component.css  --  Modal dialog component styles
+   Uses the native <dialog> element.
+   ============================================================ */
+
+.vui-modal-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f2f2f2);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-border-subtle: var(--vui-border-subtle, #e5e5e5);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-accent-hover: var(--vui-accent-hover, #333333);
+  --_vui-accent-fg: var(--vui-accent-fg, #fafafa);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-radius-lg: var(--vui-radius-lg, 10px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-space-xl: var(--vui-space-xl, 40px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-xs: var(--vui-font-size-xs, 0.75rem);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  --_vui-font-size-base: var(--vui-font-size-base, 1rem);
+  --_vui-font-size-xl: var(--vui-font-size-xl, 1.25rem);
+  --_vui-line-height: var(--vui-line-height, 1.6);
+  --_vui-shadow-lg: var(--vui-shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.12));
+  --_vui-duration: var(--vui-duration, 150ms);
+  --_vui-easing: var(--vui-easing, cubic-bezier(0.4, 0, 0.2, 1));
+  display: grid;
+  gap: var(--_vui-space-md);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-modal-note {
+  max-width: 36rem;
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-sm);
+  line-height: var(--_vui-line-height);
+}
+
+.vui-modal-stage {
+  display: grid;
+  place-items: center;
+  gap: var(--_vui-space-md);
+  min-height: 26rem;
+  padding: var(--_vui-space-xl) var(--_vui-space-md);
+  border: 1px solid var(--_vui-border-subtle);
+  border-radius: calc(var(--_vui-radius-lg) + 4px);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.64)),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.18));
+}
+
+.vui-modal {
+  box-sizing: border-box;
+  width: min(34rem, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
+  max-block-size: calc(100dvh - 2rem);
+  margin: auto;
+  inset: 0;
+  overflow: auto;
+  padding: var(--_vui-space-lg);
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-lg);
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  box-shadow: var(--_vui-shadow-lg);
+}
+
+.vui-modal[open] {
+  display: grid;
+}
+
+@supports selector(dialog:open) {
+  .vui-modal[open] {
+    display: block;
+  }
+
+  .vui-modal:open {
+    display: grid;
+  }
+}
+
+.vui-modal::backdrop {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.vui-modal-kicker {
+  margin-bottom: var(--_vui-space-sm);
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vui-modal-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  line-height: 1.1;
+}
+
+.vui-modal-copy {
+  margin: var(--_vui-space-md) 0 0;
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-base);
+  line-height: var(--_vui-line-height);
+}
+
+.vui-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--_vui-space-sm);
+  margin-top: var(--_vui-space-lg);
+}
+
+.vui-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--_vui-accent);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-accent);
+  color: var(--_vui-accent-fg);
+  font: inherit;
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--_vui-duration) var(--_vui-easing),
+    border-color var(--_vui-duration) var(--_vui-easing),
+    transform var(--_vui-duration) var(--_vui-easing);
+}
+
+.vui-modal-btn:hover {
+  background: var(--_vui-accent-hover);
+  border-color: var(--_vui-accent-hover);
+}
+
+.vui-modal-btn:focus-visible {
+  outline: 2px solid var(--_vui-fg);
+  outline-offset: 2px;
+}
+
+.vui-modal-btn:active {
+  transform: translateY(1px);
+}
+
+.vui-modal-btn--subtle {
+  border-color: var(--_vui-border);
+  background: var(--_vui-bg);
+  color: var(--_vui-fg);
+}
+
+.vui-modal-btn--subtle:hover {
+  background: var(--_vui-bg-surface);
+  border-color: var(--_vui-border);
+}
+
+.vui-modal-btn--launcher {
+  min-width: 10rem;
+}
+
+@media (max-width: 768px) {
+  .vui-modal-stage {
+    min-height: auto;
+    padding: var(--_vui-space-lg) var(--_vui-space-sm);
+  }
+
+  .vui-modal {
+    width: 100%;
+    padding: var(--_vui-space-md);
+  }
+
+  .vui-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .vui-modal-btn {
+    width: 100%;
+  }
+}

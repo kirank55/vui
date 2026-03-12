@@ -1,0 +1,180 @@
+/* ============================================================
+   form.component.css  --  Form control component styles
+   Uses native HTML5 validation and UI pseudo-classes.
+   ============================================================ */
+
+.vui-form {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f2f2f2);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-fg-subtle: var(--vui-fg-subtle, #999999);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-border-strong: var(--vui-border-strong, #a3a3a3);
+  --_vui-danger: var(--vui-danger, #b91c1c);
+  --_vui-success: var(--vui-success, #15803d);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-radius-lg: var(--vui-radius-lg, 10px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-xs: var(--vui-font-size-xs, 0.75rem);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  --_vui-font-size-base: var(--vui-font-size-base, 1rem);
+  --_vui-line-height: var(--vui-line-height, 1.6);
+  --_vui-duration: var(--vui-duration, 150ms);
+  --_vui-easing: var(--vui-easing, cubic-bezier(0.4, 0, 0.2, 1));
+  display: grid;
+  gap: var(--_vui-space-lg);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--_vui-space-md);
+}
+
+.vui-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.vui-field--full {
+  grid-column: 1 / -1;
+}
+
+.vui-field-label {
+  color: var(--_vui-fg);
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+}
+
+.vui-field-help {
+  color: var(--_vui-fg-subtle);
+  font-size: var(--_vui-font-size-xs);
+  line-height: 1.5;
+}
+
+.vui-input,
+.vui-textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  font: inherit;
+  font-size: var(--_vui-font-size-base);
+  transition:
+    border-color var(--_vui-duration) var(--_vui-easing),
+    box-shadow var(--_vui-duration) var(--_vui-easing),
+    background var(--_vui-duration) var(--_vui-easing);
+}
+
+.vui-textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.vui-input::placeholder,
+.vui-textarea::placeholder {
+  color: var(--_vui-fg-subtle);
+}
+
+.vui-input:hover,
+.vui-textarea:hover {
+  border-color: var(--_vui-border-strong);
+}
+
+.vui-input:focus-visible,
+.vui-textarea:focus-visible,
+.vui-form-btn:focus-visible,
+.vui-choice input:focus-visible {
+  outline: 2px solid var(--_vui-fg);
+  outline-offset: 2px;
+}
+
+.vui-input:user-invalid,
+.vui-textarea:user-invalid {
+  border-color: var(--_vui-danger);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+  background: rgba(185, 28, 28, 0.03);
+}
+
+.vui-input:user-valid,
+.vui-textarea:user-valid {
+  border-color: var(--_vui-success);
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);
+}
+
+.vui-choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_vui-space-sm);
+  padding: var(--_vui-space-md);
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-lg);
+  background: linear-gradient(180deg, #ffffff, #fbfbfb);
+}
+
+.vui-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: 999px;
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  font-size: var(--_vui-font-size-sm);
+}
+
+.vui-choice--checkbox {
+  justify-self: start;
+}
+
+.vui-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--_vui-space-sm);
+}
+
+.vui-form-btn {
+  min-height: 44px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--_vui-fg);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-fg);
+  color: var(--_vui-bg);
+  font: inherit;
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vui-form-btn--secondary {
+  border-color: var(--_vui-border);
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+}
+
+@media (max-width: 768px) {
+  .vui-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vui-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .vui-form-btn,
+  .vui-choice-group,
+  .vui-choice--checkbox {
+    width: 100%;
+  }
+}

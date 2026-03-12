@@ -1,0 +1,45 @@
+<div class="vui-modal-demo">
+  <p class="vui-modal-note">
+    The preview keeps the opener self-contained with a small inline
+    <code>onclick</code> handler that calls <code>showModal()</code>. The
+    dialog stays centered, backdrop clicks cancel it, and the action buttons
+    still close it natively via <code>method="dialog"</code>.
+  </p>
+
+  <div class="vui-modal-stage">
+    <button
+      class="vui-modal-btn vui-modal-btn--launcher"
+      type="button"
+      onclick="this.nextElementSibling.showModal()"
+    >
+      Open modal
+    </button>
+
+    <dialog
+      class="vui-modal"
+      aria-labelledby="vui-modal-title"
+      aria-describedby="vui-modal-copy"
+      onclick="if (event.target === this) this.requestClose ? this.requestClose('cancel') : this.close('cancel')"
+    >
+      <p class="vui-modal-kicker">Design Review</p>
+      <h2 id="vui-modal-title" class="vui-modal-title">
+        Ship the refreshed pricing page?
+      </h2>
+      <p id="vui-modal-copy" class="vui-modal-copy">
+        This dialog demonstrates a copy-paste-ready surface built with the
+        native dialog element, including centered positioning and
+        backdrop-click cancellation, so the opener stays clean and
+        self-contained.
+      </p>
+
+      <form class="vui-modal-actions" method="dialog">
+        <button class="vui-modal-btn vui-modal-btn--subtle" value="cancel">
+          Cancel
+        </button>
+        <button class="vui-modal-btn" autofocus value="publish">
+          Publish
+        </button>
+      </form>
+    </dialog>
+  </div>
+</div>
