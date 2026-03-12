@@ -2,12 +2,103 @@
    responsive.css  —  Mobile breakpoint overrides.
    Stacks the sidebar above the main content on small screens.
    ============================================================ */
+.docs-code-stack.has-two-blocks {
+  grid-template-columns: 1fr;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+  .docs-table-scroll {
+    overflow: visible;
+  }
 
+  .docs-compat-table {
+    border: none;
+  }
+
+  .docs-compat-table thead {
+    display: none;
+  }
+
+  .docs-compat-table,
+  .docs-compat-table tbody,
+  .docs-compat-table tr,
+  .docs-compat-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .docs-compat-table tr {
+    margin-bottom: var(--vui-space-md);
+    border: 1px solid var(--vui-border);
+    border-radius: var(--vui-radius-md);
+    overflow: hidden;
+    background: var(--vui-bg-elevated);
+  }
+
+  .docs-compat-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .docs-compat-table td {
+    display: grid;
+    grid-template-columns: minmax(88px, 108px) minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px 12px;
+    white-space: normal;
+  }
+
+  .docs-compat-table td::before {
+    content: "";
+    font-size: var(--vui-font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--vui-fg-subtle);
+  }
+  .docs-compat-table td:nth-child(1) {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .docs-compat-table td:nth-child(1)::before {
+    content: "Feature";
+  }
+
+  .docs-compat-table td:nth-child(2)::before {
+    content: "Chrome";
+  }
+
+  .docs-compat-table td:nth-child(3)::before {
+    content: "Edge";
+  }
+
+  .docs-compat-table td:nth-child(4)::before {
+    content: "Firefox";
+  }
+
+  .docs-compat-table td:nth-child(5)::before {
+    content: "Safari";
+  }
+
+  .docs-compat-table td:nth-child(6)::before {
+    content: "Notes";
+  }
+
+  .docs-compat-table td:nth-child(7)::before {
+    content: "Source";
+  }
+
+  .docs-compat-row.is-healthy td {
+    background: transparent;
+  }
+}
+
+@media (max-width: 900px) {
   /* Stack columns vertically */
   .docs-layout {
     grid-template-columns: 1fr;
+    width: 95%;
+    margin: 0 auto;
   }
 
   /* Sidebar sits on top instead of the side */
@@ -20,7 +111,13 @@
 
   /* Tighten main content padding */
   .docs-main {
+    min-width: 0;
     padding: var(--vui-space-lg);
+    max-width: 100%;
+  }
+
+  .docs-preview {
+    padding: 16px;
   }
 
   /* Reduce code panel padding */
@@ -34,6 +131,18 @@
     padding-right: 12px;
   }
 
+  .docs-code-block-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .docs-code-window,
+  .docs-code-stack,
+  .docs-code-block,
+  [data-panel="code"] {
+    min-width: 0;
+  }
+
   .docs-code-toggle-row {
     padding-left: 12px;
     padding-right: 12px;
@@ -42,11 +151,6 @@
   .docs-code-block pre {
     padding: 14px 12px 18px;
     font-size: 0.75rem;
-  }
-
-  /* Stack the side-by-side code blocks vertically */
-  .docs-code-stack.has-two-blocks {
-    grid-template-columns: 1fr;
   }
 
   .docs-code-stack.has-two-blocks .docs-code-block + .docs-code-block {
@@ -60,11 +164,27 @@
     flex-direction: column;
   }
 
+  .docs-code-actions {
+    width: 100%;
+  }
+
+  .docs-copy-btn,
+  .docs-toggle-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
   .docs-code-toggle-row {
     align-items: center;
   }
 
   [data-panel="preview"] > :not(.docs-panel-label) {
     padding: 32px 20px;
+  }
+}
+
+@media (max-width:576px) {
+  .docs-compat-table td:nth-child(1) {
+  flex-direction: column;
   }
 }

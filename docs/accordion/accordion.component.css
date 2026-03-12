@@ -101,3 +101,19 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+  .vui-accordion-item > summary {
+    align-items: flex-start;
+    padding: var(--_vui-space-md);
+    font-size: var(--_vui-font-size-sm);
+  }
+
+  .vui-accordion-body {
+    padding: 0 var(--_vui-space-md);
+  }
+
+  .vui-accordion-item[open] .vui-accordion-body {
+    padding-bottom: var(--_vui-space-md);
+  }
+}

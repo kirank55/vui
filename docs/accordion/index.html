@@ -65,8 +65,8 @@
             data-html-source="accordion.component.html"
             data-css-source="accordion.component.css"
           >
+          <div class="docs-panel-label">Preview</div>
             <div data-panel="preview" class="docs-preview">
-              <div class="docs-panel-label">Preview</div>
             </div>
             <div data-panel="code" hidden>
               <pre><code></code></pre>
@@ -75,7 +75,7 @@
         </section>
 
         <!-- ---- Open by Default ---- -->
-        <h2 class="docs-section-title">Open by Default</h2>
+        <h5 class="docs-section-title">Open by Default</h2>
         <div class="docs-preview">
           <div class="vui-accordion">
             <details class="vui-accordion-item" open>
@@ -92,97 +92,99 @@
               </div>
             </details>
           </div>
+          <div class="docs-code is-enhanced">
+            <span class="docs-code-label">HTML</span>
+            <pre><code><span class="token punctuation">&lt;</span><span class="token tag">details</span> <span class="token attr-name">class</span><span class="token punctuation">=</span><span class="token attr-value">&quot;vui-accordion-item&quot;</span> <span class="token attr-name">open</span><span class="token punctuation">&gt;</span>
+  </code></pre>
+          </div>
         </div>
 
-        <div class="docs-code is-enhanced">
-          <span class="docs-code-label">HTML</span>
-          <pre><code><span class="token punctuation">&lt;</span><span class="token tag">details</span> <span class="token attr-name">class</span><span class="token punctuation">=</span><span class="token attr-value">&quot;vui-accordion-item&quot;</span> <span class="token attr-name">open</span><span class="token punctuation">&gt;</span>
-</code></pre>
-        </div>
 
         <!-- ---- Browser Compatibility ---- -->
         <div style="display: flex;justify-content: space-between;align-items: center;">
             <h2 class="docs-section-title">Browser Compatibility</h2>
         </div>
 
-        <table class="docs-table docs-compat-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Chrome</th>
-              <th>Edge</th>
-              <th>Firefox</th>
-              <th>Safari</th>
-              <th>Notes</th>
-              <th>Source</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="docs-compat-row is-healthy">
-              <td>
-                <code>&lt;details&gt;</code>
-                <span class="docs-compat-signal is-good">Broad support</span>
-              </td>
-              <td>12+</td>
-              <td>79+</td>
-              <td>49+</td>
-              <td>6+</td>
-              <td>
-                Firefox before 57 had an issue with default-open details when an
-                active CSS animation was applied.
-              </td>
-              <td>
-                <a
-                  class="docs-compat-link"
-                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/details"
-                  target="_blank"
-                  rel="noreferrer"
-                  >MDN</a
-                >
-              </td>
-            </tr>
-            <tr class="docs-compat-row is-healthy">
-              <td>
-                <code>&lt;summary&gt;</code>
-                <span class="docs-compat-signal is-good">Broad support</span>
-              </td>
-              <td>12+</td>
-              <td>79+</td>
-              <td>49+</td>
-              <td>6+</td>
-              <td>Stable support with no major notes in MDN BCD.</td>
-              <td>
-                <a
-                  class="docs-compat-link"
-                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/summary"
-                  target="_blank"
-                  rel="noreferrer"
-                  >MDN</a
-                >
-              </td>
-            </tr>
-            <tr class="docs-compat-row is-healthy">
-              <td>
-                <code>details[name]</code>
-                <span class="docs-compat-signal is-good">Broad support</span>
-              </td>
-              <td>120+</td>
-              <td>120+</td>
-              <td>130+</td>
-              <td>17.2+</td>
-              <td>Needed for exclusive accordion groups without JavaScript.</td>
-              <td>
-                <a
-                  class="docs-compat-link"
-                  href="https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name"
-                  target="_blank"
-                  rel="noreferrer"
-                  >MDN</a
-                >
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="docs-table-scroll">
+          <table class="docs-table docs-compat-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Chrome</th>
+                <th>Edge</th>
+                <th>Firefox</th>
+                <th>Safari</th>
+                <th>Notes</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="docs-compat-row is-healthy">
+                <td>
+                  <code>&lt;details&gt;</code>
+                  <span class="docs-compat-signal is-good">Broad support</span>
+                </td>
+                <td>12+</td>
+                <td>79+</td>
+                <td>49+</td>
+                <td>6+</td>
+                <td>
+                  Firefox before 57 had an issue with default-open details when an
+                  active CSS animation was applied.
+                </td>
+                <td>
+                  <a
+                    class="docs-compat-link"
+                    href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/details"
+                    target="_blank"
+                    rel="noreferrer"
+                    >MDN</a
+                  >
+                </td>
+              </tr>
+              <tr class="docs-compat-row is-healthy">
+                <td>
+                  <code>&lt;summary&gt;</code>
+                  <span class="docs-compat-signal is-good">Broad support</span>
+                </td>
+                <td>12+</td>
+                <td>79+</td>
+                <td>49+</td>
+                <td>6+</td>
+                <td>Stable support with no major notes in MDN BCD.</td>
+                <td>
+                  <a
+                    class="docs-compat-link"
+                    href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/summary"
+                    target="_blank"
+                    rel="noreferrer"
+                    >MDN</a
+                  >
+                </td>
+              </tr>
+              <tr class="docs-compat-row is-healthy">
+                <td>
+                  <code>details[name]</code>
+                  <span class="docs-compat-signal is-good">Broad support</span>
+                </td>
+                <td>120+</td>
+                <td>120+</td>
+                <td>130+</td>
+                <td>17.2+</td>
+                <td>Needed for exclusive accordion groups without JavaScript.</td>
+                <td>
+                  <a
+                    class="docs-compat-link"
+                    href="https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name"
+                    target="_blank"
+                    rel="noreferrer"
+                    >MDN</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p class="docs-compat-meta">
           Generated from MDN Browser Compat Data 7.3.6.

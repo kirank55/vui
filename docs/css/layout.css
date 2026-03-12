@@ -15,6 +15,10 @@ html {
   min-height: 100vh;
 }
 
+.docs-layout--standalone {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 /* --- Sidebar --- */
 
 .docs-sidebar {
