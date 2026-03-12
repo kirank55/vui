@@ -1,82 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accordion -- vui</title>
 
-    <!-- Design tokens and global reset -->
-    <link rel="stylesheet" href="/css/global.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accordion -- vui</title>
 
-    <!-- Docs layout (split into focused files for readability) -->
-    <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/content.css" />
-    <link rel="stylesheet" href="../css/code-blocks.css" />
-    <link rel="stylesheet" href="../css/compat-table.css" />
-    <link rel="stylesheet" href="../css/responsive.css" />
+  <!-- Design tokens and global reset -->
+  <link rel="stylesheet" href="/css/global.css" />
 
-    <!-- The accordion component's own styles -->
-    <link rel="stylesheet" href="accordion.component.css" />
-  </head>
+  <!-- Docs layout (split into focused files for readability) -->
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/content.css" />
+  <link rel="stylesheet" href="../css/code-blocks.css" />
+  <link rel="stylesheet" href="../css/compat-table.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
 
-  <body>
-    <div class="docs-layout">
+  <!-- The accordion component's own styles -->
+  <link rel="stylesheet" href="accordion.component.css" />
+</head>
 
-      <!-- ======== Sidebar ======== -->
-      <docs-sidebar base-path="../"></docs-sidebar>
+<body>
+  <div class="docs-layout">
 
-      <!-- ======== Main Content ======== -->
-      <main class="docs-main">
+    <!-- ======== Sidebar ======== -->
+    <docs-sidebar base-path="../"></docs-sidebar>
 
-        <!-- Page heading -->
-        <h1 class="docs-title">Accordion</h1>
-        <p class="docs-subtitle">
-          A disclosure component using the native &lt;details&gt; and
-          &lt;summary&gt; elements.
-        </p>
-        <p>
-          <a
-            href="https://codepen.io/Kiran-Kumar-G-S/pen/pvERjqq"
-            target="_blank"
-            rel="noreferrer"
-            style="display: inline-flex; align-items: center; gap: 0.35rem;"
-            >Demo on CodePen
-            <svg
-              aria-hidden="true"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M7 7h10v10" />
-            </svg></a
-          >
-        </p>
+    <!-- ======== Main Content ======== -->
+    <main class="docs-main">
 
-        <!-- ---- Live Preview + Code ---- -->
-        <section style="margin: 2em 0;">
-          <div
-            class="component-card"
-            data-html-source="accordion.component.html"
-            data-css-source="accordion.component.css"
-          >
+      <!-- Page heading -->
+      <h1 class="docs-title">Accordion</h1>
+      <p class="docs-subtitle">
+        A disclosure component using the native &lt;details&gt; and
+        &lt;summary&gt; elements.
+      </p>
+      <p>
+        <a href="https://codepen.io/Kiran-Kumar-G-S/pen/pvERjqq" target="_blank" rel="noreferrer"
+          style="display: inline-flex; align-items: center; gap: 0.35rem;">Demo on CodePen
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7" />
+            <path d="M7 7h10v10" />
+          </svg></a>
+      </p>
+
+      <!-- ---- Live Preview + Code ---- -->
+      <section style="margin: 2em 0;">
+        <div class="component-card" data-html-source="accordion.component.html"
+          data-css-source="accordion.component.css">
           <div class="docs-panel-label">Preview</div>
-            <div data-panel="preview" class="docs-preview">
-            </div>
-            <div data-panel="code" hidden>
-              <pre><code></code></pre>
-            </div>
+          <div data-panel="preview" class="docs-preview">
           </div>
-        </section>
+          <div data-panel="code" hidden>
+            <pre><code></code></pre>
+          </div>
+        </div>
+      </section>
 
-        <!-- ---- Open by Default ---- -->
-        <h5 class="docs-section-title">Open by Default</h2>
-        <div class="docs-preview">
+      <!-- ---- Open by Default ---- -->
+      <h2 class="docs-section-title">Open by Default</h2>
+      <div class="component-card">
+        <div class="docs-panel-label">Preview</div>
+        <div data-panel="preview" class="docs-preview">
           <div class="vui-accordion">
             <details class="vui-accordion-item" open>
               <summary>This section starts open</summary>
@@ -92,108 +78,108 @@
               </div>
             </details>
           </div>
-          <div class="docs-code is-enhanced">
-            <span class="docs-code-label">HTML</span>
-            <pre><code><span class="token punctuation">&lt;</span><span class="token tag">details</span> <span class="token attr-name">class</span><span class="token punctuation">=</span><span class="token attr-value">&quot;vui-accordion-item&quot;</span> <span class="token attr-name">open</span><span class="token punctuation">&gt;</span>
-  </code></pre>
+        </div>
+        <div data-panel="code">
+          <div class="docs-code-shell">
+            <div class="docs-panel-label">Code</div>
+            <div class="docs-code-window">
+              <div class="docs-code-stack">
+                <section class="docs-code-block is-html">
+                  <div class="docs-code-block-header">
+                    <span class="docs-code-label">HTML</span>
+                  </div>
+                  <pre><code><span class="token punctuation">&lt;</span><span class="token tag">details</span> <span class="token attr-name">class</span><span class="token punctuation">=</span><span class="token attr-value">&quot;vui-accordion-item&quot;</span> <span class="token attr-name">open</span><span class="token punctuation">&gt;</span>
+</code></pre>
+                </section>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
 
-        <!-- ---- Browser Compatibility ---- -->
-        <div style="display: flex;justify-content: space-between;align-items: center;">
-            <h2 class="docs-section-title">Browser Compatibility</h2>
-        </div>
+      <!-- ---- Browser Compatibility ---- -->
+      <div style="display: flex;justify-content: space-between;align-items: center;">
+        <h2 class="docs-section-title">Browser Compatibility</h2>
+      </div>
 
-        <div class="docs-table-scroll">
-          <table class="docs-table docs-compat-table">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th>Chrome</th>
-                <th>Edge</th>
-                <th>Firefox</th>
-                <th>Safari</th>
-                <th>Notes</th>
-                <th>Source</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="docs-compat-row is-healthy">
-                <td>
-                  <code>&lt;details&gt;</code>
-                  <span class="docs-compat-signal is-good">Broad support</span>
-                </td>
-                <td>12+</td>
-                <td>79+</td>
-                <td>49+</td>
-                <td>6+</td>
-                <td>
-                  Firefox before 57 had an issue with default-open details when an
-                  active CSS animation was applied.
-                </td>
-                <td>
-                  <a
-                    class="docs-compat-link"
-                    href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/details"
-                    target="_blank"
-                    rel="noreferrer"
-                    >MDN</a
-                  >
-                </td>
-              </tr>
-              <tr class="docs-compat-row is-healthy">
-                <td>
-                  <code>&lt;summary&gt;</code>
-                  <span class="docs-compat-signal is-good">Broad support</span>
-                </td>
-                <td>12+</td>
-                <td>79+</td>
-                <td>49+</td>
-                <td>6+</td>
-                <td>Stable support with no major notes in MDN BCD.</td>
-                <td>
-                  <a
-                    class="docs-compat-link"
-                    href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/summary"
-                    target="_blank"
-                    rel="noreferrer"
-                    >MDN</a
-                  >
-                </td>
-              </tr>
-              <tr class="docs-compat-row is-healthy">
-                <td>
-                  <code>details[name]</code>
-                  <span class="docs-compat-signal is-good">Broad support</span>
-                </td>
-                <td>120+</td>
-                <td>120+</td>
-                <td>130+</td>
-                <td>17.2+</td>
-                <td>Needed for exclusive accordion groups without JavaScript.</td>
-                <td>
-                  <a
-                    class="docs-compat-link"
-                    href="https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name"
-                    target="_blank"
-                    rel="noreferrer"
-                    >MDN</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="docs-table-scroll">
+        <table class="docs-table docs-compat-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Chrome</th>
+              <th>Edge</th>
+              <th>Firefox</th>
+              <th>Safari</th>
+              <th>Notes</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="docs-compat-row is-healthy">
+              <td>
+                <code>&lt;details&gt;</code>
+                <span class="docs-compat-signal is-good">Broad support</span>
+              </td>
+              <td>12+</td>
+              <td>79+</td>
+              <td>49+</td>
+              <td>6+</td>
+              <td>
+                Firefox before 57 had an issue with default-open details when an
+                active CSS animation was applied.
+              </td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/details" target="_blank"
+                  rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+            <tr class="docs-compat-row is-healthy">
+              <td>
+                <code>&lt;summary&gt;</code>
+                <span class="docs-compat-signal is-good">Broad support</span>
+              </td>
+              <td>12+</td>
+              <td>79+</td>
+              <td>49+</td>
+              <td>6+</td>
+              <td>Stable support with no major notes in MDN BCD.</td>
+              <td>
+                <a class="docs-compat-link"
+                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/summary" target="_blank"
+                  rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+            <tr class="docs-compat-row is-healthy">
+              <td>
+                <code>details[name]</code>
+                <span class="docs-compat-signal is-good">Broad support</span>
+              </td>
+              <td>120+</td>
+              <td>120+</td>
+              <td>130+</td>
+              <td>17.2+</td>
+              <td>Needed for exclusive accordion groups without JavaScript.</td>
+              <td>
+                <a class="docs-compat-link" href="https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name"
+                  target="_blank" rel="noreferrer">MDN</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <p class="docs-compat-meta">
-          Generated from MDN Browser Compat Data 7.3.6.
-        </p>
+      <p class="docs-compat-meta">
+        Generated from MDN Browser Compat Data 7.3.6.
+      </p>
 
-      </main>
-    </div>
+    </main>
+  </div>
 
-    <!-- All behaviour is in modular ES files -->
-    <script type="module" src="../js/app.js"></script>
-  </body>
+  <!-- All behaviour is in modular ES files -->
+  <script type="module" src="../js/app.js"></script>
+</body>
+
 </html>
