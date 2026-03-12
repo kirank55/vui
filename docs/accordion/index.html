@@ -4,37 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordion -- vui</title>
+
+    <!-- Design tokens and global reset -->
     <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="../docs.css" />
+
+    <!-- Docs layout (split into focused files for readability) -->
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/content.css" />
+    <link rel="stylesheet" href="../css/code-blocks.css" />
+    <link rel="stylesheet" href="../css/compat-table.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <!-- The accordion component's own styles -->
     <link rel="stylesheet" href="accordion.component.css" />
   </head>
 
   <body>
     <div class="docs-layout">
-      <nav class="docs-sidebar">
-        <a href="../../index.html" class="docs-sidebar-brand">vui</a>
-        <div class="docs-nav-label">Components</div>
-        <a href="../index.html" class="docs-nav-link">Overview</a>
-        <a href="../modal.html" class="docs-nav-link">Modal</a>
-        <a href="../dropdown.html" class="docs-nav-link">Dropdown</a>
-        <a href="./" class="docs-nav-link" aria-current="page">Accordion</a>
-        <a href="../tooltip.html" class="docs-nav-link">Tooltip</a>
-        <a href="../form.html" class="docs-nav-link">Form Controls</a>
-      </nav>
 
+      <!-- ======== Sidebar ======== -->
+      <docs-sidebar base-path="../"></docs-sidebar>
+
+      <!-- ======== Main Content ======== -->
       <main class="docs-main">
+
+        <!-- Page heading -->
         <h1 class="docs-title">Accordion</h1>
         <p class="docs-subtitle">
           A disclosure component using the native &lt;details&gt; and
           &lt;summary&gt; elements.
         </p>
+
+        <!-- ---- Live Preview + Code ---- -->
         <section style="margin: 2em 0;">
           <div
             class="component-card"
             data-html-source="accordion.component.html"
             data-css-source="accordion.component.css"
           >
-            <div data-panel="preview">
+            <div data-panel="preview" class="docs-preview">
               <div class="docs-panel-label">Preview</div>
             </div>
             <div data-panel="code" hidden>
@@ -43,6 +51,7 @@
           </div>
         </section>
 
+        <!-- ---- Open by Default ---- -->
         <h2 class="docs-section-title">Open by Default</h2>
         <div class="docs-preview">
           <div class="vui-accordion">
@@ -68,13 +77,9 @@
 </code></pre>
         </div>
 
+        <!-- ---- Browser Compatibility ---- -->
         <div style="display: flex;justify-content: space-between;align-items: center;">
-
-            
-            <h2 class="docs-section-title">Browser Compatibility
-                
-            </h2> 
-
+            <h2 class="docs-section-title">Browser Compatibility</h2>
         </div>
 
         <table class="docs-table docs-compat-table">
@@ -113,7 +118,7 @@
                 >
               </td>
             </tr>
-            <tr class="docs-compat-row is-healthy ">
+            <tr class="docs-compat-row is-healthy">
               <td>
                 <code>&lt;summary&gt;</code>
                 <span class="docs-compat-signal is-good">Broad support</span>
@@ -159,531 +164,11 @@
         <p class="docs-compat-meta">
           Generated from MDN Browser Compat Data 7.3.6.
         </p>
+
       </main>
     </div>
 
-    <script>
-      (function () {
-        var htmlSourceCache = {};
-        var cssSourceCache = {};
-
-        function dedent(str) {
-          var lines = str.split("\n");
-          var nonEmpty = lines.filter(function (line) {
-            return line.trim().length > 0;
-          });
-
-          if (!nonEmpty.length) return str.trim();
-
-          var min = Math.min.apply(
-            null,
-            nonEmpty.map(function (line) {
-              return line.match(/^(\s*)/)[1].length;
-            }),
-          );
-
-          return lines
-            .map(function (line) {
-              return line.slice(min);
-            })
-            .join("\n")
-            .trim();
-        }
-
-        function decodeHtmlEntities(str) {
-          return String(str || "")
-            .replace(/&lt;/g, "<")
-            .replace(/&gt;/g, ">")
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, "'")
-            .replace(/&amp;/g, "&");
-        }
-
-        function formatCss(code) {
-          var input = code.replace(/\r\n?/g, "\n").trim();
-          var formatted = "";
-          var indentLevel = 0;
-          var inComment = false;
-          var stringQuote = "";
-          var parenDepth = 0;
-
-          function addIndent() {
-            formatted += new Array(indentLevel + 1).join("  ");
-          }
-
-          function trimTrailingWhitespace() {
-            formatted = formatted.replace(/[ \t]+$/g, "");
-          }
-
-          if (!input) return "";
-
-          for (var index = 0; index < input.length; index += 1) {
-            var char = input.charAt(index);
-            var next = input.charAt(index + 1);
-
-            if (inComment) {
-              formatted += char;
-              if (char === "*" && next === "/") {
-                formatted += "/";
-                index += 1;
-                inComment = false;
-              }
-              continue;
-            }
-
-            if (stringQuote) {
-              formatted += char;
-              if (char === stringQuote && input.charAt(index - 1) !== "\\") {
-                stringQuote = "";
-              }
-              continue;
-            }
-
-            if (char === "/" && next === "*") {
-              inComment = true;
-              formatted += "/*";
-              index += 1;
-              continue;
-            }
-
-            if (char === '"' || char === "'") {
-              stringQuote = char;
-              formatted += char;
-              continue;
-            }
-
-            if (char === "(") {
-              parenDepth += 1;
-              formatted += char;
-              continue;
-            }
-
-            if (char === ")") {
-              parenDepth = Math.max(parenDepth - 1, 0);
-              formatted += char;
-              continue;
-            }
-
-            if (char === "{" && parenDepth === 0) {
-              formatted = formatted.replace(/[ \t]+$/g, "");
-              formatted += " {\n";
-              indentLevel += 1;
-              addIndent();
-              continue;
-            }
-
-            if (char === "}" && parenDepth === 0) {
-              indentLevel = Math.max(indentLevel - 1, 0);
-              trimTrailingWhitespace();
-              formatted = formatted.replace(/\n\s*$/g, "\n");
-              if (
-                formatted &&
-                formatted.charAt(formatted.length - 1) !== "\n"
-              ) {
-                formatted += "\n";
-              }
-              addIndent();
-              formatted += "}";
-              if (index < input.length - 1) {
-                formatted += "\n";
-                if (input.slice(index + 1).trim()) {
-                  formatted += "\n";
-                  addIndent();
-                }
-              }
-              continue;
-            }
-
-            if (char === ";" && parenDepth === 0) {
-              formatted += ";\n";
-              addIndent();
-              continue;
-            }
-
-            if (/\s/.test(char)) {
-              if (
-                !formatted ||
-                /[\s\n]/.test(formatted.charAt(formatted.length - 1))
-              ) {
-                continue;
-              }
-              formatted += " ";
-              continue;
-            }
-
-            formatted += char;
-          }
-
-          return formatted
-            .replace(/[ \t]+\n/g, "\n")
-            .replace(/\n{3,}/g, "\n\n")
-            .trim();
-        }
-
-        function countCodeLines(code) {
-          return code ? code.split(/\r?\n/).length : 0;
-        }
-
-        function shouldCollapseCode(code) {
-          return countCodeLines(code) > 25;
-        }
-
-        function escapeHtml(str) {
-          return str
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#39;");
-        }
-
-        function highlightHtmlAttributes(attrs) {
-          return attrs
-            .replace(
-              /([\s\n\r]+)([\w:-]+)(=)(&quot;.*?&quot;|&#39;.*?&#39;)/g,
-              '$1<span class="token attr-name">$2</span><span class="token punctuation">$3</span><span class="token attr-value">$4</span>',
-            )
-            .replace(
-              /([\s\n\r]+)([\w:-]+)(?=[\s/]|$)/g,
-              '$1<span class="token attr-name">$2</span>',
-            );
-        }
-
-        function highlightHtml(code) {
-          return escapeHtml(code)
-            .replace(
-              /(&lt;!--[\s\S]*?--&gt;)/g,
-              '<span class="token comment">$1</span>',
-            )
-            .replace(
-              /(&lt;\/?)([a-zA-Z][\w:-]*)([^<>]*?)(\/?&gt;)/g,
-              function (_, open, tag, attrs, close) {
-                return (
-                  '<span class="token punctuation">' +
-                  open +
-                  "</span>" +
-                  '<span class="token tag">' +
-                  tag +
-                  "</span>" +
-                  highlightHtmlAttributes(attrs) +
-                  '<span class="token punctuation">' +
-                  close +
-                  "</span>"
-                );
-              },
-            );
-        }
-
-        function highlightCssValue(value) {
-          return value
-            .replace(
-              /(&quot;.*?&quot;|&#39;.*?&#39;)/g,
-              '<span class="token string">$1</span>',
-            )
-            .replace(
-              /(#[0-9a-fA-F]{3,8})/g,
-              '<span class="token number">$1</span>',
-            )
-            .replace(
-              /\b(rgba?\([^)]*\)|hsla?\([^)]*\)|calc\([^)]*\)|anchor\([^)]*\)|url\([^)]*\)|var\([^)]*\))\b/g,
-              '<span class="token function">$1</span>',
-            )
-            .replace(
-              /\b(\d+(?:\.\d+)?(?:px|rem|em|%|vh|vw|deg|ms|s)?)\b/g,
-              '<span class="token number">$1</span>',
-            )
-            .replace(/(--[\w-]+)/g, '<span class="token variable">$1</span>');
-        }
-
-        function highlightCss(code) {
-          return escapeHtml(code)
-            .replace(
-              /(\/\*[\s\S]*?\*\/)/g,
-              '<span class="token comment">$1</span>',
-            )
-            .replace(
-              /(^|\n)(\s*@[^\n{;]+)/g,
-              '$1<span class="token at-rule">$2</span>',
-            )
-            .replace(
-              /(^|\n)(\s*)([^{}\n][^{]*?)(\s*\{)/g,
-              function (_, lineStart, indent, selector, brace) {
-                return (
-                  lineStart +
-                  indent +
-                  '<span class="token selector">' +
-                  selector +
-                  '</span><span class="token punctuation">' +
-                  brace +
-                  "</span>"
-                );
-              },
-            )
-            .replace(
-              /(^|\n)(\s*)(--[\w-]+|[\w-]+)(\s*:)([^;\n}]*)(;?)/g,
-              function (
-                _,
-                lineStart,
-                indent,
-                property,
-                colon,
-                value,
-                semicolon,
-              ) {
-                return (
-                  lineStart +
-                  indent +
-                  '<span class="token property">' +
-                  property +
-                  '</span><span class="token punctuation">' +
-                  colon +
-                  "</span>" +
-                  highlightCssValue(value) +
-                  '<span class="token punctuation">' +
-                  semicolon +
-                  "</span>"
-                );
-              },
-            );
-        }
-
-        function highlightCode(code, typeClass) {
-          return typeClass === "is-css"
-            ? highlightCss(code)
-            : highlightHtml(code);
-        }
-
-        function createToggleButton() {
-          return '<button class="docs-toggle-btn" type="button" aria-expanded="false">Show More</button>';
-        }
-
-        function createCopyButton() {
-          return '<button class="docs-copy-btn" type="button"><span class="docs-copy-icon" aria-hidden="true">⧉</span><span class="docs-copy-text">Copy</span></button>';
-        }
-
-        function copyText(text) {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            return navigator.clipboard.writeText(text);
-          }
-
-          return new Promise(function (resolve, reject) {
-            var textarea = document.createElement("textarea");
-            textarea.value = text;
-            textarea.setAttribute("readonly", "");
-            textarea.style.position = "absolute";
-            textarea.style.left = "-9999px";
-            document.body.appendChild(textarea);
-            textarea.select();
-
-            try {
-              document.execCommand("copy");
-              resolve();
-            } catch (error) {
-              reject(error);
-            } finally {
-              document.body.removeChild(textarea);
-            }
-          });
-        }
-
-        function createCodeBlock(label, code, typeClass) {
-          var decodedCode = decodeHtmlEntities(code);
-          var normalizedCode =
-            typeClass === "is-css" ? formatCss(decodedCode) : decodedCode;
-          var isCollapsible = shouldCollapseCode(normalizedCode);
-
-          return (
-            '<section class="docs-code-block ' +
-            typeClass +
-            (isCollapsible ? " is-collapsible is-collapsed" : "") +
-            '">' +
-            '<div class="docs-code-block-header">' +
-            '<span class="docs-code-label">' +
-            label +
-            "</span>" +
-            '<div class="docs-code-actions">' +
-            createCopyButton() +
-            "</div></div>" +
-            "<pre><code>" +
-            highlightCode(normalizedCode, typeClass) +
-            "</code></pre>" +
-            (isCollapsible
-              ? '<div class="docs-code-toggle-row">' +
-                createToggleButton() +
-                "</div>"
-              : "") +
-            "</section>"
-          );
-        }
-
-        function renderCodePanel(panel, htmlCode, cssCode) {
-          var stackClass = cssCode
-            ? "docs-code-stack has-two-blocks"
-            : "docs-code-stack";
-          var blocks = createCodeBlock("HTML", htmlCode, "is-html");
-          if (cssCode) {
-            blocks += createCodeBlock("CSS", cssCode, "is-css");
-          }
-
-          panel.innerHTML =
-            '<div class="docs-code-shell">' +
-            '<div class="docs-panel-label">code</div>' +
-            '<div class="docs-code-window">' +
-            '<div class="' +
-            stackClass +
-            '">' +
-            blocks +
-            "</div></div></div>";
-        }
-
-        function getHtmlCode(card) {
-          var htmlSource = card.getAttribute("data-html-source");
-          if (!htmlSource) {
-            return Promise.resolve("");
-          }
-
-          if (!htmlSourceCache[htmlSource]) {
-            htmlSourceCache[htmlSource] = fetch(htmlSource)
-              .then(function (response) {
-                if (!response.ok) {
-                  throw new Error("Failed to load HTML source: " + htmlSource);
-                }
-                return response.text();
-              })
-              .then(function (text) {
-                return dedent(text);
-              });
-          }
-
-          return htmlSourceCache[htmlSource];
-        }
-
-        function getCssCode(card) {
-          var cssSource = card.getAttribute("data-css-source");
-          if (!cssSource) {
-            return Promise.resolve("");
-          }
-
-          if (!cssSourceCache[cssSource]) {
-            cssSourceCache[cssSource] = fetch(cssSource)
-              .then(function (response) {
-                if (!response.ok) {
-                  throw new Error("Failed to load CSS source: " + cssSource);
-                }
-                return response.text();
-              })
-              .then(function (text) {
-                return dedent(text);
-              })
-              .catch(function () {
-                return "";
-              });
-          }
-
-          return cssSourceCache[cssSource];
-        }
-
-        function enhanceLegacyCodeBlocks() {
-          document.querySelectorAll(".docs-code").forEach(function (block) {
-            var pre = block.querySelector("pre");
-            var label = block.querySelector(".docs-code-label");
-            if (!pre || !label || block.classList.contains("is-enhanced"))
-              return;
-
-            var code = dedent(decodeHtmlEntities(pre.textContent || ""));
-            pre.textContent = code;
-            block.classList.add("is-enhanced");
-
-            if (!shouldCollapseCode(code)) return;
-
-            var footer = document.createElement("div");
-            var toggleBtn = document.createElement("button");
-
-            footer.className = "docs-code-toggle-row is-legacy";
-            toggleBtn.className = "docs-toggle-btn";
-            toggleBtn.type = "button";
-            toggleBtn.setAttribute("aria-expanded", "false");
-            toggleBtn.textContent = "Show More";
-            footer.appendChild(toggleBtn);
-            block.appendChild(footer);
-
-            block.classList.add("is-collapsible", "is-collapsed");
-          });
-        }
-
-        function toggleCodeBlock(container, button) {
-          var isExpanded = container.classList.toggle("is-expanded");
-          container.classList.toggle("is-collapsed", !isExpanded);
-          button.textContent = isExpanded ? "Show Less" : "Show More";
-          button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-          document.querySelectorAll(".component-card").forEach(function (card) {
-            if (!card.hasAttribute("data-html-source")) return;
-
-            var preview = card.querySelector('[data-panel="preview"]');
-            var codePanel = card.querySelector('[data-panel="code"]');
-
-            Promise.all([getHtmlCode(card), getCssCode(card)])
-              .then(function (results) {
-                var htmlCode = results[0];
-                var cssCode = results[1];
-
-                if (preview) {
-                  preview.insertAdjacentHTML("beforeend", htmlCode);
-                }
-
-                if (codePanel) {
-                  codePanel.hidden = false;
-                  renderCodePanel(codePanel, htmlCode, cssCode);
-                }
-              })
-              .catch(function (error) {
-                if (codePanel) {
-                  codePanel.hidden = false;
-                  renderCodePanel(codePanel, error.message, "");
-                }
-              });
-          });
-
-          enhanceLegacyCodeBlocks();
-
-          document.addEventListener("click", function (event) {
-            var toggleBtn = event.target.closest(".docs-toggle-btn");
-            if (toggleBtn) {
-              var codeBlock = toggleBtn.closest(".docs-code-block, .docs-code");
-              if (!codeBlock) return;
-              toggleCodeBlock(codeBlock, toggleBtn);
-              return;
-            }
-
-            var copyBtn = event.target.closest(".docs-copy-btn");
-            if (!copyBtn) return;
-
-            var codeEl = copyBtn
-              .closest(".docs-code-block")
-              .querySelector("code");
-            var previousText = copyBtn.textContent;
-
-            copyText(codeEl.textContent)
-              .then(function () {
-                copyBtn.textContent = "Copied";
-                copyBtn.classList.add("is-copied");
-                window.setTimeout(function () {
-                  copyBtn.textContent = previousText;
-                  copyBtn.classList.remove("is-copied");
-                }, 1400);
-              })
-              .catch(function () {
-                copyBtn.textContent = "Error";
-                window.setTimeout(function () {
-                  copyBtn.textContent = previousText;
-                }, 1400);
-              });
-          });
-        });
-      })();
-    </script>
+    <!-- All behaviour is in modular ES files -->
+    <script type="module" src="../js/app.js"></script>
   </body>
 </html>
