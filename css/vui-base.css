@@ -1,0 +1,102 @@
+/* ============================================================
+   vui-base.css  --  Design Tokens & Shared Foundation
+   Zero-dependency UI library. Modern browsers only.
+   ============================================================ */
+
+/* --- Design Tokens --- */
+:root {
+  /* Background scale (soft black & white) */
+  --vui-bg:            #fafafa;
+  --vui-bg-surface:    #f2f2f2;
+  --vui-bg-elevated:   #ffffff;
+  --vui-bg-invert:     #1a1a1a;
+
+  /* Foreground / text */
+  --vui-fg:            #1a1a1a;
+  --vui-fg-muted:      #6b6b6b;
+  --vui-fg-subtle:     #999999;
+  --vui-fg-invert:     #fafafa;
+
+  /* Border */
+  --vui-border:        #d4d4d4;
+  --vui-border-strong: #a3a3a3;
+  --vui-border-subtle: #e5e5e5;
+
+  /* Accent (monochrome) */
+  --vui-accent:        #1a1a1a;
+  --vui-accent-hover:  #333333;
+  --vui-accent-fg:     #fafafa;
+
+  /* Danger / Error */
+  --vui-danger:        #b91c1c;
+  --vui-danger-fg:     #ffffff;
+
+  /* Success */
+  --vui-success:       #15803d;
+  --vui-success-fg:    #ffffff;
+
+  /* Radius */
+  --vui-radius-sm:     4px;
+  --vui-radius-md:     6px;
+  --vui-radius-lg:     10px;
+
+  /* Spacing */
+  --vui-space-xs:      4px;
+  --vui-space-sm:      8px;
+  --vui-space-md:      16px;
+  --vui-space-lg:      24px;
+  --vui-space-xl:      40px;
+
+  /* Typography */
+  --vui-font-sans:     "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --vui-font-mono:     "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --vui-font-size-xs:  0.75rem;
+  --vui-font-size-sm:  0.875rem;
+  --vui-font-size-base: 1rem;
+  --vui-font-size-lg:  1.125rem;
+  --vui-font-size-xl:  1.25rem;
+  --vui-font-size-2xl: 1.5rem;
+  --vui-font-size-3xl: 2rem;
+  --vui-line-height:   1.6;
+
+  /* Shadows */
+  --vui-shadow-sm:     0 1px 2px rgba(0,0,0,0.06);
+  --vui-shadow-md:     0 4px 12px rgba(0,0,0,0.08);
+  --vui-shadow-lg:     0 8px 24px rgba(0,0,0,0.12);
+
+  /* Transitions */
+  --vui-duration:      150ms;
+  --vui-easing:        cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Minimal Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-base);
+  line-height: var(--vui-line-height);
+  color: var(--vui-fg);
+  background: var(--vui-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Shared Utilities --- */
+.vui-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

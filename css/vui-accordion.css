@@ -1,0 +1,107 @@
+/* ============================================================
+   vui-accordion.css  --  Details/Summary Accordion
+   Uses native <details> and <summary> elements.
+  Built-in toggle state, no dependency required.
+   ============================================================ */
+
+/* --- Container --- */
+.vui-accordion {
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  overflow: hidden;
+}
+
+/* --- Individual Item --- */
+.vui-accordion-item {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  border-bottom: 1px solid var(--vui-border-subtle);
+  transition: grid-template-rows 220ms var(--vui-easing);
+}
+
+.vui-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.vui-accordion-item[open] {
+  grid-template-rows: auto 1fr;
+}
+
+/* --- Summary (Trigger) --- */
+.vui-accordion-item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--vui-space-md) var(--vui-space-lg);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-base);
+  font-weight: 500;
+  color: var(--vui-fg);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background var(--vui-duration) var(--vui-easing);
+}
+
+.vui-accordion-item > summary:hover {
+  background: var(--vui-bg-surface);
+}
+
+/* Remove default marker */
+.vui-accordion-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.vui-accordion-item > summary::marker {
+  content: "";
+}
+
+/* Chevron indicator */
+.vui-accordion-item > summary::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--vui-fg-muted);
+  border-bottom: 2px solid var(--vui-fg-muted);
+  transform: rotate(-45deg);
+  transition: transform var(--vui-duration) var(--vui-easing);
+  flex-shrink: 0;
+  margin-left: var(--vui-space-md);
+}
+
+/* Rotate chevron when open */
+.vui-accordion-item[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+/* --- Content Panel --- */
+.vui-accordion-body {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 var(--vui-space-lg);
+  color: var(--vui-fg-muted);
+  font-size: var(--vui-font-size-sm);
+  line-height: var(--vui-line-height);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 220ms var(--vui-easing),
+              transform 220ms var(--vui-easing),
+              padding-bottom 220ms var(--vui-easing);
+}
+
+.vui-accordion-item[open] .vui-accordion-body {
+  padding-bottom: var(--vui-space-lg);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Borderless Variant --- */
+.vui-accordion--borderless {
+  border: none;
+  border-radius: 0;
+}
+
+.vui-accordion--borderless .vui-accordion-item {
+  border-bottom: 1px solid var(--vui-border-subtle);
+}

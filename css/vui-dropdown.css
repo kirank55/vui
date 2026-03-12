@@ -1,0 +1,122 @@
+/* ============================================================
+   vui-dropdown.css  --  Popover-based Dropdown
+   Uses the native Popover API (popover attribute).
+   Click-outside-to-close handled by the browser.
+   ============================================================ */
+
+/* --- Trigger --- */
+.vui-dropdown-trigger {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vui-space-xs);
+  padding: var(--vui-space-sm) var(--vui-space-md);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--vui-fg);
+  background: var(--vui-bg-elevated);
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  cursor: pointer;
+  transition: background var(--vui-duration) var(--vui-easing),
+              border-color var(--vui-duration) var(--vui-easing);
+}
+
+.vui-dropdown-trigger:hover {
+  background: var(--vui-bg-surface);
+  border-color: var(--vui-border-strong);
+}
+
+/* Chevron indicator */
+.vui-dropdown-trigger::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  margin-left: var(--vui-space-xs);
+}
+
+/* --- Popover Panel --- */
+.vui-dropdown-menu {
+  position: fixed;
+  inset: unset;
+  margin: 0;
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  background: var(--vui-bg-elevated);
+  box-shadow: var(--vui-shadow-md);
+  padding: var(--vui-space-xs) 0;
+  min-width: 180px;
+  z-index: 50;
+  animation: vui-dropdown-in var(--vui-duration) var(--vui-easing);
+}
+
+/* Hide default popover styles */
+.vui-dropdown-menu:popover-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.vui-dropdown-menu::backdrop {
+  background: transparent;
+}
+
+/* --- Menu Items --- */
+.vui-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: var(--vui-space-sm);
+  padding: var(--vui-space-sm) var(--vui-space-md);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  color: var(--vui-fg);
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background var(--vui-duration) var(--vui-easing);
+  width: 100%;
+  text-align: left;
+}
+
+.vui-dropdown-item:hover {
+  background: var(--vui-bg-surface);
+}
+
+.vui-dropdown-item--danger {
+  color: var(--vui-danger);
+}
+
+/* --- Divider --- */
+.vui-dropdown-divider {
+  height: 1px;
+  background: var(--vui-border-subtle);
+  margin: var(--vui-space-xs) 0;
+}
+
+/* --- Group Label --- */
+.vui-dropdown-label {
+  padding: var(--vui-space-xs) var(--vui-space-md);
+  font-size: var(--vui-font-size-xs);
+  font-weight: 600;
+  color: var(--vui-fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Animation --- */
+@keyframes vui-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

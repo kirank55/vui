@@ -1,0 +1,11 @@
+{
+  "name": "vui-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:compat": "node scripts/generate-browser-compat.mjs"
+  },
+  "dependencies": {
+    "@mdn/browser-compat-data": "latest"
+  }
+}

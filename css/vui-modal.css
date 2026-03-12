@@ -1,0 +1,150 @@
+/* ============================================================
+   vui-modal.css  --  Dialog-based Modal
+   Uses the native <dialog> element.
+   Focus trapping, Esc-to-close, and backdrop handled by browser.
+   ============================================================ */
+
+/* --- Backdrop --- */
+.vui-modal::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+/* --- Dialog Shell --- */
+.vui-modal {
+  position: fixed;
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-lg);
+  background: var(--vui-bg-elevated);
+  color: var(--vui-fg);
+  padding: 0;
+  max-width: 520px;
+  width: calc(100% - var(--vui-space-lg) * 2);
+  box-shadow: var(--vui-shadow-lg);
+  animation: vui-modal-in var(--vui-duration) var(--vui-easing);
+}
+
+.vui-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Header --- */
+.vui-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--vui-space-md) var(--vui-space-lg);
+  border-bottom: 1px solid var(--vui-border-subtle);
+}
+
+.vui-modal-title {
+  font-size: var(--vui-font-size-lg);
+  font-weight: 600;
+  color: var(--vui-fg);
+}
+
+/* --- Close Button --- */
+.vui-modal-close {
+  appearance: none;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--vui-radius-sm);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vui-fg-muted);
+  transition: background var(--vui-duration) var(--vui-easing),
+              color var(--vui-duration) var(--vui-easing);
+}
+
+.vui-modal-close:hover {
+  background: var(--vui-bg-surface);
+  color: var(--vui-fg);
+}
+
+.vui-modal-close::before {
+  content: "\00D7"; /* multiplication sign as close icon */
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* --- Body --- */
+.vui-modal-body {
+  padding: var(--vui-space-lg);
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* --- Footer --- */
+.vui-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--vui-space-sm);
+  padding: var(--vui-space-md) var(--vui-space-lg);
+  border-top: 1px solid var(--vui-border-subtle);
+}
+
+/* --- Size Variants --- */
+.vui-modal--sm { max-width: 380px; }
+.vui-modal--lg { max-width: 680px; }
+
+/* --- Shared Button Styles (used in modal footer) --- */
+.vui-btn {
+  appearance: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vui-space-xs);
+  padding: var(--vui-space-sm) var(--vui-space-md);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--vui-radius-md);
+  border: 1px solid var(--vui-border);
+  background: var(--vui-bg-elevated);
+  color: var(--vui-fg);
+  cursor: pointer;
+  transition: background var(--vui-duration) var(--vui-easing),
+              border-color var(--vui-duration) var(--vui-easing);
+}
+
+.vui-btn:hover {
+  background: var(--vui-bg-surface);
+  border-color: var(--vui-border-strong);
+}
+
+.vui-btn--primary {
+  background: var(--vui-accent);
+  color: var(--vui-accent-fg);
+  border-color: var(--vui-accent);
+}
+
+.vui-btn--primary:hover {
+  background: var(--vui-accent-hover);
+  border-color: var(--vui-accent-hover);
+}
+
+.vui-btn--danger {
+  background: var(--vui-danger);
+  color: var(--vui-danger-fg);
+  border-color: var(--vui-danger);
+}
+
+/* --- Animation --- */
+@keyframes vui-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

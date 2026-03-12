@@ -1,0 +1,197 @@
+/* ============================================================
+   vui-form.css  --  Native Form Controls
+   Uses native HTML5 validation for error states.
+   Browser-native error messages via :invalid pseudo-class.
+   ============================================================ */
+
+/* --- Form Group --- */
+.vui-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vui-space-xs);
+}
+
+/* --- Label --- */
+.vui-label {
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  font-weight: 500;
+  color: var(--vui-fg);
+}
+
+.vui-label--required::after {
+  content: " *";
+  color: var(--vui-danger);
+}
+
+/* --- Helper Text --- */
+.vui-form-hint {
+  font-size: var(--vui-font-size-xs);
+  color: var(--vui-fg-subtle);
+}
+
+/* --- Text Input --- */
+.vui-input {
+  appearance: none;
+  width: 100%;
+  padding: var(--vui-space-sm) var(--vui-space-md);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  line-height: 1.5;
+  color: var(--vui-fg);
+  background: var(--vui-bg-elevated);
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  outline: none;
+  transition: border-color var(--vui-duration) var(--vui-easing),
+              box-shadow var(--vui-duration) var(--vui-easing);
+}
+
+.vui-input::placeholder {
+  color: var(--vui-fg-subtle);
+}
+
+.vui-input:hover {
+  border-color: var(--vui-border-strong);
+}
+
+.vui-input:focus {
+  border-color: var(--vui-accent);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+/* Validation states (shown after user interaction) */
+.vui-input:user-invalid {
+  border-color: var(--vui-danger);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.08);
+}
+
+.vui-input:user-valid {
+  border-color: var(--vui-success);
+}
+
+/* Disabled */
+.vui-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--vui-bg-surface);
+}
+
+/* --- Textarea --- */
+.vui-textarea {
+  appearance: none;
+  width: 100%;
+  padding: var(--vui-space-sm) var(--vui-space-md);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  line-height: var(--vui-line-height);
+  color: var(--vui-fg);
+  background: var(--vui-bg-elevated);
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color var(--vui-duration) var(--vui-easing),
+              box-shadow var(--vui-duration) var(--vui-easing);
+}
+
+.vui-textarea:focus {
+  border-color: var(--vui-accent);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+.vui-textarea:user-invalid {
+  border-color: var(--vui-danger);
+}
+
+/* --- Select --- */
+.vui-select {
+  appearance: none;
+  width: 100%;
+  padding: var(--vui-space-sm) var(--vui-space-md);
+  padding-right: 36px;
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  line-height: 1.5;
+  color: var(--vui-fg);
+  background: var(--vui-bg-elevated);
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-md);
+  outline: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6b6b' d='M6 8.825L1.175 4 2.238 2.938 6 6.7 9.763 2.937 10.825 4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border-color var(--vui-duration) var(--vui-easing);
+}
+
+.vui-select:hover {
+  border-color: var(--vui-border-strong);
+}
+
+.vui-select:focus {
+  border-color: var(--vui-accent);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+/* --- Checkbox & Radio --- */
+.vui-check,
+.vui-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vui-space-sm);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-sm);
+  color: var(--vui-fg);
+  cursor: pointer;
+}
+
+.vui-check input[type="checkbox"],
+.vui-radio input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--vui-border-strong);
+  background: var(--vui-bg-elevated);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--vui-duration) var(--vui-easing),
+              border-color var(--vui-duration) var(--vui-easing);
+}
+
+.vui-check input[type="checkbox"] {
+  border-radius: var(--vui-radius-sm);
+}
+
+.vui-radio input[type="radio"] {
+  border-radius: 50%;
+}
+
+.vui-check input[type="checkbox"]:checked {
+  background: var(--vui-accent);
+  border-color: var(--vui-accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fafafa' d='M10.28 2.22a.75.75 0 0 1 0 1.06l-5.5 5.5a.75.75 0 0 1-1.06 0l-2.5-2.5a.75.75 0 0 1 1.06-1.06L4.25 7.19l4.97-4.97a.75.75 0 0 1 1.06 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vui-radio input[type="radio"]:checked {
+  background: var(--vui-accent);
+  border-color: var(--vui-accent);
+  box-shadow: inset 0 0 0 3px var(--vui-bg-elevated);
+}
+
+/* --- Error Message --- */
+.vui-form-error {
+  font-size: var(--vui-font-size-xs);
+  color: var(--vui-danger);
+  display: none;
+}
+
+/* Show error when sibling input is invalid (after interaction) */
+.vui-input:user-invalid ~ .vui-form-error,
+.vui-textarea:user-invalid ~ .vui-form-error,
+.vui-select:user-invalid ~ .vui-form-error {
+  display: block;
+}

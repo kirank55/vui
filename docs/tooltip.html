@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip -- vui</title>
+  <link rel="stylesheet" href="../css/vui.css">
+  <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<div class="docs-layout">
+
+  <!-- Sidebar -->
+  <docs-sidebar></docs-sidebar>
+
+  <!-- Main -->
+  <main class="docs-main">
+    <h1 class="docs-title">Tooltip</h1>
+    <p class="docs-subtitle">
+      A lightweight tooltip using the Popover API with CSS Anchor Positioning.
+      No dependency, no lock-in. Just copy paste.
+    </p>
+    <span class="docs-compat">Support: Popover API is broadly available. CSS Anchor Positioning is newer and currently best in Chromium-based browsers.</span>
+
+    <template class="page-css-tpl">
+.vui-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vui-space-xs);
+  padding: var(--vui-space-sm) var(--vui-space-md);
+  font-size: var(--vui-font-size-sm);
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--vui-radius-md);
+  border: 1px solid var(--vui-border);
+  background: var(--vui-bg-elevated);
+  color: var(--vui-fg);
+  cursor: pointer;
+}
+
+.vui-tooltip {
+  position: fixed;
+  position-anchor: --vui-tooltip-anchor;
+  inset: unset;
+  margin: 0;
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-sm);
+  background: var(--vui-bg-invert);
+  color: var(--vui-fg-invert);
+  padding: var(--vui-space-xs) var(--vui-space-sm);
+  font-size: var(--vui-font-size-xs);
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 240px;
+  box-shadow: var(--vui-shadow-sm);
+  z-index: 100;
+  pointer-events: none;
+  animation: vui-tooltip-in var(--vui-duration) var(--vui-easing);
+}
+
+.vui-tooltip:popover-open {
+  display: block;
+}
+
+.vui-tooltip--top,
+.vui-tooltip {
+  bottom: anchor(top);
+  left: anchor(center);
+  translate: -50% calc(-1 * var(--vui-space-sm));
+}
+
+.vui-tooltip--bottom {
+  top: anchor(bottom);
+  left: anchor(center);
+  translate: -50% var(--vui-space-sm);
+  bottom: unset;
+}
+
+.vui-tooltip--right {
+  left: anchor(right);
+  top: anchor(center);
+  translate: var(--vui-space-sm) -50%;
+  bottom: unset;
+}
+
+@keyframes vui-tooltip-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+    </template>
+
+    <template class="component-tpl">
+<div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+  <button
+    class="vui-btn"
+    style="anchor-name: --tip-top"
+    popovertarget="tip-top"
+    popovertargetaction="toggle"
+  >
+    Top
+  </button>
+  <div class="vui-tooltip vui-tooltip--top" id="tip-top" popover
+       style="position-anchor: --tip-top">Top tooltip</div>
+
+  <button
+    class="vui-btn"
+    style="anchor-name: --tip-bottom"
+    popovertarget="tip-bottom"
+    popovertargetaction="toggle"
+  >
+    Bottom
+  </button>
+  <div class="vui-tooltip vui-tooltip--bottom" id="tip-bottom" popover
+       style="position-anchor: --tip-bottom">Bottom tooltip</div>
+
+  <button
+    class="vui-btn"
+    style="anchor-name: --tip-right"
+    popovertarget="tip-right"
+    popovertargetaction="toggle"
+  >
+    Right
+  </button>
+  <div class="vui-tooltip vui-tooltip--right" id="tip-right" popover
+       style="position-anchor: --tip-right">Right tooltip</div>
+</div>
+    </template>
+
+    <div class="component-card">
+      <div class="tab-bar">
+        <button class="tab-btn is-active" data-tab="preview">Preview</button>
+        <button class="tab-btn" data-tab="code">Code</button>
+      </div>
+      <div data-panel="preview" style="padding-top: 80px;"></div>
+      <div data-panel="code" hidden><pre><code></code></pre></div>
+    </div>
+
+    <!-- Placements -->
+    <h2 class="docs-section-title">Placement Variants</h2>
+    <table class="docs-table">
+      <thead>
+        <tr><th>Class</th><th>Position</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>.vui-tooltip--top</code></td><td>Above the trigger (default)</td></tr>
+        <tr><td><code>.vui-tooltip--bottom</code></td><td>Below the trigger</td></tr>
+        <tr><td><code>.vui-tooltip--left</code></td><td>Left of the trigger</td></tr>
+        <tr><td><code>.vui-tooltip--right</code></td><td>Right of the trigger</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Multiple Tooltips -->
+    <h2 class="docs-section-title">Multiple Tooltips</h2>
+    <div class="docs-prose">
+      <p>
+        Each tooltip needs a unique anchor name. Set <code>anchor-name</code>
+        on the trigger and <code>position-anchor</code> on the tooltip using
+        inline styles or additional CSS rules.
+      </p>
+    </div>
+
+    <div class="docs-code">
+      <span class="docs-code-label">HTML</span>
+<pre>&lt;!-- First tooltip pair --&gt;
+&lt;button style="anchor-name: --tip-1" popovertarget="tip-1"&gt;A&lt;/button&gt;
+&lt;div class="vui-tooltip" id="tip-1" popover
+     style="position-anchor: --tip-1"&gt;Tooltip A&lt;/div&gt;
+
+&lt;!-- Second tooltip pair --&gt;
+&lt;button style="anchor-name: --tip-2" popovertarget="tip-2"&gt;B&lt;/button&gt;
+&lt;div class="vui-tooltip" id="tip-2" popover
+     style="position-anchor: --tip-2"&gt;Tooltip B&lt;/div&gt;</pre>
+    </div>
+
+    <!-- API -->
+    <h2 class="docs-section-title">API</h2>
+    <table class="docs-table">
+      <thead>
+        <tr><th>Class</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>.vui-tooltip</code></td><td>The tooltip container (popover element)</td></tr>
+        <tr><td><code>.vui-tooltip--top</code></td><td>Position above anchor</td></tr>
+        <tr><td><code>.vui-tooltip--bottom</code></td><td>Position below anchor</td></tr>
+        <tr><td><code>.vui-tooltip--left</code></td><td>Position left of anchor</td></tr>
+        <tr><td><code>.vui-tooltip--right</code></td><td>Position right of anchor</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Notes -->
+    <h2 class="docs-section-title">Notes</h2>
+    <div class="docs-prose">
+      <p>
+        CSS Anchor Positioning is a newer specification. As of early 2025, it is
+        supported in Chromium-based browsers (Chrome 125+, Edge 125+). Firefox and
+        Safari support is in development. For broader compatibility, consider a
+        fixed-position fallback.
+      </p>
+      <p>
+        The tooltip uses the Popover API for show/hide behavior. The
+        <code>popovertargetaction="toggle"</code> attribute controls the
+        interaction model. For hover behavior, a small script adding
+        <code>showPopover()</code> / <code>hidePopover()</code> on
+        mouseenter/mouseleave is needed.
+      </p>
+    </div>
+      <div data-compat-key="tooltip"></div>
+  </main>
+</div>
+
+  <script src="browser-compat-data.js"></script>
+<script src="docs.js"></script>
+</body>
+</html>

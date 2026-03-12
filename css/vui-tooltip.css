@@ -1,0 +1,91 @@
+/* ============================================================
+   vui-tooltip.css  --  Popover + CSS Anchor Tooltip
+   Uses Popover API with CSS Anchor Positioning.
+  High-performance, no positioning libraries.
+   ============================================================ */
+
+/* --- Tooltip Trigger --- */
+.vui-tooltip-trigger {
+  anchor-name: --vui-tooltip-anchor;
+}
+
+/* --- Tooltip Popover --- */
+.vui-tooltip {
+  position: fixed;
+  position-anchor: --vui-tooltip-anchor;
+  inset: unset;
+  margin: 0;
+  border: 1px solid var(--vui-border);
+  border-radius: var(--vui-radius-sm);
+  background: var(--vui-bg-invert);
+  color: var(--vui-fg-invert);
+  padding: var(--vui-space-xs) var(--vui-space-sm);
+  font-family: var(--vui-font-sans);
+  font-size: var(--vui-font-size-xs);
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 240px;
+  white-space: normal;
+  word-wrap: break-word;
+  box-shadow: var(--vui-shadow-sm);
+  z-index: 100;
+  pointer-events: none;
+  animation: vui-tooltip-in var(--vui-duration) var(--vui-easing);
+}
+
+.vui-tooltip::backdrop {
+  background: transparent;
+}
+
+.vui-tooltip:popover-open {
+  display: block;
+}
+
+/* --- Placement: Top (default) --- */
+.vui-tooltip--top,
+.vui-tooltip {
+  bottom: anchor(top);
+  left: anchor(center);
+  translate: -50% calc(-1 * var(--vui-space-sm));
+}
+
+/* --- Placement: Bottom --- */
+.vui-tooltip--bottom {
+  top: anchor(bottom);
+  left: anchor(center);
+  translate: -50% var(--vui-space-sm);
+  bottom: unset;
+}
+
+/* --- Placement: Left --- */
+.vui-tooltip--left {
+  right: anchor(left);
+  top: anchor(center);
+  translate: calc(-1 * var(--vui-space-sm)) -50%;
+  bottom: unset;
+  left: unset;
+}
+
+/* --- Placement: Right --- */
+.vui-tooltip--right {
+  left: anchor(right);
+  top: anchor(center);
+  translate: var(--vui-space-sm) -50%;
+  bottom: unset;
+}
+
+/* --- Multiple Tooltips (unique anchors) ---
+   For pages with multiple tooltips, use inline style:
+     style="anchor-name: --tip-1"  on trigger
+     style="position-anchor: --tip-1"  on tooltip
+*/
+
+/* --- Animation --- */
+@keyframes vui-tooltip-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
