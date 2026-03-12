@@ -1,25 +1,26 @@
 <div class="vui-modal-demo">
   <p class="vui-modal-note">
-    The preview keeps the opener self-contained with a small inline
-    <code>onclick</code> handler that calls <code>showModal()</code>. The
-    dialog stays centered, backdrop clicks cancel it, and the action buttons
-    still close it natively via <code>method="dialog"</code>.
+    The preview is now fully HTML-only. Declarative dialog invokers open the
+    modal, <code>closedby="any"</code> enables light dismiss, and the action
+    buttons still close it natively via <code>method="dialog"</code>.
   </p>
 
   <div class="vui-modal-stage">
     <button
       class="vui-modal-btn vui-modal-btn--launcher"
       type="button"
-      onclick="this.nextElementSibling.showModal()"
+      command="show-modal"
+      commandfor="vui-modal-demo-dialog"
     >
       Open modal
     </button>
 
     <dialog
+      id="vui-modal-demo-dialog"
       class="vui-modal"
+      closedby="any"
       aria-labelledby="vui-modal-title"
       aria-describedby="vui-modal-copy"
-      onclick="if (event.target === this) this.requestClose ? this.requestClose('cancel') : this.close('cancel')"
     >
       <p class="vui-modal-kicker">Design Review</p>
       <h2 id="vui-modal-title" class="vui-modal-title">
@@ -27,9 +28,8 @@
       </h2>
       <p id="vui-modal-copy" class="vui-modal-copy">
         This dialog demonstrates a copy-paste-ready surface built with the
-        native dialog element, including centered positioning and
-        backdrop-click cancellation, so the opener stays clean and
-        self-contained.
+        native dialog element, using declarative invoker commands and
+        light-dismiss behavior so the snippet stays fully HTML-only.
       </p>
 
       <form class="vui-modal-actions" method="dialog">

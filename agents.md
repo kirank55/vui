@@ -48,7 +48,7 @@ docs/                                   Documentation site
    - HTML5 Validation for forms
 3. **Copy-paste distribution** -- Each component is a self-contained CSS file + HTML snippet. No npm install.
 4. **Standalone fallbacks** -- Components work without `global.css` via private CSS custom property fallbacks.
-5. **Prefer clean implementation over browser support** -- When there is a tradeoff, favor the cleaner native pattern and document the support implications.
+5. **Prefer clean implementation over browser support** -- When there is a tradeoff, favor the cleaner native pattern. Document limited availability clearly in component compatibility sections when newer native APIs are used.
 
 ## Design Tokens
 

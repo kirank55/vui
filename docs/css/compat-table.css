@@ -93,6 +93,17 @@
   box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.14);
 }
 
+.docs-compat-signal.is-limited {
+  border-color: rgba(180, 83, 9, 0.28);
+  background: rgba(245, 158, 11, 0.14);
+  color: #92400e;
+}
+
+.docs-compat-signal.is-limited::before {
+  background: #d97706;
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.14);
+}
+
 /* --- Links and Meta --- */
 
 .docs-compat-link {
