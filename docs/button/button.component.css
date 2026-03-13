@@ -4,6 +4,21 @@
    ============================================================ */
 
 .vui-button {
+  font-family: var(--vui-font-sans, "Segoe UI", system-ui, sans-serif);
+}
+
+.vui-button-stack {
+  display: grid;
+  gap: var(--vui-space-md, 16px);
+}
+
+.vui-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vui-space-sm, 8px);
+}
+
+.vui-btn {
   --_vui-bg: var(--vui-bg, #fafafa);
   --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
   --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
@@ -16,29 +31,12 @@
   --_vui-accent-fg: var(--vui-accent-fg, #f8fafc);
   --_vui-danger: var(--vui-danger, #b91c1c);
   --_vui-radius-md: var(--vui-radius-md, 6px);
-  --_vui-space-sm: var(--vui-space-sm, 8px);
-  --_vui-space-md: var(--vui-space-md, 16px);
   --_vui-font-sans: var(--vui-font-sans, "Segoe UI", system-ui, sans-serif);
   --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
   --_vui-font-size-base: var(--vui-font-size-base, 1rem);
   --_vui-shadow-sm: var(--vui-shadow-sm, 0 4px 12px rgba(15, 23, 42, 0.08));
   --_vui-duration: var(--vui-duration, 150ms);
   --_vui-easing: var(--vui-easing, cubic-bezier(0.4, 0, 0.2, 1));
-  font-family: var(--_vui-font-sans);
-}
-
-.vui-button-stack {
-  display: grid;
-  gap: var(--_vui-space-md);
-}
-
-.vui-button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--_vui-space-sm);
-}
-
-.vui-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -49,6 +47,7 @@
   background: var(--_vui-bg-elevated);
   color: var(--_vui-fg);
   font: inherit;
+  font-family: var(--_vui-font-sans);
   font-size: var(--_vui-font-size-sm);
   font-weight: 600;
   cursor: pointer;
