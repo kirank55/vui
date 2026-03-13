@@ -4,7 +4,7 @@ Zero-dependency, copy-paste UI component library built entirely with native HTML
 
 No bundler. No transpiler. No framework. Just copy the HTML and CSS into your project.
 
-[Browse Components](docs/index.html)
+Browse Components: [vui.bar](https://vui.bar)
 
 ---
 
