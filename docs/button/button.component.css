@@ -1,0 +1,133 @@
+/* ============================================================
+   button.component.css  --  Button component styles
+   Uses native button elements with variant and size modifiers.
+   ============================================================ */
+
+.vui-button {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-fg-muted: var(--vui-fg-muted, #52525b);
+  --_vui-border: var(--vui-border, #d4d4d8);
+  --_vui-border-strong: var(--vui-border-strong, #a1a1aa);
+  --_vui-accent: var(--vui-accent, #0f766e);
+  --_vui-accent-hover: var(--vui-accent-hover, #115e59);
+  --_vui-accent-fg: var(--vui-accent-fg, #f8fafc);
+  --_vui-danger: var(--vui-danger, #b91c1c);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-font-sans: var(--vui-font-sans, "Segoe UI", system-ui, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  --_vui-font-size-base: var(--vui-font-size-base, 1rem);
+  --_vui-shadow-sm: var(--vui-shadow-sm, 0 4px 12px rgba(15, 23, 42, 0.08));
+  --_vui-duration: var(--vui-duration, 150ms);
+  --_vui-easing: var(--vui-easing, cubic-bezier(0.4, 0, 0.2, 1));
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-button-stack {
+  display: grid;
+  gap: var(--_vui-space-md);
+}
+
+.vui-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_vui-space-sm);
+}
+
+.vui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  font: inherit;
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--_vui-duration) var(--_vui-easing),
+    border-color var(--_vui-duration) var(--_vui-easing),
+    color var(--_vui-duration) var(--_vui-easing),
+    transform var(--_vui-duration) var(--_vui-easing),
+    box-shadow var(--_vui-duration) var(--_vui-easing);
+}
+
+.vui-btn:hover {
+  transform: translateY(-1px);
+}
+
+.vui-btn:focus-visible {
+  outline: 2px solid var(--_vui-accent);
+  outline-offset: 2px;
+}
+
+.vui-btn--primary {
+  background: var(--_vui-accent);
+  color: var(--_vui-accent-fg);
+  box-shadow: var(--_vui-shadow-sm);
+}
+
+.vui-btn--primary:hover {
+  background: var(--_vui-accent-hover);
+}
+
+.vui-btn--secondary {
+  background: var(--_vui-bg-surface);
+  border-color: var(--_vui-border);
+}
+
+.vui-btn--secondary:hover,
+.vui-btn--outline:hover,
+.vui-btn--ghost:hover {
+  border-color: var(--_vui-border-strong);
+}
+
+.vui-btn--outline {
+  border-color: var(--_vui-border);
+  background: transparent;
+}
+
+.vui-btn--ghost {
+  background: transparent;
+  color: var(--_vui-fg-muted);
+}
+
+.vui-btn--danger {
+  background: color-mix(in srgb, var(--_vui-danger) 92%, white);
+  color: #fff;
+  box-shadow: var(--_vui-shadow-sm);
+}
+
+.vui-btn--danger:hover {
+  background: color-mix(in srgb, var(--_vui-danger) 82%, black);
+}
+
+.vui-btn--sm {
+  min-height: 36px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.8125rem;
+}
+
+.vui-btn--lg {
+  min-height: 52px;
+  padding: 0.95rem 1.25rem;
+  font-size: var(--_vui-font-size-base);
+}
+
+@media (max-width: 768px) {
+  .vui-button-row {
+    flex-direction: column;
+  }
+
+  .vui-btn {
+    width: 100%;
+  }
+}

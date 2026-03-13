@@ -1,0 +1,49 @@
+/* ============================================================
+   breadcrumb.component.css  --  Breadcrumb component styles
+   Uses native nav, list, and link markup for hierarchical navigation.
+   ============================================================ */
+
+.vui-breadcrumb {
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-fg-muted: var(--vui-fg-muted, #52525b);
+  --_vui-border: var(--vui-border, #d4d4d8);
+}
+
+.vui-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vui-breadcrumb-item {
+  color: var(--_vui-fg-muted);
+}
+
+.vui-breadcrumb-item + .vui-breadcrumb-item::before {
+  content: "/";
+  margin-right: 0.6rem;
+  color: var(--_vui-fg-muted);
+}
+
+.vui-breadcrumb-item a {
+  color: var(--_vui-fg);
+  text-decoration: none;
+}
+
+.vui-breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.vui-breadcrumb-item[aria-current="page"] {
+  color: var(--_vui-fg-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .vui-breadcrumb-list {
+    row-gap: 0.35rem;
+  }
+}

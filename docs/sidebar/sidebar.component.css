@@ -1,0 +1,70 @@
+/* ============================================================
+   sidebar.component.css  --  Sidebar component styles
+   Uses native nav links and mirrors the docs sidebar structure.
+   ============================================================ */
+
+.vui-sidebar {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-fg-muted: var(--vui-fg-muted, #52525b);
+  --_vui-border: var(--vui-border, #d4d4d8);
+  --_vui-accent: var(--vui-accent, #0f766e);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  display: grid;
+  gap: 0.25rem;
+  max-width: 18rem;
+  min-height: 20rem;
+  padding: var(--_vui-space-lg) 0;
+  border: 1px solid var(--_vui-border);
+  border-radius: 12px;
+  background: var(--_vui-bg);
+}
+
+.vui-sidebar-brand {
+  display: block;
+  padding: 0 var(--_vui-space-lg) var(--_vui-space-md);
+  border-bottom: 1px solid var(--_vui-border);
+  color: var(--_vui-fg);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.vui-sidebar-label {
+  padding: 0 var(--_vui-space-lg);
+  color: var(--_vui-fg-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vui-sidebar-nav {
+  display: grid;
+}
+
+.vui-sidebar-link {
+  display: block;
+  padding: 0.75rem var(--_vui-space-lg);
+  color: var(--_vui-fg-muted);
+  text-decoration: none;
+}
+
+.vui-sidebar-link:hover {
+  background: var(--_vui-bg-surface);
+  color: var(--_vui-fg);
+}
+
+.vui-sidebar-link.is-active {
+  background: color-mix(in srgb, var(--_vui-accent) 10%, white);
+  color: var(--_vui-fg);
+  box-shadow: inset 3px 0 0 var(--_vui-accent);
+}
+
+@media (max-width: 768px) {
+  .vui-sidebar {
+    max-width: none;
+  }
+}

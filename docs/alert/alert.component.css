@@ -1,0 +1,36 @@
+/* ============================================================
+   alert.component.css  --  Alert component styles
+   Uses native block content with role="alert" for status messaging.
+   ============================================================ */
+
+.vui-alert {
+  --_vui-success: var(--vui-success, #15803d);
+  --_vui-danger: var(--vui-danger, #b91c1c);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  padding: 1rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: var(--_vui-radius-md);
+  line-height: 1.6;
+}
+
+.vui-alert strong {
+  font-weight: 700;
+}
+
+.vui-alert--success {
+  color: #14532d;
+  background: #ecfdf5;
+  border-color: color-mix(in srgb, var(--_vui-success) 35%, white);
+}
+
+.vui-alert--danger {
+  color: #7f1d1d;
+  background: #fef2f2;
+  border-color: color-mix(in srgb, var(--_vui-danger) 35%, white);
+}
+
+@media (max-width: 768px) {
+  .vui-alert {
+    padding: 0.95rem 1rem;
+  }
+}

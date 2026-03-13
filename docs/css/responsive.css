@@ -184,6 +184,9 @@
 }
 
 @media (max-width:576px) {
+  .docs-preview {
+    margin: 0;
+  }
   .docs-compat-table td:nth-child(1) {
   flex-direction: column;
   }

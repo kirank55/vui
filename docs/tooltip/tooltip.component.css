@@ -31,8 +31,11 @@
   justify-items: start;
 }
 
+.vui-tooltip-stack--compact {
+  gap: var(--_vui-space-sm);
+}
+
 .vui-tooltip-trigger {
-  anchor-name: --vui-tooltip-anchor;
   min-height: 44px;
   padding: 0.8rem 1rem;
   border: 1px solid var(--_vui-border);
@@ -53,6 +56,68 @@
   border-color: var(--_vui-fg-muted);
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.vui-tooltip-trigger--bare {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.vui-tooltip-trigger--bare:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.vui-tooltip-trigger--image {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.vui-tooltip-trigger--image:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.vui-tooltip-trigger--primary {
+  anchor-name: --vui-tooltip-anchor-primary;
+}
+
+.vui-tooltip-trigger--image {
+  anchor-name: --vui-tooltip-anchor-image;
+}
+
+.vui-tooltip-trigger--bare {
+  anchor-name: --vui-tooltip-anchor-link;
+}
+
+.vui-tooltip-media {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--_vui-radius-lg);
+  border: 1px solid var(--_vui-border);
+  background: var(--_vui-bg-elevated);
+}
+
+.vui-tooltip-media img {
+  display: block;
+  inline-size: 9rem;
+  block-size: 6rem;
+  object-fit: cover;
 }
 
 .vui-tooltip-trigger:focus-visible {
@@ -93,14 +158,27 @@
   line-height: 1.6;
 }
 
-@supports (position-anchor: --vui-tooltip-anchor) and (top: anchor(bottom)) {
-  .vui-tooltip-bubble:popover-open {
+@supports (position-anchor: --vui-tooltip-anchor-primary) and (top: anchor(bottom)) {
+  .vui-tooltip-bubble--primary:popover-open,
+  .vui-tooltip-bubble--image:popover-open,
+  .vui-tooltip-bubble--link:popover-open {
     position: fixed;
-    position-anchor: --vui-tooltip-anchor;
     inset: auto;
     bottom: anchor(top);
     justify-self: anchor-center;
     margin-bottom: 14px;
+  }
+
+  .vui-tooltip-bubble--primary:popover-open {
+    position-anchor: --vui-tooltip-anchor-primary;
+  }
+
+  .vui-tooltip-bubble--image:popover-open {
+    position-anchor: --vui-tooltip-anchor-image;
+  }
+
+  .vui-tooltip-bubble--link:popover-open {
+    position-anchor: --vui-tooltip-anchor-link;
   }
 
   .vui-tooltip-bubble::before {
@@ -130,6 +208,11 @@
   .vui-tooltip-stack,
   .vui-tooltip-trigger {
     width: 100%;
+  }
+
+  .vui-tooltip-trigger--bare,
+  .vui-tooltip-trigger--image {
+    width: auto;
   }
 
   .vui-tooltip-trigger {

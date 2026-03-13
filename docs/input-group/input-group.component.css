@@ -1,0 +1,77 @@
+/* ============================================================
+   input-group.component.css  --  Input group component styles
+   Uses native inputs with prepend and append elements.
+   ============================================================ */
+
+.vui-input-group-stack {
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-fg-muted: var(--vui-fg-muted, #52525b);
+  --_vui-border: var(--vui-border, #d4d4d8);
+  --_vui-accent: var(--vui-accent, #0f766e);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-font-sans: var(--vui-font-sans, "Segoe UI", system-ui, sans-serif);
+  display: grid;
+  gap: var(--_vui-space-md);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-input-group {
+  display: flex;
+  align-items: stretch;
+  min-height: 48px;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  overflow: hidden;
+  background: var(--_vui-bg-elevated);
+}
+
+.vui-input-group:focus-within {
+  border-color: color-mix(in srgb, var(--_vui-accent) 55%, white);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--_vui-accent) 16%, white);
+}
+
+.vui-input-group-text,
+.vui-input-group-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.9rem;
+  background: var(--_vui-bg-surface);
+  color: var(--_vui-fg-muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.vui-input-group-button {
+  border: 0;
+  border-left: 1px solid var(--_vui-border);
+  color: var(--_vui-fg);
+  cursor: pointer;
+}
+
+.vui-input-group-field {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  padding: 0 0.95rem;
+  font: inherit;
+  color: var(--_vui-fg);
+  background: transparent;
+}
+
+.vui-input-group-field:focus {
+  outline: 0;
+}
+
+@media (max-width: 768px) {
+  .vui-input-group {
+    flex-wrap: wrap;
+  }
+
+  .vui-input-group-field {
+    min-height: 48px;
+    width: 100%;
+  }
+}

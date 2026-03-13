@@ -66,6 +66,12 @@ html {
   background: var(--vui-bg-surface);
 }
 
+.docs-nav-link[aria-current="page"] {
+  color: var(--vui-fg);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.08));
+  box-shadow: inset 3px 0 0 var(--vui-accent);
+}
+
 /* --- Main Content Area --- */
 
 .docs-main {

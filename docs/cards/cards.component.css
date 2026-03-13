@@ -1,0 +1,73 @@
+/* ============================================================
+   cards.component.css  --  Cards component styles
+   Uses native article elements for grouped content surfaces.
+   ============================================================ */
+
+.vui-card-grid {
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-fg-muted: var(--vui-fg-muted, #52525b);
+  --_vui-border: var(--vui-border, #d4d4d8);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-radius-lg: var(--vui-radius-lg, 10px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-shadow-md: var(--vui-shadow-md, 0 12px 28px rgba(15, 23, 42, 0.08));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--_vui-space-md);
+}
+
+.vui-card {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-lg);
+  background: var(--_vui-bg-elevated);
+}
+
+.vui-card--elevated {
+  box-shadow: var(--_vui-shadow-md);
+}
+
+.vui-card-media {
+  min-height: 7rem;
+  background: linear-gradient(135deg, #d9f99d, #a7f3d0 55%, #bfdbfe);
+}
+
+.vui-card-body,
+.vui-card-footer {
+  padding: 1rem 1.1rem;
+}
+
+.vui-card-title {
+  margin: 0 0 0.5rem;
+  color: var(--_vui-fg);
+  font-size: 1rem;
+}
+
+.vui-card-copy {
+  margin: 0;
+  color: var(--_vui-fg-muted);
+  line-height: 1.6;
+}
+
+.vui-card-footer {
+  border-top: 1px solid var(--_vui-border);
+}
+
+.vui-card-action {
+  min-height: 40px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-bg-surface);
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .vui-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

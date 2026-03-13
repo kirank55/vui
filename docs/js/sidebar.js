@@ -14,11 +14,23 @@
 /** All navigation links shown in the sidebar. Add new pages here. */
 const NAV_LINKS = [
   { href: 'index.html',    label: 'Overview' },
+  { href: 'button/',       label: 'Button' },
   { href: 'modal/',        label: 'Modal' },
   { href: 'dropdown/',     label: 'Dropdown' },
   { href: 'accordion/',    label: 'Accordion' },
   { href: 'tooltip/',      label: 'Tooltip' },
   { href: 'form/',         label: 'Form Controls' },
+  { href: 'radio/',        label: 'Radio Buttons' },
+  { href: 'checkbox/',     label: 'Checkbox' },
+  { href: 'alert/',        label: 'Alerts' },
+  { href: 'breadcrumb/',   label: 'Breadcrumb' },
+  { href: 'cards/',        label: 'Cards' },
+  { href: 'input-group/',  label: 'Input Group' },
+  { href: 'spinner/',      label: 'Spinner' },
+  { href: 'sidebar/',      label: 'Sidebar' },
+  { href: 'switch/',       label: 'Switch' },
+  { href: 'table/',        label: 'Table' },
+  { href: 'tabs/',         label: 'Tabs' },
 ];
 
 function normalizeDocsPath(path) {

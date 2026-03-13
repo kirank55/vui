@@ -87,6 +87,12 @@
   box-shadow: var(--_vui-shadow-lg);
 }
 
+@supports (min-width: anchor-size(width)) {
+  .vui-dropdown-menu {
+    min-width: max(16rem, anchor-size(width));
+  }
+}
+
 .vui-dropdown-menu:popover-open {
   display: grid;
   gap: var(--_vui-space-xs);
@@ -170,6 +176,7 @@
   }
 
   .vui-dropdown-menu {
-    min-width: min(100vw - 3rem, 18rem);
+    min-width: min(100%, 18rem);
+    width: min(100%, 18rem);
   }
 }

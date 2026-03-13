@@ -1,0 +1,45 @@
+/* ============================================================
+   table.component.css  --  Table component styles
+   Uses native table markup with an overflow wrapper for small screens.
+   ============================================================ */
+
+.vui-table-responsive {
+  overflow-x: auto;
+}
+
+.vui-table {
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-border: var(--vui-border, #d4d4d8);
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  border: 1px solid var(--_vui-border);
+  background: var(--_vui-bg-elevated);
+}
+
+.vui-table th,
+.vui-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--_vui-border);
+  text-align: left;
+}
+
+.vui-table thead {
+  background: var(--_vui-bg-surface);
+}
+
+.vui-table--striped tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--_vui-bg-surface) 55%, white);
+}
+
+.vui-table--hover tbody tr:hover {
+  background: color-mix(in srgb, var(--_vui-bg-surface) 80%, white);
+}
+
+@media (max-width: 768px) {
+  .vui-table {
+    min-width: 28rem;
+  }
+}

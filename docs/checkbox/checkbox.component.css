@@ -1,0 +1,66 @@
+/* ============================================================
+   checkbox.component.css  --  Checkbox component styles
+   Uses native checkbox inputs with accent-color and stacked labels.
+   ============================================================ */
+
+.vui-checkbox-group {
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-fg-muted: var(--vui-fg-muted, #52525b);
+  --_vui-border: var(--vui-border, #d4d4d8);
+  --_vui-accent: var(--vui-accent, #0f766e);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-font-sans: var(--vui-font-sans, "Segoe UI", system-ui, sans-serif);
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--_vui-space-sm);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-checkbox-legend {
+  margin-bottom: var(--_vui-space-sm);
+  color: var(--_vui-fg);
+  font-weight: 700;
+}
+
+.vui-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  cursor: pointer;
+}
+
+.vui-checkbox input {
+  accent-color: var(--_vui-accent);
+  inline-size: 1rem;
+  block-size: 1rem;
+  margin: 0;
+}
+
+.vui-checkbox:has(input:checked) {
+  background: color-mix(in srgb, var(--_vui-accent) 8%, white);
+  border-color: color-mix(in srgb, var(--_vui-accent) 40%, white);
+}
+
+.vui-checkbox:has(input:disabled) {
+  color: var(--_vui-fg-muted);
+  background: var(--_vui-bg-surface);
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .vui-checkbox {
+    align-items: flex-start;
+  }
+}

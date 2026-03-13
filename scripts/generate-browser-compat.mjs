@@ -1,11 +1,14 @@
 import { mkdir, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import bcd from '@mdn/browser-compat-data/forLegacyNode';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 const outputPath = path.join(rootDir, 'docs', 'browser-compat-data.js');
+const require = createRequire(import.meta.url);
+const unpackFeature = require('caniuse-lite/dist/unpacker/feature.js');
+const caniusePkg = require('caniuse-lite/package.json');
 
 const BROWSERS = [
   { id: 'chrome', label: 'Chrome' },
@@ -16,120 +19,150 @@ const BROWSERS = [
 
 const COMPONENT_FEATURES = {
   modal: [
-    { label: '<dialog> element', path: ['html', 'elements', 'dialog'] },
+    {
+      label: '<dialog> element',
+      caniuseId: 'dialog',
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/dialog',
+      note: 'Native modal and non-modal dialog support.',
+    },
+    {
+      label: 'command + commandfor',
+      manual: { chrome: '135+', edge: '135+', firefox: '144+', safari: '26.2+' },
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/button',
+      note: 'Declarative dialog invocation is newer than the dialog element itself.',
+    },
   ],
   accordion: [
-    { label: '<details> element', path: ['html', 'elements', 'details'] },
-    { label: '<summary> element', path: ['html', 'elements', 'summary'] },
-    { label: 'details[name]', path: ['api', 'HTMLDetailsElement', 'name'] },
+    {
+      label: '<details> and <summary>',
+      caniuseId: 'details',
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/details',
+      note: 'Native disclosure support for the component structure.',
+    },
+    {
+      label: 'details[name]',
+      manual: { chrome: '120+', edge: '120+', firefox: '130+', safari: '17.2+' },
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name',
+      note: 'Enables exclusive accordion groups without JavaScript.',
+    },
   ],
   dropdown: [
-    { label: 'popover', path: ['api', 'HTMLElement', 'popover'] },
-    { label: 'popovertarget', path: ['api', 'HTMLButtonElement', 'popoverTargetElement'] },
+    {
+      label: 'Popover API',
+      manual: { chrome: '114+', edge: '114+', firefox: '125+', safari: '17+' },
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/API/Popover_API',
+      note: 'Baseline 2025 feature for native, non-modal popup surfaces.',
+    },
+    {
+      label: 'CSS anchor positioning',
+      caniuseId: 'css-anchor-positioning',
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-anchor',
+      note: 'Used as a progressive enhancement for precise trigger-relative placement.',
+    },
   ],
   tooltip: [
-    { label: 'popover', path: ['api', 'HTMLElement', 'popover'] },
-    { label: 'popovertargetaction', path: ['api', 'HTMLButtonElement', 'popoverTargetAction'] },
-    { label: 'anchor-name', path: ['css', 'properties', 'anchor-name'] },
-    { label: 'position-anchor', path: ['css', 'properties', 'position-anchor'] },
+    {
+      label: 'Popover API',
+      manual: { chrome: '114+', edge: '114+', firefox: '125+', safari: '17+' },
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/API/Popover_API',
+      note: 'Provides the declarative tooltip surface and toggle behavior.',
+    },
+    {
+      label: 'CSS anchor positioning',
+      caniuseId: 'css-anchor-positioning',
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-anchor',
+      note: 'Improves placement in newer engines while older browsers use a fallback.',
+    },
+    {
+      label: 'interestfor',
+      manual: { chrome: '142+', edge: '142+', firefox: 'No', safari: 'No' },
+      mdnUrl: 'https://developer.mozilla.org/docs/Web/API/Popover_API',
+      note: 'Hover and focus tooltip invocation remains too new for the current support target.',
+    },
   ],
   form: [
-    { label: ':user-invalid', path: ['css', 'selectors', 'user-invalid'] },
+    {
+      label: 'Constraint validation',
+      caniuseId: 'constraint-validation',
+      mdnUrl: 'https://developer.mozilla.org/docs/Learn_web_development/Extensions/Forms/Form_validation',
+      note: 'Covers built-in validation UI and submit blocking for native form controls.',
+    },
   ],
 };
 
-function getFeatureCompat(pathParts) {
-  const feature = pathParts.reduce((current, part) => current?.[part], bcd);
-  return feature?.__compat ?? null;
+function loadFeature(caniuseId) {
+  return unpackFeature(require(`caniuse-lite/data/features/${caniuseId}.js`));
 }
 
-function stripHtml(value) {
-  return String(value || '')
-    .replace(/<code>/g, '`')
-    .replace(/<\/code>/g, '`')
-    .replace(/<[^>]+>/g, '')
-    .replace(/\s+/g, ' ')
+function normalizeVersion(version) {
+  if (version == null) return null;
+
+  return String(version)
+    .replace(/^≤\s*/, '')
+    .replace(/^TP$/i, 'TP')
     .trim();
 }
 
-function normalizeStatement(statement) {
-  if (statement === false) {
-    return { label: 'No', note: '' };
+function compareVersions(left, right) {
+  if (left === 'TP') return 1;
+  if (right === 'TP') return -1;
+
+  const leftParts = left.split('.').map(Number);
+  const rightParts = right.split('.').map(Number);
+  const maxLength = Math.max(leftParts.length, rightParts.length);
+
+  for (let index = 0; index < maxLength; index += 1) {
+    const leftValue = leftParts[index] || 0;
+    const rightValue = rightParts[index] || 0;
+    if (leftValue !== rightValue) {
+      return leftValue - rightValue;
+    }
   }
 
-  if (statement === true) {
-    return { label: 'Yes', note: '' };
-  }
-
-  if (!statement || statement.version_added === false) {
-    return { label: 'No', note: '' };
-  }
-
-  let label;
-  if (statement.version_added === true) {
-    label = 'Yes';
-  } else if (statement.version_last && statement.version_removed) {
-    label = `${statement.version_added}-${statement.version_last}`;
-  } else {
-    label = `${statement.version_added}+`;
-  }
-
-  if (statement.prefix) {
-    label += ' prefixed';
-  }
-  if (statement.partial_implementation) {
-    label += ' partial';
-  }
-  if (statement.flags?.length) {
-    label += ' flagged';
-  }
-
-  return {
-    label,
-    note: stripHtml(statement.notes),
-  };
+  return 0;
 }
 
-function formatBrowserSupport(rawSupport) {
-  if (Array.isArray(rawSupport)) {
-    const parts = rawSupport.map(normalizeStatement).filter((entry) => entry.label);
-    return {
-      label: parts.map((entry) => entry.label).join(' / ') || 'No',
-      note: parts.map((entry) => entry.note).filter(Boolean).join(' '),
-    };
-  }
+function getBrowserSupportLabel(featureStats, browserId) {
+  const stats = featureStats[browserId] || {};
+  const supportedVersions = Object.entries(stats)
+    .filter(([, support]) => /(^|\s)(y|a|x)(\s|$)/.test(support))
+    .map(([version]) => normalizeVersion(version))
+    .filter(Boolean)
+    .sort(compareVersions);
 
-  return normalizeStatement(rawSupport);
+  const firstSupported = supportedVersions[0];
+  return firstSupported ? `${firstSupported}+` : 'No';
 }
 
 function buildRow(featureDef) {
-  const compat = getFeatureCompat(featureDef.path);
-  if (!compat) {
-    throw new Error(`Missing MDN compat data for ${featureDef.path.join('.')}`);
+  if (featureDef.manual) {
+    return {
+      feature: featureDef.label,
+      mdnUrl: featureDef.mdnUrl || '',
+      browsers: featureDef.manual,
+      note: featureDef.note || '',
+    };
   }
 
+  const compat = loadFeature(featureDef.caniuseId);
   const browsers = {};
-  const browserNotes = [];
 
   for (const browser of BROWSERS) {
-    const formatted = formatBrowserSupport(compat.support[browser.id]);
-    browsers[browser.id] = formatted.label;
-    if (formatted.note) {
-      browserNotes.push(`${browser.label}: ${formatted.note}`);
-    }
+    browsers[browser.id] = getBrowserSupportLabel(compat.stats, browser.id);
   }
 
   return {
     feature: featureDef.label,
-    mdnUrl: compat.mdn_url || '',
+    mdnUrl: featureDef.mdnUrl || '',
     browsers,
-    note: browserNotes.join(' '),
+    note: featureDef.note || '',
   };
 }
 
 const payload = {
   generatedAt: new Date().toISOString(),
-  sourceVersion: bcd.__meta.version,
+  sourceVersion: caniusePkg.version,
+  sourceName: 'caniuse-lite',
   components: Object.fromEntries(
     Object.entries(COMPONENT_FEATURES).map(([component, features]) => [
       component,
@@ -145,4 +178,4 @@ await writeFile(
   'utf8',
 );
 
-console.log(`Generated ${path.relative(rootDir, outputPath)} from MDN BCD ${bcd.__meta.version}`);
+console.log(`Generated ${path.relative(rootDir, outputPath)} from Can I Use ${caniusePkg.version}`);

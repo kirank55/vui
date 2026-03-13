@@ -6,6 +6,6 @@
     "generate:compat": "node scripts/generate-browser-compat.mjs"
   },
   "dependencies": {
-    "@mdn/browser-compat-data": "latest"
+    "caniuse-lite": "^1.0.30001778"
   }
 }

@@ -22,13 +22,14 @@
     <main class="docs-main">
       <h1 class="docs-title">Dropdown</h1>
       <p class="docs-subtitle">
-        A non-modal action menu using the Popover API. Open and close behavior is
-        declarative today; trigger-relative positioning becomes more precise in
-        newer browsers with anchor positioning support.
+        A non-modal action menu using the Popover API. Popover is part of
+        Baseline 2025 across major browsers, while trigger-relative placement is
+        progressively improved with newer anchor-positioning support.
       </p>
 
       <section style="margin: 2em 0;">
         <div class="component-card" data-html-source="dropdown.component.html"
+          data-codepen-title="vui Dropdown"
           data-css-source="dropdown.component.css">
           <div class="docs-panel-label">Preview</div>
           <div data-panel="preview" class="docs-preview"></div>
@@ -47,10 +48,9 @@
           custom event handling.
         </p>
         <p>
-          Chrome 120-era browsers can open the menu declaratively, but do not yet
-          expose the newer implicit anchor behavior that places the menu flush to
-          its trigger. This component therefore includes a centered fallback and a
-          precise anchor-based layout when supported.
+          The menu width now tracks the trigger button when anchor sizing is
+          available, so the fallback and enhanced layouts stay visually aligned.
+          Browsers without anchor sizing still get a consistent minimum width.
         </p>
       </div>
 
@@ -75,20 +75,20 @@
             <tr class="docs-compat-row is-healthy">
               <td>
                 <code>popover</code>
-                <span class="docs-compat-signal is-good">Broad support</span>
+                <span class="docs-compat-signal is-good">Baseline 2025</span>
               </td>
               <td>114+</td>
               <td>114+</td>
               <td>125+</td>
               <td>17+</td>
               <td>
-                Covers the native non-modal popover surface and declarative toggle
-                behavior.
+                Newly available across major browsers for the native non-modal
+                popover surface and declarative toggle behavior.
               </td>
               <td>
                 <a class="docs-compat-link"
-                  href="https://developer.mozilla.org/docs/Web/API/Popover_API"
-                  target="_blank" rel="noreferrer">MDN</a>
+                  href="https://caniuse.com/?search=popover"
+                  target="_blank" rel="noreferrer">Can I Use</a>
               </td>
             </tr>
             <tr class="docs-compat-row is-healthy">
@@ -106,26 +106,26 @@
               </td>
               <td>
                 <a class="docs-compat-link"
-                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/button"
-                  target="_blank" rel="noreferrer">MDN</a>
+                  href="https://caniuse.com/?search=popovertarget"
+                  target="_blank" rel="noreferrer">Can I Use</a>
               </td>
             </tr>
             <tr>
               <td>
-                Implicit anchor reference
+                CSS anchor sizing and positioning
               </td>
-              <td>133+</td>
-              <td>133+</td>
+              <td>125+</td>
+              <td>125+</td>
               <td>147+</td>
               <td>26+</td>
               <td>
-                Needed for perfect trigger-relative placement without an explicit
-                anchor fallback.
+                Needed for same-width menus and precise trigger-relative placement
+                without a centered fallback.
               </td>
               <td>
                 <a class="docs-compat-link"
-                  href="https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/button"
-                  target="_blank" rel="noreferrer">MDN</a>
+                  href="https://caniuse.com/css-anchor-positioning"
+                  target="_blank" rel="noreferrer">Can I Use</a>
               </td>
             </tr>
           </tbody>
@@ -133,7 +133,7 @@
       </div>
 
       <p class="docs-compat-meta">
-        Compatibility notes reference MDN Browser Compat Data current as of March 2026.
+        Compatibility notes reference Can I Use data current as of March 2026.
       </p>
     </main>
   </div>

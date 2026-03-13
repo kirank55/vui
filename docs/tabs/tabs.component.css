@@ -1,0 +1,144 @@
+/* ============================================================
+   tabs.component.css  --  Tabs component styles
+   Uses native radio inputs and labels to switch panels without JavaScript.
+   Sliding pill indicator animated via CSS transforms.
+   ============================================================ */
+
+.vui-tabs {
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-bg-surface: var(--vui-bg-surface, #f2f2f2);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-duration: var(--vui-duration, 150ms);
+  --_vui-tab-count: 3;
+  font-family: var(--_vui-font-sans);
+  box-sizing: border-box;
+}
+
+.vui-tabs *,
+.vui-tabs *::before,
+.vui-tabs *::after {
+  box-sizing: inherit;
+}
+
+.vui-tabs-control {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---- Tab bar ---- */
+
+.vui-tabs-list {
+  position: relative;
+  display: flex;
+  padding: 0.25rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: 999px;
+  background: var(--_vui-bg-surface);
+  margin-bottom: 1rem;
+}
+
+/* Sliding pill indicator */
+.vui-tabs-list::before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  left: 0.25rem;
+  width: calc((100% - 0.5rem) / var(--_vui-tab-count));
+  border-radius: 999px;
+  background: var(--_vui-bg-elevated);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform var(--_vui-duration) cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+}
+
+.vui-tab {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--_vui-fg-muted);
+  font-family: var(--_vui-font-sans);
+  font-size: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: color 200ms ease;
+}
+
+/* ---- Active tab text color ---- */
+
+#vui-tab-overview:checked ~ .vui-tabs-list label[for="vui-tab-overview"],
+#vui-tab-specs:checked ~ .vui-tabs-list label[for="vui-tab-specs"],
+#vui-tab-notes:checked ~ .vui-tabs-list label[for="vui-tab-notes"] {
+  color: var(--_vui-fg);
+}
+
+/* ---- Slide indicator to active tab ---- */
+
+#vui-tab-overview:checked ~ .vui-tabs-list::before {
+  transform: translateX(0);
+}
+
+#vui-tab-specs:checked ~ .vui-tabs-list::before {
+  transform: translateX(100%);
+}
+
+#vui-tab-notes:checked ~ .vui-tabs-list::before {
+  transform: translateX(200%);
+}
+
+/* ---- Panels ---- */
+
+.vui-tab-panels {
+  border: 1px solid var(--_vui-border);
+  border-radius: 10px;
+  background: var(--_vui-bg-elevated);
+}
+
+.vui-tab-panel {
+  display: none;
+  padding: 1rem 1.1rem;
+}
+
+.vui-tab-panel h3 {
+  margin: 0 0 0.5rem;
+}
+
+.vui-tab-panel p {
+  margin: 0;
+  color: var(--_vui-fg-muted);
+  line-height: 1.6;
+}
+
+#vui-tab-overview:checked ~ .vui-tab-panels .vui-tab-panel--overview,
+#vui-tab-specs:checked ~ .vui-tab-panels .vui-tab-panel--specs,
+#vui-tab-notes:checked ~ .vui-tab-panels .vui-tab-panel--notes {
+  display: block;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .vui-tabs-list {
+    gap: 0;
+  }
+
+  .vui-tab {
+    min-height: 36px;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.875rem;
+  }
+}
