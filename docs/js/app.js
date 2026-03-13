@@ -39,64 +39,6 @@ function fetchSource(url) {
   return fetchCache[url];
 }
 
-function submitToCodePen({ title, html, css }) {
-  const form = document.createElement('form');
-  form.action = 'https://codepen.io/pen/define';
-  form.method = 'POST';
-  form.target = '_blank';
-  form.hidden = true;
-
-  const input = document.createElement('input');
-  input.type = 'hidden';
-  input.name = 'data';
-  input.value = JSON.stringify({
-    title,
-    html,
-    css,
-    js: '',
-    editors: '110',
-    layout: 'left',
-  });
-
-  form.appendChild(input);
-  document.body.appendChild(form);
-  form.submit();
-  form.remove();
-}
-
-function injectPageCodePenLinks() {
-  if (document.querySelector('a[href*="codepen.io"]') || document.querySelector('.docs-demo-links')) {
-    return;
-  }
-
-  const subtitle = document.querySelector('.docs-subtitle');
-  if (!subtitle) return;
-
-  const cards = Array.from(document.querySelectorAll('.component-card[data-html-source][data-codepen-title]'));
-  if (!cards.length) return;
-
-  const row = document.createElement('div');
-  row.className = 'docs-demo-links';
-
-  cards.forEach(card => {
-    const title = card.getAttribute('data-codepen-title') || 'vui component';
-    const htmlSourceUrl = card.getAttribute('data-html-source');
-    const cssSourceUrl = card.getAttribute('data-css-source');
-    const button = document.createElement('button');
-    button.className = 'docs-demo-link';
-    button.type = 'button';
-    button.textContent = `${title} on CodePen`;
-    button.addEventListener('click', () => {
-      Promise.all([fetchSource(htmlSourceUrl), fetchSource(cssSourceUrl)]).then(([html, css]) => {
-        submitToCodePen({ title, html, css });
-      });
-    });
-    row.appendChild(button);
-  });
-
-  subtitle.insertAdjacentElement('afterend', row);
-}
-
 /**
  * Initialise a single component card.
  *
@@ -107,8 +49,6 @@ function injectPageCodePenLinks() {
 function initComponentCard(card) {
   const htmlSourceUrl = card.getAttribute('data-html-source');
   const cssSourceUrl = card.getAttribute('data-css-source');
-  const codePenTitle = card.getAttribute('data-codepen-title') || document.title.replace(/\s+--\s+vui$/, '');
-
   if (!htmlSourceUrl) return;
 
   const previewPanel = card.querySelector('[data-panel="preview"]');
@@ -141,8 +81,6 @@ function initComponentCard(card) {
 /* ---------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
-  injectPageCodePenLinks();
-
   // 1. Initialise every component card on the page
   document.querySelectorAll('.component-card').forEach(initComponentCard);
 

@@ -1,4 +1,12 @@
+<!--
+  vui Tooltip
+  A lightweight help bubble using the Popover API. Includes button,
+  image, and underline trigger variants.
+  Copy both this HTML and tooltip.component.css into your project.
+  Source: https://github.com/kirank55/vui
+-->
 <div class="vui-tooltip-demo">
+  <!-- Button trigger -->
   <div class="vui-tooltip-stack">
     <button
       class="vui-tooltip-trigger vui-tooltip-trigger--primary"
@@ -11,6 +19,43 @@
 
     <div id="vui-tooltip-panel" class="vui-tooltip-bubble vui-tooltip-bubble--primary" popover role="tooltip">
       Requires legal sign-off, billing copy, and analytics naming before launch.
+    </div>
+  </div>
+
+  <!-- Image trigger -->
+  <div class="vui-tooltip-stack vui-tooltip-stack--compact">
+    <button
+      class="vui-tooltip-trigger vui-tooltip-trigger--image"
+      type="button"
+      popovertarget="vui-tooltip-image-panel"
+      aria-describedby="vui-tooltip-image-panel"
+    >
+      <span class="vui-tooltip-media">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='288' height='192' viewBox='0 0 288 192'%3E%3Crect width='288' height='192' fill='%23f4f4f5'/%3E%3Crect x='18' y='18' width='252' height='156' rx='18' fill='%23ffffff' stroke='%23d4d4d8'/%3E%3Ccircle cx='92' cy='80' r='26' fill='%230f766e' opacity='0.22'/%3E%3Cpath d='M48 136 104 94l40 30 34-24 62 36' fill='none' stroke='%231a1a1a' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+          alt="Analytics dashboard preview"
+        />
+      </span>
+    </button>
+
+    <div id="vui-tooltip-image-panel" class="vui-tooltip-bubble vui-tooltip-bubble--image" popover role="tooltip">
+      Snapshot cards inherit the same popover behavior while the visible trigger stays an image wrapped by a span.
+    </div>
+  </div>
+
+  <!-- Underline trigger -->
+  <div class="vui-tooltip-stack vui-tooltip-stack--compact">
+    <button
+      class="vui-tooltip-trigger vui-tooltip-trigger--bare"
+      type="button"
+      popovertarget="vui-tooltip-link-panel"
+      aria-describedby="vui-tooltip-link-panel"
+    >
+      Why is this disabled?
+    </button>
+
+    <div id="vui-tooltip-link-panel" class="vui-tooltip-bubble vui-tooltip-bubble--link" popover role="tooltip">
+      The underline-only trigger keeps native button semantics without adding pill, border, or surface styling.
     </div>
   </div>
 

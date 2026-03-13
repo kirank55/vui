@@ -1,3 +1,9 @@
+<!--
+  vui Dropdown
+  A dropdown menu using the Popover API for declarative show/hide.
+  Copy both this HTML and dropdown.component.css into your project.
+  Source: https://github.com/kirank55/vui
+-->
 <div class="vui-dropdown-demo">
   <div class="vui-dropdown">
     <button
@@ -10,13 +16,13 @@
       <span class="vui-dropdown-caret" aria-hidden="true"></span>
     </button>
 
-    <div id="vui-dropdown-menu" class="vui-dropdown-menu" popover>
-      <div class="vui-dropdown-group-label">Workspace</div>
-      <button class="vui-dropdown-item" type="button">Invite reviewer</button>
-      <button class="vui-dropdown-item" type="button">Duplicate page</button>
-      <button class="vui-dropdown-item" type="button">Move to archive</button>
+    <div id="vui-dropdown-menu" class="vui-dropdown-menu" popover role="menu" aria-label="Project actions">
+      <div class="vui-dropdown-group-label" id="vui-dropdown-group-workspace">Workspace</div>
+      <button class="vui-dropdown-item" type="button" role="menuitem">Invite reviewer</button>
+      <button class="vui-dropdown-item" type="button" role="menuitem">Duplicate page</button>
+      <button class="vui-dropdown-item" type="button" role="menuitem">Move to archive</button>
       <hr class="vui-dropdown-separator" />
-      <button class="vui-dropdown-item vui-dropdown-item--danger" type="button">
+      <button class="vui-dropdown-item vui-dropdown-item--danger" type="button" role="menuitem">
         Delete draft
       </button>
     </div>

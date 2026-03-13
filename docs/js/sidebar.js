@@ -14,23 +14,23 @@
 /** All navigation links shown in the sidebar. Add new pages here. */
 const NAV_LINKS = [
   { href: 'index.html',    label: 'Overview' },
-  { href: 'button/',       label: 'Button' },
-  { href: 'modal/',        label: 'Modal' },
-  { href: 'dropdown/',     label: 'Dropdown' },
   { href: 'accordion/',    label: 'Accordion' },
-  { href: 'tooltip/',      label: 'Tooltip' },
-  { href: 'form/',         label: 'Form Controls' },
-  { href: 'radio/',        label: 'Radio Buttons' },
-  { href: 'checkbox/',     label: 'Checkbox' },
   { href: 'alert/',        label: 'Alerts' },
   { href: 'breadcrumb/',   label: 'Breadcrumb' },
+  { href: 'button/',       label: 'Button' },
   { href: 'cards/',        label: 'Cards' },
+  { href: 'checkbox/',     label: 'Checkbox' },
+  { href: 'dropdown/',     label: 'Dropdown' },
+  { href: 'form/',         label: 'Form Controls' },
   { href: 'input-group/',  label: 'Input Group' },
-  { href: 'spinner/',      label: 'Spinner' },
+  { href: 'modal/',        label: 'Modal' },
+  { href: 'radio/',        label: 'Radio Buttons' },
   { href: 'sidebar/',      label: 'Sidebar' },
+  { href: 'spinner/',      label: 'Spinner' },
   { href: 'switch/',       label: 'Switch' },
   { href: 'table/',        label: 'Table' },
   { href: 'tabs/',         label: 'Tabs' },
+  { href: 'tooltip/',      label: 'Tooltip' },
 ];
 
 function normalizeDocsPath(path) {
@@ -62,11 +62,39 @@ class DocsSidebar extends HTMLElement {
     }).join('\n');
 
     this.innerHTML =
-      '<nav class="docs-sidebar">\n' +
+      '<button class="docs-sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">' +
+      '  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
+      '</button>\n' +
+      '<div class="docs-sidebar-overlay" aria-hidden="true"></div>\n' +
+      '<nav class="docs-sidebar" aria-label="Documentation navigation">\n' +
       `  <a href="${basePath}../index.html" class="docs-sidebar-brand">vui</a>\n` +
       '  <div class="docs-nav-label">Components</div>\n' +
       linksHtml + '\n' +
       '</nav>';
+
+    const toggle = this.querySelector('.docs-sidebar-toggle');
+    const overlay = this.querySelector('.docs-sidebar-overlay');
+    const nav = this.querySelector('.docs-sidebar');
+
+    const open = () => {
+      nav.classList.add('is-open');
+      overlay.classList.add('is-open');
+      toggle.hidden = true;
+      toggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const close = () => {
+      nav.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      toggle.hidden = false;
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', () => {
+      nav.classList.contains('is-open') ? close() : open();
+    });
+
+    overlay.addEventListener('click', close);
   }
 }
 

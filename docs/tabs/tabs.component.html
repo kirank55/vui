@@ -1,3 +1,10 @@
+<!--
+  vui Tabs
+  A no-JavaScript tabs component driven by radio inputs and labels.
+  Includes a sliding pill indicator animated via CSS transforms.
+  Copy both this HTML and tabs.component.css into your project.
+  Source: https://github.com/kirank55/vui
+-->
 <div class="vui-tabs">
   <input class="vui-tabs-control" type="radio" name="vui-tabs-demo" id="vui-tab-overview" checked />
   <input class="vui-tabs-control" type="radio" name="vui-tabs-demo" id="vui-tab-specs" />
@@ -10,15 +17,15 @@
   </div>
 
   <div class="vui-tab-panels">
-    <section class="vui-tab-panel vui-tab-panel--overview">
+    <section class="vui-tab-panel vui-tab-panel--overview" role="tabpanel" aria-labelledby="vui-tab-overview">
       <h3>Overview</h3>
       <p>Use radio-driven tabs when you need a no-JavaScript section switcher inside static content.</p>
     </section>
-    <section class="vui-tab-panel vui-tab-panel--specs">
+    <section class="vui-tab-panel vui-tab-panel--specs" role="tabpanel" aria-labelledby="vui-tab-specs">
       <h3>Specs</h3>
       <p>Each tab is a label bound to a hidden radio input, so one panel is always active.</p>
     </section>
-    <section class="vui-tab-panel vui-tab-panel--notes">
+    <section class="vui-tab-panel vui-tab-panel--notes" role="tabpanel" aria-labelledby="vui-tab-notes">
       <h3>Notes</h3>
       <p>This pattern is best for small static tab sets where native semantics can be approximated without scripting.</p>
     </section>
