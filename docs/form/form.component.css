@@ -29,6 +29,14 @@
   display: grid;
   gap: var(--_vui-space-lg);
   font-family: var(--_vui-font-sans);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.vui-form *,
+.vui-form *::before,
+.vui-form *::after {
+  box-sizing: inherit;
 }
 
 .vui-form-grid {
@@ -40,6 +48,7 @@
 .vui-field {
   display: grid;
   gap: 0.45rem;
+  min-width: 0;
 }
 
 .vui-field--full {
@@ -115,10 +124,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--_vui-space-sm);
+  min-inline-size: 0;
+  margin: 0;
   padding: var(--_vui-space-md);
   border: 1px solid var(--_vui-border);
   border-radius: var(--_vui-radius-lg);
   background: linear-gradient(180deg, #ffffff, #fbfbfb);
+}
+
+.vui-choice-group > .vui-field-label {
+  margin: 0 0 var(--_vui-space-sm);
+  padding: 0;
 }
 
 .vui-choice {

@@ -38,6 +38,7 @@
   --_vui-duration: var(--vui-duration, 150ms);
   --_vui-easing: var(--vui-easing, cubic-bezier(0.4, 0, 0.2, 1));
   display: inline-flex;
+  text-decoration: none;
   align-items: center;
   justify-content: center;
   min-height: 44px;
@@ -59,9 +60,6 @@
     box-shadow var(--_vui-duration) var(--_vui-easing);
 }
 
-.vui-btn:hover {
-  transform: translateY(-1px);
-}
 
 .vui-btn:focus-visible {
   outline: 2px solid var(--_vui-accent);

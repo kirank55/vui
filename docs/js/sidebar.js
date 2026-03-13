@@ -13,7 +13,7 @@
 
 /** All navigation links shown in the sidebar. Add new pages here. */
 const NAV_LINKS = [
-  { href: 'index.html',    label: 'Overview' },
+  { href: '',    label: 'Overview' },
   { href: 'accordion/',    label: 'Accordion' },
   { href: 'alert/',        label: 'Alerts' },
   { href: 'breadcrumb/',   label: 'Breadcrumb' },
@@ -34,7 +34,11 @@ const NAV_LINKS = [
 ];
 
 function normalizeDocsPath(path) {
-  const normalized = path.replace(/\\/g, '/');
+  const normalized = path.replace(/\\/g, '/').replace(/^\.\//, '').replace(/^\//, '');
+
+  if (normalized === 'index.html' || normalized === '') {
+    return '';
+  }
 
   if (normalized.endsWith('/index.html')) {
     return normalized.slice(0, -'index.html'.length);
@@ -67,7 +71,7 @@ class DocsSidebar extends HTMLElement {
       '</button>\n' +
       '<div class="docs-sidebar-overlay" aria-hidden="true"></div>\n' +
       '<nav class="docs-sidebar" aria-label="Documentation navigation">\n' +
-      `  <a href="${basePath}../index.html" class="docs-sidebar-brand">vui</a>\n` +
+      `  <a href="/" class="docs-sidebar-brand">vui</a>\n` +
       '  <div class="docs-nav-label">Components</div>\n' +
       linksHtml + '\n' +
       '</nav>';

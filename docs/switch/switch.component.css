@@ -16,6 +16,14 @@
   display: grid;
   gap: var(--_vui-space-md);
   font-family: var(--_vui-font-sans);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.vui-switch-group *,
+.vui-switch-group *::before,
+.vui-switch-group *::after {
+  box-sizing: inherit;
 }
 
 .vui-switch {
@@ -35,6 +43,7 @@
 
 .vui-switch-control {
   position: relative;
+  flex: none;
   inline-size: 3rem;
   block-size: 1.75rem;
   border-radius: 999px;

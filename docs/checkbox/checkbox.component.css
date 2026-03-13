@@ -20,6 +20,7 @@
   display: grid;
   gap: var(--_vui-space-sm);
   font-family: var(--_vui-font-sans);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 }
 
 .vui-checkbox-legend {
