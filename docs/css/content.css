@@ -69,6 +69,7 @@
 
 .docs-preview {
   /* border: 1px solid var(--vui-border); */
+  min-width: 0;
   border-radius: var(--vui-radius-md);
   background: var(--vui-bg-elevated);
   overflow: hidden;
@@ -84,6 +85,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
   margin-inline-start: auto;
 }
 
@@ -99,6 +101,7 @@
 .docs-preview-toggle {
   display: inline-flex;
   align-items: center;
+  flex: none;
   padding: 2px;
   border: 1px solid var(--vui-border);
   border-radius: 999px;
@@ -191,6 +194,8 @@
 .docs-panel-label--with-toolbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  min-width: 0;
   gap: 12px;
 }
 
@@ -198,6 +203,7 @@
 
 [data-panel="preview"] {
   display: grid;
+  min-width: 0;
   background: var(--vui-bg-elevated);
 }
 

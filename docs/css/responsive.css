@@ -118,6 +118,7 @@
     justify-content: center;
     position: fixed;
     top: var(--vui-space-sm, 8px);
+    left: calc((100vw - 95vw) / 2 + var(--vui-space-lg));
     z-index: 1001;
     width: 40px;
     height: 40px;
@@ -188,6 +189,11 @@
 
   .docs-preview-toolbar {
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .docs-panel-label--with-toolbar {
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
