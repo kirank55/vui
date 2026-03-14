@@ -90,3 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Wire up copy and toggle button clicks
   setupClickHandlers();
 });
+
+/* ---------------------------------------------------------- */
+/*  add favicons to doc                                       */
+/* ---------------------------------------------------------- */
+
+
+const faviconLinks = [
+  { rel: 'icon', type: 'image/png', href: '/favicon-96x96.png', sizes: '96x96' },
+  { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+  { rel: 'shortcut icon', href: '/favicon.ico' },
+  { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' },
+  { rel: 'manifest', href: '/site.webmanifest' },
+];
+
+for (const attrs of faviconLinks) {
+  const selector = attrs.rel === 'manifest'
+    ? 'link[rel="manifest"]'
+    : `link[rel="${attrs.rel}"][href="${attrs.href}"]`;
+
+  if (document.head.querySelector(selector)) continue;
+
+  const link = document.createElement('link');
+  Object.entries(attrs).forEach(([key, value]) => link.setAttribute(key, value));
+  document.head.appendChild(link);
+}
