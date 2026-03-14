@@ -1,0 +1,76 @@
+/* ============================================================
+   kbd.component.css  --  Keyboard input styles
+   Uses the native <kbd> element for shortcuts and key labels.
+   ============================================================ */
+
+.vui-kbd-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-mono: var(--vui-font-mono, "JetBrains Mono", "Fira Code", ui-monospace, monospace);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  --_vui-font-size-base: var(--vui-font-size-base, 1rem);
+  display: grid;
+  gap: var(--_vui-space-md);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-kbd-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_vui-space-md);
+  align-items: center;
+}
+
+.vui-kbd,
+kbd.vui-kbd {
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: 2rem;
+  min-block-size: 2rem;
+  padding-inline: 0.55rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  background: linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--_vui-bg) 70%, white));
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.08);
+  color: var(--_vui-fg);
+  font-family: var(--_vui-font-mono);
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+
+.vui-kbd--sm {
+  min-inline-size: 1.7rem;
+  min-block-size: 1.7rem;
+  font-size: 0.75rem;
+}
+
+.vui-kbd--lg {
+  min-inline-size: 2.5rem;
+  min-block-size: 2.5rem;
+  font-size: var(--_vui-font-size-base);
+}
+
+.vui-kbd-combo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--_vui-space-sm);
+  color: var(--_vui-fg-muted);
+
+  &:has(.vui-kbd) {
+    font-size: var(--_vui-font-size-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .vui-kbd-row {
+    gap: var(--_vui-space-sm);
+  }
+}

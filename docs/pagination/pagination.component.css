@@ -1,0 +1,83 @@
+/* ============================================================
+   pagination.component.css  --  Pagination navigation styles
+   Uses native nav, list, and link elements only.
+   ============================================================ */
+
+.vui-pagination-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-accent-fg: var(--vui-accent-fg, #fafafa);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-xs: var(--vui-space-xs, 4px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  display: grid;
+  gap: var(--_vui-space-lg, 24px);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_vui-space-sm);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &:has([aria-current="page"]) {
+    color: var(--_vui-fg);
+  }
+}
+
+.vui-pagination a,
+.vui-pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 2.5rem;
+  min-block-size: 2.5rem;
+  padding-inline: 0.8rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-bg-elevated);
+  color: inherit;
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.vui-pagination [aria-current="page"] {
+  border-color: var(--_vui-accent);
+  background: var(--_vui-accent);
+  color: var(--_vui-accent-fg);
+}
+
+.vui-pagination [aria-disabled="true"] {
+  color: var(--_vui-fg-muted);
+  background: color-mix(in srgb, var(--_vui-border) 16%, white);
+  pointer-events: none;
+}
+
+.vui-pagination-ellipsis {
+  border-style: dashed;
+  color: var(--_vui-fg-muted);
+}
+
+@media (max-width: 768px) {
+  .vui-pagination {
+    gap: var(--_vui-space-xs);
+  }
+
+  .vui-pagination a,
+  .vui-pagination span {
+    min-inline-size: 2.2rem;
+    min-block-size: 2.2rem;
+    padding-inline: 0.65rem;
+  }
+}

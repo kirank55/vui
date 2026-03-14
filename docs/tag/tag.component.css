@@ -1,0 +1,94 @@
+/* ============================================================
+   tag.component.css  --  Tag and dismissible chip styles
+   Uses plain labels plus hidden native checkbox state.
+   ============================================================ */
+
+.vui-tag-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-danger: var(--vui-danger, #b91c1c);
+  --_vui-success: var(--vui-success, #15803d);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-xs: var(--vui-space-xs, 4px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  display: grid;
+  gap: var(--_vui-space-md);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_vui-space-sm);
+}
+
+.vui-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--_vui-space-xs);
+  min-block-size: 2rem;
+  padding-inline: 0.8rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: 999px;
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 600;
+}
+
+.vui-tag--outline {
+  border-color: var(--_vui-accent);
+  background: color-mix(in srgb, var(--_vui-accent) 4%, white);
+}
+
+.vui-tag--danger {
+  border-color: color-mix(in srgb, var(--_vui-danger) 35%, white);
+  background: color-mix(in srgb, var(--_vui-danger) 10%, white);
+}
+
+.vui-tag--success {
+  border-color: color-mix(in srgb, var(--_vui-success) 35%, white);
+  background: color-mix(in srgb, var(--_vui-success) 10%, white);
+}
+
+.vui-tag--sm {
+  min-block-size: 1.65rem;
+  padding-inline: 0.6rem;
+  font-size: 0.75rem;
+}
+
+.vui-tag--lg {
+  min-block-size: 2.3rem;
+  padding-inline: 1rem;
+}
+
+.vui-tag--dismissible {
+  cursor: pointer;
+  user-select: none;
+
+  &:has(.vui-tag-dismiss:checked) {
+    display: none;
+  }
+}
+
+.vui-tag-dismiss-icon {
+  inline-size: 0.95rem;
+  block-size: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .vui-tag-row {
+    gap: var(--_vui-space-xs);
+  }
+}

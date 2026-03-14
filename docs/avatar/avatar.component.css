@@ -1,0 +1,125 @@
+/* ============================================================
+   avatar.component.css  --  Avatar, status, and avatar-group styles
+   Uses native <img> with pure CSS fallbacks for initials and presence.
+   ============================================================ */
+
+.vui-avatar-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-invert: var(--vui-fg-invert, #fafafa);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-border-subtle: var(--vui-border-subtle, #e5e5e5);
+  --_vui-success: var(--vui-success, #15803d);
+  --_vui-danger: var(--vui-danger, #b91c1c);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  display: grid;
+  gap: var(--_vui-space-lg);
+  container-type: inline-size;
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-avatar-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_vui-space-lg);
+  align-items: center;
+}
+
+.vui-avatar {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  inline-size: 3.5rem;
+  aspect-ratio: 1;
+  overflow: clip;
+  border: 1px solid var(--_vui-border-subtle);
+  border-radius: 999px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--_vui-accent) 80%, white), color-mix(in srgb, var(--_vui-accent) 20%, white));
+  color: var(--_vui-fg-invert);
+  font-weight: 700;
+}
+
+.vui-avatar img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.vui-avatar--square {
+  border-radius: calc(var(--_vui-radius-md) * 1.5);
+}
+
+.vui-avatar--sm {
+  inline-size: 2.5rem;
+}
+
+.vui-avatar--lg {
+  inline-size: 4.5rem;
+}
+
+.vui-avatar--xl {
+  inline-size: 5.75rem;
+}
+
+.vui-avatar-status::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0.2rem;
+  inset-block-end: 0.2rem;
+  inline-size: 0.8rem;
+  block-size: 0.8rem;
+  border: 2px solid var(--_vui-bg-elevated);
+  border-radius: 999px;
+  background: var(--_vui-fg-muted);
+}
+
+.vui-avatar-status.is-online::after {
+  background: var(--_vui-success);
+}
+
+.vui-avatar-status.is-busy::after {
+  background: var(--_vui-danger);
+}
+
+.vui-avatar-group {
+  display: inline-flex;
+  align-items: center;
+  padding-inline-start: 1rem;
+
+  &:has(.vui-avatar:nth-child(5)) .vui-avatar {
+    margin-inline-start: -1rem;
+  }
+}
+
+.vui-avatar-group .vui-avatar {
+  margin-inline-start: -0.75rem;
+  border: 2px solid var(--_vui-bg-elevated);
+}
+
+.vui-avatar-copy {
+  max-inline-size: 30rem;
+  color: var(--_vui-fg-muted);
+}
+
+@container (max-width: 32rem) {
+  .vui-avatar-row {
+    gap: var(--_vui-space-md);
+  }
+
+  .vui-avatar--xl {
+    inline-size: 4.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vui-avatar-group {
+    padding-inline-start: 0.75rem;
+  }
+}

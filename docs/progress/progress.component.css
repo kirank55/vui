@@ -1,0 +1,114 @@
+/* ============================================================
+   progress.component.css  --  Progress and meter styles
+   Uses native <progress> and <meter> elements.
+   ============================================================ */
+
+@property --vui-progress-shift {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.vui-progress-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f2f2f2);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-success: var(--vui-success, #15803d);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  display: grid;
+  gap: var(--_vui-space-lg);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-progress-stack {
+  display: grid;
+  gap: var(--_vui-space-md);
+}
+
+.vui-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--_vui-space-md);
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-sm);
+}
+
+.vui-progress,
+.vui-meter {
+  inline-size: min(34rem, 100%);
+  block-size: 0.9rem;
+  overflow: hidden;
+  border: none;
+  border-radius: 999px;
+  background: var(--_vui-bg-surface);
+  color: var(--_vui-accent);
+  accent-color: var(--_vui-accent);
+}
+
+.vui-progress--sm {
+  block-size: 0.55rem;
+}
+
+.vui-progress--lg {
+  block-size: 1.15rem;
+}
+
+.vui-progress::-webkit-progress-bar,
+.vui-meter::-webkit-meter-bar {
+  background: var(--_vui-bg-surface);
+  border-radius: 999px;
+}
+
+.vui-progress::-webkit-progress-value {
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--_vui-accent), color-mix(in srgb, var(--_vui-accent) 35%, white));
+}
+
+.vui-progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--_vui-accent), color-mix(in srgb, var(--_vui-accent) 35%, white));
+}
+
+.vui-progress:indeterminate {
+  animation: vui-progress-shimmer 1.2s linear infinite;
+  background-image: linear-gradient(90deg, var(--_vui-bg-surface), color-mix(in srgb, var(--_vui-accent) 16%, white) var(--vui-progress-shift), var(--_vui-bg-surface));
+}
+
+.vui-meter::-webkit-meter-optimum-value {
+  background: linear-gradient(90deg, var(--_vui-success), color-mix(in srgb, var(--_vui-success) 30%, white));
+}
+
+.vui-meter::-webkit-meter-suboptimum-value,
+.vui-meter::-webkit-meter-even-less-good-value {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+}
+
+.vui-meter::-moz-meter-bar {
+  background: linear-gradient(90deg, var(--_vui-success), color-mix(in srgb, var(--_vui-success) 30%, white));
+}
+
+@keyframes vui-progress-shimmer {
+  from {
+    --vui-progress-shift: 0%;
+  }
+
+  to {
+    --vui-progress-shift: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .vui-progress-label {
+    flex-direction: column;
+    gap: var(--_vui-space-sm);
+  }
+}

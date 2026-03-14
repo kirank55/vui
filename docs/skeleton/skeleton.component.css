@@ -1,0 +1,87 @@
+/* ============================================================
+   skeleton.component.css  --  Skeleton loading placeholders
+   Uses generic HTML only, with aria-busy for loading semantics.
+   ============================================================ */
+
+@property --vui-skeleton-shift {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.vui-skeleton-demo {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f2f2f2);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-radius-lg: var(--vui-radius-lg, 10px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-space-xl: var(--vui-space-xl, 40px);
+  display: grid;
+  gap: var(--_vui-space-lg);
+}
+
+.vui-skeleton {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) var(--vui-skeleton-shift), rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, #ececec, #dcdcdc);
+  border-radius: var(--_vui-radius-md);
+  animation: vui-skeleton-pulse 1.2s linear infinite;
+}
+
+.vui-skeleton--text {
+  block-size: 1rem;
+}
+
+.vui-skeleton--circle {
+  inline-size: 3.5rem;
+  block-size: 3.5rem;
+  border-radius: 999px;
+}
+
+.vui-skeleton-card {
+  content-visibility: auto;
+  display: grid;
+  gap: var(--_vui-space-md);
+  max-inline-size: 24rem;
+  padding: var(--_vui-space-lg);
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-lg);
+  background: var(--_vui-bg-elevated);
+}
+
+.vui-skeleton-media {
+  block-size: 10rem;
+}
+
+.vui-skeleton-paragraph {
+  display: grid;
+  gap: var(--_vui-space-sm);
+}
+
+.vui-skeleton-paragraph .vui-skeleton:nth-child(2) {
+  inline-size: 90%;
+}
+
+.vui-skeleton-paragraph .vui-skeleton:nth-child(3) {
+  inline-size: 72%;
+}
+
+@keyframes vui-skeleton-pulse {
+  from {
+    --vui-skeleton-shift: 0%;
+  }
+
+  to {
+    --vui-skeleton-shift: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .vui-skeleton-card {
+    padding: var(--_vui-space-md);
+  }
+}

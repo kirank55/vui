@@ -11,26 +11,53 @@
  * so the sidebar works from any directory depth.
  */
 
-/** All navigation links shown in the sidebar. Add new pages here. */
-const NAV_LINKS = [
-  { href: '',    label: 'Overview' },
-  { href: 'accordion/',    label: 'Accordion' },
-  { href: 'alert/',        label: 'Alerts' },
-  { href: 'breadcrumb/',   label: 'Breadcrumb' },
-  { href: 'button/',       label: 'Button' },
-  { href: 'cards/',        label: 'Cards' },
-  { href: 'checkbox/',     label: 'Checkbox' },
-  { href: 'dropdown/',     label: 'Dropdown' },
-  { href: 'form/',         label: 'Form Controls' },
-  { href: 'input-group/',  label: 'Input Group' },
-  { href: 'modal/',        label: 'Modal' },
-  { href: 'radio/',        label: 'Radio Buttons' },
-  { href: 'sidebar/',      label: 'Sidebar' },
-  { href: 'spinner/',      label: 'Spinner' },
-  { href: 'switch/',       label: 'Switch' },
-  { href: 'table/',        label: 'Table' },
-  { href: 'tabs/',         label: 'Tabs' },
-  { href: 'tooltip/',      label: 'Tooltip' },
+/** Navigation groups shown in the sidebar. */
+const NAV_GROUPS = [
+  {
+    label: 'Overview',
+    href: '',
+    links: [
+      { href: '', label: 'Project Overview' },
+    ],
+  },
+  {
+    label: 'Icons',
+    links: [
+      { href: 'icons/', label: 'Icons' },
+    ],
+  },
+  {
+    label: 'Components',
+    links: [
+      { href: 'accordion/', label: 'Accordion' },
+      { href: 'alert/', label: 'Alerts' },
+      { href: 'avatar/', label: 'Avatar' },
+      { href: 'badge/', label: 'Badge' },
+      { href: 'breadcrumb/', label: 'Breadcrumb' },
+      { href: 'button/', label: 'Button' },
+      { href: 'cards/', label: 'Cards' },
+      { href: 'checkbox/', label: 'Checkbox' },
+      { href: 'divider/', label: 'Divider' },
+      { href: 'dropdown/', label: 'Dropdown' },
+      { href: 'form/', label: 'Form Controls' },
+      { href: 'input-group/', label: 'Input Group' },
+      { href: 'kbd/', label: 'Kbd' },
+      { href: 'modal/', label: 'Modal' },
+      { href: 'pagination/', label: 'Pagination' },
+      { href: 'progress/', label: 'Progress' },
+      { href: 'radio/', label: 'Radio Buttons' },
+      { href: 'sidebar/', label: 'Sidebar' },
+      { href: 'skeleton/', label: 'Skeleton' },
+      { href: 'spinner/', label: 'Spinner' },
+      { href: 'stepper/', label: 'Stepper' },
+      { href: 'switch/', label: 'Switch' },
+      { href: 'table/', label: 'Table' },
+      { href: 'tag/', label: 'Tag' },
+      { href: 'tabs/', label: 'Tabs' },
+      { href: 'timeline/', label: 'Timeline' },
+      { href: 'tooltip/', label: 'Tooltip' },
+    ],
+  },
 ];
 
 function normalizeDocsPath(path) {
@@ -54,15 +81,20 @@ class DocsSidebar extends HTMLElement {
       location.pathname.replace(/^.*\/docs\//, '') || 'index.html'
     );
 
-    const linksHtml = NAV_LINKS.map(link => {
-      const href = basePath + link.href;
-      const linkPath = normalizeDocsPath(link.href);
+    const linksHtml = NAV_GROUPS.map(group => {
+      const groupLabel = `  <div class="docs-nav-label">${group.label}</div>`;
+      const groupLinks = group.links.map(link => {
+        const href = basePath + link.href;
+        const linkPath = normalizeDocsPath(link.href);
 
-      // Mark the current page as active for screen readers and styling
-      const isActive = currentPath === linkPath;
-      const activeAttr = isActive ? ' aria-current="page"' : '';
+        // Mark the current page as active for screen readers and styling
+        const isActive = currentPath === linkPath;
+        const activeAttr = isActive ? ' aria-current="page"' : '';
 
-      return `    <a href="${href}" class="docs-nav-link"${activeAttr}>${link.label}</a>`;
+        return `    <a href="${href}" class="docs-nav-link"${activeAttr}>${link.label}</a>`;
+      }).join('\n');
+
+      return `${groupLabel}\n${groupLinks}`;
     }).join('\n');
 
     this.innerHTML =
@@ -72,7 +104,6 @@ class DocsSidebar extends HTMLElement {
       '<div class="docs-sidebar-overlay" aria-hidden="true"></div>\n' +
       '<nav class="docs-sidebar" aria-label="Documentation navigation">\n' +
       `  <a href="/" class="docs-sidebar-brand">vui</a>\n` +
-      '  <div class="docs-nav-label">Components</div>\n' +
       linksHtml + '\n' +
       '</nav>';
 

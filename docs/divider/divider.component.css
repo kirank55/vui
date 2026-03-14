@@ -1,0 +1,92 @@
+/* ============================================================
+   divider.component.css  --  Divider and separator styles
+   Uses native <hr> and plain elements with separator semantics.
+   ============================================================ */
+
+.vui-divider-demo {
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-border-strong: var(--vui-border-strong, #a3a3a3);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  display: grid;
+  gap: var(--_vui-space-lg);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-divider-stack {
+  display: grid;
+  gap: var(--_vui-space-lg);
+}
+
+.vui-divider-copy {
+  color: var(--_vui-fg-muted);
+}
+
+.vui-divider {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--_vui-border);
+}
+
+.vui-divider--dashed {
+  border-top-style: dashed;
+}
+
+.vui-divider--dotted {
+  border-top-style: dotted;
+}
+
+.vui-divider-with-text {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--_vui-space-md);
+  align-items: center;
+  align-content: center;
+  min-block-size: 2rem;
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.vui-divider-with-text::before,
+.vui-divider-with-text::after {
+  content: "";
+  block-size: 1px;
+  background: var(--_vui-border-strong);
+}
+
+.vui-divider-rail {
+  display: flex;
+  align-items: center;
+  gap: var(--_vui-space-md);
+  padding: var(--_vui-space-md);
+  border: 1px solid var(--_vui-border);
+  border-radius: var(--_vui-radius-md);
+  background: var(--_vui-bg-elevated);
+}
+
+.vui-divider--vertical {
+  inline-size: 1px;
+  align-self: stretch;
+  background: var(--_vui-border-strong);
+}
+
+@media (max-width: 768px) {
+  .vui-divider-rail {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vui-divider--vertical {
+    inline-size: auto;
+    block-size: 1px;
+  }
+}

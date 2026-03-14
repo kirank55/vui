@@ -1,0 +1,96 @@
+/* ============================================================
+   icons.component.css  --  SVG icon set and icon grid styles
+   Uses inline SVG only. No sprite, no script.
+   ============================================================ */
+
+.vui-icons {
+  --_vui-bg: var(--vui-bg, #fafafa);
+  --_vui-bg-surface: var(--vui-bg-surface, #f2f2f2);
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-border-subtle: var(--vui-border-subtle, #e5e5e5);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-radius-lg: var(--vui-radius-lg, 10px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  --_vui-font-size-base: var(--vui-font-size-base, 1rem);
+  display: grid;
+  gap: var(--_vui-space-lg);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--_vui-space-md);
+}
+
+.vui-icon-card {
+  display: grid;
+  justify-items: start;
+  gap: var(--_vui-space-sm);
+  padding: var(--_vui-space-md);
+  border: 1px solid var(--_vui-border-subtle);
+  border-radius: var(--_vui-radius-lg);
+  background: linear-gradient(180deg, var(--_vui-bg-elevated), var(--_vui-bg-surface));
+}
+
+.vui-icon-stage {
+  display: grid;
+  place-items: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  border-radius: var(--_vui-radius-md);
+  background: color-mix(in srgb, var(--_vui-accent) 6%, white);
+  color: var(--_vui-accent);
+}
+
+.vui-icon {
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+  vertical-align: middle;
+}
+
+.vui-icon--sm {
+  inline-size: 1em;
+  block-size: 1em;
+}
+
+.vui-icon--lg {
+  inline-size: 1.75em;
+  block-size: 1.75em;
+}
+
+.vui-icon--xl {
+  inline-size: 2.5em;
+  block-size: 2.5em;
+}
+
+.vui-icon-name {
+  font-size: var(--_vui-font-size-base);
+  font-weight: 700;
+  color: var(--_vui-fg);
+}
+
+.vui-icon-copy {
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-sm);
+}
+
+@media (max-width: 768px) {
+  .vui-icon-grid {
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  }
+}

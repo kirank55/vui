@@ -1,0 +1,146 @@
+/* ============================================================
+   stepper.component.css  --  Stepper and process indicator styles
+   Uses semantic ordered lists plus CSS counters.
+   ============================================================ */
+
+.vui-stepper-demo {
+  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
+  --_vui-fg: var(--vui-fg, #1a1a1a);
+  --_vui-fg-muted: var(--vui-fg-muted, #6b6b6b);
+  --_vui-border: var(--vui-border, #d4d4d4);
+  --_vui-accent: var(--vui-accent, #1a1a1a);
+  --_vui-accent-fg: var(--vui-accent-fg, #fafafa);
+  --_vui-success: var(--vui-success, #15803d);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+  --_vui-space-sm: var(--vui-space-sm, 8px);
+  --_vui-space-md: var(--vui-space-md, 16px);
+  --_vui-space-lg: var(--vui-space-lg, 24px);
+  --_vui-font-sans: var(--vui-font-sans, "Inter", "Segoe UI", system-ui, -apple-system, sans-serif);
+  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
+  display: grid;
+  gap: var(--_vui-space-lg);
+  font-family: var(--_vui-font-sans);
+}
+
+.vui-stepper {
+  counter-reset: vui-step;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--_vui-space-md);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.vui-stepper--vertical {
+  grid-template-columns: 1fr;
+}
+
+.vui-stepper-step {
+  counter-increment: vui-step;
+  position: relative;
+  display: grid;
+  gap: var(--_vui-space-sm);
+  justify-items: start;
+
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-start: calc(1rem + 0.5rem);
+    inline-size: calc(100% - 1rem);
+    block-size: 2px;
+    background: var(--_vui-border);
+  }
+
+  &:has(+ .vui-stepper-step.is-active)::after {
+    background: color-mix(in srgb, var(--_vui-accent) 45%, white);
+  }
+}
+
+.vui-stepper--vertical .vui-stepper-step {
+  grid-template-columns: auto 1fr;
+  column-gap: var(--_vui-space-md);
+
+  &:not(:last-child)::after {
+    inset-block-start: calc(1rem + 1rem);
+    inset-inline-start: 1rem;
+    inline-size: 2px;
+    block-size: calc(100% - 1rem);
+  }
+}
+
+.vui-stepper-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border: 1px solid var(--_vui-border);
+  border-radius: 999px;
+  background: var(--_vui-bg-elevated);
+  color: var(--_vui-fg);
+  font-size: var(--_vui-font-size-sm);
+  font-weight: 700;
+}
+
+.vui-stepper-marker::before {
+  content: counter(vui-step);
+}
+
+.vui-stepper-copy {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.vui-stepper-label {
+  font-weight: 700;
+}
+
+.vui-stepper-detail {
+  color: var(--_vui-fg-muted);
+  font-size: var(--_vui-font-size-sm);
+}
+
+.vui-stepper-step.is-completed .vui-stepper-marker {
+  border-color: var(--_vui-success);
+  background: var(--_vui-success);
+  color: white;
+}
+
+.vui-stepper-step.is-completed .vui-stepper-marker::before {
+  content: "✓";
+}
+
+.vui-stepper-step.is-completed::after {
+  background: var(--_vui-success);
+}
+
+.vui-stepper-step.is-active .vui-stepper-marker {
+  border-color: var(--_vui-accent);
+  background: var(--_vui-accent);
+  color: var(--_vui-accent-fg);
+}
+
+.vui-stepper-step.is-disabled {
+  opacity: 0.56;
+}
+
+@media (max-width: 768px) {
+  .vui-stepper {
+    grid-template-columns: 1fr;
+  }
+
+  .vui-stepper-step {
+    grid-template-columns: auto 1fr;
+    column-gap: var(--_vui-space-md);
+  }
+
+  .vui-stepper-step:not(:last-child)::after {
+    inset-block-start: calc(1rem + 1rem);
+    inset-inline-start: 1rem;
+    inline-size: 2px;
+    block-size: calc(100% - 1rem);
+  }
+}
