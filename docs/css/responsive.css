@@ -107,32 +107,40 @@
   /* Stack columns vertically */
   .docs-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "topbar"
+      "main";
     width: 95%;
-    margin: 2em auto 0 auto;
+    margin: 0 auto;
   }
 
-  /* Hamburger button */
+  /* Top bar becomes a fixed header */
+  .docs-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    padding: var(--vui-space-sm) var(--vui-space-md);
+    background: var(--vui-bg, #fafafa);
+    border-bottom: 1px solid var(--vui-border-subtle, #e5e5e5);
+    box-shadow: var(--vui-shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+  }
+
+  /* Hamburger button — inline in topbar */
   .docs-sidebar-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: var(--vui-space-sm, 8px);
-    left: calc((100vw - 95vw) / 2 + var(--vui-space-lg));
-    z-index: 1001;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     padding: 0;
     border: 1px solid var(--vui-border-subtle, #e5e5e5);
     border-radius: var(--vui-radius-md, 6px);
-    background: var(--vui-bg-elevated, #ffffff);
+    background: transparent;
     color: var(--vui-fg, #1a1a1a);
     cursor: pointer;
-    box-shadow: var(--vui-shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
-  }
-
-  .docs-sidebar-toggle[hidden] {
-    display: none;
+    margin-right: var(--vui-space-sm, 8px);
   }
 
   /* Overlay */
@@ -157,6 +165,7 @@
     width: 75%;
     max-width: 300px;
     height: 100vh;
+    padding-top: 56px;
     border-right: 1px solid var(--vui-border-subtle);
     border-bottom: none;
     background: var(--vui-bg, #fafafa);
@@ -173,6 +182,7 @@
   .docs-main {
     min-width: 0;
     padding: var(--vui-space-lg);
+    padding-top: calc(56px + var(--vui-space-lg));
     max-width: 100%;
   }
 

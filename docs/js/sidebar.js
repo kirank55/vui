@@ -98,12 +98,27 @@ class DocsSidebar extends HTMLElement {
     }).join('\n');
 
     this.innerHTML =
-      '<button class="docs-sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">' +
-      '  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
-      '</button>\n' +
+      '<div class="docs-topbar">\n' +
+      '  <button class="docs-sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">' +
+      '    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
+      '  </button>\n' +
+      `  <a href="/" class="docs-sidebar-brand">\n` +
+      `    <img src="/assets/logo.svg" alt="VUI logo" width="21" height="21" class="docs-sidebar-logo">\n` +
+      `    <span>vui</span>\n` +
+      `  </a>\n` +
+      '  <div class="docs-sidebar-actions">\n' +
+      '    <button class="docs-theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">\n' +
+      '      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>\n' +
+      '      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>\n' +
+      '    </button>\n' +
+      '    <a href="https://github.com/kirank55/vui" class="vui-btn vui-btn--primary vui-btn--sm" target="_blank" rel="noreferrer">\n' +
+      '      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right:6px"><path d="M8 .2a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 8 .2z"/></svg>\n' +
+      '      Star on GitHub\n' +
+      '    </a>\n' +
+      '  </div>\n' +
+      '</div>\n' +
       '<div class="docs-sidebar-overlay" aria-hidden="true"></div>\n' +
       '<nav class="docs-sidebar" aria-label="Documentation navigation">\n' +
-      `  <a href="/" class="docs-sidebar-brand">vui</a>\n` +
       linksHtml + '\n' +
       '</nav>';
 
@@ -114,14 +129,12 @@ class DocsSidebar extends HTMLElement {
     const open = () => {
       nav.classList.add('is-open');
       overlay.classList.add('is-open');
-      toggle.hidden = true;
       toggle.setAttribute('aria-expanded', 'true');
     };
 
     const close = () => {
       nav.classList.remove('is-open');
       overlay.classList.remove('is-open');
-      toggle.hidden = false;
       toggle.setAttribute('aria-expanded', 'false');
     };
 

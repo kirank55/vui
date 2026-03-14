@@ -13,6 +13,46 @@ import './sidebar.js';
 import { dedent } from './helpers.js';
 import { renderCodePanel, enhanceLegacyBlocks, setupClickHandlers } from './code-panel.js';
 
+/* ---------------------------------------------------------- */
+/*  Inject button CSS for topbar GitHub button                */
+/* ---------------------------------------------------------- */
+
+if (!document.querySelector('link[href*="button.component.css"]')) {
+  const btnCSS = document.createElement('link');
+  btnCSS.rel = 'stylesheet';
+  btnCSS.href = '/docs/button/button.component.css';
+  document.head.appendChild(btnCSS);
+}
+
+/* ---------------------------------------------------------- */
+/*  Theme toggle                                              */
+/* ---------------------------------------------------------- */
+
+(function initTheme() {
+  const root = document.documentElement;
+  const key = 'vui-theme';
+
+  const saved = localStorage.getItem(key);
+  if (saved === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+  } else if (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    root.setAttribute('data-theme', 'dark');
+  }
+
+  document.addEventListener('click', (e) => {
+    const toggle = e.target.closest('#theme-toggle');
+    if (!toggle) return;
+    const isDark = root.hasAttribute('data-theme');
+    const next = isDark ? 'light' : 'dark';
+    if (next === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    localStorage.setItem(key, next);
+  });
+})();
+
 const PREVIEW_WIDTH_DEFAULT = 'default';
 const PREVIEW_WIDTH_NARROW = 'narrow';
 
