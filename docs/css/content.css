@@ -74,8 +74,88 @@
   overflow: hidden;
   padding: 24px;
   margin: 1em auto;
-  width: 40rem;
+  width: 100%;
+  transition: width 220ms var(--vui-easing),
+              box-shadow 220ms var(--vui-easing),
+              border-color 220ms var(--vui-easing);
+}
 
+.docs-preview-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-inline-start: auto;
+}
+
+.docs-preview-toolbar-label {
+  font-family: var(--vui-font-mono);
+  font-size: var(--vui-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vui-fg-subtle);
+}
+
+.docs-preview-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid var(--vui-border);
+  border-radius: 999px;
+  background: var(--vui-bg-surface);
+}
+
+.docs-preview-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--vui-fg-muted);
+  min-inline-size: 2.25rem;
+  min-block-size: 2rem;
+  padding: 6px 8px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--vui-duration) var(--vui-easing),
+              color var(--vui-duration) var(--vui-easing);
+}
+
+.docs-preview-toggle-btn:hover {
+  color: var(--vui-fg);
+}
+
+.docs-preview-toggle-btn.is-active {
+  background: var(--vui-bg-elevated);
+  color: var(--vui-fg);
+  box-shadow: var(--vui-shadow-sm);
+}
+
+.docs-preview-toggle-icon {
+  inline-size: 1rem;
+  block-size: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.docs-preview-stage {
+  inline-size: min(100%, 40rem);
+  margin-inline: auto;
+}
+
+.docs-preview.is-preview-narrow {
+  border: 1px solid var(--vui-border);
+  width: min(100%, 350px);
+  border-radius: var(--vui-radius-md);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
 }
 
 /* --- Component Card (wraps preview + code panels) --- */
@@ -106,6 +186,12 @@
     rgba(255, 255, 255, 0.98),
     rgba(246, 248, 251, 0.95)
   );
+}
+
+.docs-panel-label--with-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* --- Preview Panel --- */

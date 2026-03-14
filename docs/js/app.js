@@ -13,6 +13,9 @@ import './sidebar.js';
 import { dedent } from './helpers.js';
 import { renderCodePanel, enhanceLegacyBlocks, setupClickHandlers } from './code-panel.js';
 
+const PREVIEW_WIDTH_DEFAULT = 'default';
+const PREVIEW_WIDTH_NARROW = 'narrow';
+
 /**
  * Simple fetch cache so we don't re-download the same file twice.
  * Keys are source file paths, values are Promises that resolve to text.
@@ -39,6 +42,57 @@ function fetchSource(url) {
   return fetchCache[url];
 }
 
+function enhancePreviewPanel(card) {
+  const previewPanel = card.querySelector('[data-panel="preview"]');
+  if (!previewPanel || previewPanel.dataset.previewEnhanced === 'true') return;
+
+  previewPanel.dataset.previewEnhanced = 'true';
+  const previewLabel = previewPanel.previousElementSibling;
+
+  const toolbar = document.createElement('div');
+  toolbar.className = 'docs-preview-toolbar';
+  toolbar.innerHTML =
+    '<span class="docs-preview-toolbar-label">Width</span>' +
+    '<div class="docs-preview-toggle" role="group" aria-label="Preview width">' +
+      `<button class="docs-preview-toggle-btn is-active" type="button" data-preview-width="${PREVIEW_WIDTH_DEFAULT}" aria-pressed="true" aria-label="Desktop preview width">` +
+        '<svg class="docs-preview-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8" /><path d="M12 16v4" /></svg>' +
+        '<span class="vui-sr-only">Desktop preview width</span>' +
+      '</button>' +
+      `<button class="docs-preview-toggle-btn" type="button" data-preview-width="${PREVIEW_WIDTH_NARROW}" aria-pressed="false" aria-label="Mobile preview width">` +
+        '<svg class="docs-preview-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5" /><path d="M11 18.5h2" /></svg>' +
+        '<span class="vui-sr-only">Mobile preview width</span>' +
+      '</button>' +
+    '</div>';
+
+  const stage = document.createElement('div');
+  stage.className = 'docs-preview-stage';
+
+  while (previewPanel.firstChild) {
+    stage.appendChild(previewPanel.firstChild);
+  }
+
+  if (previewLabel?.classList.contains('docs-panel-label')) {
+    previewLabel.classList.add('docs-panel-label--with-toolbar');
+    previewLabel.appendChild(toolbar);
+  }
+
+  previewPanel.append(stage);
+
+  toolbar.addEventListener('click', event => {
+    const button = event.target.closest('.docs-preview-toggle-btn');
+    if (!button) return;
+
+    const isNarrow = button.dataset.previewWidth === PREVIEW_WIDTH_NARROW;
+    previewPanel.classList.toggle('is-preview-narrow', isNarrow);
+
+    toolbar.querySelectorAll('.docs-preview-toggle-btn').forEach(toggleButton => {
+      const isActive = toggleButton === button;
+      toggleButton.classList.toggle('is-active', isActive);
+      toggleButton.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  });
+}
+
 /**
  * Initialise a single component card.
  *
@@ -49,16 +103,19 @@ function fetchSource(url) {
 function initComponentCard(card) {
   const htmlSourceUrl = card.getAttribute('data-html-source');
   const cssSourceUrl = card.getAttribute('data-css-source');
-  if (!htmlSourceUrl) return;
+  enhancePreviewPanel(card);
 
   const previewPanel = card.querySelector('[data-panel="preview"]');
+  const previewStage = previewPanel?.querySelector('.docs-preview-stage');
   const codePanel = card.querySelector('[data-panel="code"]');
+
+  if (!htmlSourceUrl) return;
 
   Promise.all([fetchSource(htmlSourceUrl), fetchSource(cssSourceUrl)])
     .then(([htmlCode, cssCode]) => {
       // Insert the component HTML into the live preview
-      if (previewPanel) {
-        previewPanel.insertAdjacentHTML('beforeend', htmlCode);
+      if (previewStage) {
+        previewStage.insertAdjacentHTML('beforeend', htmlCode);
       }
 
       // Build the syntax-highlighted code panel

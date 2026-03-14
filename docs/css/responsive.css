@@ -118,7 +118,6 @@
     justify-content: center;
     position: fixed;
     top: var(--vui-space-sm, 8px);
-    left:5%;
     z-index: 1001;
     width: 40px;
     height: 40px;
@@ -178,6 +177,22 @@
 
   .docs-preview {
     padding: 16px;
+  }
+
+  .docs-preview.is-preview-narrow {
+    border: 1px solid var(--vui-border);
+    width: min(100%, 350px);
+    border-radius: var(--vui-radius-md);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  }
+
+  .docs-preview-toolbar {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .docs-preview-stage {
+    inline-size: 100%;
   }
 
   /* Reduce code panel padding */
