@@ -116,3 +116,15 @@
   font-size: var(--vui-font-size-xs);
   color: var(--vui-fg-subtle);
 }
+
+[data-theme="dark"] .docs-compat-signal.is-good {
+  border-color: rgba(74, 222, 128, 0.28);
+  background: rgba(21, 128, 61, 0.2);
+  color: #bbf7d0;
+}
+
+[data-theme="dark"] .docs-compat-signal.is-limited {
+  border-color: rgba(251, 191, 36, 0.28);
+  background: rgba(217, 119, 6, 0.22);
+  color: #fcd34d;
+}

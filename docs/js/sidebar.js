@@ -77,6 +77,7 @@ function normalizeDocsPath(path) {
 class DocsSidebar extends HTMLElement {
   connectedCallback() {
     const basePath = this.getAttribute('base-path') || '';
+    const hasNavigation = !this.hasAttribute('nav-hidden');
     const currentPath = normalizeDocsPath(
       location.pathname.replace(/^.*\/docs\//, '') || 'index.html'
     );
@@ -99,9 +100,11 @@ class DocsSidebar extends HTMLElement {
 
     this.innerHTML =
       '<div class="docs-topbar">\n' +
-      '  <button class="docs-sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">' +
-      '    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
-      '  </button>\n' +
+      (hasNavigation
+        ? '  <button class="docs-sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false">' +
+          '    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
+          '  </button>\n'
+        : '') +
       `  <a href="/" class="docs-sidebar-brand">\n` +
       `    <img src="/assets/logo.svg" alt="VUI logo" width="21" height="21" class="docs-sidebar-logo">\n` +
       `    <span>vui</span>\n` +
@@ -117,14 +120,20 @@ class DocsSidebar extends HTMLElement {
       '    </a>\n' +
       '  </div>\n' +
       '</div>\n' +
-      '<div class="docs-sidebar-overlay" aria-hidden="true"></div>\n' +
-      '<nav class="docs-sidebar" aria-label="Documentation navigation">\n' +
-      linksHtml + '\n' +
-      '</nav>';
+      (hasNavigation
+        ? '<div class="docs-sidebar-overlay" aria-hidden="true"></div>\n' +
+          '<nav class="docs-sidebar" aria-label="Documentation navigation">\n' +
+          linksHtml + '\n' +
+          '</nav>'
+        : '');
 
     const toggle = this.querySelector('.docs-sidebar-toggle');
     const overlay = this.querySelector('.docs-sidebar-overlay');
     const nav = this.querySelector('.docs-sidebar');
+
+    if (!toggle || !overlay || !nav) {
+      return;
+    }
 
     const open = () => {
       nav.classList.add('is-open');

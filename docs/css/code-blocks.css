@@ -222,11 +222,11 @@
 }
 
 .docs-code-block.is-collapsed pre::after {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--vui-bg-elevated));
+  background: linear-gradient(180deg, transparent, var(--vui-bg-elevated));
 }
 
 .docs-code.is-collapsed > pre::after {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--vui-bg-elevated));
+  background: linear-gradient(180deg, transparent, var(--vui-bg-elevated));
 }
 
 .docs-code-block.is-expanded pre,
@@ -241,16 +241,16 @@
 }
 
 .docs-code-block pre::-webkit-scrollbar-track {
-  background: #e2e8f0;
+  background: var(--vui-bg-surface);
 }
 
 .docs-code-block pre::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: var(--vui-border-strong);
   border-radius: 999px;
 }
 
 .docs-code-block pre::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: var(--vui-fg-subtle);
 }
 
 /* --- Syntax Highlighting Tokens --- */
