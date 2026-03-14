@@ -52,7 +52,6 @@ function enhancePreviewPanel(card) {
   const toolbar = document.createElement('div');
   toolbar.className = 'docs-preview-toolbar';
   toolbar.innerHTML =
-    '<span class="docs-preview-toolbar-label">Width</span>' +
     '<div class="docs-preview-toggle" role="group" aria-label="Preview width">' +
       `<button class="docs-preview-toggle-btn is-active" type="button" data-preview-width="${PREVIEW_WIDTH_DEFAULT}" aria-pressed="true" aria-label="Desktop preview width">` +
         '<svg class="docs-preview-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8" /><path d="M12 16v4" /></svg>' +
