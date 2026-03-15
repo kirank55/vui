@@ -23,7 +23,8 @@ const NAV_GROUPS = [
   {
     label: 'Icons',
     links: [
-      // { href: 'icons/', label: 'Icons' },
+      { href: 'icons/', label: 'Icons' },
+      { href: 'icons/icon-button/', label: 'Icon Button' },
     ],
   },
   {
