@@ -1,120 +1,24 @@
 /* ============================================================
-   icon-button.component.css  --  Icon button component styles
-   Uses native button elements with inline SVG chevrons.
+   icon-button.component.css  --  Animated SVG icon styles
+   Inline SVG with SMIL hover animation. No button wrapper.
    ============================================================ */
 
-.vui-icon-button-demo {
-  --_vui-bg: var(--vui-bg, #fafafa);
-  --_vui-bg-surface: var(--vui-bg-surface, #f4f4f5);
-  --_vui-bg-elevated: var(--vui-bg-elevated, #ffffff);
-  --_vui-fg: var(--vui-fg, #18181b);
-  --_vui-fg-muted: var(--vui-fg-muted, #52525b);
-  --_vui-border: var(--vui-border, #d4d4d8);
-  --_vui-border-strong: var(--vui-border-strong, #a1a1aa);
-  --_vui-accent: var(--vui-accent, #0f766e);
-  --_vui-accent-hover: var(--vui-accent-hover, #115e59);
-  --_vui-accent-fg: var(--vui-accent-fg, #f8fafc);
-  --_vui-radius-md: var(--vui-radius-md, 6px);
-  --_vui-space-sm: var(--vui-space-sm, 8px);
-  --_vui-space-md: var(--vui-space-md, 16px);
-  --_vui-space-lg: var(--vui-space-lg, 24px);
-  --_vui-font-sans: var(--vui-font-sans, "Segoe UI", system-ui, sans-serif);
-  --_vui-font-size-sm: var(--vui-font-size-sm, 0.875rem);
-  --_vui-shadow-sm: var(--vui-shadow-sm, 0 4px 12px rgba(15, 23, 42, 0.08));
-  display: grid;
-  gap: var(--_vui-space-md);
-  font-family: var(--_vui-font-sans);
-}
-
-.vui-icon-button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--_vui-space-sm);
-}
-
 .vui-icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  min-block-size: 44px;
-  min-inline-size: 44px;
-  padding: 0.75rem;
-  border: 1px solid transparent;
-  border-radius: var(--_vui-radius-md);
-  background: var(--_vui-bg-elevated);
+  --_vui-fg: var(--vui-fg, #18181b);
+  --_vui-radius-md: var(--vui-radius-md, 6px);
+
+  display: inline-block;
+  inline-size: 100px;
+  block-size: 100px;
   color: var(--_vui-fg);
-  font: inherit;
-  font-family: var(--_vui-font-sans);
-  font-size: var(--_vui-font-size-sm);
-  font-weight: 600;
   cursor: pointer;
-  box-shadow: var(--_vui-shadow-sm);
-  transition: background 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
-}
-
-.vui-icon-button:hover {
-  transform: translateY(-1px);
-}
-
-.vui-icon-button:focus-visible {
-  outline: 2px solid var(--_vui-accent);
-  outline-offset: 2px;
-}
-
-.vui-icon-button-icon {
-  inline-size: 1rem;
-  block-size: 1rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex: none;
-}
-
-.vui-icon-button--primary {
-  background: var(--_vui-accent);
-  color: var(--_vui-accent-fg);
-}
-
-.vui-icon-button--primary:hover {
-  background: var(--_vui-accent-hover);
-}
-
-.vui-icon-button--outline {
-  border-color: var(--_vui-border);
-  background: transparent;
-  box-shadow: none;
-}
-
-.vui-icon-button--outline:hover {
-  border-color: var(--_vui-border-strong);
-  background: var(--_vui-bg-surface);
-}
-
-.vui-icon-button--ghost {
-  background: transparent;
-  color: var(--_vui-fg-muted);
-  box-shadow: none;
-}
-
-.vui-icon-button--ghost:hover {
-  color: var(--_vui-fg);
-  background: var(--_vui-bg-surface);
-}
-
-.vui-icon-button--pill {
-  min-inline-size: auto;
-  padding-inline: 1rem;
+  border-radius: var(--_vui-radius-md);
+  overflow: visible;
 }
 
 @media (max-width: 768px) {
-  .vui-icon-button-row {
-    flex-direction: column;
-  }
-
   .vui-icon-button {
-    width: 100%;
+    inline-size: 36px;
+    block-size: 36px;
   }
 }
