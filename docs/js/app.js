@@ -17,7 +17,7 @@ import { renderCodePanel, enhanceLegacyBlocks, setupClickHandlers } from './code
 /*  Inject button CSS for topbar GitHub button                */
 /* ---------------------------------------------------------- */
 
-if (!document.querySelector('link[href*="button.component.css"]')) {
+if (!document.querySelector('link[href="/docs/button/button.component.css"]')) {
   const btnCSS = document.createElement('link');
   btnCSS.rel = 'stylesheet';
   btnCSS.href = '/docs/button/button.component.css';

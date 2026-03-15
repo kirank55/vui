@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "npx http-server . -p 3000 -c-1 -o /docs/",
     "generate:compat": "node scripts/generate-browser-compat.mjs"
   },
   "dependencies": {
