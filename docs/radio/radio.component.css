@@ -46,6 +46,7 @@
   background: var(--_vui-bg-elevated);
   color: var(--_vui-fg);
   cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
 }
 
 .vui-radio input {
@@ -56,8 +57,19 @@
 }
 
 .vui-radio:has(input:checked) {
-  background: color-mix(in srgb, var(--_vui-accent) 10%, white);
-  border-color: color-mix(in srgb, var(--_vui-accent) 45%, white);
+  background: color-mix(in srgb, var(--_vui-accent) 12%, white);
+  border-color: color-mix(in srgb, var(--_vui-accent) 60%, white);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--_vui-accent) 18%, transparent);
+}
+[data-theme="dark"] .vui-radio:has(input:checked) {
+  color: #fff;
+  background: color-mix(in srgb, var(--_vui-accent) 16%, #121212);
+  border-color: color-mix(in srgb, var(--_vui-accent) 52%, rgba(255, 255, 255, 0.22));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--_vui-accent) 26%, transparent);
+}
+
+[data-theme="dark"]  .vui-radio input {
+  accent-color: #000;
 }
 
 .vui-radio:has(input:disabled) {

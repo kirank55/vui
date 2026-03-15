@@ -54,6 +54,12 @@
   border-color: color-mix(in srgb, var(--_vui-accent) 40%, white);
 }
 
+[data-theme="dark"] .vui-checkbox:has(input:checked) {
+  color: #fff;
+  background: #121212;
+  border-color: color-mix(in srgb, var(--_vui-accent) 20%, rgba(255, 255, 255, 0.19));
+}
+
 .vui-checkbox:has(input:disabled) {
   color: var(--_vui-fg-muted);
   background: var(--_vui-bg-surface);
