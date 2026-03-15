@@ -11,7 +11,69 @@
   <link rel="stylesheet" href="../css/code-blocks.css" />
   <link rel="stylesheet" href="../css/compat-table.css" />
   <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="icons.component.css" />
+  <style>
+    .vui-anim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 120px);
+      gap: 2px;
+    }
+
+    .vui-anim-cell {
+      display: flex;
+      flex-direction: column;
+      width: 120px;
+      height: 120px;
+      background: var(--vui-bg-surface, #f2f2f2);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .vui-anim-cell:hover .vui-anim-copy-row {
+      opacity: 1;
+    }
+
+    .vui-anim-icon-area {
+      width: 120px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .vui-anim-icon-area svg {
+      width: 40px;
+      height: 40px;
+      overflow: visible;
+    }
+
+    .vui-anim-copy-row {
+      width: 120px;
+      height: 20px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      opacity: 0.5;
+      transition: opacity 150ms ease;
+      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+      font-size: 10px;
+      color: var(--vui-fg-muted, #6b6b6b);
+    }
+
+    .vui-anim-copy-row svg {
+      width: 11px;
+      height: 11px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -21,14 +83,376 @@
     <main class="docs-main">
       <h1 class="docs-title">Icons</h1>
       <p class="docs-subtitle">
-        Twenty copy-paste inline SVG icons styled with currentColor. No font, no sprite sheet, no JavaScript.
+        Twenty copy-paste inline SVG icons with SMIL hover animations. No font, no sprite sheet, no JavaScript.
       </p>
 
       <section style="margin: 2em 0;">
-        <div class="component-card" data-html-source="icons.component.html" data-css-source="icons.component.css">
-          <div class="docs-panel-label">Preview</div>
-          <div data-panel="preview" class="docs-preview"></div>
-          <div data-panel="code" hidden><pre><code></code></pre></div>
+        <div class="vui-anim-grid">
+
+          <!-- chevron-down -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="chevron-down">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="m6 9 6 6 6-6" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              chevron-down
+            </div>
+          </div>
+
+          <!-- chevron-right -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="chevron-right">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="m9 6 6 6-6 6" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              chevron-right
+            </div>
+          </div>
+
+          <!-- x -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="x">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M18 6 6 18" />
+                  <path pointer-events="none" d="m6 6 12 12" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              x
+            </div>
+          </div>
+
+          <!-- check -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="check">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="m5 12 5 5L19 8" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              check
+            </div>
+          </div>
+
+          <!-- plus -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="plus">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M12 5v14" />
+                  <path pointer-events="none" d="M5 12h14" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              plus
+            </div>
+          </div>
+
+          <!-- minus -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="minus">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M5 12h14" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              minus
+            </div>
+          </div>
+
+          <!-- search -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="search">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <circle pointer-events="none" cx="11" cy="11" r="7" />
+                  <path pointer-events="none" d="m20 20-3.5-3.5" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              search
+            </div>
+          </div>
+
+          <!-- arrow-left -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="arrow-left">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="m12 19-7-7 7-7" />
+                  <path pointer-events="none" d="M19 12H5" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              arrow-left
+            </div>
+          </div>
+
+          <!-- arrow-right -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="arrow-right">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="m12 5 7 7-7 7" />
+                  <path pointer-events="none" d="M5 12h14" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              arrow-right
+            </div>
+          </div>
+
+          <!-- external-link -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="external-link">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M7 17 17 7" />
+                  <path pointer-events="none" d="M7 7h10v10" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              external-link
+            </div>
+          </div>
+
+          <!-- info -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="info">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <circle pointer-events="none" cx="12" cy="12" r="9" />
+                  <path pointer-events="none" d="M12 11v5" />
+                  <path pointer-events="none" d="M12 8h.01" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              info
+            </div>
+          </div>
+
+          <!-- alert-triangle -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="alert-triangle">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M12 4 3 20h18L12 4Z" />
+                  <path pointer-events="none" d="M12 9v4" />
+                  <path pointer-events="none" d="M12 17h.01" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              alert-triangle
+            </div>
+          </div>
+
+          <!-- alert-circle -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="alert-circle">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <circle pointer-events="none" cx="12" cy="12" r="9" />
+                  <path pointer-events="none" d="M12 8v5" />
+                  <path pointer-events="none" d="M12 16h.01" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              alert-circle
+            </div>
+          </div>
+
+          <!-- eye -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="eye">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
+                  <circle pointer-events="none" cx="12" cy="12" r="2.5" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              eye
+            </div>
+          </div>
+
+          <!-- eye-off -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="eye-off">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M3 3 21 21" />
+                  <path pointer-events="none" d="M10.6 10.7a2.5 2.5 0 0 0 3.3 3.3" />
+                  <path pointer-events="none" d="M9.4 5.3A11.8 11.8 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-4 4.9" />
+                  <path pointer-events="none" d="M6 6.6C3.6 8.3 2 12 2 12s3.5 6 10 6c1.2 0 2.4-.2 3.4-.6" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              eye-off
+            </div>
+          </div>
+
+          <!-- copy -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="copy">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <rect pointer-events="none" x="9" y="9" width="10" height="10" rx="2" />
+                  <rect pointer-events="none" x="5" y="5" width="10" height="10" rx="2" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              copy
+            </div>
+          </div>
+
+          <!-- menu -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="menu">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="M4 7h16" />
+                  <path pointer-events="none" d="M4 12h16" />
+                  <path pointer-events="none" d="M4 17h16" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              menu
+            </div>
+          </div>
+
+          <!-- user -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="user">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <circle pointer-events="none" cx="12" cy="8" r="4" />
+                  <path pointer-events="none" d="M5 20a7 7 0 0 1 14 0" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              user
+            </div>
+          </div>
+
+          <!-- settings -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="settings">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <circle pointer-events="none" cx="12" cy="12" r="3" />
+                  <path pointer-events="none" d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5h.1a1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v.1a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1Z" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              settings
+            </div>
+          </div>
+
+          <!-- calendar -->
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="calendar">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <rect pointer-events="none" x="3" y="5" width="18" height="16" rx="2" />
+                  <path pointer-events="none" d="M16 3v4" />
+                  <path pointer-events="none" d="M8 3v4" />
+                  <path pointer-events="none" d="M3 11h18" />
+                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12; 0 12 12" keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+              calendar
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -38,7 +462,7 @@
           Every icon uses a <code>24 24</code> viewBox and a two-pixel outline stroke so the set stays visually consistent.
         </p>
         <p>
-          Because the SVG is inline, icons inherit text color automatically and can be resized with the shared <code>.vui-icon</code> utility classes.
+          Hover animations are pure SMIL — <code>animateTransform</code> with <code>begin="mouseover"</code>. No CSS, no JavaScript needed.
         </p>
       </div>
     </main>
