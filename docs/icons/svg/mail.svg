@@ -1,0 +1,13 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="mail">
+
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" />
+    <path pointer-events="none" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" pathLength="100" stroke-dasharray="100">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur=".7s" begin="mouseover" fill="remove" />
+    </path>
+    <path pointer-events="none" d="M22 6l-10 7L2 6" pathLength="100" stroke-dasharray="100">
+      <animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.4;1" dur="1s" begin="mouseover" fill="remove" />
+    </path>
+  </g>
+
+</svg>

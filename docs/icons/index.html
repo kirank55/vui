@@ -207,11 +207,21 @@
   <script type="module" src="../js/app.js"></script>
   <script>
     (async function () {
+      // List of all 71 icons available
       const iconNames = [
-        "chevron-down", "chevron-right", "x", "check", "plus",
-        "minus", "search", "arrow-left", "arrow-right", "external-link",
-        "info", "alert-triangle", "alert-circle", "eye", "eye-off",
-        "copy", "menu", "user", "settings", "calendar"
+        // Original 20
+        'chevron-down', 'chevron-right', 'x', 'check', 'plus', 'minus',
+        'search', 'arrow-left', 'arrow-right', 'external-link',
+        'info', 'alert-triangle', 'alert-circle', 'eye', 'eye-off',
+        'copy', 'menu', 'user', 'settings', 'calendar',
+        // New Interface & Navigation 25
+        'edit-2', 'trash-2', 'save', 'list', 'grid', 'heart', 'thumbs-up', 'lock', 'unlock', 'refresh',
+        'arrow-up', 'arrow-down', 'map-pin', 'compass', 'home', 'globe', 'navigation', 'map', 'send', 'crosshair',
+        'mail', 'message-square', 'phone', 'bell', 'share-2',
+        // New Media, Files & Status 26
+        'play', 'pause', 'volume-2', 'mic', 'camera', 'video', 'monitor', 'smartphone', 'hard-drive', 'database',
+        'file', 'folder', 'paperclip', 'download', 'upload', 'cloud', 'sun', 'moon', 'zap', 'shield',
+        'clock', 'star', 'award', 'briefcase', 'coffee', 'wifi'
       ];
 
       const grid = document.getElementById('icon-grid');

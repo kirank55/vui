@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="monitor">
+
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" />
+    <rect pointer-events="none" x="2" y="3" width="20" height="14" rx="2" ry="2" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur=".7s" begin="mouseover" fill="remove" /></rect>
+    <line pointer-events="none" x1="8" y1="21" x2="16" y2="21" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.5;1" dur="1s" begin="mouseover" fill="remove" /></line>
+    <line pointer-events="none" x1="12" y1="17" x2="12" y2="21" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.7;1" dur="1.2s" begin="mouseover" fill="remove" /></line>
+  </g>
+
+</svg>

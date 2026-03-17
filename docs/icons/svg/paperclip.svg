@@ -1,0 +1,8 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="paperclip">
+
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" />
+    <path pointer-events="none" d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" begin="mouseover" fill="remove" /></path>
+  </g>
+
+</svg>

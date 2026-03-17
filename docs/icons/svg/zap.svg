@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="zap">
+
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" />
+    <polygon pointer-events="none" points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" pathLength="100" stroke-dasharray="100">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur=".4s" begin="mouseover" fill="remove" />
+      <animate attributeName="stroke-width" values="2;4;2" keyTimes="0; 0.5; 1" dur=".3s" begin="mouseover" />
+    </polygon>
+  </g>
+
+</svg>

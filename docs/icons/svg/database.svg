@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="database">
+
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" />
+    <ellipse pointer-events="none" cx="12" cy="5" rx="9" ry="3" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur=".5s" begin="mouseover" fill="remove" /></ellipse>
+    <path pointer-events="none" d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.4;1" dur=".8s" begin="mouseover" fill="remove" /></path>
+    <path pointer-events="none" d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.6;1" dur=".9s" begin="mouseover" fill="remove" /></path>
+  </g>
+
+</svg>

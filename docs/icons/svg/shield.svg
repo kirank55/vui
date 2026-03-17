@@ -1,0 +1,9 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="shield">
+
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" />
+    <path pointer-events="none" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur=".6s" begin="mouseover" fill="remove" /></path>
+    <polyline pointer-events="none" points="9 11 11 13 15 9" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.6;1" dur=".8s" begin="mouseover" fill="remove" /></polyline>
+  </g>
+
+</svg>

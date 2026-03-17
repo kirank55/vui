@@ -1,0 +1,13 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="lock">
+
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" />
+    <rect pointer-events="none" x="3" y="11" width="18" height="11" rx="2" ry="2" pathLength="100" stroke-dasharray="100">
+      <animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.3;1" dur=".7s" begin="mouseover" fill="remove" />
+    </rect>
+    <path pointer-events="none" d="M7 11V7a5 5 0 0 1 10 0v4">
+      <animate attributeName="d" values="M7 11V7a5 5 0 0 1 10 0v4; M7 11V3a5 5 0 0 1 10 0v8; M7 11V7a5 5 0 0 1 10 0v4" keyTimes="0; 0.5; 1" dur=".6s" begin="mouseover" />
+    </path>
+  </g>
+
+</svg>
