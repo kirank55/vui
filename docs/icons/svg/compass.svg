@@ -1,13 +1,11 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="compass">
+<g id="compass-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <circle pointer-events="none" cx="12" cy="12" r="10" />
+  <polygon pointer-events="none" points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76">
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 45 12 12; -20 12 12; 0 12 12" dur="0.7s" begin="compass-g.mouseover" />
+  </polygon>
 
-  <g>
-    <rect width="24" height="24" fill="transparent" stroke="none" />
-    <circle pointer-events="none" cx="12" cy="12" r="10" pathLength="100" stroke-dasharray="100">
-      <animate attributeName="stroke-dashoffset" from="100" to="0" dur=".8s" begin="mouseover" fill="remove" />
-    </circle>
-    <path pointer-events="none" d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z" pathLength="100" stroke-dasharray="100">
-      <animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.4;1" dur="1s" begin="mouseover" fill="remove" />
-    </path>
-  </g>
-
+</g>
 </svg>

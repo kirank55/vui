@@ -1,16 +1,13 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="save">
-
-  <g>
-    <rect width="24" height="24" fill="transparent" stroke="none" />
-    <path pointer-events="none" d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" pathLength="100" stroke-dasharray="100">
-      <animate attributeName="stroke-dashoffset" from="100" to="0" dur=".5s" begin="mouseover" fill="remove" />
-    </path>
-    <path pointer-events="none" d="M17 21v-8H7v8" pathLength="100" stroke-dasharray="100">
-      <animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.4;1" dur=".7s" begin="mouseover" fill="remove" />
-    </path>
-    <path pointer-events="none" d="M7 3v5h8V3" pathLength="100" stroke-dasharray="100">
-      <animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.7;1" dur=".9s" begin="mouseover" fill="remove" />
-    </path>
+<g id="save-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <path pointer-events="none" d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+  <path pointer-events="none" d="M17 21v-8H7v8" />
+  <g pointer-events="none">
+    <path d="M7 3v5h8V3" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 4; 0 0" dur="0.5s" begin="save-g.mouseover" />
   </g>
 
+</g>
 </svg>

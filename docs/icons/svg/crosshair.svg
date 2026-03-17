@@ -1,14 +1,14 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="crosshair">
+<g id="crosshair-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <circle pointer-events="none" cx="12" cy="12" r="10">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 0.9 0.9; 1 1" transform-origin="12 12" dur="0.5s" begin="crosshair-g.mouseover" />
+  </circle>
+  <line pointer-events="none" x1="22" y1="12" x2="18" y2="12"><animateTransform attributeName="transform" type="translate" values="0 0; -2 0; 0 0" dur="0.5s" begin="crosshair-g.mouseover" /></line>
+  <line pointer-events="none" x1="6" y1="12" x2="2" y2="12"><animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="crosshair-g.mouseover" /></line>
+  <line pointer-events="none" x1="12" y1="6" x2="12" y2="2"><animateTransform attributeName="transform" type="translate" values="0 0; 0 2; 0 0" dur="0.5s" begin="crosshair-g.mouseover" /></line>
+  <line pointer-events="none" x1="12" y1="22" x2="12" y2="18"><animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.5s" begin="crosshair-g.mouseover" /></line>
 
-  <g>
-    <rect width="24" height="24" fill="transparent" stroke="none" />
-    <circle pointer-events="none" cx="12" cy="12" r="10" pathLength="100" stroke-dasharray="100">
-      <animate attributeName="stroke-dashoffset" from="100" to="0" dur=".6s" begin="mouseover" fill="remove" />
-    </circle>
-    <line pointer-events="none" x1="22" y1="12" x2="18" y2="12" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.5;1" dur=".8s" begin="mouseover" fill="remove" /></line>
-    <line pointer-events="none" x1="6" y1="12" x2="2" y2="12" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.5;1" dur=".8s" begin="mouseover" fill="remove" /></line>
-    <line pointer-events="none" x1="12" y1="6" x2="12" y2="2" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.5;1" dur=".8s" begin="mouseover" fill="remove" /></line>
-    <line pointer-events="none" x1="12" y1="22" x2="12" y2="18" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" values="100;100;0" keyTimes="0;0.5;1" dur=".8s" begin="mouseover" fill="remove" /></line>
-  </g>
-
+</g>
 </svg>
