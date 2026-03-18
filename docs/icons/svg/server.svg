@@ -1,0 +1,15 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="server">
+<g id="server-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <rect pointer-events="none" x="2" y="2" width="20" height="8" rx="2" ry="2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="server-g.mouseover" />
+  </rect>
+  <rect pointer-events="none" x="2" y="14" width="20" height="8" rx="2" ry="2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 1; 0 0" dur="0.4s" begin="server-g.mouseover" />
+  </rect>
+  <line pointer-events="none" x1="6" y1="6" x2="6.01" y2="6"><animate attributeName="stroke" values="currentColor; #10b981; currentColor" dur="0.6s" begin="server-g.mouseover" /></line>
+  <line pointer-events="none" x1="6" y1="18" x2="6.01" y2="18"><animate attributeName="stroke" values="currentColor; #10b981; currentColor" dur="0.6s" begin="server-g.mouseover" /></line>
+
+</g>
+</svg>

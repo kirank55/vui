@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="align-center">
+<g id="align-center-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <line pointer-events="none" x1="18" y1="10" x2="6" y2="10"><animate attributeName="x1" values="18; 15; 18" dur="0.4s" begin="align-center-g.mouseover" /><animate attributeName="x2" values="6; 9; 6" dur="0.4s" begin="align-center-g.mouseover" /></line>
+  <line pointer-events="none" x1="21" y1="6" x2="3" y2="6"><animate attributeName="x1" values="21; 19; 21" dur="0.5s" begin="align-center-g.mouseover" /><animate attributeName="x2" values="3; 5; 3" dur="0.5s" begin="align-center-g.mouseover" /></line>
+  <line pointer-events="none" x1="21" y1="14" x2="3" y2="14"><animate attributeName="x1" values="21; 19; 21" dur="0.5s" begin="align-center-g.mouseover" /><animate attributeName="x2" values="3; 5; 3" dur="0.5s" begin="align-center-g.mouseover" /></line>
+  <line pointer-events="none" x1="18" y1="18" x2="6" y2="18"><animate attributeName="x1" values="18; 15; 18" dur="0.4s" begin="align-center-g.mouseover" /><animate attributeName="x2" values="6; 9; 6" dur="0.4s" begin="align-center-g.mouseover" /></line>
+
+</g>
+</svg>

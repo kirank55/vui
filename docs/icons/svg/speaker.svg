@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="speaker">
+<g id="speaker-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <rect pointer-events="none" x="4" y="2" width="16" height="20" rx="2" ry="2" />
+  <circle pointer-events="none" cx="12" cy="14" r="4">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.2 1.2; 1 1" transform-origin="12 14" dur="0.4s" begin="speaker-g.mouseover" />
+  </circle>
+  <line pointer-events="none" x1="12" y1="6" x2="12.01" y2="6" />
+
+</g>
+</svg>

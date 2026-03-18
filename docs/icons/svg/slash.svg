@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="slash">
+<g id="slash-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <line pointer-events="none" x1="22" y1="2" x2="2" y2="22">
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; -20 12 12; 20 12 12; 0 12 12" dur="0.6s" begin="slash-g.mouseover" />
+  </line>
+
+</g>
+</svg>

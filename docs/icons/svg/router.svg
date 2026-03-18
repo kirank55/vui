@@ -1,0 +1,19 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="router">
+<g id="router-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <rect pointer-events="none" x="2" y="14" width="20" height="8" rx="2" ry="2" />
+  <path pointer-events="none" d="M6.01 14V9" />
+  <path pointer-events="none" d="M10.01 14V5" />
+  <path pointer-events="none" d="M14.01 14V7" />
+  <path pointer-events="none" d="M18.01 14V11" />
+  <g pointer-events="none">
+    <line x1="6" y1="18" x2="6.01" y2="18" />
+    <line x1="10" y1="18" x2="10.01" y2="18" />
+    <line x1="14" y1="18" x2="14.01" y2="18" />
+    <line x1="18" y1="18" x2="18.01" y2="18" />
+    <animate attributeName="stroke" values="currentColor; #10b981; currentColor" dur="0.8s" begin="router-g.mouseover" />
+  </g>
+
+</g>
+</svg>
