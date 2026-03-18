@@ -1,9 +1,0 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bookmark-plus">
-<g id="bookmark-plus-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M12 7v6" />
-  <path pointer-events="none" d="M15 10H9" />
-  <path pointer-events="none" d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.2 1.2; 1 1" transform-origin="12 12" dur="0.5s" begin="bookmark-plus-g.mouseover" />
-</g>
-</svg>

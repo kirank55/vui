@@ -1,8 +1,0 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="blend">
-<g id="blend-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <circle pointer-events="none" cx="9" cy="9" r="7" />
-  <circle pointer-events="none" cx="15" cy="15" r="7" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="blend-g.mouseover" />
-</g>
-</svg>
