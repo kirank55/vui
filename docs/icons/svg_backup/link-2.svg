@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="link-2">
+<g id="link-2-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <path pointer-events="none" d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" />
+  <line pointer-events="none" x1="8" y1="12" x2="16" y2="12">
+    <animate attributeName="stroke-width" values="2; 4; 2" dur="0.5s" begin="link-2-g.mouseover" />
+  </line>
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="link-2-g.mouseover" />
+
+</g>
+</svg>

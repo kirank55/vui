@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="zap">
+<g id="zap-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <polygon pointer-events="none" points="13 2 3 14 12 14 11 22 21 10 12 10 13 2">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.3 1.3; 1 1" transform-origin="12 12" dur="0.4s" begin="zap-g.mouseover" />
+  </polygon>
+
+</g>
+</svg>

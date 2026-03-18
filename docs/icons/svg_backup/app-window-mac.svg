@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="app-window-mac">
+<g id="app-window-mac-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect pointer-events="none" width="20" height="16" x="2" y="4" rx="2" />
+  <path pointer-events="none" d="M6 8h.01" />
+  <path pointer-events="none" d="M10 8h.01" />
+  <path pointer-events="none" d="M14 8h.01" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="app-window-mac-g.mouseover" />
+</g>
+</svg>

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="calendar-arrow-down">
+<g id="calendar-arrow-down-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="m14 18 4 4 4-4" />
+  <path pointer-events="none" d="M16 2v4" />
+  <path pointer-events="none" d="M18 14v8" />
+  <path pointer-events="none" d="M21 11.354V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.343" />
+  <path pointer-events="none" d="M3 10h18" />
+  <path pointer-events="none" d="M8 2v4" />
+  <animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="calendar-arrow-down-g.mouseover" />
+</g>
+</svg>

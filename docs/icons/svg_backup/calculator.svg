@@ -1,0 +1,16 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="calculator">
+<g id="calculator-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect pointer-events="none" width="16" height="20" x="4" y="2" rx="2" />
+  <line pointer-events="none" x1="8" x2="16" y1="6" y2="6" />
+  <line pointer-events="none" x1="16" x2="16" y1="14" y2="18" />
+  <path pointer-events="none" d="M16 10h.01" />
+  <path pointer-events="none" d="M12 10h.01" />
+  <path pointer-events="none" d="M8 10h.01" />
+  <path pointer-events="none" d="M12 14h.01" />
+  <path pointer-events="none" d="M8 14h.01" />
+  <path pointer-events="none" d="M12 18h.01" />
+  <path pointer-events="none" d="M8 18h.01" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="calculator-g.mouseover" />
+</g>
+</svg>

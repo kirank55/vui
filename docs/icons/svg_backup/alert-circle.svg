@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-label="alert-circle">
+                <g>
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <circle pointer-events="none" cx="12" cy="12" r="9" />
+                  <path pointer-events="none" d="M12 8v5" />
+                  <path pointer-events="none" d="M12 16h.01" />
+                  <animateTransform attributeName="transform" type="rotate"
+                    values="0 12 12; -9 12 12; 9 12 12; -6 12 12; 6 12 12; -3 12 12; 3 12 12; 0 12 12"
+                    keyTimes="0; 0.14; 0.28; 0.42; 0.57; 0.71; 0.85; 1" dur=".55s" begin="mouseover" fill="freeze" />
+                </g>
+              </svg>

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="database">
+<g id="database-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <g pointer-events="none">
+    <ellipse cx="12" cy="5" rx="9" ry="3">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" keyTimes="0; 0.5; 1" dur="0.4s" begin="database-g.mouseover" />
+    </ellipse>
+    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" keyTimes="0; 0.5; 1" dur="0.4s" begin="database-g.mouseover" />
+    </path>
+    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" keyTimes="0; 0.5; 1" dur="0.4s" begin="database-g.mouseover" />
+    </path>
+  </g>
+
+</g>
+</svg>

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="banknote-arrow-up">
+<g id="banknote-arrow-up-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5" />
+  <path pointer-events="none" d="M18 12h.01" />
+  <path pointer-events="none" d="M19 22v-6" />
+  <path pointer-events="none" d="m22 19-3-3-3 3" />
+  <path pointer-events="none" d="M6 12h.01" />
+  <circle pointer-events="none" cx="12" cy="12" r="2" />
+  <animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="banknote-arrow-up-g.mouseover" />
+</g>
+</svg>

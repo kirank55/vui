@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="audio-lines">
+<g id="audio-lines-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="M2 10v3" />
+  <path pointer-events="none" d="M6 6v11" />
+  <path pointer-events="none" d="M10 3v18" />
+  <path pointer-events="none" d="M14 8v7" />
+  <path pointer-events="none" d="M18 5v13" />
+  <path pointer-events="none" d="M22 10v3" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="audio-lines-g.mouseover" />
+</g>
+</svg>

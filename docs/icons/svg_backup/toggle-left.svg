@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="toggle-left">
+<g id="toggle-left-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <rect pointer-events="none" x="1" y="5" width="22" height="14" rx="7" ry="7" />
+  <circle pointer-events="none" cx="8" cy="12" r="3">
+    <animate attributeName="cx" values="8; 16; 8" dur="0.6s" begin="toggle-left-g.mouseover" />
+  </circle>
+  <animate attributeName="stroke" values="currentColor; #f43f5e; currentColor" dur="0.6s" begin="toggle-left-g.mouseover" />
+
+</g>
+</svg>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="baseline">
+<g id="baseline-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="M4 20h16" />
+  <path pointer-events="none" d="m6 16 6-12 6 12" />
+  <path pointer-events="none" d="M8 12h8" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="baseline-g.mouseover" />
+</g>
+</svg>

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="battery-charging">
+<g id="battery-charging-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <path pointer-events="none" d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19" />
+  <line pointer-events="none" x1="23" y1="13" x2="23" y2="11" />
+  <polyline pointer-events="none" points="11 6 7 12 13 12 9 18">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.3 1.3; 1 1" transform-origin="10 12" dur="0.5s" begin="battery-charging-g.mouseover" />
+  </polyline>
+
+</g>
+</svg>

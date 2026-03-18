@@ -1,0 +1,13 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="upload">
+<g id="upload-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  
+  <path pointer-events="none" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <g pointer-events="none">
+    <polyline points="17 8 12 3 7 8" />
+    <line x1="12" y1="3" x2="12" y2="15" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="0.5s" begin="upload-g.mouseover" />
+  </g>
+
+</g>
+</svg>
