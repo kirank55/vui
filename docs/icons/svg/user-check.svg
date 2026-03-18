@@ -7,7 +7,7 @@
   </g>
   </g>
   <g pointer-events="none">
-    <path  d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <path  d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="user-check-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </path>
   </g>
@@ -17,7 +17,7 @@
   </circle>
   </g>
   <g pointer-events="none">
-    <polyline  points="17 11 19 13 23 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <polyline  points="17 11 19 13 23 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="user-check-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </polyline>
   </g>

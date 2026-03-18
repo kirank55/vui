@@ -13,12 +13,12 @@
   </path>
   </g>
   <g pointer-events="none">
-    <path  d="M12 9v4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <path  d="M12 9v4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="alert-triangle-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </path>
   </g>
   <g pointer-events="none">
-    <path  d="M12 17h.01" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <path  d="M12 17h.01" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="alert-triangle-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </path>
   </g>

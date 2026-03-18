@@ -7,7 +7,7 @@
   </g>
   </g>
   <g pointer-events="none">
-    <polyline  points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <polyline  points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="bluetooth-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </polyline>
   </g>

@@ -12,7 +12,7 @@
   </circle>
   </g>
   <g pointer-events="none">
-    <polyline  points="12 9 12 12 13.5 13.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <polyline  points="12 9 12 12 13.5 13.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="watch-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </polyline>
   </g>
@@ -22,7 +22,7 @@
   </animate>
   </g>
   <g pointer-events="none">
-    <path  d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <path  d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="watch-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </path>
   </g>

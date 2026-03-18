@@ -27,22 +27,22 @@
   </path>
   </g>
   <g pointer-events="none">
-    <line x1="6" y1="18" x2="6.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <line x1="6" y1="18" x2="6.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="router-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
-    <line x1="10" y1="18" x2="10.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <line x1="10" y1="18" x2="10.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="router-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
-    <line x1="14" y1="18" x2="14.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <line x1="14" y1="18" x2="14.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="router-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
-    <line x1="18" y1="18" x2="18.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <line x1="18" y1="18" x2="18.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="router-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>

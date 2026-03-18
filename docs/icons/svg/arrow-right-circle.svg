@@ -7,12 +7,12 @@
   </circle>
   </g>
   <g pointer-events="none">
-    <polyline points="12 16 16 12 12 8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <polyline points="12 16 16 12 12 8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="arrow-right-circle-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </polyline>
   </g>
   <g pointer-events="none">
-    <line x1="8" y1="12" x2="16" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <line x1="8" y1="12" x2="16" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="arrow-right-circle-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>

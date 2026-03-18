@@ -7,7 +7,7 @@
   </circle>
   </g>
   <g pointer-events="none">
-    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="award-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </polyline>
   </g>

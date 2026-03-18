@@ -12,7 +12,7 @@
   </polygon>
   </g>
   <g pointer-events="none">
-    <line  x1="23" y1="9" x2="17" y2="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <line  x1="23" y1="9" x2="17" y2="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="volume-x-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
@@ -22,7 +22,7 @@
   </animate>
   </g>
   <g pointer-events="none">
-    <line  x1="17" y1="9" x2="23" y2="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <line  x1="17" y1="9" x2="23" y2="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
     <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="volume-x-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
