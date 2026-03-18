@@ -1,0 +1,121 @@
+/* ============================================================
+   vui-tabs.css  --  Styles for the <vui-tabs> Web Component
+   Scoped to Shadow DOM via adoptedStyleSheets.
+   ============================================================ */
+
+:host {
+  /*
+   * Design token integration — reads from page :root when global.css is
+   * present, falls back to hardcoded values so the component works standalone.
+   */
+  --_bg-elevated: var(--vui-bg-elevated,  #ffffff);
+  --_bg-surface:  var(--vui-bg-surface,   #f2f2f2);
+  --_fg:          var(--vui-fg,           #1a1a1a);
+  --_fg-muted:    var(--vui-fg-muted,     #6b6b6b);
+  --_border:      var(--vui-border,       #d4d4d4);
+  --_radius-lg:   var(--vui-radius-lg,    10px);
+  --_duration:    var(--vui-duration,     150ms);
+  --_font-sans:   var(--vui-font-sans,    "Inter", "Segoe UI", system-ui, sans-serif);
+  --_shadow-sm:   var(--vui-shadow-sm,    0 1px 3px rgba(0,0,0,0.08));
+
+  display: block;
+  font-family: var(--_font-sans);
+  box-sizing: border-box;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+
+/* ── Tab bar ─────────────────────────────────────────────── */
+
+[role="tablist"] {
+  position: relative;
+  display: flex;
+  padding: 0.25rem;
+  border: 1px solid var(--_border);
+  border-radius: 999px;
+  background: var(--_bg-surface);
+  margin-bottom: 1rem;
+}
+
+/* Sliding pill indicator (width driven by --_pill-width; transform driven by JS) */
+[role="tablist"]::before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  left: 0.25rem;
+  width: var(--_pill-width, 33.333%);
+  border-radius: 999px;
+  background: var(--_bg-elevated);
+  box-shadow: var(--_shadow-sm);
+  transition:
+    transform  var(--_duration) cubic-bezier(0.25, 1, 0.5, 1),
+    width      var(--_duration) cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* ── Tab buttons ─────────────────────────────────────────── */
+
+.tab-btn {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--_fg-muted);
+  font-family: var(--_font-sans);
+  font-size: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: color 200ms ease;
+}
+
+.tab-btn[aria-selected="true"] {
+  color: var(--_fg);
+}
+
+.tab-btn:focus-visible {
+  outline: 2px solid var(--_fg);
+  outline-offset: -3px;
+  border-radius: 999px;
+}
+
+
+/* ── Panels ──────────────────────────────────────────────── */
+
+.panel-wrapper {
+  border: 1px solid var(--_border);
+  border-radius: var(--_radius-lg);
+  background: var(--_bg-elevated);
+  overflow: hidden;
+}
+
+.panel-slot-wrapper {
+  display: none;
+  padding: 1rem 1.1rem;
+}
+
+.panel-slot-wrapper.is-active {
+  display: block;
+}
+
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .tab-btn {
+    min-height: 36px;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.875rem;
+  }
+}
