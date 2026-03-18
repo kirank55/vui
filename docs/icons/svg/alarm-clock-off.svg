@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="alarm-clock-off">
+<g id="alarm-clock-off-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="M6.87 6.87a8 8 0 1 0 11.26 11.26" />
+  <path pointer-events="none" d="M19.9 14.25a8 8 0 0 0-9.15-9.15" />
+  <path pointer-events="none" d="m22 6-3-3" />
+  <path pointer-events="none" d="M6.26 18.67 4 21" />
+  <path pointer-events="none" d="m2 2 20 20" />
+  <path pointer-events="none" d="M4 4 2 6" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="alarm-clock-off-g.mouseover" />
+</g>
+</svg>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="arrow-up-to-line">
+<g id="arrow-up-to-line-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="M5 3h14" />
+  <path pointer-events="none" d="m18 13-6-6-6 6" />
+  <path pointer-events="none" d="M12 7v14" />
+  <animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="arrow-up-to-line-g.mouseover" />
+</g>
+</svg>

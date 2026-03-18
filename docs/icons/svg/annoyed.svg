@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="annoyed">
+<g id="annoyed-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <circle pointer-events="none" cx="12" cy="12" r="10" />
+  <path pointer-events="none" d="M8 15h8" />
+  <path pointer-events="none" d="M8 9h2" />
+  <path pointer-events="none" d="M14 9h2" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="annoyed-g.mouseover" />
+</g>
+</svg>

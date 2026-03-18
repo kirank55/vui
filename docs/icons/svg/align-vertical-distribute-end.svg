@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="align-vertical-distribute-end">
+<g id="align-vertical-distribute-end-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect pointer-events="none" width="14" height="6" x="5" y="14" rx="2" />
+  <rect pointer-events="none" width="10" height="6" x="7" y="4" rx="2" />
+  <path pointer-events="none" d="M2 20h20" />
+  <path pointer-events="none" d="M2 10h20" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="align-vertical-distribute-end-g.mouseover" />
+</g>
+</svg>

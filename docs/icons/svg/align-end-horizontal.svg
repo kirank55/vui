@@ -1,0 +1,9 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="align-end-horizontal">
+<g id="align-end-horizontal-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect pointer-events="none" width="6" height="16" x="4" y="2" rx="2" />
+  <rect pointer-events="none" width="6" height="9" x="14" y="9" rx="2" />
+  <path pointer-events="none" d="M22 22H2" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="align-end-horizontal-g.mouseover" />
+</g>
+</svg>

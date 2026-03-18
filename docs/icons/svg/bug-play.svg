@@ -1,0 +1,15 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bug-play">
+<g id="bug-play-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="M10 19.655A6 6 0 0 1 6 14v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 3.97" />
+  <path pointer-events="none" d="M14 15.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1-1.517-.86z" />
+  <path pointer-events="none" d="M14.12 3.88 16 2" />
+  <path pointer-events="none" d="M21 5a4 4 0 0 1-3.55 3.97" />
+  <path pointer-events="none" d="M3 21a4 4 0 0 1 3.81-4" />
+  <path pointer-events="none" d="M3 5a4 4 0 0 0 3.55 3.97" />
+  <path pointer-events="none" d="M6 13H2" />
+  <path pointer-events="none" d="m8 2 1.88 1.88" />
+  <path pointer-events="none" d="M9 7.13V6a3 3 0 1 1 6 0v1.13" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="bug-play-g.mouseover" />
+</g>
+</svg>

@@ -1,0 +1,8 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="captions">
+<g id="captions-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect pointer-events="none" width="18" height="14" x="3" y="5" rx="2" ry="2" />
+  <path pointer-events="none" d="M7 15h4M15 15h2M7 11h2M13 11h4" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="captions-g.mouseover" />
+</g>
+</svg>

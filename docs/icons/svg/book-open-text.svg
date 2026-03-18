@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="book-open-text">
+<g id="book-open-text-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <path pointer-events="none" d="M12 7v14" />
+  <path pointer-events="none" d="M16 12h2" />
+  <path pointer-events="none" d="M16 8h2" />
+  <path pointer-events="none" d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+  <path pointer-events="none" d="M6 12h2" />
+  <path pointer-events="none" d="M6 8h2" />
+  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="book-open-text-g.mouseover" />
+</g>
+</svg>
