@@ -1,11 +1,10 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="activity">
 <g id="activity-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <polyline pointer-events="none" points="22 12 18 12 15 21 9 3 6 12 2 12">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1 1.3; 1 1" transform-origin="12 12" dur="0.5s" begin="activity-g.mouseover" />
-    <animate attributeName="stroke" values="currentColor; #f43f5e; currentColor" dur="0.5s" begin="activity-g.mouseover" />
+  <g pointer-events="none">
+    <polyline  points="22 12 18 12 15 21 9 3 6 12 2 12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="activity-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </polyline>
-
+  </g>
 </g>
 </svg>

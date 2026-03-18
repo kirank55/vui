@@ -1,11 +1,15 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="power">
 <g id="power-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <path pointer-events="none" d="M18.36 6.64a9 9 0 1 1-12.73 0" />
-  <line pointer-events="none" x1="12" y1="2" x2="12" y2="12">
-    <animate attributeName="y1" values="2; -2; 2" dur="0.5s" begin="power-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M18.36 6.64a9 9 0 1 1-12.73 0">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="power-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <line  x1="12" y1="2" x2="12" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="power-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
-
+  </g>
 </g>
 </svg>

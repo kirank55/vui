@@ -1,11 +1,30 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="arrow-down-narrow-wide">
 <g id="arrow-down-narrow-wide-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="m3 16 4 4 4-4" />
-  <path pointer-events="none" d="M7 20V4" />
-  <path pointer-events="none" d="M11 4h4" />
-  <path pointer-events="none" d="M11 8h7" />
-  <path pointer-events="none" d="M11 12h10" />
-  <animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="arrow-down-narrow-wide-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="m3 16 4 4 4-4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="arrow-down-narrow-wide-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M7 20V4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="arrow-down-narrow-wide-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M11 4h4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="arrow-down-narrow-wide-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M11 8h7">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="arrow-down-narrow-wide-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M11 12h10">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="arrow-down-narrow-wide-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
 </g>
 </svg>

@@ -1,13 +1,40 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="car-taxi-front">
 <g id="car-taxi-front-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M10 2h4" />
-  <path pointer-events="none" d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" />
-  <path pointer-events="none" d="M7 14h.01" />
-  <path pointer-events="none" d="M17 14h.01" />
-  <rect pointer-events="none" width="18" height="8" x="3" y="10" rx="2" />
-  <path pointer-events="none" d="M5 18v2" />
-  <path pointer-events="none" d="M19 18v2" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="car-taxi-front-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M10 2h4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-taxi-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-taxi-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M7 14h.01">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-taxi-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M17 14h.01">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-taxi-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <rect  width="18" height="8" x="3" y="10" rx="2">
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="car-taxi-front-g.mouseover" />
+  </rect>
+  </g>
+  <g pointer-events="none">
+    <path  d="M5 18v2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-taxi-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M19 18v2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-taxi-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
 </g>
 </svg>

@@ -1,12 +1,20 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="shopping-bag">
 <g id="shopping-bag-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <path pointer-events="none" d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.05 1.05; 1 1" transform-origin="12 22" dur="0.5s" begin="shopping-bag-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="shopping-bag-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
-  <line pointer-events="none" x1="3" y1="6" x2="21" y2="6" />
-  <path pointer-events="none" d="M16 10a4 4 0 0 1-8 0" />
-
+  </g>
+  <g pointer-events="none">
+    <line  x1="3" y1="6" x2="21" y2="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="shopping-bag-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </line>
+  </g>
+  <g pointer-events="none">
+    <path  d="M16 10a4 4 0 0 1-8 0">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="shopping-bag-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
 </g>
 </svg>

@@ -1,15 +1,50 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bus-front">
 <g id="bus-front-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M4 6 2 7" />
-  <path pointer-events="none" d="M10 6h4" />
-  <path pointer-events="none" d="m22 7-2-1" />
-  <rect pointer-events="none" width="16" height="16" x="4" y="3" rx="2" />
-  <path pointer-events="none" d="M4 11h16" />
-  <path pointer-events="none" d="M8 15h.01" />
-  <path pointer-events="none" d="M16 15h.01" />
-  <path pointer-events="none" d="M6 19v2" />
-  <path pointer-events="none" d="M18 21v-2" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="bus-front-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M4 6 2 7">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M10 6h4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="m22 7-2-1">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <rect  width="16" height="16" x="4" y="3" rx="2">
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="bus-front-g.mouseover" />
+  </rect>
+  </g>
+  <g pointer-events="none">
+    <path  d="M4 11h16">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M8 15h.01">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M16 15h.01">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M6 19v2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M18 21v-2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bus-front-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
 </g>
 </svg>

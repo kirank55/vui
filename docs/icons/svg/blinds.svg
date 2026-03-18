@@ -1,13 +1,40 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="blinds">
 <g id="blinds-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M3 3h18" />
-  <path pointer-events="none" d="M20 7H8" />
-  <path pointer-events="none" d="M20 11H8" />
-  <path pointer-events="none" d="M10 19h10" />
-  <path pointer-events="none" d="M8 15h12" />
-  <path pointer-events="none" d="M4 3v14" />
-  <circle pointer-events="none" cx="4" cy="19" r="2" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="blinds-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M3 3h18">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="blinds-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M20 7H8">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="blinds-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M20 11H8">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="blinds-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M10 19h10">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="blinds-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M8 15h12">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="blinds-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M4 3v14">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="blinds-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="4" cy="19" r="2">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="4 19" dur="0.5s" begin="blinds-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
 </g>
 </svg>

@@ -1,10 +1,16 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-label="external-link">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <path pointer-events="none" d="M7 17 17 7" />
-                  <path pointer-events="none" d="M7 7h10v10" />
-                  <animateTransform attributeName="transform" type="translate" values="0 0; 2 -2; 0 0"
-                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze" />
-                </g>
-              </svg>
+<g id="external-link-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <g pointer-events="none">
+    <path  d="M7 17 17 7">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="external-link-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M7 7h10v10">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="external-link-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+</g>
+</svg>

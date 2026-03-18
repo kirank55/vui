@@ -1,11 +1,15 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="book">
 <g id="book-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <path pointer-events="none" d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-  <path pointer-events="none" d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z">
-    <animateTransform attributeName="transform" type="rotate" values="0 4 22; 10 4 22; 0 4 22" dur="0.5s" begin="book-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="book-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
-
+  </g>
+  <g pointer-events="none">
+    <path  d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="book-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
 </g>
 </svg>

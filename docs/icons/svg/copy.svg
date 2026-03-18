@@ -1,13 +1,16 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-label="copy">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <rect pointer-events="none" x="9" y="9" width="10" height="10" rx="2">
-                    <animate attributeName="x" values="9; 11; 9" keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover"
-                      fill="freeze" />
-                    <animate attributeName="y" values="9; 7; 9" keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover"
-                      fill="freeze" />
-                  </rect>
-                  <rect pointer-events="none" x="5" y="5" width="10" height="10" rx="2" />
-                </g>
-              </svg>
+<g id="copy-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <g pointer-events="none">
+    <rect  x="9" y="9" width="10" height="10" rx="2">
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="copy-g.mouseover" />
+  </rect>
+  </g>
+  <g pointer-events="none">
+    <rect  x="5" y="5" width="10" height="10" rx="2">
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="copy-g.mouseover" />
+  </rect>
+  </g>
+</g>
+</svg>

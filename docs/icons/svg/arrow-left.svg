@@ -1,10 +1,31 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-label="arrow-left">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <path pointer-events="none" d="m12 19-7-7 7-7" />
-                  <path pointer-events="none" d="M19 12H5" />
-                  <animateTransform attributeName="transform" type="translate" values="0 0; -4 0; 0 0"
-                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze" />
-                </g>
-              </svg>
+<g id="arrow-left-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <g pointer-events="none">
+    <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; -3 0; 0 0" dur="0.4s" begin="arrow-left-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="arrow-left-g.mouseover" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <path  d="m12 19-7-7 7-7">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -3 0; 0 0" dur="0.4s" begin="arrow-left-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="arrow-left-g.mouseover" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M19 12H5">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -3 0; 0 0" dur="0.4s" begin="arrow-left-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="arrow-left-g.mouseover" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -4 0; 0 0"
+                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -3 0; 0 0" dur="0.4s" begin="arrow-left-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="arrow-left-g.mouseover" />
+  </animate>
+  </g>
+</g>
+</svg>

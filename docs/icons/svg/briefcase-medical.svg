@@ -1,12 +1,35 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="briefcase-medical">
 <g id="briefcase-medical-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M12 11v4" />
-  <path pointer-events="none" d="M14 13h-4" />
-  <path pointer-events="none" d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-  <path pointer-events="none" d="M18 6v14" />
-  <path pointer-events="none" d="M6 6v14" />
-  <rect pointer-events="none" width="20" height="14" x="2" y="6" rx="2" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="briefcase-medical-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M12 11v4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="briefcase-medical-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M14 13h-4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="briefcase-medical-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="briefcase-medical-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M18 6v14">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="briefcase-medical-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M6 6v14">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="briefcase-medical-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <rect  width="20" height="14" x="2" y="6" rx="2">
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="briefcase-medical-g.mouseover" />
+  </rect>
+  </g>
 </g>
 </svg>

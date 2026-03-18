@@ -1,17 +1,25 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="maximize-2">
 <g id="maximize-2-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
   <g pointer-events="none">
-    <polyline points="15 3 21 3 21 9" />
-    <line x1="14" y1="10" x2="21" y2="3" />
-    <animateTransform attributeName="transform" type="translate" values="0 0; 2 -2; 0 0" dur="0.5s" begin="maximize-2-g.mouseover" />
+    <polyline points="15 3 21 3 21 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="maximize-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </polyline>
   </g>
   <g pointer-events="none">
-    <polyline points="9 21 3 21 3 15" />
-    <line x1="10" y1="14" x2="3" y2="21" />
-    <animateTransform attributeName="transform" type="translate" values="0 0; -2 2; 0 0" dur="0.5s" begin="maximize-2-g.mouseover" />
+    <line x1="14" y1="10" x2="21" y2="3" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="maximize-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </line>
   </g>
-
+  <g pointer-events="none">
+    <polyline points="9 21 3 21 3 15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="maximize-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </polyline>
+  </g>
+  <g pointer-events="none">
+    <line x1="10" y1="14" x2="3" y2="21" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="maximize-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </line>
+  </g>
 </g>
 </svg>

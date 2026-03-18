@@ -1,9 +1,25 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-label="chevron-down">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <path pointer-events="none" d="m6 9 6 6 6-6" />
-                  <animateTransform attributeName="transform" type="translate" values="0 0; 0 3; 0 0"
-                    keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
-                </g>
-              </svg>
+<g id="chevron-down-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <g pointer-events="none">
+    <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 3; 0 0" dur="0.4s" begin="chevron-down-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="chevron-down-g.mouseover" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <path  d="m6 9 6 6 6-6">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 3; 0 0" dur="0.4s" begin="chevron-down-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="chevron-down-g.mouseover" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 3; 0 0"
+                    keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 3; 0 0" dur="0.4s" begin="chevron-down-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="chevron-down-g.mouseover" />
+  </animate>
+  </g>
+</g>
+</svg>

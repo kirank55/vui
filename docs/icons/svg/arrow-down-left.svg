@@ -1,13 +1,15 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="arrow-down-left">
 <g id="arrow-down-left-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
   <g pointer-events="none">
-    <line x1="17" y1="7" x2="7" y2="17" />
-    <polyline points="17 17 7 17 7 7" />
-    <animateTransform attributeName="transform" type="translate" values="0 0; -3 3; 3 -3; 0 0" keyTimes="0; 0.45; 0.5; 1" dur="0.6s" begin="arrow-down-left-g.mouseover" />
-    <animate attributeName="opacity" values="1; 0; 0; 1" keyTimes="0; 0.45; 0.5; 1" dur="0.6s" begin="arrow-down-left-g.mouseover" />
+    <line x1="17" y1="7" x2="7" y2="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="arrow-down-left-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </line>
   </g>
-
+  <g pointer-events="none">
+    <polyline points="17 17 7 17 7 7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="arrow-down-left-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </polyline>
+  </g>
 </g>
 </svg>

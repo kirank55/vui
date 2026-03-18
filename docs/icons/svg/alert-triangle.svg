@@ -1,12 +1,33 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-label="alert-triangle">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <path pointer-events="none" d="M12 4 3 20h18L12 4Z" />
-                  <path pointer-events="none" d="M12 9v4" />
-                  <path pointer-events="none" d="M12 17h.01" />
-                  <animateTransform attributeName="transform" type="rotate"
+<g id="alert-triangle-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <g pointer-events="none">
+    <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="alert-triangle-g.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <path  d="M12 4 3 20h18L12 4Z">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="alert-triangle-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M12 9v4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="alert-triangle-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M12 17h.01" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="alert-triangle-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animateTransform attributeName="transform" type="rotate"
                     values="0 12 12; -6 12 12; 6 12 12; -3 12 12; 3 12 12; 0 12 12" keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
-                    dur=".5s" begin="mouseover" fill="freeze" />
-                </g>
-              </svg>
+                    dur=".5s" begin="mouseover" fill="freeze">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="alert-triangle-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </animate>
+  </g>
+</g>
+</svg>

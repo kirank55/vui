@@ -1,12 +1,15 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="corner-right-up">
 <g id="corner-right-up-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <polyline pointer-events="none" points="10 9 15 4 20 9" />
-  <path pointer-events="none" d="M4 20h7a4 4 0 0 0 4-4V4">
-    <animate attributeName="stroke-dasharray" values="100; 100" dur="0.01s" begin="0s" />
-    <animate attributeName="stroke-dashoffset" values="0; 100; 0" dur="0.6s" begin="corner-right-up-g.mouseover" />
+  <g pointer-events="none">
+    <polyline  points="10 9 15 4 20 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="corner-right-up-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </polyline>
+  </g>
+  <g pointer-events="none">
+    <path  d="M4 20h7a4 4 0 0 0 4-4V4">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="corner-right-up-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
-
+  </g>
 </g>
 </svg>

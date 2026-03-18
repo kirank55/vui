@@ -1,9 +1,20 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="arrow-down-to-dot">
 <g id="arrow-down-to-dot-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M12 2v14" />
-  <path pointer-events="none" d="m19 9-7 7-7-7" />
-  <circle pointer-events="none" cx="12" cy="21" r="1" />
-  <animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="arrow-down-to-dot-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M12 2v14">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="arrow-down-to-dot-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="m19 9-7 7-7-7">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="arrow-down-to-dot-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="12" cy="21" r="1">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 21" dur="0.5s" begin="arrow-down-to-dot-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
 </g>
 </svg>

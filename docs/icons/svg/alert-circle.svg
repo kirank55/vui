@@ -1,12 +1,33 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-label="alert-circle">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <circle pointer-events="none" cx="12" cy="12" r="9" />
-                  <path pointer-events="none" d="M12 8v5" />
-                  <path pointer-events="none" d="M12 16h.01" />
-                  <animateTransform attributeName="transform" type="rotate"
+<g id="alert-circle-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <g pointer-events="none">
+    <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="alert-circle-g.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="12" cy="12" r="9">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="alert-circle-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
+  <g pointer-events="none">
+    <path  d="M12 8v5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="alert-circle-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M12 16h.01" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="alert-circle-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animateTransform attributeName="transform" type="rotate"
                     values="0 12 12; -9 12 12; 9 12 12; -6 12 12; 6 12 12; -3 12 12; 3 12 12; 0 12 12"
-                    keyTimes="0; 0.14; 0.28; 0.42; 0.57; 0.71; 0.85; 1" dur=".55s" begin="mouseover" fill="freeze" />
-                </g>
-              </svg>
+                    keyTimes="0; 0.14; 0.28; 0.42; 0.57; 0.71; 0.85; 1" dur=".55s" begin="mouseover" fill="freeze">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="alert-circle-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </animate>
+  </g>
+</g>
+</svg>

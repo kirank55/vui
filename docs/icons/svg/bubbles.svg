@@ -1,10 +1,25 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bubbles">
 <g id="bubbles-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M7.001 15.085A1.5 1.5 0 0 1 9 16.5" />
-  <circle pointer-events="none" cx="18.5" cy="8.5" r="3.5" />
-  <circle pointer-events="none" cx="7.5" cy="16.5" r="5.5" />
-  <circle pointer-events="none" cx="7.5" cy="4.5" r="2.5" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="bubbles-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M7.001 15.085A1.5 1.5 0 0 1 9 16.5">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="bubbles-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="18.5" cy="8.5" r="3.5">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="18.5 8.5" dur="0.5s" begin="bubbles-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="7.5" cy="16.5" r="5.5">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="7.5 16.5" dur="0.5s" begin="bubbles-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="7.5" cy="4.5" r="2.5">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="7.5 4.5" dur="0.5s" begin="bubbles-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
 </g>
 </svg>

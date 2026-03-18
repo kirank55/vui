@@ -1,12 +1,15 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="credit-card">
 <g id="credit-card-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <rect pointer-events="none" x="1" y="4" width="22" height="16" rx="2" ry="2" />
-  <line pointer-events="none" x1="1" y1="10" x2="23" y2="10" />
   <g pointer-events="none">
-    <animateTransform attributeName="transform" type="translate" values="0 0; -6 0; 0 0" dur="0.7s" begin="credit-card-g.mouseover" />
+    <rect  x="1" y="4" width="22" height="16" rx="2" ry="2">
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="credit-card-g.mouseover" />
+  </rect>
   </g>
-
+  <g pointer-events="none">
+    <line  x1="1" y1="10" x2="23" y2="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="credit-card-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </line>
+  </g>
 </g>
 </svg>

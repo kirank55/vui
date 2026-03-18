@@ -1,11 +1,45 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="wifi">
 <g id="wifi-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <path pointer-events="none" d="M5 12.55a11 11 0 0 1 14.08 0"><animate attributeName="opacity" values="1; 0.2; 1" dur="0.6s" begin="wifi-g.mouseover" /></path>
-  <path pointer-events="none" d="M1.42 9a16 16 0 0 1 21.16 0"><animate attributeName="opacity" values="1; 0.2; 1" dur="0.8s" begin="wifi-g.mouseover" /></path>
-  <path pointer-events="none" d="M8.53 16.11a6 6 0 0 1 6.95 0"><animate attributeName="opacity" values="1; 0.2; 1" dur="0.4s" begin="wifi-g.mouseover" /></path>
-  <line pointer-events="none" x1="12" y1="20" x2="12.01" y2="20" />
-
+  <g pointer-events="none">
+    <g id="wifi-g">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="wifi-g.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <path  d="M5 12.55a11 11 0 0 1 14.08 0" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="wifi-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animate attributeName="opacity" values="1; 0.2; 1" dur="0.6s" begin="wifi-g.mouseover">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="wifi-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </animate>
+  </g>
+  <g pointer-events="none">
+    <path  d="M1.42 9a16 16 0 0 1 21.16 0" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="wifi-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animate attributeName="opacity" values="1; 0.2; 1" dur="0.8s" begin="wifi-g.mouseover">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="wifi-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </animate>
+  </g>
+  <g pointer-events="none">
+    <path  d="M8.53 16.11a6 6 0 0 1 6.95 0" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="wifi-g.mouseover+0.35000000000000003s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animate attributeName="opacity" values="1; 0.2; 1" dur="0.4s" begin="wifi-g.mouseover">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="wifi-g.mouseover+0.4s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </animate>
+  </g>
+  <g pointer-events="none">
+    <line  x1="12" y1="20" x2="12.01" y2="20" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="wifi-g.mouseover+0.45s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </line>
+  </g>
 </g>
 </svg>

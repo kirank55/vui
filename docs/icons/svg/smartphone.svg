@@ -1,12 +1,30 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="smartphone">
 <g id="smartphone-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
   <g pointer-events="none">
-    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-    <line x1="12" y1="18" x2="12.01" y2="18" />
-    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 10 12 12; -10 12 12; 10 12 12; -10 12 12; 0 12 12" dur="0.6s" begin="smartphone-g.mouseover" />
+    <g id="smartphone-g">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="smartphone-g.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </g>
-
+  </g>
+  <g pointer-events="none">
+    <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="smartphone-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="smartphone-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </rect>
+  </g>
+  <g pointer-events="none">
+    <line x1="12" y1="18" x2="12.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="smartphone-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+  </line>
+  </g>
+  <g pointer-events="none">
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 10 12 12; -10 12 12; 10 12 12; -10 12 12; 0 12 12" dur="0.6s" begin="smartphone-g.mouseover">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="smartphone-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </animate>
+  </g>
 </g>
 </svg>

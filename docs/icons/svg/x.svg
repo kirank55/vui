@@ -1,10 +1,27 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-label="x">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <path pointer-events="none" d="M18 6 6 18" />
-                  <path pointer-events="none" d="m6 6 12 12" />
-                  <animateTransform attributeName="transform" type="rotate" values="0 12 12; 135 12 12; 0 12 12"
-                    keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze" />
-                </g>
-              </svg>
+<g id="x-g">
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <g pointer-events="none">
+    <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12" dur="0.5s" begin="x-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <path  d="M18 6 6 18">
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12" dur="0.5s" begin="x-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="m6 6 12 12">
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12" dur="0.5s" begin="x-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 135 12 12; 0 12 12"
+                    keyTimes="0; 0.5; 1" dur=".5s" begin="mouseover" fill="freeze">
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 90 12 12" dur="0.5s" begin="x-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
+  </animate>
+  </g>
+</g>
+</svg>

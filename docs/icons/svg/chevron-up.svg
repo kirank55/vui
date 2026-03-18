@@ -1,10 +1,23 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="chevron-up">
 <g id="chevron-up-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <polyline pointer-events="none" points="18 15 12 9 6 15">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="0.4s" begin="chevron-up-g.mouseover" />
+  <g pointer-events="none">
+    <g id="chevron-up-g">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="0.4s" begin="chevron-up-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="chevron-up-g.mouseover" />
+  </g>
+  </g>
+  <g pointer-events="none">
+    <polyline  points="18 15 12 9 6 15">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="0.4s" begin="chevron-up-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="chevron-up-g.mouseover" />
   </polyline>
-
+  </g>
+  <g pointer-events="none">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="0.4s" begin="chevron-up-g.mouseover">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="0.4s" begin="chevron-up-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.4s" begin="chevron-up-g.mouseover" />
+  </animate>
+  </g>
 </g>
 </svg>

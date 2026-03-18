@@ -1,11 +1,30 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="baggage-claim">
 <g id="baggage-claim-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <path pointer-events="none" d="M22 18H6a2 2 0 0 1-2-2V7a2 2 0 0 0-2-2" />
-  <path pointer-events="none" d="M17 14V4a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v10" />
-  <rect pointer-events="none" width="13" height="8" x="8" y="6" rx="1" />
-  <circle pointer-events="none" cx="18" cy="20" r="2" />
-  <circle pointer-events="none" cx="9" cy="20" r="2" />
-  <animateTransform attributeName="transform" type="scale" values="1 1; 1.1 1.1; 1 1" transform-origin="12 12" dur="0.5s" begin="baggage-claim-g.mouseover" />
+  <g pointer-events="none">
+    <path  d="M22 18H6a2 2 0 0 1-2-2V7a2 2 0 0 0-2-2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="baggage-claim-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <path  d="M17 14V4a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v10">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="baggage-claim-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </path>
+  </g>
+  <g pointer-events="none">
+    <rect  width="13" height="8" x="8" y="6" rx="1">
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="baggage-claim-g.mouseover" />
+  </rect>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="18" cy="20" r="2">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="18 20" dur="0.5s" begin="baggage-claim-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
+  <g pointer-events="none">
+    <circle  cx="9" cy="20" r="2">
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="9 20" dur="0.5s" begin="baggage-claim-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+  </circle>
+  </g>
 </g>
 </svg>

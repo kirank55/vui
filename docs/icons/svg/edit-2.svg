@@ -1,10 +1,9 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="edit-2">
-<g id="edit-2-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
-  <path pointer-events="none" d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
-    <animateTransform attributeName="transform" type="translate" values="0 0; -1 1; 1 -1; -1 1; 1 -1; 0 0" dur="0.6s" begin="edit-2-g.mouseover" />
-  </path>
-
-</g>
+  <g id="edit-2-g">
+    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <path pointer-events="none" d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+      <animateTransform attributeName="transform" type="rotate" values="0 2 22; 15 2 22; -5 2 22; 0 2 22" dur="0.6s" begin="edit-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1" />
+      <animateTransform attributeName="transform" type="translate" values="0 0; 2 -2; -1 1; 0 0" dur="0.6s" begin="edit-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1" additive="sum" />
+    </path>
+  </g>
 </svg>
