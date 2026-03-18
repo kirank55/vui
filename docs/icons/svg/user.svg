@@ -1,10 +1,11 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-label="user">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <circle pointer-events="none" cx="12" cy="8" r="4" />
-                  <path pointer-events="none" d="M5 20a7 7 0 0 1 14 0" />
-                  <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0"
-                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze" />
-                </g>
-              </svg>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="user">
+  <g id="user-g">
+    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <circle pointer-events="none" cx="12" cy="8" r="4">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.5s" begin="user-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    </circle>
+    <path pointer-events="none" d="M5 20a7 7 0 0 1 14 0">
+      <animateTransform attributeName="transform" type="scale" values="1 1; 1.05 1.05; 1 1" transform-origin="12 24" dur="0.5s" begin="user-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    </path>
+  </g>
+</svg>

@@ -1,12 +1,10 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="refresh">
 <g id="refresh-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
   <g pointer-events="none">
     <path d="M23 4v6h-6" />
     <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
-    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="0.8s" begin="refresh-g.mouseover" />
+    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="0.8s" begin="refresh-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" />
   </g>
-
 </g>
 </svg>

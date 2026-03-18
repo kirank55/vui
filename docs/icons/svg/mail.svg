@@ -1,11 +1,9 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="mail">
 <g id="mail-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  
   <path pointer-events="none" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
   <path pointer-events="none" d="M22 6l-10 7L2 6">
-    <animate attributeName="d" values="M22 6l-10 7L2 6; M22 6l-10 -3L2 6; M22 6l-10 7L2 6" dur="0.5s" begin="mail-g.mouseover" />
+    <animate attributeName="d" values="M22 6l-10 7L2 6; M22 6l-10 -1L2 6; M22 6l-10 7L2 6" dur="0.4s" begin="mail-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
-
 </g>
 </svg>

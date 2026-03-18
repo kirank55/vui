@@ -1,9 +1,9 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="check">
-  <g id="check-g">
-    <rect width="24" height="24" fill="transparent" stroke="none" />
-    <path d="m5 12 5 5L19 8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" vector-effect="non-scaling-stroke">
-      <animate attributeName="stroke-dashoffset" values="1; 0; 0" dur="0.6s" begin="check-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" keyTimes="0; 0.6; 1" fill="freeze" />
-      <animateTransform attributeName="transform" type="scale" values="1; 1.15; 1; 1" transform-origin="12 12" dur="0.6s" begin="check-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1" keyTimes="0; 0.3; 0.6; 1" />
-    </path>
-  </g>
-</svg>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-label="check">
+                <g stroke-dasharray="22">
+                  <rect width="24" height="24" fill="transparent" stroke="none" />
+                  <path pointer-events="none" d="m5 12 5 5L19 8" />
+                  <animate attributeName="stroke-dashoffset" from="22" to="0" dur=".5s" begin="mouseover"
+                    calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" fill="remove" />
+                </g>
+              </svg>
