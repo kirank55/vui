@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VUI Advanced SVG Examples</title>
+  <!-- Leveraging VUI Global Styles -->
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/content.css" />
+  
+  <style>
+    /* Demo Specific Layout Styles */
+    .demo-grid {
+      display: grid;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    
+    .demo-card {
+      background: var(--vui-bg-card, #ffffff);
+      border: 1px solid var(--vui-border, #e5e5e5);
+      border-radius: var(--vui-radius-lg, 8px);
+      padding: 2rem;
+    }
+
+    /* 
+      1. Gooey Effect Styles 
+      The magic applies the SVG filter by reference to a container.
+    */
+    .gooey-container {
+      /* Apply the SVG filter to this container to blend its children */
+      filter: url('#gooey');
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: #fff; /* Needs a solid background to blend against */
+      border-radius: 8px;
+    }
+
+    .gooey-blob {
+      width: 60px;
+      height: 60px;
+      background: var(--vui-accent, #2563eb);
+      border-radius: 50%;
+      /* Simple CSS animation to move them together */
+      animation: gooey-move 2s infinite alternate ease-in-out;
+    }
+    
+    .gooey-blob:nth-child(2) {
+      animation-delay: -1s;
+      background: #ec4899; /* Pink */
+    }
+
+    @keyframes gooey-move {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(40px); }
+    }
+
+    /* 
+      2. Duotone Effect Styles
+      Applies a pure SVG matrix filter to standard <img> elements
+    */
+    .duotone-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      /* Apply the duotone color matrix filter */
+      filter: url('#duotone-navy-orange');
+      transition: filter 0.3s ease;
+    }
+    
+    .duotone-img:hover {
+      /* Remove filter on hover to reveal original image */
+      filter: none;
+    }
+
+    /*
+      3. Fractal Noise (Turbulence) Texture
+      Used as a background using the SVG filter directly on a container
+    */
+    .noise-card {
+      position: relative;
+      height: 200px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--vui-bg-surface, #f5f5f5);
+    }
+
+    .noise-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      /* The noise filter generates its own pixels, so we apply it to an empty pseudo-element */
+      filter: url('#noise-texture');
+      opacity: 0.6; /* Soften the noise */
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .noise-card h2 {
+      position: relative;
+      z-index: 10;
+      margin: 0;
+      font-size: 2rem;
+      /* Adding a text-shadow so it stands out against the noise */
+      text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="docs-layout">
+    <main class="docs-main" style="max-width: 800px; margin: 0 auto;">
+      <h1 class="docs-title">Advanced SVG Demonstrations</h1>
+      <p class="docs-subtitle">Zero-dependency, complex visual effects utilizing native SVG filters directly inside the DOM.</p>
+      
+      <!-- 
+        SVG Sprite definition block. 
+        Zero visual footprint, just defines the filters for CSS to reference via url() 
+      -->
+      <svg style="width: 0; height: 0; position: absolute;" aria-hidden="true" focusable="false">
+        <defs>
+          
+          <!-- 1. The Gooey Filter -->
+          <filter id="gooey">
+            <!-- Blur the entire container and its children -->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <!-- Drastically increase the alpha/contrast to "snap" the blurred edges into sharp liquid shapes -->
+            <feColorMatrix in="blur" mode="matrix" values="
+                1 0 0 0 0  
+                0 1 0 0 0  
+                0 0 1 0 0  
+                0 0 0 20 -9" result="gooey" />
+            <!-- Composite the original colors back over the gooey alpha shape -->
+            <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+          </filter>
+
+          <!-- 2. The Duotone Filter (Navy & Orange) -->
+          <filter id="duotone-navy-orange">
+            <!-- Convert to Grayscale first to map luminance -->
+            <feColorMatrix type="matrix" values="
+                0.33 0.33 0.33 0 0
+                0.33 0.33 0.33 0 0
+                0.33 0.33 0.33 0 0
+                0    0    0    1 0" result="gray" />
+            <!-- 
+              Map the grayscale values to two specific colors using a color ramp (Component Transfer). 
+              Values go from 0 (Navy #0F172A) to 1 (Orange #F97316) 
+            -->
+            <feComponentTransfer color-interpolation-filters="sRGB" in="gray">
+              <feFuncR type="table" tableValues="0.0588 0.9764"></feFuncR>
+              <feFuncG type="table" tableValues="0.0901 0.4509"></feFuncG>
+              <feFuncB type="table" tableValues="0.1647 0.0862"></feFuncB>
+            </feComponentTransfer>
+          </filter>
+
+          <!-- 3. Fractal Noise Texture -->
+          <filter id="noise-texture">
+            <!-- Generate a procedural cloud/noise pattern -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <!-- Optionally, you could use feColorMatrix here to tint the noise, but we handle that via CSS mix-blend-mode -->
+          </filter>
+
+        </defs>
+      </svg>
+
+
+      <div class="demo-grid">
+        
+        <!-- Demo 1: Gooey Effect -->
+        <div class="demo-card">
+          <h2>1. Gooey Blend Effect</h2>
+          <p>Uses <code>&lt;feGaussianBlur&gt;</code> and <code>&lt;feColorMatrix&gt;</code>. Apply the filter to the parent stringently forces the two child circles to merge natively like liquid when their blurred edges overlap.</p>
+          <div class="gooey-container" style="margin-top: 1rem;">
+            <div class="gooey-blob"></div>
+            <div class="gooey-blob"></div>
+          </div>
+        </div>
+
+        <!-- Demo 2: Duotone Image -->
+        <div class="demo-card">
+          <h2>2. Dynamic Duotone Filtering</h2>
+          <p>Uses <code>&lt;feColorMatrix&gt;</code> and <code>&lt;feComponentTransfer&gt;</code> to map dark-to-light luminosity values directly to a Navy and Orange palette in real-time. Hover the image to remove the filter.</p>
+          <!-- Fetching a random placeholder image for the demo -->
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800&h=400" alt="Retro computer" class="duotone-img" style="margin-top: 1rem;" />
+        </div>
+
+        <!-- Demo 3: Fractal Noise / Procedural Texture -->
+        <div class="demo-card">
+          <h2>3. Procedural Fractal Noise</h2>
+          <p>Uses <code>&lt;feTurbulence&gt;</code> to generate a native, resolution-independent noise texture directly in the browser (no external image assets downloaded). Applied to a pseudo-element with <code>mix-blend-mode</code>.</p>
+          <div class="noise-card" style="margin-top: 1rem;">
+            <h2>Native Texture</h2>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
