@@ -1,5 +1,5 @@
 window.VUI_BROWSER_COMPAT = {
-  "generatedAt": "2026-03-13T09:14:15.863Z",
+  "generatedAt": "2026-03-18T07:05:22.476Z",
   "sourceVersion": "1.0.30001778",
   "sourceName": "caniuse-lite",
   "components": {

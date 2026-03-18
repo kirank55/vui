@@ -162,6 +162,47 @@
       font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
       font-size: 14px;
     }
+
+    .vui-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+
+    .vui-page-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--vui-border, #d4d4d4);
+      border-radius: var(--vui-radius-md, 6px);
+      background: var(--vui-bg-elevated, #ffffff);
+      color: var(--vui-fg, #1a1a1a);
+      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 150ms ease, border-color 150ms ease;
+    }
+
+    .vui-page-btn:hover:not(:disabled) {
+      background: var(--vui-bg-surface, #f2f2f2);
+    }
+
+    .vui-page-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .vui-page-info {
+      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+      font-size: 14px;
+      color: var(--vui-fg-muted, #6b6b6b);
+    }
+
+    .docs-main {
+      max-width: 800px;
+      margin: 0
+    }
   </style>
 </head>
 
@@ -186,6 +227,12 @@
         </div>
         <div class="vui-anim-grid" id="icon-grid">
 
+        </div>
+
+        <div class="vui-pagination" id="icon-pagination" style="display: none;">
+          <button class="vui-page-btn" id="page-prev">Previous</button>
+          <span class="vui-page-info" id="page-info"></span>
+          <button class="vui-page-btn" id="page-next">Next</button>
         </div>
       </section>
 
@@ -232,7 +279,7 @@
         'shopping-cart', 'shopping-bag', 'credit-card', 'dollar-sign', 'percent', 'pie-chart', 'bar-chart', 'bar-chart-2', 'activity', 'trending-up', 'trending-down', 'gift', 'truck', 'package', 'clipboard', 'file-text', 'file-plus', 'file-minus', 'box', 'inbox', 'archive', 'folder-plus', 'folder-minus', 'hexagon', 'octagon', 'x-circle',
         // Batch 7: Weather, Users & Misc (27)
         'umbrella', 'cloud-drizzle', 'cloud-lightning', 'cloud-rain', 'cloud-snow', 'wind', 'snowflake', 'users', 'user-plus', 'user-minus', 'user-check', 'user-x', 'smile', 'frown', 'meh', 'anchor', 'bookmark', 'shield-off', 'toggle-left', 'toggle-right', 'sliders', 'bell-off', 'volume-x', 'volume-1', 'circle', 'square', 'triangle'
-      ,
+        ,
         // Batch 8: New 300 Lucide Icons
         'a-arrow-down', 'a-arrow-up', 'a-large-small', 'accessibility', 'activity-square', 'air-vent', 'airplay', 'alarm-check', 'alarm-clock-check', 'alarm-clock-minus',
         'alarm-clock-off', 'alarm-clock-plus', 'alarm-clock', 'alarm-minus', 'alarm-plus', 'alarm-smoke', 'album', 'alert-octagon', 'align-center-horizontal', 'align-center-vertical',
@@ -266,126 +313,164 @@
         'candy-cane', 'candy-off', 'candy', 'cannabis-off', 'cannabis', 'captions-off', 'captions', 'car-front', 'car-taxi-front', 'car'
       ]
 
+      const ICONS_PER_PAGE = 50;
+      let currentPage = 1;
+      let currentMode = 'hover';
+      let filteredNames = [...iconNames];
+      const svgCache = new Map();
+
       const grid = document.getElementById('icon-grid');
+      const searchInput = document.getElementById('icon-search');
+      const modeBtns = document.querySelectorAll('.vui-icons-mode-btn');
+      const pagination = document.getElementById('icon-pagination');
+      const btnPrev = document.getElementById('page-prev');
+      const btnNext = document.getElementById('page-next');
+      const pageInfo = document.getElementById('page-info');
 
-      // Fetch all SVGs in parallel
-      const svgs = await Promise.all(
-        iconNames.map(name => fetch(`/docs/icons/svg/${name}.svg`).then(r => r.text()))
-      );
+      async function renderPage() {
+        const totalPages = Math.ceil(filteredNames.length / ICONS_PER_PAGE) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
 
-      // Render grid cells
-      grid.innerHTML = svgs.map((svg, i) => `
-        <div class="vui-anim-cell">
-          <div class="vui-anim-icon-area">
-            ${svg}
-          </div>
-          <div class="vui-anim-copy-row">
-            <svg viewBox="0 0 24 24">
-              <rect x="9" y="9" width="10" height="10" rx="2" />
-              <rect x="5" y="5" width="10" height="10" rx="2" />
-            </svg>
-            <span class="vui-anim-copy-label">${iconNames[i]}</span>
-          </div>
-        </div>
-      `).join('');
+        const start = (currentPage - 1) * ICONS_PER_PAGE;
+        const pageNames = filteredNames.slice(start, start + ICONS_PER_PAGE);
 
-      var searchInput = document.getElementById('icon-search');
-      var modeBtns = document.querySelectorAll('.vui-icons-mode-btn');
-      var cells = grid.querySelectorAll('.vui-anim-cell');
-      var noResults = null;
-
-      // Cache original SVG markup for each cell so we can restore on mode switch
-      var originals = [];
-      cells.forEach(function (cell) {
-        originals.push(cell.querySelector('.vui-anim-icon-area').innerHTML);
-      });
-
-      var currentMode = 'hover';
-
-      // ── Search ──
-      searchInput.addEventListener('input', function () {
-        var q = searchInput.value.trim().toLowerCase();
-        var anyVisible = false;
-        cells.forEach(function (cell) {
-          var label = cell.querySelector('.vui-anim-copy-label');
-          var name = label ? label.textContent.toLowerCase() : '';
-          var match = !q || name.indexOf(q) !== -1;
-          cell.classList.toggle('is-hidden', !match);
-          if (match) anyVisible = true;
-        });
-        // Show / hide "no results" message
-        if (!anyVisible) {
-          if (!noResults) {
-            noResults = document.createElement('div');
-            noResults.className = 'vui-icons-no-results';
-            noResults.textContent = 'No icons match your search.';
-            grid.appendChild(noResults);
-          }
-          noResults.style.display = '';
-        } else if (noResults) {
-          noResults.style.display = 'none';
+        // Fetch missing SVGs
+        const svgsToFetch = pageNames.filter(name => !svgCache.has(name));
+        if (svgsToFetch.length > 0) {
+          await Promise.all(svgsToFetch.map(async name => {
+            try {
+              const svg = await fetch(`/docs/icons/svg/${name}.svg`).then(r => r.text());
+              svgCache.set(name, svg);
+            } catch (e) {
+              console.error(`Failed to load icon: ${name}`, e);
+              svgCache.set(name, '<svg viewBox="0 0 24 24"></svg>'); // Empty fallback
+            }
+          }));
         }
-      });
 
-      // ── Mode switching ──
-      function applyMode(mode) {
-        currentMode = mode;
-        modeBtns.forEach(function (btn) {
-          btn.classList.toggle('is-active', btn.dataset.mode === mode);
-        });
+        if (filteredNames.length === 0) {
+          grid.innerHTML = '<div class="vui-icons-no-results">No icons match your search.</div>';
+          pagination.style.display = 'none';
+          return;
+        }
 
-        cells.forEach(function (cell, i) {
-          var area = cell.querySelector('.vui-anim-icon-area');
-          // Restore original markup first
-          area.innerHTML = originals[i];
-          var svg = area.querySelector('svg');
+        grid.innerHTML = pageNames.map(name => `
+          <div class="vui-anim-cell">
+            <div class="vui-anim-icon-area" data-name="${name}">
+              ${svgCache.get(name)}
+            </div>
+            <div class="vui-anim-copy-row">
+              <svg viewBox="0 0 24 24">
+                <rect x="9" y="9" width="10" height="10" rx="2" />
+                <rect x="5" y="5" width="10" height="10" rx="2" />
+              </svg>
+              <span class="vui-anim-copy-label">${name}</span>
+            </div>
+          </div>
+        `).join('');
+
+        // Apply current mode to new DOM
+        applyCurrentModeToDOM();
+
+        // Setup copy listeners
+        setupCopy();
+
+        // Update pagination UI
+        pagination.style.display = 'flex';
+        pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+        btnPrev.disabled = currentPage === 1;
+        btnNext.disabled = currentPage === totalPages;
+      }
+
+      function applyCurrentModeToDOM() {
+        modeBtns.forEach(btn => btn.classList.toggle('is-active', btn.dataset.mode === currentMode));
+
+        const cells = document.querySelectorAll('.vui-anim-cell');
+        cells.forEach(cell => {
+          const area = cell.querySelector('.vui-anim-icon-area');
+          const name = area.dataset.name;
+
+          area.innerHTML = svgCache.get(name);
+
+          const svg = area.querySelector('svg');
           if (!svg) return;
 
-          if (mode === 'static') {
-            // Remove all SMIL animation elements
-            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(function (el) {
-              el.remove();
-            });
-          } else if (mode === 'infinite') {
-            // Change begin to 0s and add repeatCount=indefinite
-            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(function (el) {
+          if (currentMode === 'static') {
+            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => el.remove());
+          } else if (currentMode === 'infinite') {
+            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
               el.setAttribute('begin', '0s');
               el.setAttribute('repeatCount', 'indefinite');
               el.removeAttribute('fill');
             });
           }
-          // 'hover' mode: original markup is already correct
         });
       }
 
-      modeBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          applyMode(btn.dataset.mode);
-        });
-      });
+      function applyMode(mode) {
+        currentMode = mode;
+        applyCurrentModeToDOM();
+      }
 
-      // ── Copy-to-clipboard ──
-      document.querySelectorAll('.vui-anim-copy-row').forEach(function (row) {
-        row.addEventListener('click', function () {
-          var cell = row.closest('.vui-anim-cell');
-          var svg = cell.querySelector('.vui-anim-icon-area svg');
-          if (!svg) return;
-          var clone = svg.cloneNode(true);
-          clone.querySelectorAll('rect[fill="transparent"]').forEach(function (el) { el.remove(); });
-          var svgText = clone.outerHTML;
-          navigator.clipboard.writeText(svgText).then(function () {
-            var label = row.querySelector('.vui-anim-copy-label');
-            if (!label) return;
-            var original = label.textContent;
-            row.classList.add('is-copied');
-            label.textContent = 'Copied!';
-            setTimeout(function () {
-              label.textContent = original;
-              row.classList.remove('is-copied');
-            }, 1500);
+      function setupCopy() {
+        document.querySelectorAll('.vui-anim-copy-row').forEach(row => {
+          row.addEventListener('click', function () {
+            const cell = row.closest('.vui-anim-cell');
+            const svg = cell.querySelector('.vui-anim-icon-area svg');
+            if (!svg) return;
+            const clone = svg.cloneNode(true);
+            clone.querySelectorAll('rect[fill="transparent"]').forEach(el => el.remove());
+            const svgText = clone.outerHTML;
+
+            navigator.clipboard.writeText(svgText).then(() => {
+              const label = row.querySelector('.vui-anim-copy-label');
+              if (!label) return;
+              const originalText = label.textContent;
+              row.classList.add('is-copied');
+              label.textContent = 'Copied!';
+              setTimeout(() => {
+                label.textContent = originalText;
+                row.classList.remove('is-copied');
+              }, 1500);
+            });
           });
         });
+      }
+
+      // Search
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.trim().toLowerCase();
+        filteredNames = iconNames.filter(name => name.toLowerCase().includes(q));
+        currentPage = 1;
+        renderPage();
       });
+
+      // Pagination
+      btnPrev.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderPage();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      btnNext.addEventListener('click', () => {
+        const totalPages = Math.ceil(filteredNames.length / ICONS_PER_PAGE);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPage();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      // Modes
+      modeBtns.forEach(btn => {
+        btn.addEventListener('click', () => applyMode(btn.dataset.mode));
+      });
+
+      // Initial render
+      renderPage();
     })();
   </script>
 </body>
