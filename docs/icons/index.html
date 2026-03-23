@@ -1041,6 +1041,23 @@
               el.setAttribute('repeatCount', 'indefinite');
               el.removeAttribute('fill');
             });
+          } else {
+            // Hover mode: ID-based begin values (e.g. "icon-g.mouseover") don't resolve
+            // for SVGs injected via innerHTML. Set begin="indefinite" and trigger via JS.
+            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
+              el.setAttribute('begin', 'indefinite');
+              el.removeAttribute('repeatCount');
+            });
+            if (!area._hoverBound) {
+              area._hoverBound = true;
+              area.addEventListener('mouseenter', () => {
+                const s = area.querySelector('svg');
+                if (!s) return;
+                s.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
+                  try { el.beginElement(); } catch (e) { /* ignore */ }
+                });
+              });
+            }
           }
         });
       }
