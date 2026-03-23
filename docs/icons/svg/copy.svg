@@ -1,22 +1,33 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-  stroke-linejoin="round" aria-label="copy">
-  <g id="copy-g">
-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-    <g pointer-events="none">
-      <rect x="5" y="5" width="10" height="10" rx="2">
-        <animateTransform attributeName="transform" type="translate" values="0 0; -1 -1; 4 4; 0 0"
-          keyTimes="0; 0.25; 0.75; 1"
-          dur="0.8s" calcMode="spline" begin="copy-g.mouseover"
-          keySplines="0.42 0 0.58 1; 0.42 0 0.58 1; 0.42 0 0.58 1" />
-      </rect>
-    </g>
-    <g pointer-events="none">
-      <rect x="9" y="9" width="10" height="10" rx="2">
-        <animateTransform attributeName="transform" type="translate" values="0 0; 2 2; 0 0"
-          keyTimes="0; 0.4; 1"
-          dur="0.8s" calcMode="spline" begin="copy-g.mouseover"
-          keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
-      </rect>
-    </g>
+  stroke-linejoin="round" aria-label="copy" id="copySvg">
+  <g>
+    <rect x="5" y="5" width="10" height="10" rx="2" pointer-events="none">
+      <animateTransform attributeName="transform" type="translate"
+        from="0 0" to="0 0" dur="0.4s"
+        begin="copySvg.mouseover" fill="freeze"
+        calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1; 0.42 0 0.58 1"
+        keyTimes="0; 0.25; 0.75; 1"
+        values="0 0; -1 -1; 4 4; 0 0" />
+      <animateTransform attributeName="transform" type="translate"
+        from="0 0" to="0 0" dur="0.3s"
+        begin="copySvg.mouseout" fill="freeze"
+        calcMode="spline" keySplines="0.4 0 0.2 1"
+        keyTimes="0; 1"
+        values="4 4; 0 0" />
+    </rect>
+    <rect x="9" y="9" width="10" height="10" rx="2" pointer-events="none">
+      <animateTransform attributeName="transform" type="translate"
+        from="0 0" to="0 0" dur="0.4s"
+        begin="copySvg.mouseover" fill="freeze"
+        calcMode="spline" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"
+        keyTimes="0; 0.4; 1"
+        values="0 0; 2 2; 0 0" />
+      <animateTransform attributeName="transform" type="translate"
+        from="0 0" to="0 0" dur="0.3s"
+        begin="copySvg.mouseout" fill="freeze"
+        calcMode="spline" keySplines="0.4 0 0.2 1"
+        keyTimes="0; 1"
+        values="2 2; 0 0" />
+    </rect>
   </g>
 </svg>

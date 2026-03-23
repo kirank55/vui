@@ -1071,11 +1071,10 @@
         document.querySelectorAll('.vui-anim-copy-row').forEach(row => {
           row.addEventListener('click', function () {
             const cell = row.closest('.vui-anim-cell');
-            const svg = cell.querySelector('.vui-anim-icon-area svg');
-            if (!svg) return;
-            const clone = svg.cloneNode(true);
-            clone.querySelectorAll('rect[fill="transparent"]').forEach(el => el.remove());
-            const svgText = clone.outerHTML;
+            const area = cell.querySelector('.vui-anim-icon-area');
+            if (!area) return;
+            const name = area.dataset.name;
+            const svgText = svgCache.get(name) || '';
 
             navigator.clipboard.writeText(svgText).then(() => {
               const label = row.querySelector('.vui-anim-copy-label');
