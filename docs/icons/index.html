@@ -843,7 +843,15 @@
         svg.setAttribute('stroke-width', st.stroke);
         if (st.color) svg.setAttribute('stroke', st.color);
 
-        // SVGs are displayed exactly as in the source files - no animation modifications
+        if (st.mode === 'static') {
+          svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => el.remove());
+        } else if (st.mode === 'infinite') {
+          svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
+            el.setAttribute('begin', '0s');
+            el.setAttribute('repeatCount', 'indefinite');
+            el.removeAttribute('fill');
+          });
+        }
 
         const finalSvg = svg.outerHTML;
         pPreview.innerHTML = finalSvg;
@@ -1041,8 +1049,9 @@
             const cell = row.closest('.vui-anim-cell');
             const area = cell.querySelector('.vui-anim-icon-area');
             if (!area) return;
-            const name = area.dataset.name;
-            const svgText = svgCache.get(name) || '';
+            const svg = area.querySelector('svg');
+            if (!svg) return;
+            const svgText = svg.outerHTML;
 
             navigator.clipboard.writeText(svgText).then(() => {
               const label = row.querySelector('.vui-anim-copy-label');
