@@ -1,39 +1,39 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="cloud-snow">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="cloud-snow" id="cloudSnowSvg">
 <g id="cloud-snow-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <path  d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="cloud-snow-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="cloudSnowSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <line  x1="8" y1="16" x2="8.01" y2="16" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloud-snow-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloudSnowSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="8" y1="20" x2="8.01" y2="20" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloud-snow-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloudSnowSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="12" y1="18" x2="12.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloud-snow-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloudSnowSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="12" y1="22" x2="12.01" y2="22" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloud-snow-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloudSnowSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="16" y1="16" x2="16.01" y2="16" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloud-snow-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloudSnowSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="16" y1="20" x2="16.01" y2="20" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloud-snow-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="cloudSnowSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
 </g>

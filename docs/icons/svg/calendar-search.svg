@@ -1,34 +1,34 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="calendar-search">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="calendar-search" id="calendarSearchSvg">
 <g id="calendar-search-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <path  d="M16 2v4">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendar-search-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendarSearchSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <path  d="M21 11.75V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.25">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendar-search-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendarSearchSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <path  d="m22 22-1.875-1.875">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendar-search-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendarSearchSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <path  d="M3 10h18">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendar-search-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendarSearchSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <path  d="M8 2v4">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendar-search-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="calendarSearchSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <circle  cx="18" cy="18" r="3">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="18 18" dur="0.5s" begin="calendar-search-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="18 18" dur="0.5s" begin="calendarSearchSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </circle>
   </g>
 </g>

@@ -1,24 +1,24 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="car">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="car" id="carSvg">
 <g id="car-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <path  d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="carSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <circle  cx="7" cy="17" r="2">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="7 17" dur="0.5s" begin="car-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="7 17" dur="0.5s" begin="carSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </circle>
   </g>
   <g pointer-events="none">
     <path  d="M9 17h6">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="car-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="carSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <circle  cx="17" cy="17" r="2">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="17 17" dur="0.5s" begin="car-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="17 17" dur="0.5s" begin="carSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </circle>
   </g>
 </g>

@@ -1,0 +1,991 @@
+*** Begin Patch
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\check.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+-  stroke-linejoin="round" aria-label="check">
+-  <g stroke-dasharray="22">
+-    <rect width="24" height="24" fill="transparent" stroke="none" />
+-    <path pointer-events="none" d="m5 12 5 5L19 8" />
+-    <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.6s" begin="mouseover"
+-      calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1" fill="remove" />
+-  </g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
++  stroke-linejoin="round" aria-label="check" id="checkSvg">
++  <g stroke-dasharray="22">
++    <rect width="24" height="24" fill="transparent" stroke="none" />
++    <path pointer-events="none" d="m5 12 5 5L19 8" />
++    <animate attributeName="stroke-dashoffset" from="22" to="0" dur="0.6s" begin="checkSvg.mouseover"
++      calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1" fill="remove" />
++  </g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\search.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+-                stroke-linejoin="round" aria-label="search">
+-                <g>
+-                  <rect width="24" height="24" fill="transparent" stroke="none" />
+-                  <circle pointer-events="none" cx="11" cy="11" r="7" />
+-                  <path pointer-events="none" d="m20 20-3.5-3.5" />
+-                  <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1"
+-                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze" additive="sum" />
+-                  <animateTransform attributeName="transform" type="translate" values="0 0; -1.8 -1.8; 0 0"
+-                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze" additive="sum" />
+-                </g>
+-              </svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
++                stroke-linejoin="round" aria-label="search" id="searchSvg">
++                <g>
++                  <rect width="24" height="24" fill="transparent" stroke="none" />
++                  <circle pointer-events="none" cx="11" cy="11" r="7" />
++                  <path pointer-events="none" d="m20 20-3.5-3.5" />
++                  <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1"
++                    keyTimes="0; 0.5; 1" dur=".4s" begin="searchSvg.mouseover" fill="freeze" additive="sum" />
++                  <animateTransform attributeName="transform" type="translate" values="0 0; -1.8 -1.8; 0 0"
++                    keyTimes="0; 0.5; 1" dur=".4s" begin="searchSvg.mouseover" fill="freeze" additive="sum" />
++                </g>
++              </svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\arrow-right.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+-                stroke-linejoin="round" aria-label="arrow-right">
+-                <g>
+-                  <rect width="24" height="24" fill="transparent" stroke="none" />
+-                  <path pointer-events="none" d="m12 5 7 7-7 7" />
+-                  <path pointer-events="none" d="M5 12h14" />
+-                  <animateTransform attributeName="transform" type="translate" values="0 0; 4 0; 0 0"
+-                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze" />
+-                </g>
+-              </svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
++                stroke-linejoin="round" aria-label="arrow-right" id="arrowRightSvg">
++                <g>
++                  <rect width="24" height="24" fill="transparent" stroke="none" />
++                  <path pointer-events="none" d="m12 5 7 7-7 7" />
++                  <path pointer-events="none" d="M5 12h14" />
++                  <animateTransform attributeName="transform" type="translate" values="0 0; 4 0; 0 0"
++                    keyTimes="0; 0.5; 1" dur=".4s" begin="arrowRightSvg.mouseover" fill="freeze" />
++                </g>
++              </svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\eye.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+-                stroke-linejoin="round" aria-label="eye">
+-<g id="eye-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <path  d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eye-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-  <g pointer-events="none">
+-    <circle  cx="12" cy="12" r="2.5">
+-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="eye-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </circle>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
++                stroke-linejoin="round" aria-label="eye" id="eyeSvg">
++<g id="eye-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <path  d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++  <g pointer-events="none">
++    <circle  cx="12" cy="12" r="2.5">
++    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="eyeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </circle>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\eye-off.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+-                stroke-linejoin="round" aria-label="eye-off">
+-<g id="eye-off-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <path  d="M3 3 21 21">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eye-off-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-  <g pointer-events="none">
+-    <path  d="M10.6 10.7a2.5 2.5 0 0 0 3.3 3.3">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eye-off-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-  <g pointer-events="none">
+-    <path  d="M9.4 5.3A11.8 11.8 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-4 4.9">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eye-off-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-  <g pointer-events="none">
+-    <path  d="M6 6.6C3.6 8.3 2 12 2 12s3.5 6 10 6c1.2 0 2.4-.2 3.4-.6">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eye-off-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
++                stroke-linejoin="round" aria-label="eye-off" id="eyeOffSvg">
++<g id="eye-off-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <path  d="M3 3 21 21">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++  <g pointer-events="none">
++    <path  d="M10.6 10.7a2.5 2.5 0 0 0 3.3 3.3">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++  <g pointer-events="none">
++    <path  d="M9.4 5.3A11.8 11.8 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-4 4.9">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++  <g pointer-events="none">
++    <path  d="M6 6.6C3.6 8.3 2 12 2 12s3.5 6 10 6c1.2 0 2.4-.2 3.4-.6">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\edit-2.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="edit-2">
+-  <g id="edit-2-g">
+-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-    <path pointer-events="none" d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+-      <animateTransform attributeName="transform" type="rotate" values="0 2 22; 15 2 22; -5 2 22; 0 2 22" dur="0.6s" begin="edit-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1" />
+-      <animateTransform attributeName="transform" type="translate" values="0 0; 2 -2; -1 1; 0 0" dur="0.6s" begin="edit-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1" additive="sum" />
+-    </path>
+-  </g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="edit-2" id="edit2Svg">
++  <g id="edit-2-g">
++    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++    <path pointer-events="none" d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
++      <animateTransform attributeName="transform" type="rotate" values="0 2 22; 15 2 22; -5 2 22; 0 2 22" dur="0.6s" begin="edit2Svg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1" />
++      <animateTransform attributeName="transform" type="translate" values="0 0; 2 -2; -1 1; 0 0" dur="0.6s" begin="edit2Svg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1" additive="sum" />
++    </path>
++  </g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\trash-2.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="trash-2">
+-<g id="trash-2-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  
+-  <g pointer-events="none">
+-    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+-    <path d="M10 11v6" />
+-    <path d="M14 11v6" />
+-  </g>
+-  <g pointer-events="none">
+-    <path d="M3 6h18" />
+-    <path d="M10 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="0.6s" begin="trash-2-g.mouseover" />
+-    <animateTransform attributeName="transform" type="rotate" values="0 19 6; 20 19 6; 0 19 6" dur="0.6s" begin="trash-2-g.mouseover" additive="sum" />
+-  </g>
+-
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="trash-2" id="trash2Svg">
++<g id="trash-2-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  
++  <g pointer-events="none">
++    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
++    <path d="M10 11v6" />
++    <path d="M14 11v6" />
++  </g>
++  <g pointer-events="none">
++    <path d="M3 6h18" />
++    <path d="M10 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="0.6s" begin="trash2Svg.mouseover" />
++    <animateTransform attributeName="transform" type="rotate" values="0 19 6; 20 19 6; 0 19 6" dur="0.6s" begin="trash2Svg.mouseover" additive="sum" />
++  </g>
++
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\list.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="list">
+-<g id="list-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <line  x1="8" y1="6" x2="21" y2="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="8" y1="12" x2="21" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="8" y1="18" x2="21" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="3" y1="6" x2="3.01" y2="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="3" y1="12" x2="3.01" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="3" y1="18" x2="3.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="list" id="listSvg">
++<g id="list-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <line  x1="8" y1="6" x2="21" y2="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="8" y1="12" x2="21" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="8" y1="18" x2="21" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="3" y1="6" x2="3.01" y2="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="3" y1="12" x2="3.01" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="3" y1="18" x2="3.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\thumbs-up.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="thumbs-up">
+-<g id="thumbs-up-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <path  d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="thumbs-up-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="thumbs-up" id="thumbsUpSvg">
++<g id="thumbs-up-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <path  d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="thumbsUpSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\lock.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="lock">
+-<g id="lock-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <rect  x="3" y="11" width="18" height="11" rx="2" ry="2">
+-    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="lock-g.mouseover" />
+-  </rect>
+-  </g>
+-  <g pointer-events="none">
+-    <path  d="M7 11V7a5 5 0 0 1 10 0v4">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -5;0 0" dur="0.4s" begin="lock-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="lock" id="lockSvg">
++<g id="lock-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <rect  x="3" y="11" width="18" height="11" rx="2" ry="2">
++    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="lockSvg.mouseover" />
++  </rect>
++  </g>
++  <g pointer-events="none">
++    <path  d="M7 11V7a5 5 0 0 1 10 0v4">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -5;0 0" dur="0.4s" begin="lockSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\unlock.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="unlock">
+-<g id="unlock-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <rect  x="3" y="11" width="18" height="11" rx="2" ry="2">
+-    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="unlock-g.mouseover" />
+-  </rect>
+-  </g>
+-  <g pointer-events="none">
+-    <path  d="M7 11V7a5 5 0 0 1 9.9-1">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="0.4s" begin="unlock-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="unlock" id="unlockSvg">
++<g id="unlock-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <rect  x="3" y="11" width="18" height="11" rx="2" ry="2">
++    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="unlockSvg.mouseover" />
++  </rect>
++  </g>
++  <g pointer-events="none">
++    <path  d="M7 11V7a5 5 0 0 1 9.9-1">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="0.4s" begin="unlockSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\refresh.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="refresh">
+-<g id="refresh-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  
+-  <g pointer-events="none">
+-    <path d="M23 4v6h-6" />
+-    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+-    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="0.8s" begin="refresh-g.mouseover" />
+-  </g>
+-
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="refresh" id="refreshSvg">
++<g id="refresh-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  
++  <g pointer-events="none">
++    <path d="M23 4v6h-6" />
++    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
++    <animateTransform attributeName="transform" type="rotate" values="0 12 12; 360 12 12" dur="0.8s" begin="refreshSvg.mouseover" />
++  </g>
++
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\map-pin.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="map-pin">
+-<g id="map-pin-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="map-pin-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-  <g pointer-events="none">
+-    <circle cx="12" cy="10" r="3">
+-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 10" dur="0.5s" begin="map-pin-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </circle>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="map-pin" id="mapPinSvg">
++<g id="map-pin-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="mapPinSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++  <g pointer-events="none">
++    <circle cx="12" cy="10" r="3">
++    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 10" dur="0.5s" begin="mapPinSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </circle>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\compass.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="compass">
+-<g id="compass-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <circle  cx="12" cy="12" r="10">
+-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="compass-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </circle>
+-  </g>
+-  <g pointer-events="none">
+-    <polygon  points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76">
+-    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="compass-g.mouseover" />
+-  </polygon>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="compass" id="compassSvg">
++<g id="compass-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <circle  cx="12" cy="12" r="10">
++    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="compassSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </circle>
++  </g>
++  <g pointer-events="none">
++    <polygon  points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76">
++    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="compassSvg.mouseover" />
++  </polygon>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\globe.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="globe">
+-<g id="globe-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <circle cx="12" cy="12" r="10">
+-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="globe-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </circle>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="2" y1="12" x2="22" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="globe-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="globe-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </path>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="globe" id="globeSvg">
++<g id="globe-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <circle cx="12" cy="12" r="10">
++    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="globeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </circle>
++  </g>
++  <g pointer-events="none">
++    <line x1="2" y1="12" x2="22" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="globeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="globeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </path>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\crosshair.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="crosshair">
+-<g id="crosshair-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <circle  cx="12" cy="12" r="10">
+-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="crosshair-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </circle>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="22" y1="12" x2="18" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshair-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="6" y1="12" x2="2" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshair-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="12" y1="6" x2="12" y2="2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshair-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="12" y1="22" x2="12" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshair-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="crosshair" id="crosshairSvg">
++<g id="crosshair-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <circle  cx="12" cy="12" r="10">
++    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="crosshairSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </circle>
++  </g>
++  <g pointer-events="none">
++    <line  x1="22" y1="12" x2="18" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshairSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="6" y1="12" x2="2" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshairSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="12" y1="6" x2="12" y2="2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshairSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="12" y1="22" x2="12" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="crosshairSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\mail.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="mail">
+-<g id="mail-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  
+-  <path pointer-events="none" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+-  <path pointer-events="none" d="M22 6l-10 7L2 6">
+-    <animate attributeName="d" values="M22 6l-10 7L2 6; M22 6l-10 -3L2 6; M22 6l-10 7L2 6" dur="0.5s" begin="mail-g.mouseover" />
+-  </path>
+-
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="mail" id="mailSvg">
++<g id="mail-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  
++  <path pointer-events="none" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
++  <path pointer-events="none" d="M22 6l-10 7L2 6">
++    <animate attributeName="d" values="M22 6l-10 7L2 6; M22 6l-10 -3L2 6; M22 6l-10 7L2 6" dur="0.5s" begin="mailSvg.mouseover" />
++  </path>
++
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\bell.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bell">
+-<g id="bell-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  
+-  <g pointer-events="none">
+-    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+-    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+-    <animateTransform attributeName="transform" type="rotate" values="0 12 4; 20 12 4; -20 12 4; 10 12 4; -10 12 4; 0 12 4" dur="0.7s" begin="bell-g.mouseover" />
+-  </g>
+-
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bell" id="bellSvg">
++<g id="bell-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  
++  <g pointer-events="none">
++    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
++    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
++    <animateTransform attributeName="transform" type="rotate" values="0 12 4; 20 12 4; -20 12 4; 10 12 4; -10 12 4; 0 12 4" dur="0.7s" begin="bellSvg.mouseover" />
++  </g>
++
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\share-2.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="share-2">
+-  <g id="share-2-g">
+-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-    <g pointer-events="none">
+-      <circle cx="18" cy="5" r="3">
+-        <animateTransform attributeName="transform" type="scale" values="1 1; 1.25 1.25; 1 1" transform-origin="18 5" dur="0.5s" begin="share-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-      </circle>
+-      <circle cx="6" cy="12" r="3">
+-        <animateTransform attributeName="transform" type="scale" values="1 1; 1.25 1.25; 1 1" transform-origin="6 12" dur="0.5s" begin="share-2-g.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-      </circle>
+-      <circle cx="18" cy="19" r="3">
+-        <animateTransform attributeName="transform" type="scale" values="1 1; 1.25 1.25; 1 1" transform-origin="18 19" dur="0.5s" begin="share-2-g.mouseover+0.1s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-      </circle>
+-      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-        <animate attributeName="stroke-dashoffset" values="1; 0" dur="0.4s" begin="share-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
+-      </line>
+-      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-        <animate attributeName="stroke-dashoffset" values="1; 0" dur="0.4s" begin="share-2-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
+-      </line>
+-    </g>
+-  </g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="share-2" id="share2Svg">
++  <g id="share-2-g">
++    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++    <g pointer-events="none">
++      <circle cx="18" cy="5" r="3">
++        <animateTransform attributeName="transform" type="scale" values="1 1; 1.25 1.25; 1 1" transform-origin="18 5" dur="0.5s" begin="share2Svg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++      </circle>
++      <circle cx="6" cy="12" r="3">
++        <animateTransform attributeName="transform" type="scale" values="1 1; 1.25 1.25; 1 1" transform-origin="6 12" dur="0.5s" begin="share2Svg.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++      </circle>
++      <circle cx="18" cy="19" r="3">
++        <animateTransform attributeName="transform" type="scale" values="1 1; 1.25 1.25; 1 1" transform-origin="18 19" dur="0.5s" begin="share2Svg.mouseover+0.1s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++      </circle>
++      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++        <animate attributeName="stroke-dashoffset" values="1; 0" dur="0.4s" begin="share2Svg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
++      </line>
++      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++        <animate attributeName="stroke-dashoffset" values="1; 0" dur="0.4s" begin="share2Svg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze" />
++      </line>
++    </g>
++  </g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\volume-2.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="volume-2">
+-<g id="volume-2-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <g id="volume-2-g">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume-2-g.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </g>
+-  </g>
+-  <g pointer-events="none">
+-    <polygon  points="11 5 6 9 2 9 2 15 6 15 11 19 11 5">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume-2-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </polygon>
+-  </g>
+-  <g pointer-events="none">
+-    <path  d="M19.07 4.93a10 10 0 0 1 0 14.14" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="volume-2-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </path>
+-  </g>
+-  <g pointer-events="none">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="volume-2-g.mouseover">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume-2-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </animate>
+-  </g>
+-  <g pointer-events="none">
+-    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.5s" begin="volume-2-g.mouseover">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume-2-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </animate>
+-  </g>
+-  <g pointer-events="none">
+-    <path  d="M15.54 8.46a5 5 0 0 1 0 7.07" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="volume-2-g.mouseover+0.35000000000000003s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </path>
+-  </g>
+-  <g pointer-events="none">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 1 0; 0 0" dur="0.5s" begin="volume-2-g.mouseover">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume-2-g.mouseover+0.4s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </animate>
+-  </g>
+-  <g pointer-events="none">
+-    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.5s" begin="volume-2-g.mouseover">
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume-2-g.mouseover+0.45s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </animate>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="volume-2" id="volume2Svg">
++<g id="volume-2-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <g id="volume-2-g">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume2Svg.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </g>
++  </g>
++  <g pointer-events="none">
++    <polygon  points="11 5 6 9 2 9 2 15 6 15 11 19 11 5">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume2Svg.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </polygon>
++  </g>
++  <g pointer-events="none">
++    <path  d="M19.07 4.93a10 10 0 0 1 0 14.14" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="volume2Svg.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </path>
++  </g>
++  <g pointer-events="none">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 2 0; 0 0" dur="0.5s" begin="volume2Svg.mouseover">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume2Svg.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </animate>
++  </g>
++  <g pointer-events="none">
++    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.5s" begin="volume2Svg.mouseover">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume2Svg.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </animate>
++  </g>
++  <g pointer-events="none">
++    <path  d="M15.54 8.46a5 5 0 0 1 0 7.07" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="volume2Svg.mouseover+0.35000000000000003s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </path>
++  </g>
++  <g pointer-events="none">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 1 0; 0 0" dur="0.5s" begin="volume2Svg.mouseover">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume2Svg.mouseover+0.4s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </animate>
++  </g>
++  <g pointer-events="none">
++    <animate attributeName="opacity" values="1; 0.5; 1" dur="0.5s" begin="volume2Svg.mouseover">
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="volume2Svg.mouseover+0.45s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </animate>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\camera.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="camera">
+-  <g id="camera-g">
+-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-    <g pointer-events="none">
+-      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+-        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="camera-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-      </path>
+-      <circle cx="12" cy="13" r="4">
+-        <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 13" dur="0.4s" begin="camera-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-      </circle>
+-      <circle cx="12" cy="13" r="1.5">
+-        <animateTransform attributeName="transform" type="scale" values="1 1; 0.2 0.2; 1 1" transform-origin="12 13" dur="0.4s" begin="camera-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-      </circle>
+-    </g>
+-  </g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="camera" id="cameraSvg">
++  <g id="camera-g">
++    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++    <g pointer-events="none">
++      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
++        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="cameraSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++      </path>
++      <circle cx="12" cy="13" r="4">
++        <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 13" dur="0.4s" begin="cameraSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++      </circle>
++      <circle cx="12" cy="13" r="1.5">
++        <animateTransform attributeName="transform" type="scale" values="1 1; 0.2 0.2; 1 1" transform-origin="12 13" dur="0.4s" begin="cameraSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++      </circle>
++    </g>
++  </g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\download.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="download">
+-<g id="download-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  
+-  <path pointer-events="none" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+-  <g pointer-events="none">
+-    <polyline points="7 10 12 15 17 10" />
+-    <line x1="12" y1="15" x2="12" y2="3" />
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 4; 0 0" dur="0.5s" begin="download-g.mouseover" />
+-  </g>
+-
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="download" id="downloadSvg">
++<g id="download-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  
++  <path pointer-events="none" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
++  <g pointer-events="none">
++    <polyline points="7 10 12 15 17 10" />
++    <line x1="12" y1="15" x2="12" y2="3" />
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 4; 0 0" dur="0.5s" begin="downloadSvg.mouseover" />
++  </g>
++
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\upload.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="upload">
+-<g id="upload-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  
+-  <path pointer-events="none" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+-  <g pointer-events="none">
+-    <polyline points="17 8 12 3 7 8" />
+-    <line x1="12" y1="3" x2="12" y2="15" />
+-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="0.5s" begin="upload-g.mouseover" />
+-  </g>
+-
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="upload" id="uploadSvg">
++<g id="upload-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  
++  <path pointer-events="none" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
++  <g pointer-events="none">
++    <polyline points="17 8 12 3 7 8" />
++    <line x1="12" y1="3" x2="12" y2="15" />
++    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="0.5s" begin="uploadSvg.mouseover" />
++  </g>
++
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\sun.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="sun">
+-<g id="sun-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <circle cx="12" cy="12" r="5">
+-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </circle>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="12" y1="1" x2="12" y2="3" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="12" y1="21" x2="12" y2="23" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="1" y1="12" x2="3" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="21" y1="12" x2="23" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sun-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="sun" id="sunSvg">
++<g id="sun-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <circle cx="12" cy="12" r="5">
++    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </circle>
++  </g>
++  <g pointer-events="none">
++    <line x1="12" y1="1" x2="12" y2="3" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line x1="12" y1="21" x2="12" y2="23" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line x1="1" y1="12" x2="3" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line x1="21" y1="12" x2="23" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="sunSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++</g>
++</svg>
+*** Update File: c:\Users\kiran\code\p\vui\docs\icons\svg\clock.svg
+@@
+-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="clock">
+-<g id="clock-g">
+-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+-  <g pointer-events="none">
+-    <circle  cx="12" cy="12" r="10">
+-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="clock-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+-  </circle>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="12" y1="6" x2="12" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="clock-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-  <g pointer-events="none">
+-    <line  x1="12" y1="12" x2="16" y2="14" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="clock-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+-  </line>
+-  </g>
+-</g>
+-</svg>
++<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="clock" id="clockSvg">
++<g id="clock-g">
++  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
++  <g pointer-events="none">
++    <circle  cx="12" cy="12" r="10">
++    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="clockSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
++  </circle>
++  </g>
++  <g pointer-events="none">
++    <line  x1="12" y1="6" x2="12" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="clockSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++  <g pointer-events="none">
++    <line  x1="12" y1="12" x2="16" y2="14" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
++    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="clockSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
++  </line>
++  </g>
++</g>
++</svg>
+*** End Patch
+

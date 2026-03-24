@@ -1,10 +1,10 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-label="arrow-right">
+                stroke-linejoin="round" aria-label="arrow-right" id="arrowRightSvg">
                 <g>
                   <rect width="24" height="24" fill="transparent" stroke="none" />
                   <path pointer-events="none" d="m12 5 7 7-7 7" />
                   <path pointer-events="none" d="M5 12h14" />
                   <animateTransform attributeName="transform" type="translate" values="0 0; 4 0; 0 0"
-                    keyTimes="0; 0.5; 1" dur=".4s" begin="mouseover" fill="freeze" />
+                    keyTimes="0; 0.5; 1" dur=".4s" begin="arrowRightSvg.mouseover" fill="freeze" />
                 </g>
               </svg>

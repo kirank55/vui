@@ -1,15 +1,15 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-label="eye">
+                stroke-linejoin="round" aria-label="eye" id="eyeSvg">
 <g id="eye-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <path  d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eye-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </path>
   </g>
   <g pointer-events="none">
     <circle  cx="12" cy="12" r="2.5">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="eye-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 12" dur="0.5s" begin="eyeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </circle>
   </g>
 </g>

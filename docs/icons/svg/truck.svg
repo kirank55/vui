@@ -1,24 +1,24 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="truck">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="truck" id="truckSvg">
 <g id="truck-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <rect  x="1" y="3" width="15" height="13">
-    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="truck-g.mouseover" />
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="truckSvg.mouseover" />
   </rect>
   </g>
   <g pointer-events="none">
     <polygon  points="16 8 20 8 23 11 23 16 16 16 16 8">
-    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="truck-g.mouseover" />
+    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="truckSvg.mouseover" />
   </polygon>
   </g>
   <g pointer-events="none">
     <circle  cx="5.5" cy="18.5" r="2.5">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="5.5 18.5" dur="0.5s" begin="truck-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="5.5 18.5" dur="0.5s" begin="truckSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </circle>
   </g>
   <g pointer-events="none">
     <circle  cx="18.5" cy="18.5" r="2.5">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="18.5 18.5" dur="0.5s" begin="truck-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="18.5 18.5" dur="0.5s" begin="truckSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </circle>
   </g>
 </g>

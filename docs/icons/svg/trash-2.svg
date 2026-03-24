@@ -1,4 +1,4 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="trash-2">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="trash-2" id="trash2Svg">
 <g id="trash-2-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   
@@ -10,8 +10,8 @@
   <g pointer-events="none">
     <path d="M3 6h18" />
     <path d="M10 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="0.6s" begin="trash-2-g.mouseover" />
-    <animateTransform attributeName="transform" type="rotate" values="0 19 6; 20 19 6; 0 19 6" dur="0.6s" begin="trash-2-g.mouseover" additive="sum" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="0.6s" begin="trash2Svg.mouseover" />
+    <animateTransform attributeName="transform" type="rotate" values="0 19 6; 20 19 6; 0 19 6" dur="0.6s" begin="trash2Svg.mouseover" additive="sum" />
   </g>
 
 </g>

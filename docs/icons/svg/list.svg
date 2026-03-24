@@ -1,34 +1,34 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="list">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="list" id="listSvg">
 <g id="list-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <line  x1="8" y1="6" x2="21" y2="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="8" y1="12" x2="21" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="8" y1="18" x2="21" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="3" y1="6" x2="3.01" y2="6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="3" y1="12" x2="3.01" y2="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
   <g pointer-events="none">
     <line  x1="3" y1="18" x2="3.01" y2="18" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="list-g.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="listSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </line>
   </g>
 </g>

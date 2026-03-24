@@ -1,29 +1,29 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="user-check">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="user-check" id="userCheckSvg">
 <g id="user-check-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <g id="user-check-g">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="user-check-g.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="userCheckSvg.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </g>
   </g>
   <g pointer-events="none">
     <path  d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="user-check-g.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="userCheckSvg.mouseover+0.15000000000000002s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </path>
   </g>
   <g pointer-events="none">
     <circle  cx="8.5" cy="7" r="4">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="user-check-g.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="userCheckSvg.mouseover+0.2s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </circle>
   </g>
   <g pointer-events="none">
     <polyline  points="17 11 19 13 23 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="user-check-g.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
+    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="userCheckSvg.mouseover+0.25s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
   </polyline>
   </g>
   <g pointer-events="none">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.2 1.2; 1 1" transform-origin="20 11" dur="0.4s" begin="user-check-g.mouseover">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="user-check-g.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.2 1.2; 1 1" transform-origin="20 11" dur="0.4s" begin="userCheckSvg.mouseover">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="userCheckSvg.mouseover+0.30000000000000004s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
   </animate>
   </g>
 </g>
