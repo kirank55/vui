@@ -1,7 +1,18 @@
+<!--
+  x.svg   close/dismiss icon with SMIL-only 3D imitation effect
+  - Uses animateTransform on the <g> container
+  - trigger: xSvg.mouseover
+  - action: scale + skewX for a 3D flip illusion
+  - no external CSS needed in this file
+-->
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
   stroke-linejoin="round" aria-label="x" id="xSvg">
   <g>
     <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <animateTransform attributeName="transform" type="skewX"
+      values="0; 10; -10; 0" dur="0.45s" begin="xSvg.mouseover" fill="freeze"
+      keyTimes="0; 0.33; 0.66; 1" />
+
     <path d="M18 6 6 18" pointer-events="none">
       <animateTransform attributeName="transform" type="rotate"
         dur="0.5s"
