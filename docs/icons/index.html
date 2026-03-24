@@ -843,22 +843,7 @@
         svg.setAttribute('stroke-width', st.stroke);
         if (st.color) svg.setAttribute('stroke', st.color);
 
-        const anims = svg.querySelectorAll('animateTransform, animate, animateMotion');
-        if (st.mode === 'static') {
-          anims.forEach(el => el.remove());
-        } else {
-          anims.forEach(el => {
-            el.setAttribute('dur', `${st.duration}s`);
-            if (st.mode === 'infinite') {
-              el.setAttribute('begin', '0s');
-              el.setAttribute('repeatCount', 'indefinite');
-              el.removeAttribute('fill');
-            } else {
-              el.setAttribute('begin', 'mouseover');
-              el.removeAttribute('repeatCount');
-            }
-          });
-        }
+        // SVGs are displayed exactly as in the source files - no animation modifications
 
         const finalSvg = svg.outerHTML;
         pPreview.innerHTML = finalSvg;
@@ -1041,23 +1026,6 @@
               el.setAttribute('repeatCount', 'indefinite');
               el.removeAttribute('fill');
             });
-          } else {
-            // Hover mode: ID-based begin values (e.g. "icon-g.mouseover") don't resolve
-            // for SVGs injected via innerHTML. Set begin="indefinite" and trigger via JS.
-            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
-              el.setAttribute('begin', 'indefinite');
-              el.removeAttribute('repeatCount');
-            });
-            if (!area._hoverBound) {
-              area._hoverBound = true;
-              area.addEventListener('mouseenter', () => {
-                const s = area.querySelector('svg');
-                if (!s) return;
-                s.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
-                  try { el.beginElement(); } catch (e) { /* ignore */ }
-                });
-              });
-            }
           }
         });
       }
