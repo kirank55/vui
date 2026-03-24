@@ -787,6 +787,22 @@
         return iconState.get(name);
       }
 
+      function sanitizeSvgMarkup(markup) {
+        const svgStart = markup.search(/<svg\b/i);
+        if (svgStart === -1) return '<svg viewBox="0 0 24 24"></svg>';
+
+        const svgEndMatch = markup.match(/<\/svg>/i);
+        if (!svgEndMatch || typeof svgEndMatch.index !== 'number') {
+          return '<svg viewBox="0 0 24 24"></svg>';
+        }
+
+        const svgEnd = svgEndMatch.index + svgEndMatch[0].length;
+        return markup
+          .slice(svgStart, svgEnd)
+          .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+          .trim();
+      }
+
       function closePanel() {
         pPanel.classList.remove('is-open');
       }
@@ -940,7 +956,7 @@
 
       // Copy SVG
       pCopy.addEventListener('click', () => {
-        navigator.clipboard.writeText(pCode.value).then(() => {
+        navigator.clipboard.writeText(sanitizeSvgMarkup(pCode.value)).then(() => {
           const orig = pCopy.textContent;
           pCopy.textContent = 'Copied!';
           setTimeout(() => pCopy.textContent = orig, 1500);
@@ -964,7 +980,7 @@
           await Promise.all(svgsToFetch.map(async name => {
             try {
               const svg = await fetch(`/docs/icons/svg/${name}.svg`).then(r => r.text());
-              svgCache.set(name, svg);
+              svgCache.set(name, sanitizeSvgMarkup(svg));
             } catch (e) {
               console.error(`Failed to load icon: ${name}`, e);
               svgCache.set(name, '<svg viewBox="0 0 24 24"></svg>'); // Empty fallback
@@ -1065,7 +1081,7 @@
             if (!area) return;
             const svg = area.querySelector('svg');
             if (!svg) return;
-            const svgText = svg.outerHTML;
+            const svgText = sanitizeSvgMarkup(svg.outerHTML);
 
             navigator.clipboard.writeText(svgText).then(() => {
               const label = row.querySelector('.vui-anim-copy-label');
