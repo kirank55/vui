@@ -836,6 +836,7 @@
         const svg = doc.querySelector('svg');
         if (!svg) return;
 
+        stripSvgComments(svg);
         svg.querySelectorAll('rect[fill="transparent"]').forEach(el => el.remove());
 
         svg.setAttribute('width', st.size);
@@ -1013,6 +1014,17 @@
         btnNext.disabled = currentPage === totalPages;
       }
 
+      function stripSvgComments(svg) {
+        const walker = document.createTreeWalker(svg, NodeFilter.SHOW_COMMENT, null, false);
+        const removeList = [];
+        let node = walker.nextNode();
+        while (node) {
+          removeList.push(node);
+          node = walker.nextNode();
+        }
+        removeList.forEach(n => n.remove());
+      }
+
       function applyCurrentModeToDOM() {
         modeBtns.forEach(btn => btn.classList.toggle('is-active', btn.dataset.mode === currentMode));
 
@@ -1025,6 +1037,8 @@
 
           const svg = area.querySelector('svg');
           if (!svg) return;
+
+          stripSvgComments(svg);
 
           if (currentMode === 'static') {
             svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => el.remove());
