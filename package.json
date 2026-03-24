@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx http-server . -p 3000 -c-1 -o /docs/",
+    "dev": "npx live-server . --port=3000 --wait=500 --open=/docs/",
     "generate:compat": "node scripts/generate-browser-compat.mjs"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
   },
   "dependencies": {
     "caniuse-lite": "^1.0.30001778"
