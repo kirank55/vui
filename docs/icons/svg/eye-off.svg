@@ -1,26 +1,30 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-label="eye-off" id="eyeOffSvg">
-<g id="eye-off-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <g pointer-events="none">
-    <path  d="M3 3 21 21">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
+  stroke-linejoin="round" aria-label="eye-off" id="eyeOffSvg">
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <!-- diagonal strike: draw animation -->
+    <path pointer-events="none" d="M3 3 21 21"
+      stroke-dasharray="25.5" stroke-dashoffset="25.5">
+      <animate attributeName="stroke-dashoffset" values="25.5; 0" keyTimes="0; 1"
+        dur="0.4s" begin="eyeOffSvg.mouseover" fill="freeze"
+        calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </path>
+    <!-- outer eye paths: blink (opacity pulse) -->
+    <path pointer-events="none" d="M9.4 5.3A11.8 11.8 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-4 4.9">
+      <animate attributeName="opacity" values="1; 0.2; 1" keyTimes="0; 0.5; 1"
+        dur="0.5s" begin="eyeOffSvg.mouseover" fill="freeze"
+        calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    </path>
+    <path pointer-events="none" d="M6 6.6C3.6 8.3 2 12 2 12s3.5 6 10 6c1.2 0 2.4-.2 3.4-.6">
+      <animate attributeName="opacity" values="1; 0.2; 1" keyTimes="0; 0.5; 1"
+        dur="0.5s" begin="eyeOffSvg.mouseover" fill="freeze"
+        calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    </path>
+    <!-- inner arc: blink too -->
+    <path pointer-events="none" d="M10.6 10.7a2.5 2.5 0 0 0 3.3 3.3">
+      <animate attributeName="opacity" values="1; 0.2; 1" keyTimes="0; 0.5; 1"
+        dur="0.5s" begin="eyeOffSvg.mouseover" fill="freeze"
+        calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+    </path>
   </g>
-  <g pointer-events="none">
-    <path  d="M10.6 10.7a2.5 2.5 0 0 0 3.3 3.3">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
-  </g>
-  <g pointer-events="none">
-    <path  d="M9.4 5.3A11.8 11.8 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-4 4.9">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
-  </g>
-  <g pointer-events="none">
-    <path  d="M6 6.6C3.6 8.3 2 12 2 12s3.5 6 10 6c1.2 0 2.4-.2 3.4-.6">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="eyeOffSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
-  </g>
-</g>
 </svg>

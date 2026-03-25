@@ -1,20 +1,24 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="printer" id="printerSvg">
-<g id="printer-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <g pointer-events="none">
-    <polyline  points="6 9 6 2 18 2 18 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="printerSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
-  </polyline>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+  stroke-linejoin="round" aria-label="printer" id="printerSvg">
+  <g id="printer-g">
+    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <g pointer-events="none">
+      <polyline points="6 9 6 2 18 2 18 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
+      </polyline>
+    </g>
+    <g pointer-events="none">
+      <path d="M6 18H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0"
+          dur="0.4s" begin="printerSvg.mouseover" calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+      </path>
+    </g>
+    <g pointer-events="none">
+      <rect x="6" y="14" width="12" height="8">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 6" dur="0.6s"
+          begin="printerSvg.mouseover" />
+        <animate attributeName="opacity" values="1; 0" dur="0.6s" begin="printerSvg.mouseover" />
+      </rect>
+    </g>
   </g>
-  <g pointer-events="none">
-    <path  d="M6 18H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="printerSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
-  </g>
-  <g pointer-events="none">
-    <rect  x="6" y="14" width="12" height="8">
-    <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="printerSvg.mouseover" />
-  </rect>
-  </g>
-</g>
 </svg>

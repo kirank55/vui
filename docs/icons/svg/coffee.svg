@@ -12,19 +12,10 @@
   </path>
   </g>
   <g pointer-events="none">
-    <line x1="6" y1="1" x2="6" y2="4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="coffeeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
-  </line>
-  </g>
-  <g pointer-events="none">
-    <line x1="10" y1="1" x2="10" y2="4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="coffeeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
-  </line>
-  </g>
-  <g pointer-events="none">
-    <line x1="14" y1="1" x2="14" y2="4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="coffeeSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
-  </line>
+    <path d="M6 5v-3 M10 5v-3 M14 5v-3" stroke-linecap="round" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 -3" keyTimes="0; 0.7; 1" dur="1s" begin="coffeeSvg.mouseover" />
+      <animate attributeName="opacity" values="1; 1; 0; 1" keyTimes="0; 0.4; 0.7; 1" dur="1s" begin="coffeeSvg.mouseover" />
+    </path>
   </g>
 </g>
 </svg>

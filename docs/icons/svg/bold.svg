@@ -2,14 +2,14 @@
 <g id="bold-g">
   <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
-    <path  d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="boldSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
+    <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z">
+      <animate attributeName="stroke-width" values="2; 3; 2" dur="0.5s" begin="boldSvg.mouseover" />
+    </path>
   </g>
   <g pointer-events="none">
-    <path  d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="boldSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
+    <path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z">
+      <animate attributeName="stroke-width" values="2; 3; 2" dur="0.5s" begin="boldSvg.mouseover" />
+    </path>
   </g>
 </g>
 </svg>

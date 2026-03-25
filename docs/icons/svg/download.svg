@@ -6,7 +6,7 @@
   <g pointer-events="none">
     <polyline points="7 10 12 15 17 10" />
     <line x1="12" y1="15" x2="12" y2="3" />
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 4; 0 0" dur="0.5s" begin="downloadSvg.mouseover" />
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 4; 0 0" dur="0.4s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" begin="downloadSvg.mouseover" />
   </g>
 
 </g>

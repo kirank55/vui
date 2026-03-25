@@ -1,12 +1,40 @@
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-label="menu" id="menuSvg">
-                <g>
-                  <rect width="24" height="24" fill="transparent" stroke="none" />
-                  <path pointer-events="none" d="M4 7h16" />
-                  <path pointer-events="none" d="M4 12h16">
-                    <animate attributeName="d" values="M4 12h16; M7 12h10; M4 12h16" keyTimes="0; 0.5; 1" dur=".4s"
-                      begin="menuSvg.mouseover" fill="freeze" />
-                  </path>
-                  <path pointer-events="none" d="M4 17h16" />
-                </g>
-              </svg>
+  stroke-linejoin="round" aria-label="menu" id="menuSvg">
+  <g>
+    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <!-- top line -->
+    <line pointer-events="none" x1="4" y1="7" x2="20" y2="7">
+      <animate attributeName="x1" values="4; 6" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y1" values="7; 6" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="x2" values="20; 18" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y2" values="7; 18" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+
+      <animate attributeName="x1" values="6; 4" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y1" values="6; 7" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="x2" values="18; 20" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y2" values="18; 7" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </line>
+    <!-- middle line -->
+    <line pointer-events="none" x1="4" y1="12" x2="20" y2="12">
+      <animate attributeName="x1" values="4; 12" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="x2" values="20; 12" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="opacity" values="1; 0" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+
+      <animate attributeName="x1" values="12; 4" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="x2" values="12; 20" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="opacity" values="0; 1" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </line>
+    <!-- bottom line -->
+    <line pointer-events="none" x1="4" y1="17" x2="20" y2="17">
+      <animate attributeName="x1" values="4; 6" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y1" values="17; 18" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="x2" values="20; 18" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y2" values="17; 6" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+
+      <animate attributeName="x1" values="6; 4" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y1" values="18; 17" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="x2" values="18; 20" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="y2" values="6; 17" dur="0.25s" begin="menuSvg.mouseout" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </line>
+  </g>
+</svg>

@@ -1,15 +1,19 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="map-pin" id="mapPinSvg">
-<g id="map-pin-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
-  <g pointer-events="none">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="mapPinSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </path>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+  stroke-linejoin="round" aria-label="map-pin" id="mapPinSvg">
+  <g id="map-pin-g">
+    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <g pointer-events="none">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0"
+          dur="0.25s" begin="mapPinSvg.mouseover" calcMode="spline"
+          keySplines="0.2 0.8 0.2 1; 0.8 0 0.8 0.2" />
+      </path>
+    </g>
+    <g pointer-events="none">
+      <circle cx="12" cy="10" r="3">
+        <animate attributeName="fill" values="transparent; currentColor; transparent" dur="0.5s"
+          begin="mapPinSvg.mouseover" />
+      </circle>
+    </g>
   </g>
-  <g pointer-events="none">
-    <circle cx="12" cy="10" r="3">
-    <animateTransform attributeName="transform" type="scale" values="1 1; 1.15 1.15; 1 1" transform-origin="12 10" dur="0.5s" begin="mapPinSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
-  </circle>
-  </g>
-</g>
 </svg>
