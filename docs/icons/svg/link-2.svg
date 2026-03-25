@@ -1,6 +1,8 @@
-<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="link-2" id="link2Svg">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="link-2" id="link2Svg">
+  <g transform="translate(1.5 1.5) scale(0.875)">
+
 <g id="link-2-g">
-  <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
+  <rect  width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <path  d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">
     <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1; 0 0" dur="0.4s" begin="link2Svg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
@@ -12,4 +14,7 @@
   </line>
   </g>
 </g>
+
+  </g>
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
 </svg>

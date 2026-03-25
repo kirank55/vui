@@ -1,6 +1,8 @@
-<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="battery-charging" id="batteryChargingSvg">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="battery-charging" id="batteryChargingSvg">
+  <g transform="translate(1.5 1.5) scale(0.875)">
+
 <g id="battery-charging-g">
-  <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
+  <rect  width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
       <animate attributeName="stroke-dashoffset" values="1; 0; 0" keyTimes="0; 0.6; 1" dur="0.6s" begin="batteryChargingSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" fill="freeze" />
@@ -16,4 +18,7 @@
     </polyline>
   </g>
 </g>
+
+  </g>
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
 </svg>

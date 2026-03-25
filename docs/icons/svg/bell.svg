@@ -1,6 +1,8 @@
-<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bell" id="bellSvg">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="bell" id="bellSvg">
+  <g transform="translate(1.5 1.5) scale(0.875)">
+
 <g id="bell-g">
-  <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
+  <rect  width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
   
   <g pointer-events="none">
     <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
@@ -12,4 +14,7 @@
     <animate attributeName="opacity" values="0; 1; 0; 1; 0; 0" keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1" dur="0.8s" begin="bellSvg.mouseover" />
   </g>
 </g>
+
+  </g>
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
 </svg>

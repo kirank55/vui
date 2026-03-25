@@ -1,8 +1,10 @@
-<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
   stroke-linejoin="round" aria-label="accessibility" id="accessibilitySvg">
+  <g transform="translate(1.5 1.5) scale(0.875)">
+
   <g>
     <!-- Hit area; enables consistent mouseover across blank space -->
-    <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
+    <rect  width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
     <g pointer-events="none">
       <circle cx="16" cy="4" r="1" />
     </g>
@@ -34,4 +36,7 @@
         values="0 9.5 16; 180 9.5 16; 360 9.5 16" />
     </g>
   </g>
+
+  </g>
+  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
 </svg>
