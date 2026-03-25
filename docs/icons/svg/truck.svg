@@ -1,6 +1,6 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="truck" id="truckSvg">
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="truck" id="truckSvg">
 <g id="truck-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <rect  x="1" y="3" width="15" height="13">
     <animate attributeName="opacity" values="1; 0.7; 1" dur="0.4s" begin="truckSvg.mouseover" />

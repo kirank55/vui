@@ -1,8 +1,8 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
   stroke-linejoin="round" aria-label="grid" id="gridSvg">
   <g>
     <!-- Hit target overlay for consistent hover area -->
-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
 
     <!-- Primary tile: scales up to merge the grid shape and back to original -->
     <rect x="3" y="3" width="7" height="7" rx="1" pointer-events="none">

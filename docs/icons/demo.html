@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VUI Icons Demo</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/content.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <style>
+      /* 
+      1. Define the wrapper with explicit dimensions 
+    */
+      .svg-container {
+        width: 120px;
+        height: 120px;
+        padding: 1.5rem;
+        border: 1px dashed var(--vui-border, #d4d4d4);
+        background: var(--vui-bg-surface, #f2f2f2);
+        border-radius: var(--vui-radius-lg, 12px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 150ms ease;
+      }
+
+      .svg-container:hover {
+        border-color: var(--vui-fg-muted, #6b6b6b);
+      }
+
+      /* 
+      2. The SVG physically scales to fill the parent wrapper 
+         because width/height attributes are intentionally omitted.
+    */
+      .svg-container svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Demo layout */
+      .demo-flex {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="docs-layout">
+      <docs-sidebar base-path="../"></docs-sidebar>
+
+      <main class="docs-main">
+        <h1 class="docs-title">SVG Container Scaling</h1>
+        <p class="docs-subtitle">
+          VUI SVGs are generated purely with <code>viewBox="0 0 24 24"</code>.
+          This allows them to natively scale infinitely just by injecting them
+          inside a constrained parent container like
+          <code>.svg-container</code>, utilizing 100% of their parent wrapper's
+          width and height dynamically via CSS.
+        </p>
+
+        <div class="demo-flex" id="demo-flex">
+          <!-- SVGs are loaded here dynamically via script -->
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="../js/app.js"></script>
+    <script>
+      (async function () {
+        // Helper to strip live-server injected scripts and isolate SVG tags
+        function sanitizeSvgMarkup(markup) {
+          const svgStart = markup.search(/<svg\b/i);
+          if (svgStart === -1) return '<svg viewBox="0 0 24 24"></svg>';
+
+          const svgEndMatch = markup.match(/<\/svg>/i);
+          if (!svgEndMatch || typeof svgEndMatch.index !== "number") {
+            return '<svg viewBox="0 0 24 24"></svg>';
+          }
+
+          const svgEnd = svgEndMatch.index + svgEndMatch[0].length;
+          return markup
+            .slice(svgStart, svgEnd)
+            .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+            .trim();
+        }
+
+        // Pick 5 SVGs to demo scaling behavior
+        const demoIcons = ["sun", "heart", "crosshair", "bell", "globe"];
+        const container = document.getElementById("demo-flex");
+
+        for (const name of demoIcons) {
+          try {
+            // Fetch raw SVG
+            const rawText = await fetch(`/docs/icons/svg/${name}.svg`).then(
+              (r) => r.text(),
+            );
+            const rawSvg = sanitizeSvgMarkup(rawText);
+
+            // Create container constraint
+            const wrapper = document.createElement("div");
+            wrapper.className = "svg-container";
+            wrapper.title = name;
+
+            // Insert the SVG natively scaled using HTML parser to auto-assign namespace
+            wrapper.innerHTML = rawSvg;
+
+            const svg = wrapper.querySelector("svg");
+            if (svg) {
+              // Ensure width and height attributes are cleanly stripped
+              svg.removeAttribute("width");
+              svg.removeAttribute("height");
+            }
+
+            container.appendChild(wrapper);
+          } catch (e) {
+            console.error("Failed to load icon:", name, e);
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

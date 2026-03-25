@@ -1,12 +1,12 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
   stroke-linejoin="round" aria-label="list" id="listSvg">
   <g>
-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
     <!-- bullet dot row 1 -->
     <line pointer-events="none" x1="3" y1="6" x2="3.01" y2="6" />
     <!-- line row 1: draws in first -->
     <line pointer-events="none" x1="8" y1="6" x2="21" y2="6"
-      pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+      pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
       <animate attributeName="stroke-dashoffset" values="1; 0" keyTimes="0; 1"
         dur="0.25s" begin="listSvg.mouseover" fill="freeze"
         calcMode="spline" keySplines="0.4 0 0.2 1" />
@@ -15,7 +15,7 @@
     <line pointer-events="none" x1="3" y1="12" x2="3.01" y2="12" />
     <!-- line row 2: draws in second -->
     <line pointer-events="none" x1="8" y1="12" x2="21" y2="12"
-      pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+      pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
       <animate attributeName="stroke-dashoffset" values="1; 0" keyTimes="0; 1"
         dur="0.25s" begin="listSvg.mouseover + 0.1s" fill="freeze"
         calcMode="spline" keySplines="0.4 0 0.2 1" />
@@ -24,7 +24,7 @@
     <line pointer-events="none" x1="3" y1="18" x2="3.01" y2="18" />
     <!-- line row 3: draws in third -->
     <line pointer-events="none" x1="8" y1="18" x2="21" y2="18"
-      pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+      pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
       <animate attributeName="stroke-dashoffset" values="1; 0" keyTimes="0; 1"
         dur="0.25s" begin="listSvg.mouseover + 0.2s" fill="freeze"
         calcMode="spline" keySplines="0.4 0 0.2 1" />

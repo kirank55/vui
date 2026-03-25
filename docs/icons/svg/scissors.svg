@@ -1,6 +1,6 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="scissors" id="scissorsSvg">
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="scissors" id="scissorsSvg">
 <g id="scissors-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <g>
       <animateTransform attributeName="transform" type="rotate" values="0 12 12; 15 12 12; 0 12 12" dur="0.4s" begin="scissorsSvg.mouseover" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />

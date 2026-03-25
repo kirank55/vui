@@ -1,10 +1,10 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
   stroke-linejoin="round" aria-label="eye-off" id="eyeOffSvg">
   <g>
-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
     <!-- diagonal strike: draw animation -->
     <path pointer-events="none" d="M3 3 21 21"
-      stroke-dasharray="25.5" stroke-dashoffset="25.5">
+      stroke-dasharray="25.5" stroke-dashoffset="0">
       <animate attributeName="stroke-dashoffset" values="25.5; 0" keyTimes="0; 1"
         dur="0.4s" begin="eyeOffSvg.mouseover" fill="freeze"
         calcMode="spline" keySplines="0.4 0 0.2 1" />

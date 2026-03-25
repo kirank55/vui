@@ -1,6 +1,6 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="user-check" id="userCheckSvg">
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="user-check" id="userCheckSvg">
 <g id="user-check-g">
-  <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+  <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
   <g pointer-events="none">
     <g id="user-check-g">
     <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" begin="userCheckSvg.mouseover+0.05s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />

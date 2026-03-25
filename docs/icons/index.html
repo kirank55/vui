@@ -1,1000 +1,1227 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VUI Icons</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/content.css" />
+    <link rel="stylesheet" href="../css/code-blocks.css" />
+    <link rel="stylesheet" href="../css/compat-table.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <style>
+      .vui-anim-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 120px);
+        justify-content: space-between;
+        gap: 2em;
+        width: 100%;
+        padding: 0 2em 0 0;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> VUI Icons</title>
-  <link rel="stylesheet" href="/css/global.css" />
-  <link rel="stylesheet" href="../css/layout.css" />
-  <link rel="stylesheet" href="../css/content.css" />
-  <link rel="stylesheet" href="../css/code-blocks.css" />
-  <link rel="stylesheet" href="../css/compat-table.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-  <style>
-    .vui-anim-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 120px);
-      gap: 6px;
-    }
+      .vui-anim-cell {
+        display: flex;
+        flex-direction: column;
+        width: 120px;
+        height: max-content;
+        background: var(--vui-bg-elevated, #ffffff);
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          border-color 150ms ease,
+          box-shadow 150ms ease;
+      }
 
-    .vui-anim-cell {
-      display: flex;
-      flex-direction: column;
-      width: 120px;
-      background: var(--vui-bg-elevated, #ffffff);
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      overflow: hidden;
-      cursor: pointer;
-      transition: border-color 150ms ease, box-shadow 150ms ease;
-    }
+      .vui-anim-cell:hover {
+        border-color: var(--vui-fg-muted, #6b6b6b);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
 
-    .vui-anim-cell:hover {
-      border-color: var(--vui-fg-muted, #6b6b6b);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
+      .vui-anim-cell:hover .vui-anim-copy-row {
+        opacity: 1;
+      }
 
-    .vui-anim-cell:hover .vui-anim-copy-row {
-      opacity: 1;
-    }
+      .vui-anim-icon-area {
+        width: 120px;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
 
-    .vui-anim-icon-area {
-      width: 120px;
-      height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+      .vui-anim-icon-area svg {
+        width: 36px;
+        height: 36px;
+        overflow: visible;
+      }
 
-    .vui-anim-icon-area svg {
-      width: 36px;
-      height: 36px;
-      overflow: visible;
-    }
+      .vui-anim-copy-row {
+        width: 120px;
+        height: 32px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        opacity: 0.5;
+        transition: opacity 150ms ease;
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 12px;
+        color: var(--vui-fg-muted, #6b6b6b);
+        cursor: pointer;
+        border-radius: 0 0 4px 4px;
+        user-select: none;
+      }
 
-    .vui-anim-copy-row {
-      width: 120px;
-      height: 32px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      opacity: 0.5;
-      transition: opacity 150ms ease;
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 12px;
-      color: var(--vui-fg-muted, #6b6b6b);
-      cursor: pointer;
-      border-radius: 0 0 4px 4px;
-      user-select: none;
-    }
+      .vui-anim-cell:hover .vui-anim-copy-row {
+        opacity: 1;
+      }
 
-    .vui-anim-cell:hover .vui-anim-copy-row {
-      opacity: 1;
-    }
+      .vui-anim-copy-row svg {
+        width: 14px;
+        height: 14px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+      }
 
-    .vui-anim-copy-row svg {
-      width: 14px;
-      height: 14px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex-shrink: 0;
-    }
+      .vui-anim-copy-row.is-copied {
+        color: #16a34a;
+      }
 
-    .vui-anim-copy-row.is-copied {
-      color: #16a34a;
-    }
+      /* ── Toolbar ── */
+      .vui-icons-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--vui-bg, #fafafa);
+        padding: 12px 0;
+      }
 
-    /* ── Toolbar ── */
-    .vui-icons-toolbar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--vui-bg, #fafafa);
-      padding: 12px 0;
-    }
+      .vui-icons-sort {
+        padding: 7px 10px;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 13px;
+        color: var(--vui-fg, #1a1a1a);
+        background: var(--vui-bg-elevated, #ffffff);
+        cursor: pointer;
+        outline: none;
+        flex-shrink: 0;
+      }
 
-    .vui-icons-sort {
-      padding: 7px 10px;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 13px;
-      color: var(--vui-fg, #1a1a1a);
-      background: var(--vui-bg-elevated, #ffffff);
-      cursor: pointer;
-      outline: none;
-      flex-shrink: 0;
-    }
+      .vui-icons-sort:focus {
+        border-color: var(--vui-accent, #1a1a1a);
+      }
 
-    .vui-icons-sort:focus {
-      border-color: var(--vui-accent, #1a1a1a);
-    }
+      .vui-icons-search {
+        flex: 1 1 180px;
+        min-width: 140px;
+        padding: 8px 12px;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 14px;
+        color: var(--vui-fg, #1a1a1a);
+        background: var(--vui-bg-elevated, #ffffff);
+        outline: none;
+        transition: border-color 150ms ease;
+      }
 
-    .vui-icons-search {
-      flex: 1 1 180px;
-      min-width: 140px;
-      padding: 8px 12px;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 14px;
-      color: var(--vui-fg, #1a1a1a);
-      background: var(--vui-bg-elevated, #ffffff);
-      outline: none;
-      transition: border-color 150ms ease;
-    }
+      .vui-icons-search:focus {
+        border-color: var(--vui-accent, #1a1a1a);
+      }
 
-    .vui-icons-search:focus {
-      border-color: var(--vui-accent, #1a1a1a);
-    }
+      .vui-icons-search::placeholder {
+        color: var(--vui-fg-muted, #6b6b6b);
+      }
 
-    .vui-icons-search::placeholder {
-      color: var(--vui-fg-muted, #6b6b6b);
-    }
+      .vui-icons-modes {
+        display: flex;
+        gap: 0;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
 
-    .vui-icons-modes {
-      display: flex;
-      gap: 0;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
+      .vui-icons-mode-btn {
+        padding: 7px 14px;
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 13px;
+        font-weight: 500;
+        border: none;
+        background: var(--vui-bg-elevated, #ffffff);
+        color: var(--vui-fg-muted, #6b6b6b);
+        cursor: pointer;
+        transition:
+          background 150ms ease,
+          color 150ms ease;
+        user-select: none;
+      }
 
-    .vui-icons-mode-btn {
-      padding: 7px 14px;
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 13px;
-      font-weight: 500;
-      border: none;
-      background: var(--vui-bg-elevated, #ffffff);
-      color: var(--vui-fg-muted, #6b6b6b);
-      cursor: pointer;
-      transition: background 150ms ease, color 150ms ease;
-      user-select: none;
-    }
+      .vui-icons-mode-btn:not(:last-child) {
+        border-right: 1px solid var(--vui-border, #d4d4d4);
+      }
 
-    .vui-icons-mode-btn:not(:last-child) {
-      border-right: 1px solid var(--vui-border, #d4d4d4);
-    }
+      .vui-icons-mode-btn:hover {
+        background: var(--vui-bg-surface, #f2f2f2);
+      }
 
-    .vui-icons-mode-btn:hover {
-      background: var(--vui-bg-surface, #f2f2f2);
-    }
+      .vui-icons-mode-btn.is-active {
+        background: var(--vui-bg-invert, #1a1a1a);
+        color: var(--vui-fg-invert, #fafafa);
+      }
 
-    .vui-icons-mode-btn.is-active {
-      background: var(--vui-bg-invert, #1a1a1a);
-      color: var(--vui-fg-invert, #fafafa);
-    }
+      .vui-anim-cell.is-hidden {
+        display: none;
+      }
 
-    .vui-anim-cell.is-hidden {
-      display: none;
-    }
+      .vui-icons-no-results {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 32px 0;
+        color: var(--vui-fg-muted, #6b6b6b);
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 14px;
+      }
 
-    .vui-icons-no-results {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 32px 0;
-      color: var(--vui-fg-muted, #6b6b6b);
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 14px;
-    }
+      .vui-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
 
-    .vui-pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 32px;
-      margin-bottom: 32px;
-    }
+      .vui-page-btn {
+        padding: 8px 16px;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        background: var(--vui-bg-elevated, #ffffff);
+        color: var(--vui-fg, #1a1a1a);
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 14px;
+        cursor: pointer;
+        transition:
+          background 150ms ease,
+          border-color 150ms ease;
+      }
 
-    .vui-page-btn {
-      padding: 8px 16px;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      background: var(--vui-bg-elevated, #ffffff);
-      color: var(--vui-fg, #1a1a1a);
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 14px;
-      cursor: pointer;
-      transition: background 150ms ease, border-color 150ms ease;
-    }
+      .vui-page-btn:hover:not(:disabled) {
+        background: var(--vui-bg-surface, #f2f2f2);
+      }
 
-    .vui-page-btn:hover:not(:disabled) {
-      background: var(--vui-bg-surface, #f2f2f2);
-    }
+      .vui-page-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
 
-    .vui-page-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+      .vui-page-info {
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 14px;
+        color: var(--vui-fg-muted, #6b6b6b);
+      }
 
-    .vui-page-info {
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 14px;
-      color: var(--vui-fg-muted, #6b6b6b);
-    }
-
-    /* 
+      /* 
     .docs-layout {
       grid-template-columns: 220px 1fr 1fr;
     } */
 
-    .docs-main {
-      /* max-width: 800px; */
-      margin: 0;
-    }
+      .docs-main {
+        /* max-width: 800px; */
+        margin: 0;
+      }
 
-    /* ── Properties Panel (inline sticky sidebar) ── */
-    .vui-icon-panel {
-      position: sticky;
-      top: 65px;
-      align-self: flex-start;
-      width: 340px;
-      min-width: 340px;
-      max-height: 100vh;
-      overflow-y: auto;
-      background: var(--vui-bg-elevated, #ffffff);
-      /* border-left: 1px solid var(--vui-border, #d4d4d4); */
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      display: none;
-      flex-direction: column;
-    }
-
-    .vui-icon-panel.is-open {
-      display: flex;
-    }
-
-    .vui-icon-panel-header {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--vui-border, #d4d4d4);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .vui-icon-panel-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin: 0;
-      color: var(--vui-fg, #1a1a1a);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .vui-icon-panel-header-actions {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex-shrink: 0;
-    }
-
-    .vui-icon-panel-btn {
-      background: none;
-      border: 1px solid transparent;
-      cursor: pointer;
-      color: var(--vui-fg-muted, #6b6b6b);
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--vui-radius-md, 6px);
-      transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
-    }
-
-    .vui-icon-panel-btn:hover {
-      background: var(--vui-bg-surface, #f2f2f2);
-      color: var(--vui-fg, #1a1a1a);
-      border-color: var(--vui-border, #d4d4d4);
-    }
-
-    .vui-icon-panel-body {
-      padding: 20px;
-      overflow-y: auto;
-      flex: 1;
-    }
-
-    .vui-panel-tabs {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--vui-border, #d4d4d4);
-    }
-
-    .vui-panel-tab {
-      background: none;
-      border: none;
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--vui-fg-muted, #6b6b6b);
-      padding: 0 0 8px 0;
-      cursor: pointer;
-      position: relative;
-      margin-bottom: -1px;
-    }
-
-    .vui-panel-tab:hover {
-      color: var(--vui-fg, #1a1a1a);
-    }
-
-    .vui-panel-tab.is-active {
-      color: var(--vui-fg, #1a1a1a);
-    }
-
-    .vui-panel-tab.is-active::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--vui-fg, #1a1a1a);
-      border-radius: 2px 2px 0 0;
-    }
-
-    .vui-icon-panel-preview {
-      width: 100%;
-      aspect-ratio: 2/1;
-      background:
-        repeating-conic-gradient(var(--vui-bg-surface, #f2f2f2) 0% 25%, var(--vui-bg-elevated, #ffffff) 0% 50%) 0 0 / 16px 16px;
-      border-radius: var(--vui-radius-md, 6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      color: var(--vui-fg, #1a1a1a);
-    }
-
-    .vui-icon-panel-preview svg {
-      transition: all 150ms ease;
-    }
-
-    .vui-control-group {
-      margin-bottom: 14px;
-    }
-
-    .vui-control-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--vui-fg-muted, #6b6b6b);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-    }
-
-    .vui-control-value {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--vui-fg, #1a1a1a);
-      text-transform: none;
-      letter-spacing: 0;
-    }
-
-    /* Segmented mode buttons */
-    .vui-panel-seg {
-      display: flex;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .vui-panel-seg-btn {
-      flex: 1;
-      padding: 6px 0;
-      text-align: center;
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 12px;
-      font-weight: 500;
-      border: none;
-      background: var(--vui-bg-elevated, #ffffff);
-      color: var(--vui-fg-muted, #6b6b6b);
-      cursor: pointer;
-      transition: background 150ms ease, color 150ms ease;
-    }
-
-    .vui-panel-seg-btn:not(:last-child) {
-      border-right: 1px solid var(--vui-border, #d4d4d4);
-    }
-
-    .vui-panel-seg-btn:hover {
-      background: var(--vui-bg-surface, #f2f2f2);
-    }
-
-    .vui-panel-seg-btn.is-active {
-      background: var(--vui-bg-invert, #1a1a1a);
-      color: var(--vui-fg-invert, #fafafa);
-    }
-
-    /* Range slider styling */
-    .vui-control-range {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 4px;
-      border-radius: 2px;
-      background: var(--vui-border, #d4d4d4);
-      outline: none;
-      margin-top: 2px;
-    }
-
-    .vui-control-range::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--vui-fg, #1a1a1a);
-      cursor: pointer;
-      border: 2px solid var(--vui-bg-elevated, #ffffff);
-      box-shadow: 0 0 0 1px var(--vui-border, #d4d4d4);
-    }
-
-    .vui-control-range::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--vui-fg, #1a1a1a);
-      cursor: pointer;
-      border: 2px solid var(--vui-bg-elevated, #ffffff);
-      box-shadow: 0 0 0 1px var(--vui-border, #d4d4d4);
-    }
-
-    .vui-color-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .vui-color-input {
-      width: 32px;
-      height: 32px;
-      padding: 0;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      cursor: pointer;
-      background: none;
-    }
-
-    .vui-color-input::-webkit-color-swatch-wrapper {
-      padding: 2px;
-    }
-
-    .vui-color-input::-webkit-color-swatch {
-      border: none;
-      border-radius: 3px;
-    }
-
-    .vui-color-hex {
-      font-family: var(--vui-font-mono, "SFMono-Regular", Consolas, monospace);
-      font-size: 12px;
-      color: var(--vui-fg, #1a1a1a);
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      padding: 4px 8px;
-      background: var(--vui-bg-elevated, #ffffff);
-      outline: none;
-      width: 90px;
-    }
-
-    .vui-color-hex:focus {
-      border-color: var(--vui-accent, #1a1a1a);
-    }
-
-    .vui-panel-divider {
-      border: none;
-      border-top: 1px solid var(--vui-border, #d4d4d4);
-      margin: 16px 0;
-    }
-
-    .vui-icon-panel-code {
-      width: 100%;
-      aspect-ratio: 2/1;
-      font-family: var(--vui-font-mono, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace);
-      font-size: 11px;
-      line-height: 1.5;
-      padding: 10px;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      background: var(--vui-bg-surface, #f2f2f2);
-      color: var(--vui-fg, #1a1a1a);
-      resize: vertical;
-      margin-bottom: 20px;
-    }
-
-    .vui-panel-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .vui-panel-action-btn {
-      flex: 1;
-      padding: 8px 0;
-      text-align: center;
-      font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
-      font-size: 13px;
-      font-weight: 500;
-      border: 1px solid var(--vui-border, #d4d4d4);
-      border-radius: var(--vui-radius-md, 6px);
-      background: var(--vui-bg-elevated, #ffffff);
-      color: var(--vui-fg, #1a1a1a);
-      cursor: pointer;
-      transition: background 150ms ease;
-    }
-
-    .vui-panel-action-btn:hover {
-      background: var(--vui-bg-surface, #f2f2f2);
-    }
-
-    .vui-panel-action-btn--primary {
-      background: var(--vui-bg-invert, #1a1a1a);
-      color: var(--vui-fg-invert, #fafafa);
-      border-color: var(--vui-bg-invert, #1a1a1a);
-    }
-
-    .vui-panel-action-btn--primary:hover {
-      opacity: 0.9;
-      background: var(--vui-bg-invert, #1a1a1a);
-    }
-
-    .vui-icon-panel-empty {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--vui-fg-muted, #6b6b6b);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 900px) {
+      /* ── Properties Panel (inline sticky sidebar) ── */
       .vui-icon-panel {
-        display: none !important;
+        position: sticky;
+        top: 65px;
+        align-self: flex-start;
+        width: 340px;
+        min-width: 340px;
+        max-height: 100vh;
+        overflow-y: auto;
+        background: var(--vui-bg-elevated, #ffffff);
+        /* border-left: 1px solid var(--vui-border, #d4d4d4); */
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        display: none;
+        flex-direction: column;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div class="docs-layout">
-    <docs-sidebar base-path="../"></docs-sidebar>
+      .vui-icon-panel.is-open {
+        display: flex;
+      }
 
-    <main class="docs-main">
-      <h1 class="docs-title">Icons</h1>
-      <p class="docs-subtitle">
-        87 copy-paste inline SVG icons with SMIL hover animations. No font, no sprite sheet, no JavaScript.
-      </p>
+      .vui-icon-panel-header {
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--vui-border, #d4d4d4);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
 
-      <section style="margin: 2em 0;">
-        <div class="vui-icons-toolbar">
-          <input type="text" class="vui-icons-search" id="icon-search" placeholder="Search icons…" autocomplete="off" />
-          <select class="vui-icons-sort" id="icon-sort">
-            <option value="featured">Featured</option>
-            <option value="az">A → Z</option>
-            <option value="za">Z → A</option>
-          </select>
-          <div class="vui-icons-modes">
-            <button class="vui-icons-mode-btn is-active" data-mode="hover">Hover</button>
-            <button class="vui-icons-mode-btn" data-mode="static">Static</button>
-            <button class="vui-icons-mode-btn" data-mode="infinite">Infinite</button>
-          </div>
-        </div>
+      .vui-icon-panel-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+        color: var(--vui-fg, #1a1a1a);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-        <div class="vui-icon-container" style="display: flex;">
+      .vui-icon-panel-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-shrink: 0;
+      }
 
+      .vui-icon-panel-btn {
+        background: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        color: var(--vui-fg-muted, #6b6b6b);
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--vui-radius-md, 6px);
+        transition:
+          background 150ms ease,
+          color 150ms ease,
+          border-color 150ms ease;
+      }
 
-          <div class="vui-anim-grid" id="icon-grid" style="width: 100%;">
+      .vui-icon-panel-btn:hover {
+        background: var(--vui-bg-surface, #f2f2f2);
+        color: var(--vui-fg, #1a1a1a);
+        border-color: var(--vui-border, #d4d4d4);
+      }
 
-          </div>
+      .vui-icon-panel-body {
+        padding: 20px;
+        overflow-y: auto;
+        flex: 1;
+      }
 
-          <aside class="vui-icon-panel" id="icon-panel">
-            <div class="vui-icon-panel-header">
-              <h3 class="vui-icon-panel-title" id="panel-icon-name">Properties</h3>
-              <div class="vui-icon-panel-header-actions">
-                <button class="vui-icon-panel-btn" id="panel-reset-btn" aria-label="Reset to defaults"
-                  title="Reset to defaults">
-                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="1 4 1 10 7 10"></polyline>
-                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-                  </svg>
-                </button>
-                <button class="vui-icon-panel-btn" id="panel-close-btn" aria-label="Close panel" title="Close">
-                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </button>
-              </div>
+      .vui-panel-tabs {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid var(--vui-border, #d4d4d4);
+      }
+
+      .vui-panel-tab {
+        background: none;
+        border: none;
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--vui-fg-muted, #6b6b6b);
+        padding: 0 0 8px 0;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: -1px;
+      }
+
+      .vui-panel-tab:hover {
+        color: var(--vui-fg, #1a1a1a);
+      }
+
+      .vui-panel-tab.is-active {
+        color: var(--vui-fg, #1a1a1a);
+      }
+
+      .vui-panel-tab.is-active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--vui-fg, #1a1a1a);
+        border-radius: 2px 2px 0 0;
+      }
+
+      .vui-icon-panel-preview {
+        width: 100%;
+        aspect-ratio: 2/1;
+        background: repeating-conic-gradient(
+            var(--vui-bg-surface, #f2f2f2) 0% 25%,
+            var(--vui-bg-elevated, #ffffff) 0% 50%
+          )
+          0 0 / 16px 16px;
+        border-radius: var(--vui-radius-md, 6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        color: var(--vui-fg, #1a1a1a);
+      }
+
+      .vui-icon-panel-preview svg {
+        transition: all 150ms ease;
+      }
+
+      .vui-control-group {
+        margin-bottom: 14px;
+      }
+
+      .vui-control-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--vui-fg-muted, #6b6b6b);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+
+      .vui-control-value {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--vui-fg, #1a1a1a);
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      /* Segmented mode buttons */
+      .vui-panel-seg {
+        display: flex;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .vui-panel-seg-btn {
+        flex: 1;
+        padding: 6px 0;
+        text-align: center;
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 12px;
+        font-weight: 500;
+        border: none;
+        background: var(--vui-bg-elevated, #ffffff);
+        color: var(--vui-fg-muted, #6b6b6b);
+        cursor: pointer;
+        transition:
+          background 150ms ease,
+          color 150ms ease;
+      }
+
+      .vui-panel-seg-btn:not(:last-child) {
+        border-right: 1px solid var(--vui-border, #d4d4d4);
+      }
+
+      .vui-panel-seg-btn:hover {
+        background: var(--vui-bg-surface, #f2f2f2);
+      }
+
+      .vui-panel-seg-btn.is-active {
+        background: var(--vui-bg-invert, #1a1a1a);
+        color: var(--vui-fg-invert, #fafafa);
+      }
+
+      /* Range slider styling */
+      .vui-control-range {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--vui-border, #d4d4d4);
+        outline: none;
+        margin-top: 2px;
+      }
+
+      .vui-control-range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--vui-fg, #1a1a1a);
+        cursor: pointer;
+        border: 2px solid var(--vui-bg-elevated, #ffffff);
+        box-shadow: 0 0 0 1px var(--vui-border, #d4d4d4);
+      }
+
+      .vui-control-range::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--vui-fg, #1a1a1a);
+        cursor: pointer;
+        border: 2px solid var(--vui-bg-elevated, #ffffff);
+        box-shadow: 0 0 0 1px var(--vui-border, #d4d4d4);
+      }
+
+      .vui-color-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .vui-color-input {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        cursor: pointer;
+        background: none;
+      }
+
+      .vui-color-input::-webkit-color-swatch-wrapper {
+        padding: 2px;
+      }
+
+      .vui-color-input::-webkit-color-swatch {
+        border: none;
+        border-radius: 3px;
+      }
+
+      .vui-color-hex {
+        font-family: var(
+          --vui-font-mono,
+          "SFMono-Regular",
+          Consolas,
+          monospace
+        );
+        font-size: 12px;
+        color: var(--vui-fg, #1a1a1a);
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        padding: 4px 8px;
+        background: var(--vui-bg-elevated, #ffffff);
+        outline: none;
+        width: 90px;
+      }
+
+      .vui-color-hex:focus {
+        border-color: var(--vui-accent, #1a1a1a);
+      }
+
+      .vui-panel-divider {
+        border: none;
+        border-top: 1px solid var(--vui-border, #d4d4d4);
+        margin: 16px 0;
+      }
+
+      .vui-icon-panel-code {
+        width: 100%;
+        aspect-ratio: 2/1;
+        font-family: var(
+          --vui-font-mono,
+          "SFMono-Regular",
+          Consolas,
+          "Liberation Mono",
+          Menlo,
+          monospace
+        );
+        font-size: 11px;
+        line-height: 1.5;
+        padding: 10px;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        background: var(--vui-bg-surface, #f2f2f2);
+        color: var(--vui-fg, #1a1a1a);
+        resize: vertical;
+        margin-bottom: 20px;
+      }
+
+      .vui-panel-actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .vui-panel-action-btn {
+        flex: 1;
+        padding: 8px 0;
+        text-align: center;
+        font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid var(--vui-border, #d4d4d4);
+        border-radius: var(--vui-radius-md, 6px);
+        background: var(--vui-bg-elevated, #ffffff);
+        color: var(--vui-fg, #1a1a1a);
+        cursor: pointer;
+        transition: background 150ms ease;
+      }
+
+      .vui-panel-action-btn:hover {
+        background: var(--vui-bg-surface, #f2f2f2);
+      }
+
+      .vui-panel-action-btn--primary {
+        background: var(--vui-bg-invert, #1a1a1a);
+        color: var(--vui-fg-invert, #fafafa);
+        border-color: var(--vui-bg-invert, #1a1a1a);
+      }
+
+      .vui-panel-action-btn--primary:hover {
+        opacity: 0.9;
+        background: var(--vui-bg-invert, #1a1a1a);
+      }
+
+      .vui-icon-panel-empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--vui-fg-muted, #6b6b6b);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 900px) {
+        .vui-icon-panel {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="docs-layout">
+      <docs-sidebar base-path="../"></docs-sidebar>
+
+      <main class="docs-main">
+        <h1 class="docs-title">Icons</h1>
+        <p class="docs-subtitle">
+          87 copy-paste inline SVG icons with SMIL hover animations. No font, no
+          sprite sheet, no JavaScript.
+        </p>
+
+        <section style="margin: 2em 0">
+          <div class="vui-icons-toolbar">
+            <input
+              type="text"
+              class="vui-icons-search"
+              id="icon-search"
+              placeholder="Search icons…"
+              autocomplete="off"
+            />
+            <select class="vui-icons-sort" id="icon-sort">
+              <option value="featured">Featured</option>
+              <option value="az">A → Z</option>
+              <option value="za">Z → A</option>
+            </select>
+            <div class="vui-icons-modes">
+              <button class="vui-icons-mode-btn is-active" data-mode="hover">
+                Hover
+              </button>
+              <button class="vui-icons-mode-btn" data-mode="static">
+                Static
+              </button>
+              <button class="vui-icons-mode-btn" data-mode="infinite">
+                Infinite
+              </button>
             </div>
-            <div class="vui-icon-panel-body" id="panel-body">
-              <div class="vui-icon-panel-empty" id="panel-empty">Click any icon to inspect and customize it.</div>
-              <div id="panel-content" style="display:none;">
-                <div class="vui-panel-tabs">
-                  <button class="vui-panel-tab is-active" data-tab="preview">Preview</button>
-                  <button class="vui-panel-tab" data-tab="code">SVG Code</button>
-                </div>
+          </div>
 
-                <div id="panel-tab-preview" style="display: block;">
-                  <div class="vui-icon-panel-preview" id="panel-preview"></div>
-                </div>
+          <div class="vui-icon-container" style="display: flex">
+            <div class="vui-anim-grid" id="icon-grid"></div>
 
-                <div id="panel-tab-code" style="display: none;">
-                  <textarea class="vui-icon-panel-code" id="panel-svg-code" readonly></textarea>
+            <aside class="vui-icon-panel" id="icon-panel">
+              <div class="vui-icon-panel-header">
+                <h3 class="vui-icon-panel-title" id="panel-icon-name">
+                  Properties
+                </h3>
+                <div class="vui-icon-panel-header-actions">
+                  <button
+                    class="vui-icon-panel-btn"
+                    id="panel-reset-btn"
+                    aria-label="Reset to defaults"
+                    title="Reset to defaults"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="1 4 1 10 7 10"></polyline>
+                      <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                    </svg>
+                  </button>
+                  <button
+                    class="vui-icon-panel-btn"
+                    id="panel-close-btn"
+                    aria-label="Close panel"
+                    title="Close"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
                 </div>
+              </div>
+              <div class="vui-icon-panel-body" id="panel-body">
+                <div class="vui-icon-panel-empty" id="panel-empty">
+                  Click any icon to inspect and customize it.
+                </div>
+                <div id="panel-content" style="display: none">
+                  <div class="vui-panel-tabs">
+                    <button class="vui-panel-tab is-active" data-tab="preview">
+                      Preview
+                    </button>
+                    <button class="vui-panel-tab" data-tab="code">
+                      SVG Code
+                    </button>
+                  </div>
 
-                <div class="vui-control-group">
-                  <label class="vui-control-label">Animation</label>
-                  <div class="vui-panel-seg" id="panel-mode-seg">
-                    <button class="vui-panel-seg-btn is-active" data-mode="hover">Hover</button>
-                    <button class="vui-panel-seg-btn" data-mode="static">Static</button>
-                    <button class="vui-panel-seg-btn" data-mode="infinite">Infinite</button>
+                  <div id="panel-tab-preview" style="display: block">
+                    <div
+                      class="vui-icon-panel-preview"
+                      id="panel-preview"
+                    ></div>
+                  </div>
+
+                  <div id="panel-tab-code" style="display: none">
+                    <textarea
+                      class="vui-icon-panel-code"
+                      id="panel-svg-code"
+                      readonly
+                    ></textarea>
+                  </div>
+
+                  <div class="vui-control-group">
+                    <label class="vui-control-label"
+                      >Duration
+                      <span class="vui-control-value" id="panel-duration-val"
+                        >0.5s</span
+                      ></label
+                    >
+                    <input
+                      type="range"
+                      class="vui-control-range"
+                      id="panel-duration"
+                      min="0.1"
+                      max="3"
+                      step="0.1"
+                      value="0.5"
+                    />
+                  </div>
+
+                  <div class="vui-control-group">
+                    <label class="vui-control-label"
+                      >Size
+                      <span class="vui-control-value" id="panel-size-val"
+                        >24px</span
+                      ></label
+                    >
+                    <input
+                      type="range"
+                      class="vui-control-range"
+                      id="panel-size"
+                      min="16"
+                      max="128"
+                      step="4"
+                      value="24"
+                    />
+                  </div>
+
+                  <div class="vui-control-group">
+                    <label class="vui-control-label"
+                      >Stroke
+                      <span class="vui-control-value" id="panel-stroke-val"
+                        >2</span
+                      ></label
+                    >
+                    <input
+                      type="range"
+                      class="vui-control-range"
+                      id="panel-stroke"
+                      min="0.5"
+                      max="4"
+                      step="0.5"
+                      value="2"
+                    />
+                  </div>
+
+                  <div class="vui-control-group" style="margin-bottom: 24px">
+                    <label class="vui-control-label">Color</label>
+                    <div class="vui-color-row">
+                      <input
+                        type="color"
+                        class="vui-color-input"
+                        id="panel-color"
+                        value="#000000"
+                      />
+                      <input
+                        type="text"
+                        class="vui-color-hex"
+                        id="panel-color-hex"
+                        value="#000000"
+                        maxlength="7"
+                        spellcheck="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="vui-panel-actions">
+                    <button
+                      class="vui-panel-action-btn"
+                      id="panel-reset-icon-btn"
+                    >
+                      Reset
+                    </button>
+                    <button
+                      class="vui-panel-action-btn vui-panel-action-btn--primary"
+                      id="panel-copy-btn"
+                    >
+                      Copy SVG
+                    </button>
                   </div>
                 </div>
-
-                <div class="vui-control-group">
-                  <label class="vui-control-label">Duration <span class="vui-control-value"
-                      id="panel-duration-val">0.5s</span></label>
-                  <input type="range" class="vui-control-range" id="panel-duration" min="0.1" max="3" step="0.1"
-                    value="0.5">
-                </div>
-
-                <div class="vui-control-group">
-                  <label class="vui-control-label">Size <span class="vui-control-value"
-                      id="panel-size-val">24px</span></label>
-                  <input type="range" class="vui-control-range" id="panel-size" min="16" max="128" step="4" value="24">
-                </div>
-
-                <div class="vui-control-group">
-                  <label class="vui-control-label">Stroke <span class="vui-control-value"
-                      id="panel-stroke-val">2</span></label>
-                  <input type="range" class="vui-control-range" id="panel-stroke" min="0.5" max="4" step="0.5"
-                    value="2">
-                </div>
-
-                <div class="vui-control-group" style="margin-bottom: 24px;">
-                  <label class="vui-control-label">Color</label>
-                  <div class="vui-color-row">
-                    <input type="color" class="vui-color-input" id="panel-color" value="#000000">
-                    <input type="text" class="vui-color-hex" id="panel-color-hex" value="#000000" maxlength="7"
-                      spellcheck="false">
-                  </div>
-                </div>
-
-                <div class="vui-panel-actions">
-                  <button class="vui-panel-action-btn" id="panel-reset-icon-btn">Reset</button>
-                  <button class="vui-panel-action-btn vui-panel-action-btn--primary" id="panel-copy-btn">Copy
-                    SVG</button>
-                </div>
               </div>
-            </div>
-          </aside>
+            </aside>
+          </div>
+
+          <div
+            class="vui-pagination"
+            id="icon-pagination"
+            style="display: none"
+          >
+            <button class="vui-page-btn" id="page-prev">Previous</button>
+            <span class="vui-page-info" id="page-info"></span>
+            <button class="vui-page-btn" id="page-next">Next</button>
+          </div>
+        </section>
+
+        <h2 class="docs-section-title">Implementation Notes</h2>
+        <div class="docs-prose">
+          <p>
+            Icons use a <code>-2 -2 28 28</code> padded viewBox and a two-pixel outline
+            stroke to securely contain hover expansions while remaining visually consistent.
+          </p>
+          <p>
+            Hover animations are pure SMIL — <code>animateTransform</code> or
+            <code>animate</code> triggered by <code>begin="mouseover"</code>. No
+            CSS, no JavaScript needed.
+          </p>
         </div>
+      </main>
+    </div>
 
-        <div class="vui-pagination" id="icon-pagination" style="display: none;">
-          <button class="vui-page-btn" id="page-prev">Previous</button>
-          <span class="vui-page-info" id="page-info"></span>
-          <button class="vui-page-btn" id="page-next">Next</button>
-        </div>
-      </section>
+    <script type="module" src="../js/app.js"></script>
+    <script>
+      (async function () {
+        // Approved icon set currently visible in the docs grid
+        const iconNames = [
+          "accessibility",
+          "x",
+          "check",
+          "search",
+          "arrow-left",
+          "arrow-right",
+          "eye",
+          "eye-off",
+          "copy",
+          "menu",
+          "settings",
+          "edit-2",
+          "trash-2",
+          "list",
+          "grid",
+          "heart",
+          "thumbs-up",
+          "lock",
+          "unlock",
+          "refresh",
+          "map-pin",
+          "compass",
+          "globe",
+          "crosshair",
+          "mail",
+          "bell",
+          "share-2",
+          "volume-2",
+          "camera",
+          "download",
+          "upload",
+          "sun",
+          "clock",
+          "coffee",
+          "wifi",
+          "align-left",
+          "align-center",
+          "align-right",
+          "bold",
+          "italic",
+          "underline",
+          "link-2",
+          "scissors",
+          "crop",
+          "slash",
+          "layers",
+          "image",
+          "pen-tool",
+          "printer",
+          "battery-charging",
+          "radio",
+          "watch",
+          "shopping-cart",
+          "truck",
+          "cloud-drizzle",
+          "cloud-lightning",
+          "cloud-rain",
+          "cloud-snow",
+          "wind",
+          "user-check",
+          "user-x",
+          "smile",
+          "frown",
+          "bookmark",
+          "sliders",
+          "airplay",
+          "ambulance",
+          "ampersand",
+          "arrow-right-left",
+          "audio-lines",
+          "audio-waveform",
+          "baggage-claim",
+          "banana",
+          "beer",
+          "bell-dot",
+          "bell-ring",
+          "bike",
+          "blend",
+          "book-search",
+          "bow-arrow",
+          "bring-to-front",
+          "brush-cleaning",
+          "bus",
+          "cable",
+          "calendar-check",
+          "calendar-search",
+          "car",
+        ];
 
-      <h2 class="docs-section-title">Implementation Notes</h2>
-      <div class="docs-prose">
-        <p>
-          Every icon uses a <code>24 24</code> viewBox and a two-pixel outline stroke so the set stays visually
-          consistent.
-        </p>
-        <p>
-          Hover animations are pure SMIL — <code>animateTransform</code> or <code>animate</code> triggered by
-          <code>begin="mouseover"</code>. No CSS, no
-          JavaScript needed.
-        </p>
-      </div>
-    </main>
+        const ICONS_PER_PAGE = 50;
+        let currentPage = 1;
+        let currentMode = "hover";
+        let currentSort = "featured";
+        let filteredNames = [...iconNames];
+        const svgCache = new Map();
 
+        const grid = document.getElementById("icon-grid");
+        const searchInput = document.getElementById("icon-search");
+        const sortSelect = document.getElementById("icon-sort");
+        const modeBtns = document.querySelectorAll(".vui-icons-mode-btn");
+        const pagination = document.getElementById("icon-pagination");
+        const btnPrev = document.getElementById("page-prev");
+        const btnNext = document.getElementById("page-next");
+        const pageInfo = document.getElementById("page-info");
 
-  </div>
+        // ── Properties Panel ──
+        const DEFAULTS = {
+          mode: "hover",
+          duration: "0.5",
+          size: "24",
+          stroke: "2",
+          color: null,
+        };
+        const iconState = new Map(); // per-icon state
+        let activeIconName = "";
 
-  <script type="module" src="../js/app.js"></script>
-  <script>
-    (async function () {
-      // Approved icon set currently visible in the docs grid
-      const iconNames = [
-        'accessibility', 'x', 'check', 'search', 'arrow-left', 'arrow-right',
-        'eye', 'eye-off', 'copy', 'menu', 'settings', 'edit-2',
-        'trash-2', 'list', 'grid', 'heart', 'thumbs-up', 'lock',
-        'unlock', 'refresh', 'map-pin', 'compass', 'globe', 'crosshair',
-        'mail', 'bell', 'share-2', 'volume-2', 'camera', 'download',
-        'upload', 'sun', 'clock', 'coffee', 'wifi', 'align-left',
-        'align-center', 'align-right', 'bold', 'italic', 'underline', 'link-2',
-        'scissors', 'crop', 'slash', 'layers', 'image', 'pen-tool',
-        'printer', 'battery-charging', 'radio', 'watch', 'shopping-cart', 'truck',
-        'cloud-drizzle', 'cloud-lightning', 'cloud-rain', 'cloud-snow', 'wind', 'user-check',
-        'user-x', 'smile', 'frown', 'bookmark', 'sliders', 'airplay',
-        'ambulance', 'ampersand', 'arrow-right-left', 'audio-lines', 'audio-waveform', 'baggage-claim',
-        'banana', 'beer', 'bell-dot', 'bell-ring', 'bike', 'blend',
-        'book-search', 'bow-arrow', 'bring-to-front', 'brush-cleaning', 'bus', 'cable',
-        'calendar-check', 'calendar-search', 'car'
-      ]
+        const pPanel = document.getElementById("icon-panel");
+        const pName = document.getElementById("panel-icon-name");
+        const pPreview = document.getElementById("panel-preview");
+        const pCode = document.getElementById("panel-svg-code");
+        const pCopy = document.getElementById("panel-copy-btn");
+        const pClose = document.getElementById("panel-close-btn");
+        const pResetHeader = document.getElementById("panel-reset-btn");
+        const pResetIcon = document.getElementById("panel-reset-icon-btn");
+        const pEmpty = document.getElementById("panel-empty");
+        const pContent = document.getElementById("panel-content");
 
-      const ICONS_PER_PAGE = 50;
-      let currentPage = 1;
-      let currentMode = 'hover';
-      let currentSort = 'featured';
-      let filteredNames = [...iconNames];
-      const svgCache = new Map();
+        const segBtns = document.querySelectorAll(
+          "#panel-mode-seg .vui-panel-seg-btn",
+        );
+        const cDuration = document.getElementById("panel-duration");
+        const vDuration = document.getElementById("panel-duration-val");
+        const cSize = document.getElementById("panel-size");
+        const vSize = document.getElementById("panel-size-val");
+        const cStroke = document.getElementById("panel-stroke");
+        const vStroke = document.getElementById("panel-stroke-val");
+        const cColor = document.getElementById("panel-color");
+        const vColorHex = document.getElementById("panel-color-hex");
 
-      const grid = document.getElementById('icon-grid');
-      const searchInput = document.getElementById('icon-search');
-      const sortSelect = document.getElementById('icon-sort');
-      const modeBtns = document.querySelectorAll('.vui-icons-mode-btn');
-      const pagination = document.getElementById('icon-pagination');
-      const btnPrev = document.getElementById('page-prev');
-      const btnNext = document.getElementById('page-next');
-      const pageInfo = document.getElementById('page-info');
-
-      // ── Properties Panel ──
-      const DEFAULTS = { mode: 'hover', duration: '0.5', size: '24', stroke: '2', color: null };
-      const iconState = new Map(); // per-icon state
-      let activeIconName = '';
-
-      const pPanel = document.getElementById('icon-panel');
-      const pName = document.getElementById('panel-icon-name');
-      const pPreview = document.getElementById('panel-preview');
-      const pCode = document.getElementById('panel-svg-code');
-      const pCopy = document.getElementById('panel-copy-btn');
-      const pClose = document.getElementById('panel-close-btn');
-      const pResetHeader = document.getElementById('panel-reset-btn');
-      const pResetIcon = document.getElementById('panel-reset-icon-btn');
-      const pEmpty = document.getElementById('panel-empty');
-      const pContent = document.getElementById('panel-content');
-
-      const segBtns = document.querySelectorAll('#panel-mode-seg .vui-panel-seg-btn');
-      const cDuration = document.getElementById('panel-duration');
-      const vDuration = document.getElementById('panel-duration-val');
-      const cSize = document.getElementById('panel-size');
-      const vSize = document.getElementById('panel-size-val');
-      const cStroke = document.getElementById('panel-stroke');
-      const vStroke = document.getElementById('panel-stroke-val');
-      const cColor = document.getElementById('panel-color');
-      const vColorHex = document.getElementById('panel-color-hex');
-
-      function getIconState(name) {
-        if (!iconState.has(name)) iconState.set(name, { ...DEFAULTS });
-        return iconState.get(name);
-      }
-
-      function sanitizeSvgMarkup(markup) {
-        const svgStart = markup.search(/<svg\b/i);
-        if (svgStart === -1) return '<svg viewBox="0 0 24 24"></svg>';
-
-        const svgEndMatch = markup.match(/<\/svg>/i);
-        if (!svgEndMatch || typeof svgEndMatch.index !== 'number') {
-          return '<svg viewBox="0 0 24 24"></svg>';
+        function getIconState(name) {
+          if (!iconState.has(name)) iconState.set(name, { ...DEFAULTS });
+          return iconState.get(name);
         }
 
-        const svgEnd = svgEndMatch.index + svgEndMatch[0].length;
-        return markup
-          .slice(svgStart, svgEnd)
-          .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
-          .trim();
-      }
+        function sanitizeSvgMarkup(markup) {
+          const svgStart = markup.search(/<svg\b/i);
+          if (svgStart === -1) return '<svg viewBox="0 0 24 24"></svg>';
 
-      function closePanel() {
-        pPanel.classList.remove('is-open');
-      }
+          const svgEndMatch = markup.match(/<\/svg>/i);
+          if (!svgEndMatch || typeof svgEndMatch.index !== "number") {
+            return '<svg viewBox="0 0 24 24"></svg>';
+          }
 
-      function openPanel(name) {
-        activeIconName = name;
-        pPanel.classList.add('is-open');
-        pEmpty.style.display = 'none';
-        pContent.style.display = '';
-        pName.textContent = name;
-        loadStateIntoControls(getIconState(name));
-        updatePanelSvg();
-      }
-
-      function loadStateIntoControls(st) {
-        segBtns.forEach(b => b.classList.toggle('is-active', b.dataset.mode === st.mode));
-        cDuration.value = st.duration; vDuration.textContent = `${st.duration}s`;
-        cSize.value = st.size; vSize.textContent = `${st.size}px`;
-        cStroke.value = st.stroke; vStroke.textContent = st.stroke;
-        if (st.color) {
-          cColor.value = st.color; vColorHex.value = st.color;
-        } else {
-          cColor.value = '#000000'; vColorHex.value = 'currentColor';
-        }
-      }
-
-      function saveControlsToState() {
-        if (!activeIconName) return;
-        const st = getIconState(activeIconName);
-        st.mode = Array.from(segBtns).find(b => b.classList.contains('is-active')).dataset.mode;
-        st.duration = cDuration.value;
-        st.size = cSize.value;
-        st.stroke = cStroke.value;
-        // color is saved on input event separately
-      }
-
-      pClose.addEventListener('click', closePanel);
-
-      function updatePanelSvg() {
-        if (!activeIconName) return;
-        const baseSvg = svgCache.get(activeIconName);
-        if (!baseSvg) return;
-        const st = getIconState(activeIconName);
-
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(baseSvg, 'image/svg+xml');
-        const svg = doc.querySelector('svg');
-        if (!svg) return;
-
-        stripSvgComments(svg);
-        svg.querySelectorAll('rect[fill="transparent"]').forEach(el => el.remove());
-
-        svg.setAttribute('width', st.size);
-        svg.setAttribute('height', st.size);
-        svg.setAttribute('stroke-width', st.stroke);
-        if (st.color) svg.setAttribute('stroke', st.color);
-
-        if (st.mode === 'static') {
-          svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => el.remove());
-        } else if (st.mode === 'infinite') {
-          svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
-            el.setAttribute('begin', '0s');
-            el.setAttribute('repeatCount', 'indefinite');
-            el.removeAttribute('fill');
-          });
+          const svgEnd = svgEndMatch.index + svgEndMatch[0].length;
+          return markup
+            .slice(svgStart, svgEnd)
+            .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+            .trim();
         }
 
-        const finalSvg = svg.outerHTML;
-        pPreview.innerHTML = finalSvg;
-        pCode.value = finalSvg;
-      }
+        function closePanel() {
+          pPanel.classList.remove("is-open");
+        }
 
-      // Panel Tabs
-      const panelTabsBtns = document.querySelectorAll('.vui-panel-tab');
-      const tabPreview = document.getElementById('panel-tab-preview');
-      const tabCode = document.getElementById('panel-tab-code');
+        function openPanel(name) {
+          activeIconName = name;
+          pPanel.classList.add("is-open");
+          pEmpty.style.display = "none";
+          pContent.style.display = "";
+          pName.textContent = name;
+          loadStateIntoControls(getIconState(name));
+          updatePanelSvg();
+        }
 
-      panelTabsBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          panelTabsBtns.forEach(b => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          if (btn.dataset.tab === 'preview') {
-            tabPreview.style.display = 'block';
-            tabCode.style.display = 'none';
+        function loadStateIntoControls(st) {
+          segBtns.forEach((b) =>
+            b.classList.toggle("is-active", b.dataset.mode === st.mode),
+          );
+          cDuration.value = st.duration;
+          vDuration.textContent = `${st.duration}s`;
+          cSize.value = st.size;
+          vSize.textContent = `${st.size}px`;
+          cStroke.value = st.stroke;
+          vStroke.textContent = st.stroke;
+          if (st.color) {
+            cColor.value = st.color;
+            vColorHex.value = st.color;
           } else {
-            tabPreview.style.display = 'none';
-            tabCode.style.display = 'block';
+            cColor.value = "#000000";
+            vColorHex.value = "currentColor";
+          }
+        }
+
+        function saveControlsToState() {
+          if (!activeIconName) return;
+          const st = getIconState(activeIconName);
+          st.duration = cDuration.value;
+          st.size = cSize.value;
+          st.stroke = cStroke.value;
+          // color is saved on input event separately
+        }
+
+        pClose.addEventListener("click", closePanel);
+
+        function updatePanelSvg() {
+          if (!activeIconName) return;
+          const baseSvg = svgCache.get(activeIconName);
+          if (!baseSvg) return;
+          const st = getIconState(activeIconName);
+
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(baseSvg, "image/svg+xml");
+          const svg = doc.querySelector("svg");
+          if (!svg) return;
+
+          stripSvgComments(svg);
+          svg
+            .querySelectorAll('rect[fill="transparent"]')
+            .forEach((el) => el.remove());
+
+          svg.setAttribute("stroke-width", st.stroke);
+          if (st.color) svg.setAttribute("stroke", st.color);
+
+          if (currentMode === "static") {
+            svg
+              .querySelectorAll("animateTransform, animate, animateMotion")
+              .forEach((el) => el.remove());
+          } else if (currentMode === "infinite") {
+            svg
+              .querySelectorAll("animateTransform, animate, animateMotion")
+              .forEach((el) => {
+                el.setAttribute("begin", "0s");
+                el.setAttribute("repeatCount", "indefinite");
+                el.removeAttribute("fill");
+              });
+          }
+
+          pCode.value = svg.outerHTML;
+
+          svg.setAttribute("width", st.size);
+          svg.setAttribute("height", st.size);
+          pPreview.innerHTML = svg.outerHTML;
+        }
+
+        // Panel Tabs
+        const panelTabsBtns = document.querySelectorAll(".vui-panel-tab");
+        const tabPreview = document.getElementById("panel-tab-preview");
+        const tabCode = document.getElementById("panel-tab-code");
+
+        panelTabsBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            panelTabsBtns.forEach((b) => b.classList.remove("is-active"));
+            btn.classList.add("is-active");
+            if (btn.dataset.tab === "preview") {
+              tabPreview.style.display = "block";
+              tabCode.style.display = "none";
+            } else {
+              tabPreview.style.display = "none";
+              tabCode.style.display = "block";
+            }
+          });
+        });
+
+        // Segmented mode buttons
+        segBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            segBtns.forEach((b) => b.classList.remove("is-active"));
+            btn.classList.add("is-active");
+            saveControlsToState();
+            updatePanelSvg();
+          });
+        });
+
+        // Range sliders
+        [cDuration, cSize, cStroke].forEach((input) => {
+          input.addEventListener("input", () => {
+            vDuration.textContent = `${cDuration.value}s`;
+            vSize.textContent = `${cSize.value}px`;
+            vStroke.textContent = cStroke.value;
+            saveControlsToState();
+            updatePanelSvg();
+          });
+        });
+
+        // Color picker
+        cColor.addEventListener("input", () => {
+          const st = getIconState(activeIconName);
+          st.color = cColor.value;
+          vColorHex.value = cColor.value;
+          updatePanelSvg();
+        });
+
+        // Hex text input
+        vColorHex.addEventListener("change", () => {
+          let v = vColorHex.value.trim();
+          if (v === "currentColor" || v === "") {
+            const st = getIconState(activeIconName);
+            st.color = null;
+            cColor.value = "#000000";
+            vColorHex.value = "currentColor";
+            updatePanelSvg();
+            return;
+          }
+          if (!v.startsWith("#")) v = "#" + v;
+          if (/^#[0-9a-fA-F]{3,6}$/.test(v)) {
+            const st = getIconState(activeIconName);
+            st.color = v;
+            cColor.value = v;
+            vColorHex.value = v;
+            updatePanelSvg();
           }
         });
-      });
 
-      // Segmented mode buttons
-      segBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          segBtns.forEach(b => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          saveControlsToState();
+        // Reset (per-icon)
+        function resetCurrentIcon() {
+          if (!activeIconName) return;
+          iconState.set(activeIconName, { ...DEFAULTS });
+          loadStateIntoControls(DEFAULTS);
           updatePanelSvg();
+        }
+        pResetHeader.addEventListener("click", resetCurrentIcon);
+        pResetIcon.addEventListener("click", resetCurrentIcon);
+
+        // Copy SVG
+        pCopy.addEventListener("click", () => {
+          navigator.clipboard
+            .writeText(sanitizeSvgMarkup(pCode.value))
+            .then(() => {
+              const orig = pCopy.textContent;
+              pCopy.textContent = "Copied!";
+              setTimeout(() => (pCopy.textContent = orig), 1500);
+            });
         });
-      });
 
-      // Range sliders
-      [cDuration, cSize, cStroke].forEach(input => {
-        input.addEventListener('input', () => {
-          vDuration.textContent = `${cDuration.value}s`;
-          vSize.textContent = `${cSize.value}px`;
-          vStroke.textContent = cStroke.value;
-          saveControlsToState();
-          updatePanelSvg();
-        });
-      });
+        // Show panel on first load in empty state
+        pPanel.classList.add("is-open");
 
-      // Color picker
-      cColor.addEventListener('input', () => {
-        const st = getIconState(activeIconName);
-        st.color = cColor.value;
-        vColorHex.value = cColor.value;
-        updatePanelSvg();
-      });
+        async function renderPage() {
+          const totalPages =
+            Math.ceil(filteredNames.length / ICONS_PER_PAGE) || 1;
+          if (currentPage > totalPages) currentPage = totalPages;
+          if (currentPage < 1) currentPage = 1;
 
-      // Hex text input
-      vColorHex.addEventListener('change', () => {
-        let v = vColorHex.value.trim();
-        if (v === 'currentColor' || v === '') {
-          const st = getIconState(activeIconName);
-          st.color = null;
-          cColor.value = '#000000';
-          vColorHex.value = 'currentColor';
-          updatePanelSvg();
-          return;
-        }
-        if (!v.startsWith('#')) v = '#' + v;
-        if (/^#[0-9a-fA-F]{3,6}$/.test(v)) {
-          const st = getIconState(activeIconName);
-          st.color = v;
-          cColor.value = v;
-          vColorHex.value = v;
-          updatePanelSvg();
-        }
-      });
+          const start = (currentPage - 1) * ICONS_PER_PAGE;
+          const pageNames = filteredNames.slice(start, start + ICONS_PER_PAGE);
 
-      // Reset (per-icon)
-      function resetCurrentIcon() {
-        if (!activeIconName) return;
-        iconState.set(activeIconName, { ...DEFAULTS });
-        loadStateIntoControls(DEFAULTS);
-        updatePanelSvg();
-      }
-      pResetHeader.addEventListener('click', resetCurrentIcon);
-      pResetIcon.addEventListener('click', resetCurrentIcon);
+          // Fetch missing SVGs
+          const svgsToFetch = pageNames.filter((name) => !svgCache.has(name));
+          if (svgsToFetch.length > 0) {
+            await Promise.all(
+              svgsToFetch.map(async (name) => {
+                try {
+                  const svg = await fetch(`/docs/icons/svg/${name}.svg`).then(
+                    (r) => r.text(),
+                  );
+                  svgCache.set(name, sanitizeSvgMarkup(svg));
+                } catch (e) {
+                  console.error(`Failed to load icon: ${name}`, e);
+                  svgCache.set(name, '<svg viewBox="0 0 24 24"></svg>'); // Empty fallback
+                }
+              }),
+            );
+          }
 
-      // Copy SVG
-      pCopy.addEventListener('click', () => {
-        navigator.clipboard.writeText(sanitizeSvgMarkup(pCode.value)).then(() => {
-          const orig = pCopy.textContent;
-          pCopy.textContent = 'Copied!';
-          setTimeout(() => pCopy.textContent = orig, 1500);
-        });
-      });
+          if (filteredNames.length === 0) {
+            grid.innerHTML =
+              '<div class="vui-icons-no-results">No icons match your search.</div>';
+            pagination.style.display = "none";
+            return;
+          }
 
-      // Show panel on first load in empty state
-      pPanel.classList.add('is-open');
-
-      async function renderPage() {
-        const totalPages = Math.ceil(filteredNames.length / ICONS_PER_PAGE) || 1;
-        if (currentPage > totalPages) currentPage = totalPages;
-        if (currentPage < 1) currentPage = 1;
-
-        const start = (currentPage - 1) * ICONS_PER_PAGE;
-        const pageNames = filteredNames.slice(start, start + ICONS_PER_PAGE);
-
-        // Fetch missing SVGs
-        const svgsToFetch = pageNames.filter(name => !svgCache.has(name));
-        if (svgsToFetch.length > 0) {
-          await Promise.all(svgsToFetch.map(async name => {
-            try {
-              const svg = await fetch(`/docs/icons/svg/${name}.svg`).then(r => r.text());
-              svgCache.set(name, sanitizeSvgMarkup(svg));
-            } catch (e) {
-              console.error(`Failed to load icon: ${name}`, e);
-              svgCache.set(name, '<svg viewBox="0 0 24 24"></svg>'); // Empty fallback
-            }
-          }));
-        }
-
-        if (filteredNames.length === 0) {
-          grid.innerHTML = '<div class="vui-icons-no-results">No icons match your search.</div>';
-          pagination.style.display = 'none';
-          return;
-        }
-
-        grid.innerHTML = pageNames.map(name => `
+          grid.innerHTML = pageNames
+            .map(
+              (name) => `
           <div class="vui-anim-cell">
             <div class="vui-anim-icon-area" data-name="${name}">
               ${svgCache.get(name)}
@@ -1006,144 +1233,163 @@
                 </svg>
                 <span class="vui-anim-copy-label">Copy</span>
                 </div>
-                <span class="vui-anim-copy-label">${name}</span>
                 </div>
-                `).join('');
+                `,
+            )
+            .join("");
+          // <span class="vui-anim-copy-label">${name}</span>
 
-        // Apply current mode to new DOM
-        applyCurrentModeToDOM();
+          // Apply current mode to new DOM
+          applyCurrentModeToDOM();
 
-        // Setup copy listeners
-        setupCopy();
+          // Setup copy listeners
+          setupCopy();
 
-        // Setup panel trigger
-        document.querySelectorAll('.vui-anim-icon-area').forEach(area => {
-          area.addEventListener('click', function () {
-            openPanel(this.dataset.name);
+          // Setup panel trigger
+          document.querySelectorAll(".vui-anim-icon-area").forEach((area) => {
+            area.addEventListener("click", function () {
+              openPanel(this.dataset.name);
+            });
           });
+
+          // Update pagination UI
+          pagination.style.display = "flex";
+          pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+          btnPrev.disabled = currentPage === 1;
+          btnNext.disabled = currentPage === totalPages;
+        }
+
+        function stripSvgComments(svg) {
+          const walker = document.createTreeWalker(
+            svg,
+            NodeFilter.SHOW_COMMENT,
+            null,
+            false,
+          );
+          const removeList = [];
+          let node = walker.nextNode();
+          while (node) {
+            removeList.push(node);
+            node = walker.nextNode();
+          }
+          removeList.forEach((n) => n.remove());
+        }
+
+        function applyCurrentModeToDOM() {
+          modeBtns.forEach((btn) =>
+            btn.classList.toggle("is-active", btn.dataset.mode === currentMode),
+          );
+
+          const cells = document.querySelectorAll(".vui-anim-cell");
+          cells.forEach((cell) => {
+            const area = cell.querySelector(".vui-anim-icon-area");
+            const name = area.dataset.name;
+
+            area.innerHTML = svgCache.get(name);
+
+            const svg = area.querySelector("svg");
+            if (!svg) return;
+
+            stripSvgComments(svg);
+
+            if (currentMode === "static") {
+              svg
+                .querySelectorAll("animateTransform, animate, animateMotion")
+                .forEach((el) => el.remove());
+            } else if (currentMode === "infinite") {
+              svg
+                .querySelectorAll("animateTransform, animate, animateMotion")
+                .forEach((el) => {
+                  el.setAttribute("begin", "0s");
+                  el.setAttribute("repeatCount", "indefinite");
+                  el.removeAttribute("fill");
+                });
+            }
+          });
+        }
+
+        function applyMode(mode) {
+          currentMode = mode;
+          applyCurrentModeToDOM();
+          promptPanelUpdate();
+        }
+
+        function promptPanelUpdate() {
+          if (activeIconName) updatePanelSvg();
+        }
+
+        function setupCopy() {
+          document.querySelectorAll(".vui-anim-copy-row").forEach((row) => {
+            row.addEventListener("click", function () {
+              const cell = row.closest(".vui-anim-cell");
+              const area = cell.querySelector(".vui-anim-icon-area");
+              if (!area) return;
+              const svg = area.querySelector("svg");
+              if (!svg) return;
+              const svgText = sanitizeSvgMarkup(svg.outerHTML);
+
+              navigator.clipboard.writeText(svgText).then(() => {
+                const label = row.querySelector(".vui-anim-copy-label");
+                if (!label) return;
+                const originalText = label.textContent;
+                row.classList.add("is-copied");
+                label.textContent = "Copied!";
+                setTimeout(() => {
+                  label.textContent = originalText;
+                  row.classList.remove("is-copied");
+                }, 1500);
+              });
+            });
+          });
+        }
+
+        // Filter + sort helper
+        function applyFilterAndSort() {
+          const q = searchInput.value.trim().toLowerCase();
+          filteredNames = iconNames.filter((name) =>
+            name.toLowerCase().includes(q),
+          );
+          if (currentSort === "az") filteredNames.sort();
+          else if (currentSort === "za") filteredNames.sort().reverse();
+          currentPage = 1;
+          renderPage();
+        }
+
+        // Search
+        searchInput.addEventListener("input", applyFilterAndSort);
+
+        // Sort
+        sortSelect.addEventListener("change", () => {
+          currentSort = sortSelect.value;
+          applyFilterAndSort();
         });
 
-        // Update pagination UI
-        pagination.style.display = 'flex';
-        pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-        btnPrev.disabled = currentPage === 1;
-        btnNext.disabled = currentPage === totalPages;
-      }
-
-      function stripSvgComments(svg) {
-        const walker = document.createTreeWalker(svg, NodeFilter.SHOW_COMMENT, null, false);
-        const removeList = [];
-        let node = walker.nextNode();
-        while (node) {
-          removeList.push(node);
-          node = walker.nextNode();
-        }
-        removeList.forEach(n => n.remove());
-      }
-
-      function applyCurrentModeToDOM() {
-        modeBtns.forEach(btn => btn.classList.toggle('is-active', btn.dataset.mode === currentMode));
-
-        const cells = document.querySelectorAll('.vui-anim-cell');
-        cells.forEach(cell => {
-          const area = cell.querySelector('.vui-anim-icon-area');
-          const name = area.dataset.name;
-
-          area.innerHTML = svgCache.get(name);
-
-          const svg = area.querySelector('svg');
-          if (!svg) return;
-
-          stripSvgComments(svg);
-
-          if (currentMode === 'static') {
-            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => el.remove());
-          } else if (currentMode === 'infinite') {
-            svg.querySelectorAll('animateTransform, animate, animateMotion').forEach(el => {
-              el.setAttribute('begin', '0s');
-              el.setAttribute('repeatCount', 'indefinite');
-              el.removeAttribute('fill');
-            });
+        // Pagination
+        btnPrev.addEventListener("click", () => {
+          if (currentPage > 1) {
+            currentPage--;
+            renderPage();
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }
         });
-      }
 
-      function applyMode(mode) {
-        currentMode = mode;
-        applyCurrentModeToDOM();
-      }
-
-      function setupCopy() {
-        document.querySelectorAll('.vui-anim-copy-row').forEach(row => {
-          row.addEventListener('click', function () {
-            const cell = row.closest('.vui-anim-cell');
-            const area = cell.querySelector('.vui-anim-icon-area');
-            if (!area) return;
-            const svg = area.querySelector('svg');
-            if (!svg) return;
-            const svgText = sanitizeSvgMarkup(svg.outerHTML);
-
-            navigator.clipboard.writeText(svgText).then(() => {
-              const label = row.querySelector('.vui-anim-copy-label');
-              if (!label) return;
-              const originalText = label.textContent;
-              row.classList.add('is-copied');
-              label.textContent = 'Copied!';
-              setTimeout(() => {
-                label.textContent = originalText;
-                row.classList.remove('is-copied');
-              }, 1500);
-            });
-          });
+        btnNext.addEventListener("click", () => {
+          const totalPages = Math.ceil(filteredNames.length / ICONS_PER_PAGE);
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderPage();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
         });
-      }
 
-      // Filter + sort helper
-      function applyFilterAndSort() {
-        const q = searchInput.value.trim().toLowerCase();
-        filteredNames = iconNames.filter(name => name.toLowerCase().includes(q));
-        if (currentSort === 'az') filteredNames.sort();
-        else if (currentSort === 'za') filteredNames.sort().reverse();
-        currentPage = 1;
+        // Modes
+        modeBtns.forEach((btn) => {
+          btn.addEventListener("click", () => applyMode(btn.dataset.mode));
+        });
+
+        // Initial render
         renderPage();
-      }
-
-      // Search
-      searchInput.addEventListener('input', applyFilterAndSort);
-
-      // Sort
-      sortSelect.addEventListener('change', () => {
-        currentSort = sortSelect.value;
-        applyFilterAndSort();
-      });
-
-      // Pagination
-      btnPrev.addEventListener('click', () => {
-        if (currentPage > 1) {
-          currentPage--;
-          renderPage();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-
-      btnNext.addEventListener('click', () => {
-        const totalPages = Math.ceil(filteredNames.length / ICONS_PER_PAGE);
-        if (currentPage < totalPages) {
-          currentPage++;
-          renderPage();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-
-      // Modes
-      modeBtns.forEach(btn => {
-        btn.addEventListener('click', () => applyMode(btn.dataset.mode));
-      });
-
-      // Initial render
-      renderPage();
-    })();
-  </script>
-</body>
-
+      })();
+    </script>
+  </body>
 </html>

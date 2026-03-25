@@ -1,7 +1,7 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
   stroke-linejoin="round" aria-label="printer" id="printerSvg">
   <g id="printer-g">
-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
     <g pointer-events="none">
       <polyline points="6 9 6 2 18 2 18 9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0">
       </polyline>

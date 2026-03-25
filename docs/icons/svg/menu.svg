@@ -1,7 +1,7 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+<svg viewBox="-2 -2 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
   stroke-linejoin="round" aria-label="menu" id="menuSvg">
   <g>
-    <rect width="24" height="24" fill="transparent" stroke="none" pointer-events="all" />
+    <rect x="-2" y="-2" width="28" height="28" fill="transparent" stroke="none" pointer-events="all" />
     <!-- top line -->
     <line pointer-events="none" x1="4" y1="7" x2="20" y2="7">
       <animate attributeName="x1" values="4; 6" dur="0.3s" begin="menuSvg.mouseover" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
