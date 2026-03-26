@@ -830,6 +830,44 @@
           </div>
         </section>
 
+        <!-- <section style="margin: 4em 0; padding-top: 2em; border-top: 1px solid var(--vui-border, #d4d4d4);">
+          <h2 class="docs-section-title">Works Everywhere</h2>
+          <p class="docs-prose" style="margin-bottom: 24px;">
+            VUI icons are pure SVG, which means they drop effortlessly into any framework without configuration. 
+            See for yourself in these live environments:
+          </p>
+
+          <style>
+            .vui-fw-tab {
+              background: none;
+              border: none;
+              font-family: var(--vui-font-sans, "Inter", system-ui, sans-serif);
+              font-size: 13px;
+              font-weight: 500;
+              color: var(--vui-fg-muted, #6b6b6b);
+              padding: 0 0 8px 0;
+              cursor: pointer;
+              position: relative;
+              margin-bottom: -1px;
+            }
+            .vui-fw-tab:hover { color: var(--vui-fg, #1a1a1a); }
+            .vui-fw-tab.is-active { color: var(--vui-fg, #1a1a1a); }
+            .vui-fw-tab.is-active::after {
+              content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+              background: var(--vui-fg, #1a1a1a); border-radius: 2px 2px 0 0;
+            }
+          </style>
+          <div class="vui-panel-tabs" id="framework-tabs">
+            <button class="vui-fw-tab is-active" data-fw="react">React</button>
+            <button class="vui-fw-tab" data-fw="vue">Vue</button>
+            <button class="vui-fw-tab" data-fw="html">HTML</button>
+          </div>
+
+          <div style="border: 1px solid var(--vui-border, #d4d4d4); border-radius: var(--vui-radius-md, 6px); overflow: hidden; background: var(--vui-bg-surface, #f2f2f2);">
+            <div id="embed-container" style="width: 100%; height: 450px;"></div>
+          </div>
+        </section> -->
+
         <h2 class="docs-section-title">Implementation Notes</h2>
         <div class="docs-prose">
           <p>
@@ -1008,7 +1046,7 @@
           const svgEnd = svgEndMatch.index + svgEndMatch[0].length;
           return markup
             .slice(svgStart, svgEnd)
-            .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+            .replace(new RegExp('<' + 'script\\b[^>]*>[\\s\\S]*?<\\/script>', 'gi'), "")
             .trim();
         }
 
@@ -1393,6 +1431,167 @@
 
         // Initial render
         renderPage();
+      })();
+    </script>
+
+    <script src="https://unpkg.com/@stackblitz/sdk/bundles/sdk.umd.js"></script>
+    <script>
+      (function() {
+        const sdk = window.StackBlitzSDK;
+        if (!sdk) {
+          console.error("StackBlitz SDK failed to load");
+          return;
+        }
+
+        const frameworkTabs = document.querySelectorAll('#framework-tabs .vui-fw-tab');
+        const embedContainer = document.getElementById('embed-container');
+        
+        const defaultSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="settings" id="settingsPreviewSvg">
+  <g transform="translate(1.5 1.5) scale(0.875)">
+    <g>
+      <circle pointer-events="none" cx="12" cy="12" r="3"></circle>
+      <path
+        pointer-events="none"
+        d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5h.1a1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v.1a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1Z"
+      ></path>
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 12 12"
+        to="60 12 12"
+        dur="0.25s"
+        begin="settingsPreviewSvg.mouseover"
+        fill="freeze"
+        calcMode="spline"
+        keySplines="0.4 0 0.2 1"
+        keyTimes="0;1"
+        values="0 12 12;60 12 12"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="60 12 12"
+        to="0 12 12"
+        dur="0.25s"
+        begin="settingsPreviewSvg.mouseout"
+        fill="freeze"
+        calcMode="spline"
+        keySplines="0.4 0 0.2 1"
+        keyTimes="0;1"
+        values="60 12 12;0 12 12"
+      />
+    </g>
+  </g>
+</svg>`;
+
+        function getIconSvg() {
+          const panelCode = document.getElementById('panel-svg-code');
+          let svgStr = panelCode && panelCode.value && panelCode.value.trim().length > 0
+            ? panelCode.value
+            : defaultSvg;
+
+          if (!svgStr.includes('xmlns="http://www.w3.org/2000/svg"')) {
+            svgStr = svgStr.replace(
+              '<svg',
+              '<svg xmlns="http://www.w3.org/2000/svg"',
+            );
+          }
+
+          if (svgStr.includes('width="24"')) {
+            svgStr = svgStr.replace('width="24"', 'width="48"').replace('height="24"', 'height="48"');
+          }
+
+          return svgStr;
+        }
+
+        function getIconSvgEscaped() {
+          return getIconSvg().replace(/`/g, '\\`').replace(/\$/g, '\\$');
+        }
+
+        const projects = {
+          react: () => ({
+            title: "VUI React Demo",
+            description: "Live React Icon Reference",
+            template: "create-react-app",
+            files: {
+              "public/index.html": `<div id="root"></div>`,
+              "src/icon.svg": getIconSvg(),
+              "src/index.js": `import React from "react";\nimport { createRoot } from "react-dom/client";\nimport App from "./App";\n\nconst root = createRoot(document.getElementById("root"));\nroot.render(<App />);`,
+              "src/App.js": `import React from "react";\nimport { ReactComponent as Icon } from "./icon.svg";\n\nexport default function App() {\n  return (\n    <div style={{ padding: "2rem", fontFamily: "system-ui, sans-serif", display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>\n      <h2>React Component</h2>\n      <p style={{ color: "#666", margin: 0 }}>SVG imported as React component</p>\n      <Icon width="48" height="48" style={{ marginTop: "1rem" }} />\n    </div>\n  );\n}\n`,
+              "package.json": JSON.stringify({ dependencies: { "react": "^18.0.0", "react-dom": "^18.0.0" }})
+            }
+          }),
+          vue: () => ({
+            title: "VUI Vue Demo",
+            description: "Live Vue Icon Reference",
+            template: "javascript",
+            files: {
+              "index.html": `<!doctype html>\n<html>\n<` + `body>\n  <div id="app" style="padding: 2rem; font-family: system-ui, sans-serif; display: flex; flex-direction: column; align-items: center; gap: 1rem;">\n    <h2>Vue 3 Example</h2>\n    <p style="color: #666; margin: 0">Inline SVG via v-html</p>\n    <div v-html="icon" style="color: #2563eb; margin-top: 1rem;"></div>\n  </div>\n\n  <` + `script type="module" src="./index.js"><` + `/script>\n</` + `body>\n</` + `html>`,
+              "index.js": `import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";\ncreateApp({ data() { return { icon: \`` + getIconSvgEscaped() + `\` }; } }).mount('#app');`
+            }
+          }),
+          html: () => ({
+            title: "VUI HTML Demo",
+            description: "Live HTML Icon Reference",
+            template: "javascript",
+            files: {
+              "index.html": `<!doctype html>\n<html>\n<` + `body>\n  <div style="padding: 2rem; font-family: system-ui, sans-serif; display: flex; flex-direction: column; align-items: center; gap: 1rem;">\n    <h2>Plain HTML / WordPress</h2>\n    <p style="color: #666; margin: 0">Paste the SVG directly into your markup</p>\n    <div style="color: #2563eb; margin-top: 1rem;">\n      ` + getIconSvg() + `\n    </div>\n  </div>\n</` + `body>\n</` + `html>`,
+              "index.js": `// Zero dependencies. The SVG is inlined directly in the HTML.`
+            }
+          })
+        };
+
+        let currentFW = 'react';
+        
+        function mountStackBlitz() {
+          if (!embedContainer) return;
+          embedContainer.innerHTML = '<div id="sb-mount-target" style="display: flex; align-items: center; justify-content: center; height: 100%; color: #6b6b6b; font-family: sans-serif;">Loading Sandbox...</div>';
+          try {
+            sdk.embedProject('sb-mount-target', projects[currentFW](), {
+              height: 450,
+              forceEmbedLayout: true,
+              openFile: currentFW === 'react' ? 'src/App.js' : 'index.html',
+              view: 'both',
+              terminalHeight: 0,
+              hideExplorer: true,
+              hideNavigation: true
+            });
+          } catch (err) {
+            console.error("StackBlitz Error:", err);
+            embedContainer.innerHTML = '<div style="padding: 20px; color: red;">Failed to load sandbox: ' + err.message + '</div>';
+          }
+        }
+
+        frameworkTabs.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (btn.dataset.fw === currentFW) return;
+            frameworkTabs.forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            currentFW = btn.dataset.fw;
+            mountStackBlitz();
+          });
+        });
+
+        const panelCopy = document.getElementById('panel-copy-btn');
+        if(panelCopy) {
+          panelCopy.addEventListener('click', () => {
+            mountStackBlitz(); 
+          });
+        }
+
+        setTimeout(() => {
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+              if (entries[0].isIntersecting) {
+                mountStackBlitz();
+                observer.disconnect();
+              }
+            });
+            observer.observe(embedContainer);
+          } else {
+            mountStackBlitz();
+          }
+        }, 500);
       })();
     </script>
   </body>
